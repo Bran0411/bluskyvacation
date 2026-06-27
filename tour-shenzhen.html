@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="HRDF-claimable AI study trip to Shenzhen — visit BYD, UBTECH Humanoid Robots, Baidu Apollo self-driving, SF DJI drones & Hong Kong-Zhuhai-Macau Bridge cruise. Nov 10–16, 2026.">
+<title>Shenzhen AI Study Trip — Nov 2026 | Blue Sky Vacation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --sky: #0B4F8A; --sky-light: #E8F2FB; --teal: #0E7A6E;
+    --sand: #F7F3EE; --charcoal: #1A1A1A; --mid: #4A4A4A;
+    --light-line: #E2DDD8; --white: #FFFFFF; --accent: #C9793A;
+    --hrdf: #1a7a3c; --deep: #0a1628;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: var(--charcoal); background: var(--white); font-weight: 300; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 3rem; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.07); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--sky); text-decoration: none; }
+  .nav-logo span { color: var(--accent); }
+  .nav-back { font-size: 0.78rem; color: var(--mid); text-decoration: none; letter-spacing: 0.06em; }
+  .nav-back:hover { color: var(--sky); }
+
+  .hero { min-height: 88vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 70px; }
+  .hero-left { background: var(--deep); padding: 5rem 4rem 5rem 5rem; display: flex; flex-direction: column; justify-content: center; }
+  .hero-badges { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
+  .badge { padding: 0.3rem 0.8rem; border-radius: 2px; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; }
+  .badge-hrdf { background: var(--hrdf); color: white; }
+  .badge-date { background: var(--accent); color: white; }
+  .badge-limit { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.18); }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 3.5vw, 3.6rem); line-height: 1.08; font-weight: 600; color: var(--white); margin-bottom: 0.6rem; }
+  .hero-title em { color: #FFB347; font-style: italic; }
+  .hero-sub-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: rgba(255,255,255,0.5); font-style: italic; margin-bottom: 1.5rem; }
+  .hero-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.85; max-width: 400px; margin-bottom: 2.5rem; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary { background: var(--accent); color: white; padding: 0.9rem 2rem; text-decoration: none; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; transition: opacity 0.2s; display: inline-block; }
+  .btn-primary:hover { opacity: 0.9; }
+  .btn-outline { border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.8); padding: 0.9rem 2rem; text-decoration: none; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; display: inline-block; transition: border-color 0.2s; }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.6); }
+
+  .hero-right { background: linear-gradient(160deg, #1a0a2e 0%, #0f1a3a 50%, #0a2040 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 3rem; position: relative; overflow: hidden; }
+  .hero-label { position: absolute; top: 2.5rem; right: 2.5rem; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.25); }
+  .hero-companies { display: flex; flex-direction: column; gap: 0.8rem; position: relative; z-index: 1; }
+  .company-pill { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 3px; padding: 0.75rem 1.25rem; display: flex; align-items: center; gap: 0.8rem; }
+  .company-icon { width: 28px; height: 28px; background: #C9793A; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; flex-shrink: 0; }
+  .company-name { font-size: 0.82rem; font-weight: 500; color: rgba(255,255,255,0.9); }
+  .company-desc { font-size: 0.72rem; color: rgba(255,255,255,0.4); }
+
+  .pricing-band { background: var(--hrdf); color: white; padding: 2rem 5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+  .price-item { text-align: center; }
+  .price-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 600; display: block; line-height: 1; }
+  .price-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-top: 0.3rem; display: block; }
+  .price-divider { width: 1px; height: 50px; background: rgba(255,255,255,0.2); }
+  .price-note { font-size: 0.8rem; color: rgba(255,255,255,0.7); max-width: 260px; line-height: 1.6; }
+  .hrdf-badge-big { background: rgba(255,255,255,0.13); border: 1px solid rgba(255,255,255,0.22); border-radius: 3px; padding: 0.5rem 1.2rem; font-size: 0.8rem; font-weight: 500; white-space: nowrap; }
+
+  section { padding: 5rem 5rem; }
+  .section-eyebrow { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 0.8rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 2.5vw, 2.4rem); font-weight: 600; line-height: 1.15; margin-bottom: 2rem; }
+
+  .included-section { background: var(--sand); }
+  .included-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .included-col h4 { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); margin-bottom: 1rem; font-weight: 500; }
+  .included-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .included-list li { font-size: 0.85rem; color: var(--mid); display: flex; align-items: flex-start; gap: 0.6rem; line-height: 1.5; }
+  .check { color: var(--hrdf); flex-shrink: 0; margin-top: 1px; }
+  .cross { color: #c0392b; flex-shrink: 0; margin-top: 1px; }
+
+  .companies-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
+  .company-card { border: 1px solid var(--light-line); border-radius: 3px; padding: 1.75rem; transition: border-color 0.2s, transform 0.2s; }
+  .company-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .company-card-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+  .company-card-name { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 0.4rem; }
+  .company-card-theme { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 0.75rem; }
+  .company-card-desc { font-size: 0.82rem; color: var(--mid); line-height: 1.65; }
+
+  .itinerary-section { background: var(--sand); }
+  .day-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 2.5rem; }
+  .day-item { background: var(--white); border-radius: 3px; overflow: hidden; }
+  .day-header { display: flex; align-items: center; gap: 1.25rem; padding: 1.25rem 1.5rem; cursor: pointer; user-select: none; }
+  .day-num { background: var(--charcoal); color: white; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.3rem 0.7rem; border-radius: 2px; white-space: nowrap; flex-shrink: 0; }
+  .day-date { font-size: 0.8rem; color: var(--mid); flex-shrink: 0; }
+  .day-title { font-size: 0.9rem; font-weight: 500; flex: 1; }
+  .day-chevron { font-size: 0.8rem; color: var(--mid); transition: transform 0.3s; }
+  .day-item.open .day-chevron { transform: rotate(180deg); }
+  .day-body { display: none; border-top: 1px solid var(--light-line); }
+  .day-item.open .day-body { display: block; }
+  .timeline { padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+  .tl-item { display: flex; gap: 1rem; align-items: flex-start; }
+  .tl-time { font-size: 0.72rem; color: var(--mid); min-width: 48px; padding-top: 3px; font-weight: 500; }
+  .tl-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 6px; }
+  .tl-content { font-size: 0.84rem; color: var(--charcoal); line-height: 1.6; flex: 1; }
+  .tl-content strong { display: block; font-weight: 500; margin-bottom: 0.15rem; }
+  .tl-content span { color: var(--mid); font-size: 0.8rem; }
+
+  .highlight-strip { background: var(--charcoal); color: white; padding: 3.5rem 5rem; }
+  .highlight-strip .section-title { color: white; margin-bottom: 2rem; }
+  .highlights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .highlight-item { border-left: 2px solid var(--accent); padding-left: 1.25rem; }
+  .highlight-item h4 { font-size: 0.85rem; font-weight: 500; color: rgba(255,255,255,0.9); margin-bottom: 0.4rem; }
+  .highlight-item p { font-size: 0.78rem; color: rgba(255,255,255,0.5); line-height: 1.65; }
+
+  .info-section { padding: 4rem 5rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
+  .info-card { padding: 2rem; border: 1px solid var(--light-line); border-radius: 3px; }
+  .info-icon { font-size: 1.5rem; margin-bottom: 1rem; }
+  .info-title { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); font-weight: 500; margin-bottom: 0.75rem; }
+  .info-body { font-size: 0.84rem; color: var(--mid); line-height: 1.7; }
+
+  .cta-section { background: var(--charcoal); color: white; padding: 5rem; text-align: center; }
+  .cta-section .section-title { color: white; margin-bottom: 1rem; }
+  .cta-section p { color: rgba(255,255,255,0.65); margin-bottom: 2rem; font-size: 0.95rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .cta-limit { display: inline-block; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: 3px; padding: 0.5rem 1.25rem; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2.5rem; color: rgba(255,255,255,0.65); }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-white { background: white; color: var(--charcoal); padding: 0.9rem 2.5rem; text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; display: inline-block; }
+  .btn-whatsapp { background: #25D366; color: white; padding: 0.9rem 2.5rem; text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; display: inline-block; }
+
+  footer { background: #0d0d0d; color: rgba(255,255,255,0.35); padding: 2rem 5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: rgba(255,255,255,0.75); }
+  .footer-logo span { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left, .hero-right { padding: 2.5rem 1.5rem; }
+    .hero-right { min-height: 320px; }
+    .pricing-band { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
+    .price-divider { display: none; }
+    section { padding: 3.5rem 1.5rem; }
+    .included-grid, .companies-grid, .highlights-grid { grid-template-columns: 1fr; }
+    .info-section { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; }
+    .highlight-strip { padding: 3rem 1.5rem; }
+    .cta-section { padding: 3.5rem 1.5rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Blue Sky <span>Vacation</span></a>
+  <a href="index.html" class="nav-back">← Back to tours</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-badges">
+      <span class="badge badge-hrdf">✓ 100% HRDF Claimable</span>
+      <span class="badge badge-date">10–16 Nov 2026</span>
+      <span class="badge badge-limit">Limited to 30 pax</span>
+    </div>
+    <h1 class="hero-title">AI Empowers<br>Business: <em>Inside Shenzhen's</em><br>Tech Giants</h1>
+    <p class="hero-sub-title">深圳 · 7 Days 6 Nights Study Trip</p>
+    <p class="hero-desc">From BYD's factory floor to Baidu's self-driving cars, UBTECH's humanoid robots, SF drone logistics, and a sunset cruise under the Hong Kong-Zhuhai-Macau Bridge. China's innovation capital in 7 immersive days.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/60XXXXXXXXX?text=Hi,%20I'm%20interested%20in%20the%20Shenzhen%20HRDF%20trip%20Nov%202026" class="btn-primary">Register interest</a>
+      <a href="#itinerary" class="btn-outline">View itinerary</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <span class="hero-label">Companies you'll visit</span>
+    <div class="hero-companies">
+      <div class="company-pill"><div class="company-icon">🔋</div><div><div class="company-name">BYD + Yunba</div><div class="company-desc">Museum, battery experience & EV ecosystem</div></div></div>
+      <div class="company-pill"><div class="company-icon">🤖</div><div><div class="company-name">UBTECH Robotics 优必选</div><div class="company-desc">Humanoid robots in real-world commercial use</div></div></div>
+      <div class="company-pill"><div class="company-icon">🚌</div><div><div class="company-name">Shenzhen Bus Group</div><div class="company-desc">Self-driving city bus demonstration & ride</div></div></div>
+      <div class="company-pill"><div class="company-icon">🚁</div><div><div class="company-name">SF DJI Fengyi Drones</div><div class="company-desc">Logistics, medical & emergency drone ops</div></div></div>
+      <div class="company-pill"><div class="company-icon">🚗</div><div><div class="company-name">Baidu Apollo 萝卜快跑</div><div class="company-desc">Ride a fully autonomous car in Shenzhen CBD</div></div></div>
+      <div class="company-pill"><div class="company-icon">🌉</div><div><div class="company-name">HZM Bridge Sunset Cruise</div><div class="company-desc">Sunset + blue hour + bridge light show by sea</div></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="pricing-band">
+  <div class="price-item">
+    <span class="price-num">RM 8,250</span>
+    <span class="price-label">HRDF price (100% claimable)</span>
+  </div>
+  <div class="price-divider"></div>
+  <div class="price-item">
+    <span class="price-num">RM 8,000</span>
+    <span class="price-label">Cash price</span>
+  </div>
+  <div class="price-divider"></div>
+  <div class="price-item">
+    <span class="price-num">RM 5,250 + RM 3,000</span>
+    <span class="price-label">Course fee + tour fee</span>
+  </div>
+  <div class="price-divider"></div>
+  <p class="price-note">Flights not included but 50% of return flights are also HRDF claimable. Single room supplement: RM 1,400.</p>
+  <div class="hrdf-badge-big">Dedicated HRDF application support</div>
+</div>
+
+<section class="included-section">
+  <p class="section-eyebrow">Package details</p>
+  <h2 class="section-title">What's included</h2>
+  <div class="included-grid">
+    <div class="included-col">
+      <h4>Included</h4>
+      <ul class="included-list">
+        <li><span class="check">✓</span>Full study programme + all company visits</li>
+        <li><span class="check">✓</span>5-star hotel accommodation (twin sharing)</li>
+        <li><span class="check">✓</span>All meals listed in the itinerary</li>
+        <li><span class="check">✓</span>Full-day coach transport throughout</li>
+        <li><span class="check">✓</span>All entrance tickets and company visit fees</li>
+        <li><span class="check">✓</span>HZM Bridge sunset cruise with buffet dinner</li>
+        <li><span class="check">✓</span>Driver & guide gratuities</li>
+        <li><span class="check">✓</span>HRDF application guidance provided</li>
+      </ul>
+    </div>
+    <div class="included-col">
+      <h4>Not included (own expense)</h4>
+      <ul class="included-list">
+        <li><span class="cross">✕</span>Return flights (50% claimable via HRDF)</li>
+        <li><span class="cross">✕</span>Personal travel insurance</li>
+        <li><span class="cross">✕</span>14 Nov lunch · 15 Nov lunch & dinner (free day)</li>
+        <li><span class="cross">✕</span>Single room supplement: RM 1,400</li>
+        <li><span class="cross">✕</span>Personal shopping & extras</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <p class="section-eyebrow">Who you'll learn from</p>
+  <h2 class="section-title">Five AI pioneers.<br>One future city.</h2>
+  <div class="companies-grid">
+    <div class="company-card">
+      <div class="company-card-icon">🔋</div>
+      <div class="company-card-theme">EV & Energy</div>
+      <h3 class="company-card-name">BYD + Yunba</h3>
+      <p class="company-card-desc">From battery startup to the world's largest EV maker. Walk through BYD Museum, hand-roll a battery cell as a souvenir, eat the legendary "Tongle Chicken Leg Rice," and see Yunba's autonomous rail system.</p>
+    </div>
+    <div class="company-card">
+      <div class="company-card-icon">🤖</div>
+      <div class="company-card-theme">Humanoid Robots</div>
+      <h3 class="company-card-name">UBTECH 优必选</h3>
+      <p class="company-card-desc">Listed on Hong Kong Stock Exchange in 2023. Their Walker S2 robot performed at the 2025 National Games opening. See humanoid robots working in logistics, retail, education and smart manufacturing.</p>
+    </div>
+    <div class="company-card">
+      <div class="company-card-icon">🚌</div>
+      <div class="company-card-theme">Smart City Transit</div>
+      <h3 class="company-card-name">Shenzhen Bus Group</h3>
+      <p class="company-card-desc">China's most advanced autonomous bus demonstration base. 20 driverless vehicles on active routes. Ride one. Understand how a city-scale AI traffic system operates and what it means for future urban mobility.</p>
+    </div>
+    <div class="company-card">
+      <div class="company-card-icon">🚁</div>
+      <div class="company-card-theme">Drone Logistics</div>
+      <h3 class="company-card-name">SF Fengyi 丰翼科技</h3>
+      <p class="company-card-desc">China's first UAV operating license holder. Active in logistics, medical supply, emergency response across 12 countries. See drones launching from the rooftop and understand the full uncrewed logistics chain.</p>
+    </div>
+    <div class="company-card">
+      <div class="company-card-icon">🚗</div>
+      <div class="company-card-theme">Autonomous Driving</div>
+      <h3 class="company-card-name">Baidu Apollo 萝卜快跑</h3>
+      <p class="company-card-desc">The world's largest autonomous driving operator and biggest 5G cloud fleet. Shenzhen is the first city to open self-driving taxis in its CBD. You'll ride one — 3 people per car, 5-minute technology park loop.</p>
+    </div>
+    <div class="company-card">
+      <div class="company-card-icon">🌉</div>
+      <div class="company-card-theme">Iconic Experience</div>
+      <h3 class="company-card-name">HZM Bridge Cruise + Ping'an Tower</h3>
+      <p class="company-card-desc">Sail under the world's longest sea bridge at sunset — dusk + blue hour + bridge light-up. Earlier that evening, ascend to 547m at Ping'an Finance Centre Floor 116 for a 360° view of Shenzhen Bay and beyond.</p>
+    </div>
+  </div>
+</section>
+
+<div class="highlight-strip">
+  <p class="section-eyebrow" style="color:rgba(255,255,255,0.4)">Who this is for</p>
+  <h2 class="section-title">Built for business leaders.</h2>
+  <div class="highlights-grid">
+    <div class="highlight-item"><h4>SME owners & founders</h4><p>Understand how China's AI companies scaled and what that means for your own business strategy.</p></div>
+    <div class="highlight-item"><h4>Second-generation leaders</h4><p>See the industries being disrupted by AI — and build relationships with peers at the same crossroads.</p></div>
+    <div class="highlight-item"><h4>Senior executives</h4><p>A full-day AI business salon with Baidu on Day 4 — covering LLM industry applications, case studies, and live discussion.</p></div>
+  </div>
+</div>
+
+<section class="itinerary-section" id="itinerary">
+  <p class="section-eyebrow">Day by day</p>
+  <h2 class="section-title">Full itinerary</h2>
+  <div class="day-list">
+
+    <div class="day-item open">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">Day 1</span><span class="day-date">Tue 10 Nov</span>
+        <span class="day-title">Depart Malaysia · Arrive Shenzhen</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body"><div class="timeline">
+        <div class="tl-item"><div class="tl-time">All day</div><div class="tl-dot"></div><div class="tl-content"><strong>Depart from Malaysia — meet at KLIA1 boarding gate</strong><span>Flights from KCH and MYY connect via KL. Group leader will be at the boarding gate.</span></div></div>
+        <div class="tl-item"><div class="tl-time">19:55</div><div class="tl-dot"></div><div class="tl-content"><strong>Arrive Shenzhen Bao'an International Airport (SZX)</strong><span>Check in to hotel. Rest before the programme begins tomorrow.</span></div></div>
+      </div></div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">Day 2</span><span class="day-date">Wed 11 Nov</span>
+        <span class="day-title">BYD Museum · Yunba Rail · Iconic Chicken Leg Rice</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body"><div class="timeline">
+        <div class="tl-item"><div class="tl-time">09:00</div><div class="tl-dot"></div><div class="tl-content"><strong>Yunba 云巴 Autonomous Rail System</strong><span>Experience BYD's urban rail innovation — the Yunba system that runs autonomously through Shenzhen's streets.</span></div></div>
+        <div class="tl-item"><div class="tl-time">12:00</div><div class="tl-dot"></div><div class="tl-content"><strong>Lunch — Tongle Chicken Leg Rice 同乐鸡腿饭</strong><span>The iconic BYD founding-era meal, recreated in the BYD Museum as the "Pioneer's Memory Set." A cultural moment, not just food.</span></div></div>
+        <div class="tl-item"><div class="tl-time">13:00</div><div class="tl-dot"></div><div class="tl-content"><strong>BYD History Museum</strong><span>BYD's journey from battery factory to global EV leader. Hand-roll a battery cell and take it home. See the full industrial production chain up close.</span></div></div>
+        <div class="tl-item"><div class="tl-time">17:00</div><div class="tl-dot"></div><div class="tl-content"><strong>Dinner</strong></div></div>
+      </div></div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">Day 3</span><span class="day-date">Thu 12 Nov</span>
+        <span class="day-title">UBTECH Humanoid Robots · Bus Self-Driving Base · SF Drones</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body"><div class="timeline">
+        <div class="tl-item"><div class="tl-time">09:00</div><div class="tl-dot"></div><div class="tl-content"><strong>UBTECH Robotics 优必选科技</strong><span>See humanoid robots in real deployment: logistics, care, education, smart factory. From the Alpha robot that performed at CCTV New Year Gala (540 robots on stage) to today's Walker S2.</span></div></div>
+        <div class="tl-item"><div class="tl-time">12:30</div><div class="tl-dot"></div><div class="tl-content"><strong>Shenzhen Bus Group — Qianhai Autonomous Driving Base</strong><span>Explore the AI control centre · Ride a driverless bus · Understand how China is deploying self-driving at city scale.</span></div></div>
+        <div class="tl-item"><div class="tl-time">15:00</div><div class="tl-dot"></div><div class="tl-content"><strong>SF Fengyi Drones 顺丰丰翼</strong><span>Exhibition hall, control centre, industry exchange, and rooftop drone observation. See drones active in logistics, medical cold-chain, and emergency response across 12 countries.</span></div></div>
+        <div class="tl-item"><div class="tl-time">17:00</div><div class="tl-dot"></div><div class="tl-content"><strong>Dinner</strong></div></div>
+      </div></div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">Day 4</span><span class="day-date">Fri 13 Nov</span>
+        <span class="day-title">Baidu Apollo — Ride a Self-Driving Car · Full-Day AI Salon</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body"><div class="timeline">
+        <div class="tl-item"><div class="tl-time">08:30</div><div class="tl-dot"></div><div class="tl-content"><strong>Baidu Apollo 百度萝卜快跑 Autonomous Driving Centre</strong><span>Shenzhen is the first city in China to run fully autonomous taxis in its CBD. You'll ride one — 3 people per vehicle, 5-minute technology park loop. No safety driver. Fully AI-operated.</span></div></div>
+        <div class="tl-item"><div class="tl-time">All day</div><div class="tl-dot"></div><div class="tl-content"><strong>Full-Day Course: AI Business Salon — Algorithm Deep Dive</strong><span>Part 1: AI knowledge fundamentals (45 min) · Part 2: Industry case studies — LLM applications, industry upgrades (70 min) · Part 3: Hands-on demos — enterprise AI tools (35 min) · Part 4: Q&A and industry exchange (20 min) + Self-driving half-day field course.</span></div></div>
+        <div class="tl-item"><div class="tl-time">18:00</div><div class="tl-dot"></div><div class="tl-content"><strong>Ping'an Finance Centre 平安金融中心 — Floor 116</strong><span>547m above Shenzhen. 270°–360° view of Futian CBD, Shenzhen Bay, Dapeng Bay. Sunset, golden hour, and city lights in one visit.</span></div></div>
+      </div></div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">Day 5</span><span class="day-date">Sat 14 Nov</span>
+        <span class="day-title">COCO Park · HZM Bridge Sunset Cruise</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body"><div class="timeline">
+        <div class="tl-item"><div class="tl-time">10:00</div><div class="tl-dot"></div><div class="tl-content"><strong>Shenzhen COCO Park</strong><span>Shenzhen's most popular lifestyle and retail destination. Lunch on your own account.</span></div></div>
+        <div class="tl-item"><div class="tl-time">17:30</div><div class="tl-dot"></div><div class="tl-content"><strong>Hong Kong–Zhuhai–Macau Bridge Sea Cruise</strong><span>Board the 18:00–21:00 sailing. Buffet dinner on board. Watch sunset over the South China Sea, the blue hour settle over the bridge, and the full light show as the bridge illuminates at night. Incredible photography.</span></div></div>
+      </div></div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">Day 6</span><span class="day-date">Sun 15 Nov</span>
+        <span class="day-title">Free Day in Shenzhen</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body"><div class="timeline">
+        <div class="tl-item"><div class="tl-time">All day</div><div class="tl-dot"></div><div class="tl-content"><strong>Free day — explore at your own pace</strong><span>Suggested: Dafen Oil Painting Village, Splendid China Folk Village, Window of the World, OCT Loft creative park, or cross into Lo Wu for shopping.</span></div></div>
+      </div></div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">Day 7</span><span class="day-date">Mon 16 Nov</span>
+        <span class="day-title">Departure</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body"><div class="timeline">
+        <div class="tl-item"><div class="tl-time">07:00</div><div class="tl-dot"></div><div class="tl-content"><strong>Check out and transfer to Shenzhen Bao'an Airport</strong><span>Depart 10:40 · Arrive KL 14:40 · Onward connections available to KCH, MYY, BTU.</span></div></div>
+      </div></div>
+    </div>
+
+  </div>
+</section>
+
+<div class="info-section">
+  <div class="info-card">
+    <div class="info-icon">🌡️</div>
+    <div class="info-title">Weather in November</div>
+    <div class="info-body">Mostly sunny days in Shenzhen.<br>Daytime: 24–28°C<br>Evenings: 17–22°C<br><br>Light jacket recommended for evenings. No rain season — excellent photography conditions for the bridge cruise.</div>
+  </div>
+  <div class="info-card">
+    <div class="info-icon">💳</div>
+    <div class="info-title">Payments in China</div>
+    <div class="info-body">Download <strong>Touch 'n Go</strong> or <strong>Alipay</strong> and link your card before departure. Cash is also universally accepted — Chinese law requires all merchants to accept it.</div>
+  </div>
+  <div class="info-card">
+    <div class="info-icon">✈️</div>
+    <div class="info-title">Getting there</div>
+    <div class="info-body">Meet at KLIA1 boarding gate (not KLIA2 — note this is different from the Hangzhou trip). Flights available from KCH, MYY via KL connection. Buy luggage with your ticket — adding later costs far more.</div>
+  </div>
+</div>
+
+<div class="cta-section">
+  <p class="section-eyebrow" style="color:rgba(255,255,255,0.4)">Secure your place</p>
+  <h2 class="section-title">Ready to join?</h2>
+  <p>Limited to 30 participants. Register interest or start your HRDF application with our guided support team.</p>
+  <div class="cta-limit">⚠ Only 30 seats — first come, first served</div>
+  <div class="cta-buttons">
+    <a href="https://wa.me/60XXXXXXXXX?text=Hi,%20I'm%20interested%20in%20the%20Shenzhen%20HRDF%20trip%20Nov%202026" class="btn-whatsapp">WhatsApp to register</a>
+    <a href="mailto:info@blueskyvacation.com.my?subject=Shenzhen HRDF Trip Nov 2026" class="btn-white">Email enquiry</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Blue Sky <span>Vacation</span> · KPK/LN:7700</div>
+  <p>© 2026 Blue Sky Vacation Sdn Bhd · Kota Kinabalu, Sabah</p>
+</footer>
+
+<script>
+  document.querySelectorAll('.day-header').forEach(h => {
+    h.addEventListener('click', () => { h.parentElement.classList.toggle('open'); });
+  });
+</script>
+</body>
+</html>

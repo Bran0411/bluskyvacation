@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="HRDF-claimable study trip to Hangzhou — visit Alibaba, Geely EV Factory, BrainCo, iFlytek & Robot Town. 8 days 6 nights, Oct 11–17, 2026. 100% HRDF claimable.">
+<title>Hangzhou AI Study Trip — Oct 2026 | Blue Sky Vacation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --sky: #0B4F8A; --sky-light: #E8F2FB; --teal: #0E7A6E;
+    --sand: #F7F3EE; --charcoal: #1A1A1A; --mid: #4A4A4A;
+    --light-line: #E2DDD8; --white: #FFFFFF; --accent: #C9793A;
+    --hrdf: #1a7a3c;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: var(--charcoal); background: var(--white); font-weight: 300; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 3rem; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.07); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--sky); text-decoration: none; }
+  .nav-logo span { color: var(--accent); }
+  .nav-back { font-size: 0.78rem; color: var(--mid); text-decoration: none; letter-spacing: 0.06em; display: flex; align-items: center; gap: 0.4rem; }
+  .nav-back:hover { color: var(--sky); }
+
+  /* HERO */
+  .hero { min-height: 88vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 70px; }
+  .hero-left { background: var(--charcoal); padding: 5rem 4rem 5rem 5rem; display: flex; flex-direction: column; justify-content: center; }
+  .hero-badges { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
+  .badge { padding: 0.3rem 0.8rem; border-radius: 2px; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; }
+  .badge-hrdf { background: var(--hrdf); color: white; }
+  .badge-date { background: var(--accent); color: white; }
+  .badge-limit { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.2); }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 3.5vw, 3.6rem); line-height: 1.08; font-weight: 600; color: var(--white); margin-bottom: 0.6rem; }
+  .hero-title em { color: #7EC8E3; font-style: italic; }
+  .hero-sub-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: rgba(255,255,255,0.55); font-style: italic; margin-bottom: 1.5rem; }
+  .hero-desc { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.85; max-width: 400px; margin-bottom: 2.5rem; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary { background: var(--sky); color: white; padding: 0.9rem 2rem; text-decoration: none; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; transition: background 0.2s; display: inline-block; }
+  .btn-primary:hover { background: var(--teal); }
+  .btn-outline { border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.85); padding: 0.9rem 2rem; text-decoration: none; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; transition: all 0.2s; display: inline-block; }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.7); }
+  .hero-right { background: linear-gradient(160deg, #0B4F8A 0%, #0a3d6b 40%, #062a4a 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 3rem; position: relative; overflow: hidden; }
+  .hero-companies { display: flex; flex-direction: column; gap: 0.8rem; position: relative; z-index: 1; }
+  .company-pill { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 3px; padding: 0.75rem 1.25rem; display: flex; align-items: center; gap: 0.8rem; }
+  .company-icon { width: 28px; height: 28px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; flex-shrink: 0; }
+  .company-name { font-size: 0.82rem; font-weight: 500; color: rgba(255,255,255,0.9); }
+  .company-desc { font-size: 0.72rem; color: rgba(255,255,255,0.45); }
+  .hero-label { position: absolute; top: 2.5rem; right: 2.5rem; font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+
+  /* PRICING BAND */
+  .pricing-band { background: var(--hrdf); color: white; padding: 2rem 5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+  .price-item { text-align: center; }
+  .price-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 600; display: block; line-height: 1; }
+  .price-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-top: 0.3rem; display: block; }
+  .price-divider { width: 1px; height: 50px; background: rgba(255,255,255,0.2); }
+  .price-note { font-size: 0.8rem; color: rgba(255,255,255,0.75); max-width: 260px; line-height: 1.6; }
+  .hrdf-badge-big { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); border-radius: 3px; padding: 0.5rem 1.2rem; font-size: 0.8rem; font-weight: 500; white-space: nowrap; }
+
+  /* WHAT'S INCLUDED */
+  .included-section { padding: 5rem 5rem; background: var(--sand); }
+  .section-eyebrow { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 0.8rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 2.5vw, 2.4rem); font-weight: 600; line-height: 1.15; margin-bottom: 2.5rem; }
+  .included-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .included-col h4 { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); margin-bottom: 1rem; font-weight: 500; }
+  .included-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .included-list li { font-size: 0.85rem; color: var(--mid); display: flex; align-items: flex-start; gap: 0.6rem; line-height: 1.5; }
+  .check { color: var(--hrdf); font-size: 0.9rem; flex-shrink: 0; margin-top: 1px; }
+  .cross { color: #c0392b; font-size: 0.9rem; flex-shrink: 0; margin-top: 1px; }
+
+  /* COMPANIES */
+  .companies-section { padding: 5rem 5rem; }
+  .companies-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
+  .company-card { border: 1px solid var(--light-line); border-radius: 3px; padding: 1.75rem; transition: border-color 0.2s, transform 0.2s; }
+  .company-card:hover { border-color: var(--sky); transform: translateY(-2px); }
+  .company-card-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+  .company-card-name { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; }
+  .company-card-theme { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sky); font-weight: 500; margin-bottom: 0.75rem; }
+  .company-card-desc { font-size: 0.82rem; color: var(--mid); line-height: 1.65; }
+
+  /* ITINERARY */
+  .itinerary-section { padding: 5rem 5rem; background: var(--sand); }
+  .day-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 2.5rem; }
+  .day-item { background: var(--white); border-radius: 3px; overflow: hidden; }
+  .day-header { display: flex; align-items: center; gap: 1.25rem; padding: 1.25rem 1.5rem; cursor: pointer; user-select: none; }
+  .day-num { background: var(--sky); color: white; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.3rem 0.7rem; border-radius: 2px; white-space: nowrap; flex-shrink: 0; }
+  .day-date { font-size: 0.8rem; color: var(--mid); flex-shrink: 0; }
+  .day-title { font-size: 0.9rem; font-weight: 500; flex: 1; }
+  .day-chevron { font-size: 0.8rem; color: var(--mid); transition: transform 0.3s; }
+  .day-item.open .day-chevron { transform: rotate(180deg); }
+  .day-body { display: none; border-top: 1px solid var(--light-line); }
+  .day-item.open .day-body { display: block; }
+  .timeline { padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+  .tl-item { display: flex; gap: 1rem; align-items: flex-start; }
+  .tl-time { font-size: 0.72rem; color: var(--mid); min-width: 48px; padding-top: 3px; font-weight: 500; }
+  .tl-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--sky); flex-shrink: 0; margin-top: 6px; }
+  .tl-content { font-size: 0.84rem; color: var(--charcoal); line-height: 1.6; flex: 1; }
+  .tl-content strong { display: block; font-weight: 500; margin-bottom: 0.15rem; }
+  .tl-content span { color: var(--mid); font-size: 0.8rem; }
+
+  /* WEATHER */
+  .info-section { padding: 4rem 5rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
+  .info-card { padding: 2rem; border: 1px solid var(--light-line); border-radius: 3px; }
+  .info-icon { font-size: 1.5rem; margin-bottom: 1rem; }
+  .info-title { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); font-weight: 500; margin-bottom: 0.75rem; }
+  .info-body { font-size: 0.84rem; color: var(--mid); line-height: 1.7; }
+
+  /* CTA */
+  .cta-section { background: var(--sky); color: white; padding: 5rem; text-align: center; }
+  .cta-section .section-title { color: white; margin-bottom: 1rem; }
+  .cta-section p { color: rgba(255,255,255,0.7); margin-bottom: 2rem; font-size: 0.95rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .cta-limit { display: inline-block; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 3px; padding: 0.5rem 1.25rem; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2.5rem; color: rgba(255,255,255,0.75); }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-white { background: white; color: var(--sky); padding: 0.9rem 2.5rem; text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; transition: opacity 0.2s; display: inline-block; }
+  .btn-white:hover { opacity: 0.9; }
+  .btn-whatsapp { background: #25D366; color: white; padding: 0.9rem 2.5rem; text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; transition: opacity 0.2s; display: inline-block; }
+  .btn-whatsapp:hover { opacity: 0.9; }
+
+  /* FOOTER */
+  footer { background: var(--charcoal); color: rgba(255,255,255,0.4); padding: 2rem 5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: rgba(255,255,255,0.8); }
+  .footer-logo span { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 3rem 1.5rem; }
+    .hero-right { min-height: 340px; padding: 2rem 1.5rem; }
+    .pricing-band { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
+    .price-divider { display: none; }
+    .included-section, .companies-section, .itinerary-section, .cta-section { padding: 3.5rem 1.5rem; }
+    .included-grid { grid-template-columns: 1fr; }
+    .companies-grid { grid-template-columns: 1fr; }
+    .info-section { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Blue Sky <span>Vacation</span></a>
+  <a href="index.html" class="nav-back">← Back to tours</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-badges">
+      <span class="badge badge-hrdf">✓ 100% HRDF Claimable</span>
+      <span class="badge badge-date">11–17 Oct 2026</span>
+      <span class="badge badge-limit">Limited to 40 pax</span>
+    </div>
+    <h1 class="hero-title">Building High-Growth<br>Companies: <em>Inside Alibaba</em><br>& China's AI Leaders</h1>
+    <p class="hero-sub-title">杭州 · 8 Days 6 Nights Study Trip</p>
+    <p class="hero-desc">An immersive business study trip to Hangzhou — visiting Alibaba headquarters, Geely EV factory, BrainCo brain-computer interface lab, iFlytek AI centre, and China's Robot Town. Designed for business owners, executives, and next-generation leaders.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/60XXXXXXXXX?text=Hi,%20I'm%20interested%20in%20the%20Hangzhou%20HRDF%20trip%20Oct%202026" class="btn-primary">Register interest</a>
+      <a href="#itinerary" class="btn-outline">View itinerary</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <span class="hero-label">Companies you'll visit</span>
+    <div class="hero-companies">
+      <div class="company-pill"><div class="company-icon">🛒</div><div><div class="company-name">Alibaba Group</div><div class="company-desc">Culture, strategy & digital ecosystem tour</div></div></div>
+      <div class="company-pill"><div class="company-icon">🚗</div><div><div class="company-name">Geely Qiantang EV Factory</div><div class="company-desc">Smart manufacturing & EV production line</div></div></div>
+      <div class="company-pill"><div class="company-icon">🤖</div><div><div class="company-name">申昊 Shenhao Robotics</div><div class="company-desc">AI industrial inspection robots</div></div></div>
+      <div class="company-pill"><div class="company-icon">🧠</div><div><div class="company-name">BrainCo 强脑科技</div><div class="company-desc">World-leading brain-computer interface tech</div></div></div>
+      <div class="company-pill"><div class="company-icon">🎤</div><div><div class="company-name">iFlytek 科大讯飞</div><div class="company-desc">AI speech recognition & cognitive models</div></div></div>
+      <div class="company-pill"><div class="company-icon">🏙️</div><div><div class="company-name">Robot Town 机器人小镇</div><div class="company-desc">China's first robot-themed innovation hub</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING BAND -->
+<div class="pricing-band">
+  <div class="price-item">
+    <span class="price-num">RM 8,250</span>
+    <span class="price-label">HRDF price (100% claimable)</span>
+  </div>
+  <div class="price-divider"></div>
+  <div class="price-item">
+    <span class="price-num">RM 8,000</span>
+    <span class="price-label">Cash price</span>
+  </div>
+  <div class="price-divider"></div>
+  <div class="price-item">
+    <span class="price-num">RM 5,250 + RM 3,000</span>
+    <span class="price-label">Course fee + tour fee</span>
+  </div>
+  <div class="price-divider"></div>
+  <p class="price-note">Flight tickets not included but 50% of return flights are also HRDF claimable. Single room supplement: RM 1,200.</p>
+  <div class="hrdf-badge-big">HRDF guided application support provided</div>
+</div>
+
+<!-- WHAT'S INCLUDED -->
+<section class="included-section">
+  <p class="section-eyebrow">Package details</p>
+  <h2 class="section-title">What's included</h2>
+  <div class="included-grid">
+    <div class="included-col">
+      <h4>Included</h4>
+      <ul class="included-list">
+        <li><span class="check">✓</span>3-day course + full site visits programme</li>
+        <li><span class="check">✓</span>5-star hotel accommodation (twin sharing)</li>
+        <li><span class="check">✓</span>All meals listed in the itinerary</li>
+        <li><span class="check">✓</span>Full-day coach transport throughout</li>
+        <li><span class="check">✓</span>All entrance tickets and company visit fees</li>
+        <li><span class="check">✓</span>Driver & tour guide gratuities</li>
+        <li><span class="check">✓</span>HRDF application guidance & support</li>
+      </ul>
+    </div>
+    <div class="included-col">
+      <h4>Not included (own expense)</h4>
+      <ul class="included-list">
+        <li><span class="cross">✕</span>Return flights (50% claimable via HRDF)</li>
+        <li><span class="cross">✕</span>Personal travel insurance</li>
+        <li><span class="cross">✕</span>Wuzhen lunch (free time day)</li>
+        <li><span class="cross">✕</span>Single room supplement: RM 1,200</li>
+        <li><span class="cross">✕</span>Personal shopping & extras</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANIES -->
+<section class="companies-section">
+  <p class="section-eyebrow">Who you'll learn from</p>
+  <h2 class="section-title">Six world-class companies.<br>Six learning sessions.</h2>
+  <div class="companies-grid">
+    <div class="company-card">
+      <div class="company-card-icon">🛒</div>
+      <div class="company-card-theme">Strategy & Culture</div>
+      <h3 class="company-card-name">Alibaba Group</h3>
+      <p class="company-card-desc">Inside Alibaba's Xixi Campus. Learn the "Three Axes" leadership framework — strategy, culture, people. Tour the cultural wall, Alibaba's growth milestones, and dine at the Alibaba canteen.</p>
+    </div>
+    <div class="company-card">
+      <div class="company-card-icon">🚗</div>
+      <div class="company-card-theme">Smart Manufacturing</div>
+      <h3 class="company-card-name">Geely EV Factory</h3>
+      <p class="company-card-desc">Walk through the full stamping-welding-assembly line. See how a robot assembles a full electric vehicle in 6 minutes on Geely's AMA EV platform — one of China's most advanced.</p>
+    </div>
+    <div class="company-card">
+      <div class="company-card-icon">🤖</div>
+      <div class="company-card-theme">Industrial AI</div>
+      <h3 class="company-card-name">Shenhao Robotics 申昊科技</h3>
+      <p class="company-card-desc">20+ years in fault detection. 3,000+ inspection robot deployments. Tour their new production quality science park — rail, power grid, emergency and marine inspection robots.</p>
+    </div>
+    <div class="company-card">
+      <div class="company-card-icon">🧠</div>
+      <div class="company-card-theme">Brain-Computer Interface</div>
+      <h3 class="company-card-name">BrainCo 强脑科技</h3>
+      <p class="company-card-desc">The first Chinese team admitted to Harvard Innovation Lab. Their bionic hand — controlled by brainwaves — lit the torch at the 2022 Asian Para Games. Hands-on experience with BCI technology.</p>
+    </div>
+    <div class="company-card">
+      <div class="company-card-icon">🎤</div>
+      <div class="company-card-theme">AI & Language</div>
+      <h3 class="company-card-name">iFlytek 科大讯飞</h3>
+      <p class="company-card-desc">China's leading AI speech and cognitive company. Test their live voice recognition accuracy, experience virtual human creation, and learn about the Spark LLM and its industry deployments.</p>
+    </div>
+    <div class="company-card">
+      <div class="company-card-icon">🏙️</div>
+      <div class="company-card-theme">Future City</div>
+      <h3 class="company-card-name">Robot Town 机器人小镇</h3>
+      <p class="company-card-desc">China's first robot-named innovation district. 40+ robot products on display — dancing robots, calligraphy robots, chess robots, VR smart factories. Interactive experience across two floors.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ITINERARY -->
+<section class="itinerary-section" id="itinerary">
+  <p class="section-eyebrow">Day by day</p>
+  <h2 class="section-title">Full itinerary</h2>
+  <div class="day-list">
+
+    <div class="day-item open">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">Day 1</span>
+        <span class="day-date">Sat 11 Oct</span>
+        <span class="day-title">Depart Malaysia · Check in to Alibaba's AI Hotel</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-time">Night</div><div class="tl-dot"></div><div class="tl-content"><strong>Depart from Malaysia via KLIA2</strong><span>All participants depart from KL. Flight options from KCH, SWB, BTU, MYY also available via connection.</span></div></div>
+          <div class="tl-item"><div class="tl-time">23:00</div><div class="tl-dot"></div><div class="tl-content"><strong>Arrive Hangzhou Xiaoshan International Airport</strong><span>Check in to FlyZoo Hotel — Alibaba's fully AI-operated hotel. Face-recognition check-in, robot room service, voice-controlled room, 3D-printed latte coffee.</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">Day 2</span>
+        <span class="day-date">Sun 12 Oct</span>
+        <span class="day-title">Alibaba HQ · AI Frontiers Course</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-time">12:00</div><div class="tl-dot"></div><div class="tl-content"><strong>Alibaba Digital Eco Innovation Campus</strong><span>Lunch at the famous Alibaba canteen.</span></div></div>
+          <div class="tl-item"><div class="tl-time">13:30</div><div class="tl-dot"></div><div class="tl-content"><strong>Alibaba Group Culture Tour</strong><span>Alibaba milestones · Cultural Wall & Kung Fu culture · Alibaba's charity & community day · Alibaba micro-film screening.</span></div></div>
+          <div class="tl-item"><div class="tl-time">Afternoon</div><div class="tl-dot"></div><div class="tl-content"><strong>Course: AI Frontiers & Real-World Case Studies</strong><span>Classroom learning module on AI applications.</span></div></div>
+          <div class="tl-item"><div class="tl-time">16:00</div><div class="tl-dot"></div><div class="tl-content"><strong>Scenic drive through Alibaba's Xixi Campus</strong></div></div>
+          <div class="tl-item"><div class="tl-time">18:00</div><div class="tl-dot"></div><div class="tl-content"><strong>Dinner</strong></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">Day 3</span>
+        <span class="day-date">Mon 13 Oct</span>
+        <span class="day-title">Shenhao Robotics · BrainCo Lab · Graphene Museum</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-time">09:00</div><div class="tl-dot"></div><div class="tl-content"><strong>Shenhao Science Production Park</strong><span>Robot labs for rail, power grid, emergency, police safety, marine & ecological applications. Course: AI Robots in Industrial Special Scenarios.</span></div></div>
+          <div class="tl-item"><div class="tl-time">13:00</div><div class="tl-dot"></div><div class="tl-content"><strong>BrainCo 强脑科技</strong><span>Science exhibition hall · Course: Brain-Computer Interface technology — latest progress & application prospects. Hands-on demos with bionic limbs.</span></div></div>
+          <div class="tl-item"><div class="tl-time">15:30</div><div class="tl-dot"></div><div class="tl-content"><strong>Graphene Museum</strong></div></div>
+          <div class="tl-item"><div class="tl-time">17:00</div><div class="tl-dot"></div><div class="tl-content"><strong>Dinner at Xixi Paradise commercial street</strong></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">Day 4</span>
+        <span class="day-date">Tue 14 Oct</span>
+        <span class="day-title">Robot Town · iFlytek AI Centre · Hangzhou Youhao Hotel</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-time">09:30</div><div class="tl-dot"></div><div class="tl-content"><strong>Robot Town 机器人小镇</strong><span>40+ robot products: PEPPER service robot, calligraphy robot, VR smart factory. 2F interactive experience: dance, portrait, chess robots.</span></div></div>
+          <div class="tl-item"><div class="tl-time">13:30</div><div class="tl-dot"></div><div class="tl-content"><strong>iFlytek 科大讯飞</strong><span>Test live speech recognition accuracy · Virtual human creation experience · Course: Spark Cognitive LLM & Industry Applications.</span></div></div>
+          <div class="tl-item"><div class="tl-time">15:00</div><div class="tl-dot"></div><div class="tl-content"><strong>Check in to Hangzhou Youhao Hotel</strong><span>Historic hotel in Longjing Bridge precinct. 5-min walk to West Lake. Features a revolving restaurant with 360° city and lake views.</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">Day 5</span>
+        <span class="day-date">Wed 15 Oct</span>
+        <span class="day-title">Dama Alley Food Street · Geely EV Factory</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-time">09:00</div><div class="tl-dot"></div><div class="tl-content"><strong>Dama Alley 大马弄</strong><span>Hangzhou's most authentic local food street. Spring onion pancakes, stinky tofu, ding sheng cake, pian er chuan noodles. Pure local life.</span></div></div>
+          <div class="tl-item"><div class="tl-time">13:30</div><div class="tl-dot"></div><div class="tl-content"><strong>Geely Qiantang EV Factory</strong><span>Full stamping-welding-assembly line walkthrough. See an EV assembled in 6 minutes by smart robots. Course: Lean Smart Manufacturing — digital transformation methodology.</span></div></div>
+          <div class="tl-item"><div class="tl-time">18:00</div><div class="tl-dot"></div><div class="tl-content"><strong>Dinner</strong></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">Day 6</span>
+        <span class="day-date">Thu 16 Oct</span>
+        <span class="day-title">West Lake · He Fang Street (South Song Dynasty)</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-time">08:40</div><div class="tl-dot"></div><div class="tl-content"><strong>West Lake 西湖 — UNESCO World Heritage Site</strong><span>Scenic tour by sightseeing bus around the full lake. Broken Bridge, Su Causeway, Thunder Peak Pagoda. Stories of Bai Suzhen, Su Dongpo & Yue Fei.</span></div></div>
+          <div class="tl-item"><div class="tl-time">13:30</div><div class="tl-dot"></div><div class="tl-content"><strong>He Fang Street 河坊街</strong><span>South Song Dynasty commercial district. Traditional Hangzhou snacks, handcraft shops, Hu Qing Yu Tang century-old Chinese medicine hall.</span></div></div>
+          <div class="tl-item"><div class="tl-time">17:00</div><div class="tl-dot"></div><div class="tl-content"><strong>Dinner</strong></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">Day 7</span>
+        <span class="day-date">Fri 17 Oct</span>
+        <span class="day-title">Wuzhen Water Town · Departure</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-time">09:00</div><div class="tl-dot"></div><div class="tl-content"><strong>Wuzhen West Gate 乌镇西栅</strong><span>One of China's best-preserved ancient river towns. 1,000+ years of history. White walls, black tiles, stone paths, canal bridges. Free time for lunch.</span></div></div>
+          <div class="tl-item"><div class="tl-time">15:30</div><div class="tl-dot"></div><div class="tl-content"><strong>Depart Wuzhen</strong></div></div>
+          <div class="tl-item"><div class="tl-time">17:00</div><div class="tl-dot"></div><div class="tl-content"><strong>Farewell dinner</strong></div></div>
+          <div class="tl-item"><div class="tl-time">19:00</div><div class="tl-dot"></div><div class="tl-content"><strong>Transfer to Hangzhou Xiaoshan Airport</strong><span>Depart 23:40 · Arrive KL 18 Oct 05:05 · Onward connection to home cities</span></div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRACTICAL INFO -->
+<div class="info-section">
+  <div class="info-card">
+    <div class="info-icon">🌡️</div>
+    <div class="info-title">Weather in October</div>
+    <div class="info-body">Daytime: 20–24°C<br>Nights: 14–18°C<br><br>Autumn — one of the best seasons to visit Hangzhou. Cool and comfortable. Occasional light rain; hotel provides complimentary umbrellas.</div>
+  </div>
+  <div class="info-card">
+    <div class="info-icon">💳</div>
+    <div class="info-title">Payments in China</div>
+    <div class="info-body">Download <strong>Alipay</strong> or <strong>Touch 'n Go</strong> and link your credit/debit card before departure. Cash is also accepted — Chinese law requires merchants to accept it.</div>
+  </div>
+  <div class="info-card">
+    <div class="info-icon">🧳</div>
+    <div class="info-title">Getting there</div>
+    <div class="info-body">All participants depart from KLIA2. Departure flights available from KCH, SWB, BTU, and MYY connecting through KL. Buy flights with luggage included — adding later costs significantly more on AirAsia.</div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <p class="section-eyebrow" style="color:rgba(255,255,255,0.5)">Secure your place</p>
+  <h2 class="section-title">Ready to join?</h2>
+  <p>Limited to 40 participants. Contact us to register interest or get your HRDF application started today.</p>
+  <div class="cta-limit">⚠ Only 40 seats available — first come, first served</div>
+  <div class="cta-buttons">
+    <a href="https://wa.me/60XXXXXXXXX?text=Hi,%20I'm%20interested%20in%20the%20Hangzhou%20HRDF%20trip%20Oct%202026" class="btn-whatsapp">WhatsApp to register</a>
+    <a href="mailto:info@blueskyvacation.com.my?subject=Hangzhou HRDF Trip Oct 2026" class="btn-white">Email enquiry</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Blue Sky <span>Vacation</span> · KPK/LN:7700</div>
+  <p>© 2026 Blue Sky Vacation Sdn Bhd · Kota Kinabalu, Sabah</p>
+</footer>
+
+<script>
+  // Open first day by default, toggle rest
+  document.querySelectorAll('.day-header').forEach(h => {
+    h.addEventListener('click', () => {
+      const item = h.parentElement;
+      const wasOpen = item.classList.contains('open');
+      item.classList.toggle('open', !wasOpen);
+    });
+  });
+</script>
+</body>
+</html>

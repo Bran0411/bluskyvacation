@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Northern Xinjiang Odyssey — 11D10N Classic & Elite summer tours, and 9D8N Winter Exclusive. Kanas Lake, Hemu Village, Sayram Lake, Duku Highway, Ghost City. From Kuala Lumpur via China Southern.">
+<title>Northern Xinjiang Odyssey | Blue Sky Vacation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --sky: #0B4F8A; --teal: #0E7A6E; --sand: #F7F3EE;
+    --charcoal: #1A1A1A; --mid: #4A4A4A; --light-line: #E2DDD8;
+    --white: #FFFFFF; --accent: #C9793A;
+    --grass: #2d6a2d; --alpine: #1a4a6e; --winter: #2a3a5a; --gold: #b8860b;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: var(--charcoal); background: var(--white); font-weight: 300; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 3rem; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.07); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--sky); text-decoration: none; }
+  .nav-logo span { color: var(--accent); }
+  .nav-back { font-size: 0.78rem; color: var(--mid); text-decoration: none; }
+  .nav-back:hover { color: var(--sky); }
+
+  /* HERO */
+  .hero { min-height: 90vh; background: linear-gradient(160deg, #0d1f0a 0%, #1a3012 40%, #0d2010 100%); display: flex; align-items: center; padding-top: 70px; position: relative; overflow: hidden; }
+  .hero-content { padding: 5rem; max-width: 700px; position: relative; z-index: 2; }
+  .hero-badges { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
+  .badge { padding: 0.3rem 0.8rem; border-radius: 2px; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; }
+  .badge-summer { background: var(--grass); color: white; }
+  .badge-winter { background: var(--winter); color: white; }
+  .badge-days { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.18); }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 4.5vw, 5rem); line-height: 1.05; font-weight: 600; color: var(--white); margin-bottom: 0.5rem; }
+  .hero-title em { color: #a8d8a8; font-style: italic; }
+  .hero-sub { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: rgba(255,255,255,0.45); font-style: italic; margin-bottom: 1.5rem; }
+  .hero-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.85; max-width: 520px; margin-bottom: 2.5rem; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-grass { background: var(--grass); color: white; padding: 0.9rem 2rem; text-decoration: none; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; transition: opacity 0.2s; display: inline-block; }
+  .btn-grass:hover { opacity: 0.88; }
+  .btn-outline { border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.8); padding: 0.9rem 2rem; text-decoration: none; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; display: inline-block; transition: border-color 0.2s; }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.6); }
+  .hero-route { position: absolute; right: 0; top: 0; bottom: 0; width: 42%; display: flex; flex-direction: column; justify-content: center; padding: 3rem; gap: 0.75rem; }
+  .route-stop { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 3px; padding: 0.65rem 1rem; display: flex; align-items: center; gap: 0.75rem; }
+  .route-icon { font-size: 1rem; flex-shrink: 0; }
+  .route-name { font-size: 0.78rem; font-weight: 500; color: rgba(255,255,255,0.85); }
+  .route-sub { font-size: 0.68rem; color: rgba(255,255,255,0.4); }
+
+  /* PACKAGE SELECTOR */
+  .packages-section { padding: 5rem 5rem 3rem; background: var(--sand); }
+  .section-eyebrow { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 0.8rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 2.5vw, 2.4rem); font-weight: 600; line-height: 1.15; margin-bottom: 2rem; }
+  .pkg-tabs { display: flex; gap: 0; margin-bottom: 2.5rem; border: 1px solid var(--light-line); border-radius: 3px; overflow: hidden; }
+  .pkg-tab { flex: 1; padding: 1.25rem 1.5rem; cursor: pointer; background: var(--white); border-right: 1px solid var(--light-line); transition: background 0.2s; text-align: center; }
+  .pkg-tab:last-child { border-right: none; }
+  .pkg-tab.active { background: var(--charcoal); }
+  .pkg-tab-season { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); font-weight: 500; margin-bottom: 0.25rem; }
+  .pkg-tab.active .pkg-tab-season { color: rgba(255,255,255,0.45); }
+  .pkg-tab-name { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: var(--charcoal); }
+  .pkg-tab.active .pkg-tab-name { color: white; }
+  .pkg-tab-days { font-size: 0.72rem; color: var(--mid); margin-top: 0.2rem; }
+  .pkg-tab.active .pkg-tab-days { color: rgba(255,255,255,0.5); }
+  .pkg-content { display: none; }
+  .pkg-content.active { display: block; }
+
+  /* PACKAGE DETAIL */
+  .pkg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem; }
+  .pkg-card { background: var(--white); border-radius: 3px; padding: 2rem; border: 1px solid var(--light-line); }
+  .pkg-card-label { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); font-weight: 500; margin-bottom: 1rem; }
+  .pkg-highlight-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .pkg-highlight-list li { font-size: 0.84rem; color: var(--mid); display: flex; gap: 0.6rem; align-items: flex-start; line-height: 1.55; }
+  .ph-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 6px; }
+  .pkg-meals { display: flex; flex-direction: column; gap: 0.4rem; }
+  .meal-row { display: flex; gap: 0.5rem; align-items: center; font-size: 0.82rem; }
+  .meal-day { font-size: 0.7rem; color: var(--mid); min-width: 40px; font-weight: 500; }
+  .meal-item { font-size: 0.78rem; color: var(--mid); }
+  .meal-hotel { font-size: 0.72rem; color: var(--sky); }
+
+  /* UPGRADE COMPARISON */
+  .compare-section { background: var(--white); border: 1px solid var(--light-line); border-radius: 3px; padding: 2rem; margin-bottom: 2rem; }
+  .compare-title { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); font-weight: 500; margin-bottom: 1.25rem; }
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .compare-col h4 { font-size: 0.78rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--charcoal); }
+  .compare-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .compare-list li { font-size: 0.8rem; color: var(--mid); display: flex; gap: 0.5rem; align-items: flex-start; }
+  .ci { color: var(--grass); font-size: 0.85rem; flex-shrink: 0; margin-top: 1px; }
+  .cx { color: var(--accent); font-size: 0.85rem; flex-shrink: 0; margin-top: 1px; }
+
+  /* HIGHLIGHTS */
+  .highlights-section { padding: 5rem 5rem; }
+  .highlights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
+  .hl-card { border: 1px solid var(--light-line); border-radius: 3px; overflow: hidden; }
+  .hl-top { height: 5px; }
+  .hl-body { padding: 1.5rem; }
+  .hl-icon { font-size: 1.6rem; margin-bottom: 0.75rem; }
+  .hl-tag { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); font-weight: 500; margin-bottom: 0.4rem; }
+  .hl-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+  .hl-desc { font-size: 0.8rem; color: var(--mid); line-height: 1.65; }
+  .seasonal-note { display: inline-block; background: rgba(184,134,11,0.1); border: 1px solid rgba(184,134,11,0.3); border-radius: 2px; padding: 0.2rem 0.5rem; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-top: 0.5rem; font-weight: 500; }
+
+  /* ITINERARY */
+  .itinerary-section { padding: 5rem 5rem; background: var(--sand); }
+  .itin-tabs { display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  .itin-tab { padding: 0.5rem 1.25rem; border: 1px solid var(--light-line); border-radius: 2px; font-size: 0.78rem; font-weight: 500; cursor: pointer; background: var(--white); color: var(--mid); transition: all 0.2s; }
+  .itin-tab.active { background: var(--charcoal); color: white; border-color: var(--charcoal); }
+  .itin-content { display: none; }
+  .itin-content.active { display: block; }
+  .day-list { display: flex; flex-direction: column; gap: 0.75rem; }
+  .day-item { background: var(--white); border-radius: 3px; overflow: hidden; border: 1px solid var(--light-line); }
+  .day-header { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem; cursor: pointer; }
+  .day-header:hover { background: rgba(0,0,0,0.02); }
+  .day-num { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.25rem 0.6rem; border-radius: 2px; white-space: nowrap; flex-shrink: 0; color: white; }
+  .day-route { font-size: 0.75rem; color: var(--mid); flex-shrink: 0; }
+  .day-title { font-size: 0.85rem; font-weight: 500; flex: 1; }
+  .day-chevron { font-size: 0.75rem; color: var(--mid); transition: transform 0.3s; }
+  .day-item.open .day-chevron { transform: rotate(180deg); }
+  .day-body { display: none; border-top: 1px solid var(--light-line); padding: 1.25rem; background: var(--sand); }
+  .day-item.open .day-body { display: block; }
+  .day-stops { display: flex; flex-direction: column; gap: 0.75rem; }
+  .stop { display: flex; gap: 0.75rem; align-items: flex-start; }
+  .stop-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+  .stop-text { font-size: 0.82rem; color: var(--charcoal); line-height: 1.6; }
+  .stop-text strong { font-weight: 500; }
+  .stop-text span { color: var(--mid); font-size: 0.78rem; display: block; margin-top: 0.1rem; }
+  .hotel-line { display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(11,79,138,0.07); border: 1px solid rgba(11,79,138,0.15); border-radius: 2px; padding: 0.2rem 0.6rem; font-size: 0.7rem; color: var(--sky); font-weight: 500; margin-top: 0.75rem; }
+  .meal-line { display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(45,106,45,0.07); border: 1px solid rgba(45,106,45,0.15); border-radius: 2px; padding: 0.2rem 0.6rem; font-size: 0.7rem; color: var(--grass); font-weight: 500; margin-top: 0.5rem; margin-right: 0.4rem; }
+  .optional-tag { background: rgba(201,121,58,0.1); border: 1px solid rgba(201,121,58,0.25); border-radius: 2px; padding: 0.15rem 0.4rem; font-size: 0.65rem; color: var(--accent); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; margin-left: 0.4rem; vertical-align: middle; }
+
+  /* FOOD & HOTELS */
+  .food-section { padding: 4rem 5rem; background: var(--charcoal); color: white; }
+  .food-section .section-title { color: white; }
+  .food-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2rem; }
+  .food-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 3px; padding: 1.25rem; text-align: center; }
+  .food-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .food-name { font-size: 0.78rem; font-weight: 500; color: rgba(255,255,255,0.9); margin-bottom: 0.25rem; }
+  .food-detail { font-size: 0.7rem; color: rgba(255,255,255,0.45); line-height: 1.5; }
+
+  /* PRACTICAL */
+  .practical-section { padding: 4rem 5rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
+  .prac-card { padding: 1.75rem; border: 1px solid var(--light-line); border-radius: 3px; }
+  .prac-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+  .prac-title { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); font-weight: 500; margin-bottom: 0.6rem; }
+  .prac-body { font-size: 0.83rem; color: var(--mid); line-height: 1.7; }
+
+  /* CTA */
+  .cta-section { background: linear-gradient(135deg, #0d1f0a 0%, #1a3012 100%); color: white; padding: 5rem; text-align: center; }
+  .cta-section .section-title { color: white; margin-bottom: 1rem; }
+  .cta-section p { color: rgba(255,255,255,0.6); margin-bottom: 2rem; max-width: 480px; margin-left: auto; margin-right: auto; font-size: 0.95rem; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-white { background: white; color: var(--charcoal); padding: 0.9rem 2.5rem; text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; display: inline-block; }
+  .btn-whatsapp { background: #25D366; color: white; padding: 0.9rem 2.5rem; text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; display: inline-block; }
+
+  footer { background: #0a0a0a; color: rgba(255,255,255,0.35); padding: 2rem 5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: rgba(255,255,255,0.75); }
+  .footer-logo span { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .hero-content { padding: 3rem 1.5rem; }
+    .hero-route { display: none; }
+    .packages-section, .highlights-section, .itinerary-section, .cta-section { padding: 3.5rem 1.5rem; }
+    .food-section, .practical-section { padding: 3rem 1.5rem; }
+    .pkg-tabs { flex-direction: column; }
+    .pkg-tab { border-right: none; border-bottom: 1px solid var(--light-line); }
+    .pkg-grid, .compare-grid, .highlights-grid, .food-grid, .practical-section { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Blue Sky <span>Vacation</span></a>
+  <a href="index.html" class="nav-back">← Back to tours</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-badges">
+      <span class="badge badge-summer">Summer · 11D10N</span>
+      <span class="badge badge-winter">Winter · 9D8N</span>
+      <span class="badge badge-days">Classic · Elite · Winter options</span>
+    </div>
+    <h1 class="hero-title">Northern<br><em>Xinjiang</em><br>Odyssey</h1>
+    <p class="hero-sub">域见北疆 · Discover the Last Frontier of China</p>
+    <p class="hero-desc">Three worlds in one destination — the fairy-tale birch forests and glacial lakes of Altay, the rolling sub-alpine meadows of Ili, and in winter, a frozen wonderland no photograph has ever fully captured. Kanas, Hemu, Sayram Lake, the Duku Highway, and Ghost City.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/60XXXXXXXXX?text=Hi,%20I'm%20interested%20in%20the%20Northern%20Xinjiang%20tour" class="btn-grass">Enquire now</a>
+      <a href="#packages" class="btn-outline">Compare packages</a>
+    </div>
+  </div>
+  <div class="hero-route">
+    <div class="route-stop"><div class="route-icon">🏙️</div><div><div class="route-name">Urumqi</div><div class="route-sub">Gateway city · Day 1 & 10–11</div></div></div>
+    <div class="route-stop"><div class="route-icon">🏔️</div><div><div class="route-name">Kanas National Geological Park</div><div class="route-sub">Wolong Bay · Fairy Bay · Moon Bay</div></div></div>
+    <div class="route-stop"><div class="route-icon">🌲</div><div><div class="route-name">Hemu Village</div><div class="route-sub">China's most beautiful fairytale village</div></div></div>
+    <div class="route-stop"><div class="route-icon">🌈</div><div><div class="route-name">Wucai Beach</div><div class="route-sub">Coloured cliffs at sunset · Irtysh River</div></div></div>
+    <div class="route-stop"><div class="route-icon">👻</div><div><div class="route-name">Ghost City — Urho</div><div class="route-sub">Wind-carved Yadan landforms</div></div></div>
+    <div class="route-stop"><div class="route-icon">💎</div><div><div class="route-name">Sayram Lake</div><div class="route-sub">Last Tear of the Atlantic</div></div></div>
+    <div class="route-stop"><div class="route-icon">🐎</div><div><div class="route-name">Nalati Grassland</div><div class="route-sub">Sky-high alpine meadow · Ili Valley</div></div></div>
+    <div class="route-stop"><div class="route-icon">🛣️</div><div><div class="route-name">Duku Highway</div><div class="route-sub">Seasonal · Four seasons in one day</div></div></div>
+  </div>
+</div>
+
+<!-- PACKAGES -->
+<section class="packages-section" id="packages">
+  <p class="section-eyebrow">Three ways to experience Xinjiang</p>
+  <h2 class="section-title">Choose your journey</h2>
+
+  <div class="pkg-tabs">
+    <div class="pkg-tab active" onclick="showPkg('classic')">
+      <div class="pkg-tab-season">Summer · May–Oct</div>
+      <div class="pkg-tab-name">Classic</div>
+      <div class="pkg-tab-days">11 Days · 10 Nights</div>
+    </div>
+    <div class="pkg-tab" onclick="showPkg('elite')">
+      <div class="pkg-tab-season">Summer · May–Oct</div>
+      <div class="pkg-tab-name">Elite</div>
+      <div class="pkg-tab-days">11 Days · 10 Nights</div>
+    </div>
+    <div class="pkg-tab" onclick="showPkg('winter')">
+      <div class="pkg-tab-season">Winter · Nov–Feb</div>
+      <div class="pkg-tab-name">Winter Exclusive</div>
+      <div class="pkg-tab-days">9 Days · 8 Nights</div>
+    </div>
+  </div>
+
+  <!-- CLASSIC -->
+  <div class="pkg-content active" id="pkg-classic">
+    <div class="pkg-grid">
+      <div class="pkg-card">
+        <div class="pkg-card-label">What's included</div>
+        <ul class="pkg-highlight-list">
+          <li><div class="ph-dot"></div>All entrance fees included throughout</li>
+          <li><div class="ph-dot"></div>2+1 VIP Premium Coach — spacious seating, extra legroom for long distances</li>
+          <li><div class="ph-dot"></div>Shuttle buses at Kanas, Hemu Village, Ghost City, Nalati Grassland</li>
+          <li><div class="ph-dot"></div>Full meal plan: hotel breakfast + lunches + dinners daily</li>
+          <li><div class="ph-dot"></div>4-star hotels throughout, listed per night</li>
+          <li><div class="ph-dot"></div>Seasonal Duku Highway (Jun–Sep) or high-speed train alternative</li>
+          <li><div class="ph-dot"></div>Roast whole lamb farewell dinner on Day 10</li>
+        </ul>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-card-label">Signature dining</div>
+        <ul class="pkg-highlight-list">
+          <li><div class="ph-dot"></div>Burqin Cold-Water Fish (Day 2)</li>
+          <li><div class="ph-dot"></div>Hand-Grabbed Rice 手抓饭 (Day 5)</li>
+          <li><div class="ph-dot"></div>Xinjiang Big Plate Chicken 大盘鸡 (Day 6)</li>
+          <li><div class="ph-dot"></div>Signature Lamb Ribs 羊排 (Day 7)</li>
+          <li><div class="ph-dot"></div>Xinjiang BBQ Skewers 烤串 (Day 9)</li>
+          <li><div class="ph-dot"></div>Roast Whole Lamb 烤全羊 farewell banquet (Day 10)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="compare-section">
+      <div class="compare-title">Classic vs Elite — key differences</div>
+      <div class="compare-grid">
+        <div class="compare-col">
+          <h4>Classic includes</h4>
+          <ul class="compare-list">
+            <li><span class="ci">✓</span>2+1 VIP Premium Coach (standard group)</li>
+            <li><span class="ci">✓</span>4-star hotels throughout</li>
+            <li><span class="ci">✓</span>Full meal plan as listed</li>
+            <li><span class="ci">✓</span>All same attractions and itinerary</li>
+          </ul>
+        </div>
+        <div class="compare-col">
+          <h4>Elite adds / upgrades</h4>
+          <ul class="compare-list">
+            <li><span class="ci">✓</span>Smaller group, more exclusive experience</li>
+            <li><span class="ci">✓</span>Premium hotel upgrades</li>
+            <li><span class="ci">✓</span>Enhanced dining selections</li>
+            <li><span class="ci">✓</span>Contact us for full Elite pricing & details</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:0.82rem; color:var(--mid); background:var(--white); padding:1rem 1.25rem; border-radius:3px; border:1px solid var(--light-line);">Contact us for pricing — tours are priced per departure date and group size. All tours conducted in Mandarin. Minimum group applies. Itinerary adjustable for May and October departures (Duku Highway not open; train alternative via Yining).</p>
+  </div>
+
+  <!-- ELITE -->
+  <div class="pkg-content" id="pkg-elite">
+    <div class="pkg-grid">
+      <div class="pkg-card">
+        <div class="pkg-card-label">Elite upgrades over Classic</div>
+        <ul class="pkg-highlight-list">
+          <li><div class="ph-dot"></div>Smaller, more curated group size</li>
+          <li><div class="ph-dot"></div>Premium hotel selection throughout</li>
+          <li><div class="ph-dot"></div>Upgraded dining and in-destination experiences</li>
+          <li><div class="ph-dot"></div>Same comprehensive itinerary covering all 9 stops</li>
+          <li><div class="ph-dot"></div>2+1 VIP Coach or premium vehicle depending on group size</li>
+          <li><div class="ph-dot"></div>All entrance fees, shuttle buses, and Duku Highway (seasonal)</li>
+        </ul>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-card-label">Same great itinerary</div>
+        <ul class="pkg-highlight-list">
+          <li><div class="ph-dot"></div>Kanas: Wolong Bay, Fairy Bay, Moon Bay + Guanyu Terrace</li>
+          <li><div class="ph-dot"></div>Hemu Village: birch forest, Hemu Bridge, Hemu River</li>
+          <li><div class="ph-dot"></div>Wucai Beach sunset · Burqin Night Market</li>
+          <li><div class="ph-dot"></div>Ghost City Urho — wind-eroded Yadan landforms</li>
+          <li><div class="ph-dot"></div>Sayram Lake circuit · Guozigou Bridge (Ili's No.1 view)</li>
+          <li><div class="ph-dot"></div>Nalati Sky Grassland + Duku Highway (seasonal)</li>
+        </ul>
+      </div>
+    </div>
+    <p style="font-size:0.82rem; color:var(--mid); background:var(--white); padding:1rem 1.25rem; border-radius:3px; border:1px solid var(--light-line);">Elite pricing available on request. Contact us to compare Classic vs Elite for your travel dates and group size.</p>
+  </div>
+
+  <!-- WINTER -->
+  <div class="pkg-content" id="pkg-winter">
+    <div class="pkg-grid">
+      <div class="pkg-card">
+        <div class="pkg-card-label">Winter Exclusive inclusions</div>
+        <ul class="pkg-highlight-list">
+          <li><div class="ph-dot"></div>1+1 Luxury MPV throughout — spacious, premium ride</li>
+          <li><div class="ph-dot"></div>Stay inside Hemu Village at Globeflower Hotel (more time in the village)</li>
+          <li><div class="ph-dot"></div>Complimentary Yunxiao Peak cable car at Hemu</li>
+          <li><div class="ph-dot"></div>Complimentary afternoon tea at Hemu snow view</li>
+          <li><div class="ph-dot"></div>Free snow tubing and horse-drawn sled at Hemu</li>
+          <li><div class="ph-dot"></div>Milky Way starry sky viewing at Hemu (clear nights)</div></li>
+          <li><div class="ph-dot"></div>General Mountain Ski Resort with snow rave + cable car</li>
+          <li><div class="ph-dot"></div>Self-drive around Sayram Lake in ice season</li>
+          <li><div class="ph-dot"></div>Sayram Lake sunrise over blue ice</li>
+          <li><div class="ph-dot"></div>Shawan Natural Hot Spring Hotel — soak in mineral springs</li>
+          <li><div class="ph-dot"></div>Tianshan Heavenly Lake in winter snowscape</li>
+          <li><div class="ph-dot"></div>4+5 star hotels throughout</li>
+        </ul>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-card-label">Sayram Lake — what to see by month</div>
+        <ul class="pkg-highlight-list">
+          <li><div class="ph-dot"></div><strong>November</strong> — Unfrozen lake, pink skies, drifting snow, swans</li>
+          <li><div class="ph-dot"></div><strong>December</strong> — "Ice push" phenomenon: floating ice driven ashore, half-blue half-ice lake</li>
+          <li><div class="ph-dot"></div><strong>January</strong> — Blue icefalls shimmering under sunlight — like an ice palace</li>
+          <li><div class="ph-dot"></div><strong>February</strong> — Blue ice, ice flowers and ice bubbles — magical dreamscape</li>
+        </ul>
+        <br>
+        <div class="pkg-card-label">Optional add-on</div>
+        <ul class="pkg-highlight-list">
+          <li><div class="ph-dot"></div>Ice Floating Experience — RMB 400/person (drift along a frozen river through an icy canyon)</li>
+        </ul>
+      </div>
+    </div>
+    <p style="font-size:0.82rem; color:var(--mid); background:var(--white); padding:1rem 1.25rem; border-radius:3px; border:1px solid var(--light-line);">Winter pricing available on request. Tours conducted in Mandarin. All entrance fees included. Ski clothing not included for General Mountain Ski Resort. Scenery varies by weather conditions — the tour operator will advise on seasonal highlights at time of booking.</p>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section class="highlights-section">
+  <p class="section-eyebrow">Must-see experiences</p>
+  <h2 class="section-title">Nine landscapes.<br>One extraordinary journey.</h2>
+  <div class="highlights-grid">
+    <div class="hl-card">
+      <div class="hl-top" style="background:#1a6b4a;"></div>
+      <div class="hl-body">
+        <div class="hl-icon">🏔️</div>
+        <div class="hl-tag">Northern Altay</div>
+        <h3 class="hl-name">Kanas Lake & The Three Bays</h3>
+        <p class="hl-desc">China's most pristine alpine lake, deep inside the Altay Mountains. Wolong Bay, Fairy Bay, and Moon Bay each have their own character — mist-draped, moon-curved river bends through birch forest. The Guanyu Terrace overlooks it all.</p>
+      </div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-top" style="background:#4a7a1a;"></div>
+      <div class="hl-body">
+        <div class="hl-icon">🌲</div>
+        <div class="hl-tag">Northern Altay · Autumn Gold</div>
+        <h3 class="hl-name">Hemu Village</h3>
+        <p class="hl-desc">One of China's most beautiful villages. Wooden Tuva houses, white birch forests, and the Hemu River valley. In autumn the birches turn gold — in winter they're cloaked in snow. From the observation deck, the whole village unfolds below you like a painting.</p>
+        <span class="seasonal-note">Summer: birch & wildflowers · Winter: snow village</span>
+      </div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-top" style="background:#c85a1a;"></div>
+      <div class="hl-body">
+        <div class="hl-icon">🌈</div>
+        <div class="hl-tag">Northern Altay · Sunset</div>
+        <h3 class="hl-name">Wucai Beach 五彩滩</h3>
+        <p class="hl-desc">A Danxia landscape along the Irtysh River. At sunset, the rock formations glow in shades of red, orange, and yellow — and across the river, green poplars form a sharp contrast. One of the most photogenic spots in all of Xinjiang.</p>
+      </div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-top" style="background:#5a3a8a;"></div>
+      <div class="hl-body">
+        <div class="hl-icon">👻</div>
+        <div class="hl-tag">Karamay · Yadan Landforms</div>
+        <h3 class="hl-name">Ghost City — Urho</h3>
+        <p class="hl-desc">Also known as the "Wind City." Wind-carved rock pillars of extraordinary shapes rise across the Gobi Desert. When the wind howls between the formations, the sound resembles ghostly cries. A place like nowhere else on Earth.</p>
+      </div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-top" style="background:#1a5a8a;"></div>
+      <div class="hl-body">
+        <div class="hl-icon">💎</div>
+        <div class="hl-tag">Ili · Any season</div>
+        <h3 class="hl-name">Sayram Lake</h3>
+        <p class="hl-desc">Called "The Last Tear of the Atlantic" — the westernmost ocean-connected lake in China. Crystal blue waters ringed by snow peaks. In summer, swans and wildflowers. In winter, blue ice, icefalls, and ice bubbles that look like another planet.</p>
+        <span class="seasonal-note">Summer: blue mirror · Winter: ice palace</span>
+      </div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-top" style="background:#2a6a2a;"></div>
+      <div class="hl-body">
+        <div class="hl-icon">🐎</div>
+        <div class="hl-tag">Ili · Seasonal</div>
+        <h3 class="hl-name">Nalati Sky Grassland</h3>
+        <p class="hl-desc">A sub-alpine meadow at nearly 2,000m altitude — rolling green hills, wildflower seas, and snow-capped peaks. Called "Paradise on Earth." On certain months, herds of heavenly horses run through the Zhaosu Wetland below. Shuttle bus from base included.</p>
+        <span class="seasonal-note">Best: May–September</span>
+      </div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-top" style="background:#8a2a0a;"></div>
+      <div class="hl-body">
+        <div class="hl-icon">🛣️</div>
+        <div class="hl-tag">Seasonal · Jun–Sep</div>
+        <h3 class="hl-name">Duku Highway 独库公路</h3>
+        <p class="hl-desc">One of China's most beautiful roads — 560km through the Tianshan Mountains. The highway passes from alpine snow into grasslands, canyon gorges, and desert in a single day. Literally "four seasons in one day." Seasonal (Jun–Sep); train alternative in other months.</p>
+        <span class="seasonal-note">Seasonal: June–September only</span>
+      </div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-top" style="background:#4a6a1a;"></div>
+      <div class="hl-body">
+        <div class="hl-icon">🌸</div>
+        <div class="hl-tag">Ili · Seasonal</div>
+        <h3 class="hl-name">Tianshan Flower Sea & Kazanchi Folk Area</h3>
+        <p class="hl-desc">In May–June, peonies and lavender carpet the Tianshan foothills. In August–September, Kazanchi Folk Area opens — ride a horse cart through Uyghur streets, taste the famous Marajun ice cream, and watch Uzbek folk performances.</p>
+        <span class="seasonal-note">Flowers: May–Jun · Culture: Aug–Sep</span>
+      </div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-top" style="background:#1a3a6a;"></div>
+      <div class="hl-body">
+        <div class="hl-icon">⛷️</div>
+        <div class="hl-tag">Winter exclusive</div>
+        <h3 class="hl-name">General Mountain Ski Resort + Yunxiao Cable Car</h3>
+        <p class="hl-desc">Winter adds experiences no other season offers: skiing in Altay (some of China's best snow), a snow rave on the mountain, the Yunxiao Peak cable car with views across four countries (China, Russia, Kazakhstan, Mongolia), and a hot spring soak at Shawan.</p>
+        <span class="seasonal-note">Winter only: Nov–Feb</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ITINERARY -->
+<section class="itinerary-section" id="itinerary">
+  <p class="section-eyebrow">Day by day</p>
+  <h2 class="section-title">Full itineraries</h2>
+  <div class="itin-tabs">
+    <div class="itin-tab active" onclick="showItin('sum')">Summer Classic/Elite · 11D10N</div>
+    <div class="itin-tab" onclick="showItin('win')">Winter Exclusive · 9D8N</div>
+  </div>
+
+  <!-- SUMMER ITINERARY -->
+  <div class="itin-content active" id="itin-sum">
+    <div class="day-list">
+
+      <div class="day-item open">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2d6a2d">D1</span>
+          <span class="day-route">KL → Urumqi</span>
+          <span class="day-title">Depart KL · Arrive Urumqi · Free evening</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#2d6a2d"></div><div class="stop-text"><strong>Assemble KL International Airport · Fly to Urumqi</strong><span>China Southern Airlines. Check in and rest, or explore freely.</span></div></div>
+          <div class="meal-line">D: Xinjiang Specialty Welcome Dinner</div>
+          <div class="hotel-line">🏨 Urumqi Hantang Hotel or similar ★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2d6a2d">D2</span>
+          <span class="day-route">Urumqi → Burqin · 520km · 6.5hrs</span>
+          <span class="day-title">S21 Desert Highway · Karameli Desert Park</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#c85a1a"></div><div class="stop-text"><strong>Karameli Desert Park 克拉美丽沙漠公园</strong><span>Pass through — vast Gobi terrain, rippling dunes, wind-eroded landforms.</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#2d6a2d"></div><div class="stop-text"><strong>S21 Desert Highway 沙漠公路</strong><span>Drive through China's second-largest desert — Gurbantunggut. The Kalamaili Mountains Nature Reserve alongside is home to Mongolian wild asses and goitered gazelle.</span></div></div>
+          <div class="meal-line">L: Xinjiang Specialty</div><div class="meal-line">D: Burqin Cold-Water Fish</div>
+          <div class="hotel-line">🏨 Burqin Riverside Art Villa Holiday Hotel or similar ★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2d6a2d">D3</span>
+          <span class="day-route">Burqin → Jiadengyu · 180km · 4hrs</span>
+          <span class="day-title">Kanas National Geological Park · Three Bays · Guanyu Terrace</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#2d6a2d"></div><div class="stop-text"><strong>★ Kanas National Geological Park 喀纳斯景区</strong><span>Shuttle bus included. Wolong Bay, Fairy Bay, Moon Bay — three iconic river bends through forested alpine valleys.</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#2d6a2d"></div><div class="stop-text"><strong>★ Guanyu Terrace 喀纳斯观鱼台</strong><span>Highest viewpoint in Kanas. Overlooking the full lake — named after the legend that visitors might spot the "lake monster" from here. Most iconic viewpoint in Northern Xinjiang.</span></div></div>
+          <div class="meal-line">L: At Scenic Area</div><div class="meal-line">D: Xinjiang Specialty</div>
+          <div class="hotel-line">🏨 Kanas Hongfu Eco-Resort Hotel or similar ★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2d6a2d">D4</span>
+          <span class="day-route">Jiadengyu → Hemu → Burqin · 50km + 170km</span>
+          <span class="day-title">Hemu Highway · Hemu Village · Wucai Beach · Night Market</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#4a7a1a"></div><div class="stop-text"><strong>Hemu Highway 禾木公路</strong><span>Scenic drive to Hemu — mountains, birch forests, winding river valleys. Stops for photography along the way.</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#4a7a1a"></div><div class="stop-text"><strong>★ Hemu Scenic Area — Hemu Village 禾木风景区</strong><span>Shuttle bus included. Birch Forest, Hemu Bridge, Hemu River. Climb the observation deck for full village panorama — wooden houses, smoke from chimneys, mountains behind.</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#c85a1a"></div><div class="stop-text"><strong>★ Wucai Beach 五彩滩</strong><span>Danxia multi-coloured rock formations along the Irtysh River. Red, yellow, orange cliffs — spectacular at sunset.</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#2d6a2d"></div><div class="stop-text"><strong>Hedi Night Market 河提夜市</strong><span>Burqin's liveliest market. Grilled fish, lamb skewers, hand-grabbed rice — the flavours of the Silk Road.</span></div></div>
+          <div class="meal-line">L: Chinese Set</div><div class="meal-line">D: Chinese Set</div>
+          <div class="hotel-line">🏨 Burqin Riverside Art Villa Holiday Hotel or similar ★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#5a3a8a">D5</span>
+          <span class="day-route">Burqin → Urho → Kuitun · 270km + 280km</span>
+          <span class="day-title">Ghost City · Dushanzi Grand Canyon</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#5a3a8a"></div><div class="stop-text"><strong>★ Urho Ghost City 乌尔禾世界魔鬼城</strong><span>Shuttle bus included. Classic Yadan landform — wind-carved rock pillars, maze-like passages, eerie howling winds. Layered rock colours under sunlight.</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#5a3a8a"></div><div class="stop-text"><strong>★ Dushanzi Grand Canyon 独山子大峡谷</strong><span>Carved by Tianshan snowmelt. Layered canyon walls with terraced cliffs and sculpted rock formations.</span></div></div>
+          <div class="meal-line">L: Hand-Grabbed Rice 手抓饭</div><div class="meal-line">D: Liao's Signature Pork Ribs</div>
+          <div class="hotel-line">🏨 Kuitun Rezen Hotel or similar ★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#1a5a8a">D6</span>
+          <span class="day-route">Kuitun → Sayram Lake → Huocheng · 210km + 80km</span>
+          <span class="day-title">Sayram Lake Circuit · Guozigou Bridge</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#1a5a8a"></div><div class="stop-text"><strong>★ Sayram Lake 赛里木湖 — Full Lake Tour</strong><span>"The Last Tear of the Atlantic." Crystal-blue water ringed by snow peaks. Circling the lake reveals different moods in the light.</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#1a5a8a"></div><div class="stop-text"><strong>Guozigou Bridge 果子沟大桥</strong><span>Pass through. "Ili's No.1 Scenic View" — an iconic bridge spanning the dramatic Guozigou Canyon.</span></div></div>
+          <div class="meal-line">L: Chinese Set</div><div class="meal-line">D: Xinjiang Big Plate Chicken 大盘鸡</div>
+          <div class="hotel-line">🏨 Huocheng Qingshuihe Shengdu Hotel or similar ★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2d6a2d">D7</span>
+          <span class="day-route">Huocheng → Yining → Zhaosu · 70km + 180km</span>
+          <span class="day-title">Seasonal: Flower Sea (May–Jun) or Kazanchi Folk Area (Aug–Sep) · Zhaosu Wetland</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#4a7a1a"></div><div class="stop-text"><strong>★ Tianshan Flower Sea 天山花海</strong><span>Seasonal: May–June only. Peonies, lavender, and wildflowers carpeting the Tianshan foothills in waves of colour.</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#c85a1a"></div><div class="stop-text"><strong>★ Kazanchi Folk Tourism Area 喀赞其民俗古城</strong><span>Seasonal: Aug–Sep only. Horse cart ride through Uyghur streets, traditional residential architecture, European-style buildings, Marajun ice cream, osmanthus eyebrow custom, Uzbek folk performances.</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#2d6a2d"></div><div class="stop-text"><strong>★ Zhaosu Wetland Park 昭苏湿地公园 — Heavenly Horses Bathing in the River</strong><span>One of Xinjiang's largest natural wetlands (nearly 5,000 hectares). Herds of horses in the river — a scene exclusive to Zhaosu and unique to Malaysia tour groups. Wooden boardwalks and viewing platforms.</span></div></div>
+          <div class="meal-line">L: Signature Lamb Ribs 羊排</div><div class="meal-line">D: Chinese Set</div>
+          <div class="hotel-line">🏨 Zhaosu Pegasus Hotel or similar ★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2d6a2d">D8</span>
+          <span class="day-route">Zhaosu → Nalati · 170km · 3.5hrs</span>
+          <span class="day-title">Nalati Sky Grassland</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#2d6a2d"></div><div class="stop-text"><strong>★ Nalati Sky Grassland 那拉提空中草原</strong><span>Shuttle bus included. Sub-alpine meadow at altitude — rolling green hills, wildflower sea, snow peaks on the horizon. Called "Paradise on Earth." One of the world's great grassland landscapes.</span></div></div>
+          <div class="meal-line">L: Chinese Set</div><div class="meal-line">D: Xinjiang Specialty</div>
+          <div class="hotel-line">🏨 Cultural Tourism Nalati Resort Hotel or similar ★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#8a2a0a">D9</span>
+          <span class="day-route">Nalati → Dushanzi · 270km · ~5–6hrs via Duku Highway</span>
+          <span class="day-title">Duku Highway — Four Seasons in One Day (Seasonal)</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#8a2a0a"></div><div class="stop-text"><strong>Duku Highway 独库公路</strong><span>Seasonal (June–September). One of China's most scenic roads — 560km through Tianshan crossing alpine snow, canyon gorges, and grassland. In May and October, return by high-speed train via Yining instead. If road is closed on any date, train alternative used.</span></div></div>
+          <div class="meal-line">L: Chinese Set</div><div class="meal-line">D: Xinjiang BBQ Skewers 烤串</div>
+          <div class="hotel-line">🏨 Dushanzi Xigoma International Hotel or similar ★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2d6a2d">D10</span>
+          <span class="day-route">Dushanzi → Urumqi · 260km · 3.5hrs</span>
+          <span class="day-title">Akhal-Teke Horse Base · Xinjiang Grand Bazaar · Farewell Roast Whole Lamb</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#c85a1a"></div><div class="stop-text"><strong>★ Xinjiang Ancient Ecological Park — Akhal-Teke Horse Base</strong><span>Silicified wood, fossil trees, black iron meteorites, grassland stone figures, Przewalski's wild horses, and the legendary Akhal-Teke horses. Watch equestrian performances — "Belt and Road" cultural exchange base.</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#2d6a2d"></div><div class="stop-text"><strong>Xinjiang International Grand Bazaar 新疆国际大巴扎</strong><span>"Window of Xinjiang" — Islamic architecture, ethnic handicrafts, cuisine, and a living market culture.</span></div></div>
+          <div class="meal-line">L: Chinese Set</div><div class="meal-line">D: Roast Whole Lamb 烤全羊 — Farewell Banquet</div>
+          <div class="hotel-line">🏨 Urumqi Hantang Hotel or similar ★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2d6a2d">D11</span>
+          <span class="day-route">Urumqi → KL</span>
+          <span class="day-title">Return flight home</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#2d6a2d"></div><div class="stop-text"><strong>Assemble at Urumqi Airport · Fly to Kuala Lumpur</strong><span>Itinerary may be adjusted based on final confirmed flight schedule.</span></div></div>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- WINTER ITINERARY -->
+  <div class="itin-content" id="itin-win">
+    <div class="day-list">
+
+      <div class="day-item open">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2a3a5a">D1</span>
+          <span class="day-route">KL → Transit → Urumqi</span>
+          <span class="day-title">Depart KL · Arrive Urumqi via transit (Guangzhou)</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#2a3a5a"></div><div class="stop-text"><strong>KL → Guangzhou → Urumqi</strong><span>Check in to hotel. Welcome dinner at Xinjiang specialty restaurant.</span></div></div>
+          <div class="meal-line">D: Xinjiang Specialty Welcome Dinner</div>
+          <div class="hotel-line">🏨 Urumqi Liston International Hotel or similar ★★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2a3a5a">D2</span>
+          <span class="day-route">Urumqi → Altay · 665km · 9hrs</span>
+          <span class="day-title">S21 Desert Highway · General Mountain Ski Resort + Snow Rave</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#2a3a5a"></div><div class="stop-text"><strong>S21 Desert Highway</strong><span>Drive through the Gobi Desert — a landscape of vast deserts, rugged terrain, and snowy plains in winter.</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#1a4a8a"></div><div class="stop-text"><strong>★ General Mountain Ski Resort 将军山滑雪场</strong><span>Ski resort in Altay City with excellent snow quality. Cable car to summit. Snow rave experience included. (Ski clothing not included — rent on-site.)</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#c85a1a"></div><div class="stop-text"><strong>Optional: Ice Floating Experience — RMB 400</strong><span>Drift along a frozen river through an icy canyon. Unique and unforgettable.</span></div></div>
+          <div class="meal-line">L: Xinjiang-style mixed noodles</div>
+          <div class="hotel-line">🏨 Wanda Moments Altay or similar ★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2a3a5a">D3</span>
+          <span class="day-route">Altay → Hemu · 287km · 6hrs</span>
+          <span class="day-title">Hemu Scenic Area · Milky Way Starry Sky · Yunxiao Cable Car</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#4a7a1a"></div><div class="stop-text"><strong>★ Hemu Scenic Area 禾木景区</strong><span>Shuttle bus + Yunxiao Peak cable car included. The most iconic view in Hemu is from the observation deck — overlooking the whole village, chimney smoke rising, distant snow peaks in the frame. Morning mist makes it look like a fairytale.</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#1a3a6a"></div><div class="stop-text"><strong>★ Yunxiao Peak Cable Car 云霄峰缆车</strong><span>Complimentary. Panoramic views of snowy forest — and on clear days, you can see across all four countries: China, Russia, Kazakhstan, and Mongolia.</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#4a7a1a"></div><div class="stop-text"><strong>Milky Way & Starry Sky viewing</strong><span>Hemu Village has almost no light pollution in winter — one of the best stargazing locations in China.</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#c85a1a"></div><div class="stop-text"><strong>Free activities at Hemu</strong><span>Complimentary afternoon tea in snow view · Free snow tubing · Free horse-drawn sled ride.</span></div></div>
+          <div class="meal-line">L: Chinese Set</div><div class="meal-line">D: Cold-Water Fish</div>
+          <div class="hotel-line">🏨 Hemu Globeflower Hotel 禾木金莲花名宿 or similar (inside Hemu Village)</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2a3a5a">D4</span>
+          <span class="day-route">Hemu → Kanas · 70km · 2hrs</span>
+          <span class="day-title">Hemu Village Viewing Platform · Kanas Lake</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#4a7a1a"></div><div class="stop-text"><strong>Hemu Village — Haden Observation Deck 禾木村哈登观景台</strong><span>At sunrise, golden light reflects across the snowfields and morning mist intertwines with the light. The wooden village below is silver-white. Every frame is breathtaking.</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#1a5a8a"></div><div class="stop-text"><strong>★ Kanas Lake 喀纳斯</strong><span>Famous for deep blue lake water that changes colour with the light. In winter, surrounded by snow-capped mountains and frozen forests. Rime-covered trees, ice on the lake edges — a winter wonderland.</span></div></div>
+          <div class="meal-line">L: Simple meal at scenic area</div><div class="meal-line">D: Chinese Set</div>
+          <div class="hotel-line">🏨 Kanas Kunshye Luxury Private Accommodation or similar ★★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2a3a5a">D5</span>
+          <span class="day-route">Kanas → Ghost City → Karamay · 358km + 98km</span>
+          <span class="day-title">Urho Ghost City · Karamay</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#5a3a8a"></div><div class="stop-text"><strong>★ Urho Ghost City 乌尔禾魔鬼城</strong><span>Shuttle bus included. Wind-carved rock pillars across the Gobi. Also called "Wind City" — strong winds roar between the stone formations, producing eerie sounds that gave this place its name.</span></div></div>
+          <div class="meal-line">L: Simple meal at scenic area</div><div class="meal-line">D: BBQ 风味烧烤</div>
+          <div class="hotel-line">🏨 Karamay Jinghui Grand Hotel or similar ★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#1a4a8a">D6</span>
+          <span class="day-route">Karamay → Sayram Lake · 420km · 6hrs</span>
+          <span class="day-title">Sayram Lake — Self-Drive Ice Circuit</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#1a5a8a"></div><div class="stop-text"><strong>★ Self-Drive Around Sayram Lake 赛里木湖自驾环湖</strong><span>In winter, the lake freezes into extraordinary formations — blue ice, ice bubbles, ice flowers, and blue icefalls. Depending on your month: November (unfrozen lake + swans), December ("ice push"), January (blue icefalls), February (full ice world). Scenery varies with weather.</span></div></div>
+          <div class="meal-line">L: Chinese Set</div><div class="meal-line">D: Xinjiang Big Plate Chicken</div>
+          <div class="hotel-line">🏨 Selim Lake Spruce Resort 赛里木湖水云杉酒店 or similar ★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#1a4a8a">D7</span>
+          <span class="day-route">Sayram Lake → Shawan · 379km · 5hrs</span>
+          <span class="day-title">Sayram Lake Sunrise · Shawan Hot Spring Hotel</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#1a5a8a"></div><div class="stop-text"><strong>★ Sayram Lake Sunrise 赛里木湖日出</strong><span>Golden light spreading across the crystal-clear frozen surface, interplaying with light and shadow, set against distant snow peaks. One of the most romantic winter scenes in all of China.</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#4a7a1a"></div><div class="stop-text"><strong>★ Shawan Natural Hot Spring 沙湾酒店泡温泉</strong><span>Geothermal springs from the Tianshan Mountains. After days in the winter cold, soaking in warm mineral-rich springs with steam rising around you is deeply restorative. Bring your own swimwear.</span></div></div>
+          <div class="meal-line">L: Xinjiang meatball soup 新疆特色丸子汤</div><div class="meal-line">D: Xinjiang Big Plate Chicken</div>
+          <div class="hotel-line">🏨 Xinjiang Heavenly Holy Spring Resort Hotel 沙湾天赐温泉酒店 or similar ★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2a3a5a">D8</span>
+          <span class="day-route">Shawan → Urumqi · 171km · 2hrs</span>
+          <span class="day-title">Tianshan Heavenly Lake · Xinjiang Grand Bazaar</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#1a5a8a"></div><div class="stop-text"><strong>★ Tianshan Heavenly Lake 天山天池</strong><span>Shuttle bus included. A high-altitude glacial lake where snow peaks reflect on crystal-clear waters. In winter, the lake is frozen and blanketed in snow — pure serenity and majestic beauty.</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#c85a1a"></div><div class="stop-text"><strong>Xinjiang International Grand Bazaar 新疆国际大巴扎</strong><span>Urumqi's landmark cultural district. Islamic architecture, ethnic cuisine, handcrafts, and live cultural atmosphere.</span></div></div>
+          <div class="meal-line">L: Xinjiang fried noodles 新疆特色炒面</div>
+          <div class="hotel-line">🏨 Urumqi Liston International Hotel or similar ★★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2a3a5a">D9</span>
+          <span class="day-route">Urumqi → Transit → KL</span>
+          <span class="day-title">Return flight home</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#2a3a5a"></div><div class="stop-text"><strong>Assemble at Urumqi International Airport · Fly via transit city to KL</strong></div></div>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOD -->
+<div class="food-section">
+  <p class="section-eyebrow" style="color:rgba(255,255,255,0.4)">Xinjiang food culture</p>
+  <h2 class="section-title">Eating your way across Northern Xinjiang</h2>
+  <div class="food-grid">
+    <div class="food-card"><div class="food-icon">🐑</div><div class="food-name">Roast Whole Lamb 烤全羊</div><div class="food-detail">Farewell banquet on the final night — the most ceremonial meal in Xinjiang</div></div>
+    <div class="food-card"><div class="food-icon">🍚</div><div class="food-name">Hand-Grabbed Rice 手抓饭</div><div class="food-detail">The definitive Uyghur dish — lamb, carrots, raisins over slow-cooked rice</div></div>
+    <div class="food-card"><div class="food-icon">🍗</div><div class="food-name">Big Plate Chicken 大盘鸡</div><div class="food-detail">Xinjiang's most famous dish — spiced chicken and potato in a wide clay plate</div></div>
+    <div class="food-card"><div class="food-icon">🐟</div><div class="food-name">Burqin Cold-Water Fish 冷水鱼</div><div class="food-detail">Clear mountain stream trout from the Irtysh — simply grilled or steamed</div></div>
+    <div class="food-card"><div class="food-icon">🍢</div><div class="food-name">Xinjiang BBQ Skewers 烤串</div><div class="food-detail">Lamb skewers from the night market — seasoned with cumin and chilli</div></div>
+    <div class="food-card"><div class="food-icon">🍖</div><div class="food-name">Signature Lamb Ribs 羊排</div><div class="food-detail">Braised or grilled — Xinjiang's lamb is uniquely sweet from mountain grass</div></div>
+    <div class="food-card"><div class="food-icon">🍲</div><div class="food-name">Hemu Clay Pot Hotpot</div><div class="food-detail">Winter exclusive — warming clay pot with Tuva-style broth in the snow village</div></div>
+    <div class="food-card"><div class="food-icon">🍜</div><div class="food-name">Xinjiang Lagman Noodles 拌面</div><div class="food-detail">Hand-pulled noodles with lamb and vegetables — a Uyghur staple</div></div>
+  </div>
+</div>
+
+<!-- PRACTICAL -->
+<div class="practical-section">
+  <div class="prac-card">
+    <div class="prac-icon">✈️</div>
+    <div class="prac-title">Getting there</div>
+    <div class="prac-body">Depart from Kuala Lumpur International Airport. Summer: China Southern direct or one connection. Winter: via Guangzhou. Urumqi is 2 time zones ahead of Malaysia (same clock — add 2h mentally).</div>
+  </div>
+  <div class="prac-card">
+    <div class="prac-icon">🌡️</div>
+    <div class="prac-title">What to expect</div>
+    <div class="prac-body">Summer (May–Sep): 15–28°C days, cool evenings. Layer up for altitude. Autumn (Sep–Oct): 5–18°C, peak foliage. Winter (Nov–Feb): –10°C to –25°C in Altay — full winter gear essential. Thermal base layers, down jacket, snow boots, gloves.</div>
+  </div>
+  <div class="prac-card">
+    <div class="prac-icon">💳</div>
+    <div class="prac-title">Payments & notes</div>
+    <div class="prac-body">Download Alipay or WeChat Pay and link your card before departure. Cash (CNY) works everywhere. All tours conducted in Mandarin. All entrance fees included — no individual refunds on unused tickets. Tours depart from KL.</div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <p class="section-eyebrow" style="color:rgba(255,255,255,0.4)">Ready to explore</p>
+  <h2 class="section-title">Xinjiang awaits.</h2>
+  <p>Tell us your preferred travel season and group size. We'll recommend Classic, Elite, or Winter — and get you pricing and departure dates.</p>
+  <div class="cta-buttons">
+    <a href="https://wa.me/60XXXXXXXXX?text=Hi,%20I'm%20interested%20in%20the%20Northern%20Xinjiang%20tour.%20Please%20advise%20on%20dates%20and%20pricing." class="btn-whatsapp">WhatsApp to enquire</a>
+    <a href="mailto:info@blueskyvacation.com.my?subject=Northern Xinjiang Tour Enquiry" class="btn-white">Email us</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Blue Sky <span>Vacation</span> · KPK/LN:7700</div>
+  <p>© 2026 Blue Sky Vacation Sdn Bhd · Kota Kinabalu, Sabah</p>
+</footer>
+
+<script>
+  function showPkg(id) {
+    document.querySelectorAll('.pkg-content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.pkg-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('pkg-' + id).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+  function showItin(id) {
+    document.querySelectorAll('.itin-content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.itin-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('itin-' + id).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+  document.querySelectorAll('.day-header').forEach(h => {
+    h.addEventListener('click', () => h.parentElement.classList.toggle('open'));
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Blue Sky Vacation — Curated travel experiences from Kota Kinabalu. Explore Borneo and beyond with a travel company that knows every detail.">
+<title>Blue Sky Vacation | Curated Travel from Kota Kinabalu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --sky: #0B4F8A;
+    --sky-light: #E8F2FB;
+    --teal: #0E7A6E;
+    --sand: #F7F3EE;
+    --charcoal: #1A1A1A;
+    --mid: #4A4A4A;
+    --light-line: #E2DDD8;
+    --white: #FFFFFF;
+    --accent: #C9793A;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--charcoal);
+    background: var(--white);
+    font-weight: 300;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 3rem;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    transition: padding 0.3s;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--sky);
+    letter-spacing: 0.02em;
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--accent); }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mid);
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--sky); }
+
+  .nav-cta {
+    background: var(--sky);
+    color: var(--white) !important;
+    padding: 0.6rem 1.4rem;
+    border-radius: 2px;
+    font-size: 0.78rem !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--teal) !important; color: var(--white) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 4rem 6rem 5rem;
+    background: var(--sand);
+  }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+    line-height: 1.1;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--sky);
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+    color: var(--mid);
+    max-width: 380px;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--sky);
+    color: var(--white);
+    padding: 0.9rem 2rem;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: background 0.2s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover { background: var(--teal); }
+
+  .btn-secondary {
+    border: 1px solid var(--sky);
+    color: var(--sky);
+    padding: 0.9rem 2rem;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.2s;
+    display: inline-block;
+  }
+
+  .btn-secondary:hover { background: var(--sky-light); }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+    background: var(--sky);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(160deg, #0B4F8A 0%, #0E7A6E 60%, #1a9a8a 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .hero-image-placeholder svg {
+    opacity: 0.3;
+  }
+
+  /* Overlay stats on hero */
+  .hero-stat-bar {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .hero-stat {
+    padding: 1rem 1.75rem;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .hero-stat:last-child { border-right: none; }
+
+  .hero-stat-num {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .hero-stat-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+  }
+
+  /* MARQUEE */
+  .marquee-bar {
+    background: var(--sky);
+    color: rgba(255,255,255,0.7);
+    padding: 0.85rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .marquee-inner {
+    display: inline-block;
+    animation: marquee 28s linear infinite;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* SECTION BASE */
+  section { padding: 6rem 5rem; }
+
+  .section-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+  }
+
+  .section-body {
+    font-size: 0.95rem;
+    color: var(--mid);
+    max-width: 520px;
+    line-height: 1.85;
+  }
+
+  /* DESTINATIONS */
+  .destinations {
+    background: var(--sand);
+  }
+
+  .destinations-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3.5rem;
+  }
+
+  .destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .dest-card {
+    background: var(--white);
+    border-radius: 3px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s;
+    display: block;
+  }
+
+  .dest-card:hover { transform: translateY(-4px); }
+
+  .dest-img {
+    height: 220px;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.25rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dest-img-bg {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+  }
+
+  .dest-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 60%);
+  }
+
+  .dest-badge {
+    position: relative;
+    z-index: 1;
+    background: var(--accent);
+    color: white;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.7rem;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+
+  .dest-body {
+    padding: 1.25rem 1.5rem 1.5rem;
+  }
+
+  .dest-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  .dest-desc {
+    font-size: 0.82rem;
+    color: var(--mid);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .dest-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--light-line);
+    font-size: 0.78rem;
+  }
+
+  .dest-duration { color: var(--mid); }
+  .dest-link { color: var(--sky); font-weight: 500; }
+
+  /* WHY US */
+  .why {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    padding: 6rem 5rem;
+  }
+
+  .why-left .section-body { margin-bottom: 2rem; }
+
+  .why-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .why-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .why-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--sky-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.9rem;
+    margin-top: 2px;
+  }
+
+  .why-text strong {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 0.2rem;
+  }
+
+  .why-text span {
+    font-size: 0.82rem;
+    color: var(--mid);
+    line-height: 1.6;
+  }
+
+  .why-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .why-card {
+    background: var(--sand);
+    padding: 1.75rem 1.5rem;
+    border-radius: 3px;
+  }
+
+  .why-card:first-child {
+    grid-column: span 2;
+    background: var(--sky);
+    color: var(--white);
+  }
+
+  .why-card-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .why-card:first-child .why-card-num { color: rgba(255,255,255,0.95); }
+
+  .why-card-label {
+    font-size: 0.78rem;
+    color: var(--mid);
+  }
+
+  .why-card:first-child .why-card-label { color: rgba(255,255,255,0.65); }
+
+  /* TESTIMONIAL */
+  .testimonial-section {
+    background: var(--charcoal);
+    color: var(--white);
+    text-align: center;
+    padding: 5rem;
+  }
+
+  .testimonial-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+    font-style: italic;
+    font-weight: 400;
+    max-width: 720px;
+    margin: 0 auto 2rem;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.9);
+  }
+
+  .testimonial-author {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+
+  .testimonial-accent {
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+    margin: 0 auto 2.5rem;
+  }
+
+  /* CTA SECTION */
+  .cta-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 420px;
+  }
+
+  .cta-left {
+    background: var(--teal);
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--white);
+  }
+
+  .cta-left .section-title { color: var(--white); margin-bottom: 1rem; }
+  .cta-left .section-body { color: rgba(255,255,255,0.75); margin-bottom: 2rem; max-width: 360px; }
+
+  .btn-white {
+    background: var(--white);
+    color: var(--teal);
+    padding: 0.9rem 2rem;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: opacity 0.2s;
+    display: inline-block;
+    align-self: flex-start;
+  }
+
+  .btn-white:hover { opacity: 0.9; }
+
+  .cta-right {
+    background: var(--sky);
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--white);
+  }
+
+  .cta-right .section-title { color: var(--white); margin-bottom: 1rem; }
+  .cta-right .section-body { color: rgba(255,255,255,0.75); margin-bottom: 2rem; max-width: 360px; }
+
+  .btn-whatsapp {
+    background: #25D366;
+    color: var(--white);
+    padding: 0.9rem 2rem;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: opacity 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    align-self: flex-start;
+  }
+
+  .btn-whatsapp:hover { opacity: 0.9; }
+
+  /* FOOTER */
+  footer {
+    background: var(--charcoal);
+    color: rgba(255,255,255,0.5);
+    padding: 3rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .footer-logo span { color: var(--accent); }
+
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .footer-links a {
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: rgba(255,255,255,0.8); }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { min-height: 280px; }
+    .hero-left { padding: 3rem 1.5rem; }
+    section { padding: 4rem 1.5rem; }
+    .destinations-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .destinations-grid { grid-template-columns: 1fr; }
+    .why { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 3rem; }
+    .why-right { grid-template-columns: 1fr 1fr; }
+    .why-card:first-child { grid-column: span 2; }
+    .testimonial-section { padding: 4rem 1.5rem; }
+    .cta-section { grid-template-columns: 1fr; }
+    .cta-left, .cta-right { padding: 3.5rem 1.5rem; }
+    footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2.5rem 1.5rem; }
+    .hero-stat-bar { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Blue Sky <span>Vacation</span></a>
+  <ul class="nav-links">
+    <li><a href="#destinations">Destinations</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://wa.me/60XXXXXXXXX" class="nav-cta">Plan a trip</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Kota Kinabalu · Sabah · Malaysia</p>
+    <h1 class="hero-title">
+      Travel the way it<br>
+      was <em>meant to feel.</em>
+    </h1>
+    <p class="hero-sub">
+      Blue Sky Vacation crafts curated journeys across Borneo and beyond — 
+      guided by people who know every trail, every tide, and every hidden table worth sitting at.
+    </p>
+    <div class="hero-actions">
+      <a href="#destinations" class="btn-primary">Explore tours</a>
+      <a href="https://wa.me/60XXXXXXXXX" class="btn-secondary">WhatsApp us</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-image-placeholder">
+      <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+        <rect x="8" y="32" width="48" height="24" rx="2" stroke="white" stroke-width="1.5"/>
+        <path d="M8 32 L32 12 L56 32" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+        <circle cx="32" cy="44" r="6" stroke="white" stroke-width="1.5"/>
+        <path d="M20 56 L20 44 C20 37.4 25.4 32 32 32 C38.6 32 44 37.4 44 44 L44 56" stroke="white" stroke-width="1.5"/>
+      </svg>
+      <span>Add your hero photo here</span>
+      <span style="font-size:0.65rem; opacity:0.6">Replace this section with a stunning Borneo image</span>
+    </div>
+    <div class="hero-stat-bar">
+      <div class="hero-stat">
+        <span class="hero-stat-num">30+</span>
+        <span class="hero-stat-label">Years experience</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">500+</span>
+        <span class="hero-stat-label">Happy travellers</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">12+</span>
+        <span class="hero-stat-label">Destinations</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee-bar" aria-hidden="true">
+  <span class="marquee-inner">
+    &nbsp;&nbsp;&nbsp;&nbsp;Kota Kinabalu &nbsp;·&nbsp; Mount Kinabalu &nbsp;·&nbsp; Sepilok Orangutan Sanctuary &nbsp;·&nbsp; Kinabatangan River &nbsp;·&nbsp; Semporna Islands &nbsp;·&nbsp; North Borneo Railway &nbsp;·&nbsp; Desa Dairy Farm &nbsp;·&nbsp; Japan &nbsp;·&nbsp; South Korea &nbsp;·&nbsp; Taiwan &nbsp;·&nbsp; Vietnam &nbsp;·&nbsp; 
+    Kota Kinabalu &nbsp;·&nbsp; Mount Kinabalu &nbsp;·&nbsp; Sepilok Orangutan Sanctuary &nbsp;·&nbsp; Kinabatangan River &nbsp;·&nbsp; Semporna Islands &nbsp;·&nbsp; North Borneo Railway &nbsp;·&nbsp; Desa Dairy Farm &nbsp;·&nbsp; Japan &nbsp;·&nbsp; South Korea &nbsp;·&nbsp; Taiwan &nbsp;·&nbsp; Vietnam &nbsp;·&nbsp;
+  </span>
+</div>
+
+<!-- DESTINATIONS -->
+<section class="destinations" id="destinations">
+  <div class="destinations-header">
+    <div>
+      <p class="section-eyebrow">Curated journeys</p>
+      <h2 class="section-title">Where would you<br>like to go?</h2>
+    </div>
+    <a href="https://wa.me/60XXXXXXXXX" class="btn-secondary" style="white-space:nowrap">View all tours →</a>
+  </div>
+  <div class="destinations-grid">
+    <a href="tour-hangzhou.html" class="dest-card">
+      <div class="dest-img" style="background: linear-gradient(135deg, #1a5276, #0e7a6e);">
+        <div class="dest-img-bg">🦧</div>
+        <div class="dest-img-overlay"></div>
+        <span class="dest-badge">Borneo Wildlife</span>
+      </div>
+      <div class="dest-body">
+        <h3 class="dest-name">Sepilok & Kinabatangan</h3>
+        <p class="dest-desc">Witness orangutans in sanctuary, proboscis monkeys along the river, and fireflies lighting the mangroves at dusk.</p>
+        <div class="dest-footer">
+          <span class="dest-duration">3 – 5 days</span>
+          <span class="dest-link">Enquire →</span>
+        </div>
+      </div>
+    </a>
+    <a href="tour-hangzhou.html" class="dest-card">
+      <div class="dest-img" style="background: linear-gradient(135deg, #1a3a5c, #2e86c1);">
+        <div class="dest-img-bg">🏔️</div>
+        <div class="dest-img-overlay"></div>
+        <span class="dest-badge">Adventure</span>
+      </div>
+      <div class="dest-body">
+        <h3 class="dest-name">Mount Kinabalu</h3>
+        <p class="dest-desc">Summit Southeast Asia's highest peak. We handle permits, guides, and acclimatisation so you can focus on the climb.</p>
+        <div class="dest-footer">
+          <span class="dest-duration">2 days</span>
+          <span class="dest-link">Enquire →</span>
+        </div>
+      </div>
+    </a>
+    <a href="tour-hangzhou.html" class="dest-card">
+      <div class="dest-img" style="background: linear-gradient(135deg, #c97d3a, #e67e22);">
+        <div class="dest-img-bg">⛩️</div>
+        <div class="dest-img-overlay"></div>
+        <span class="dest-badge">Overseas</span>
+      </div>
+      <div class="dest-body">
+        <h3 class="dest-name">Japan & South Korea</h3>
+        <p class="dest-desc">Cherry blossoms, temple walks, street food, and skylines. Group departures with everything arranged from KK.</p>
+        <div class="dest-footer">
+          <span class="dest-duration">7 – 10 days</span>
+          <span class="dest-link">Enquire →</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why" id="about">
+  <div class="why-left">
+    <p class="section-eyebrow">Why Blue Sky Vacation</p>
+    <h2 class="section-title">Local knowledge.<br>Seamless journeys.</h2>
+    <p class="section-body">We've been showing people the real Sabah — and the world beyond it — since 1991. Every itinerary is shaped around what we'd personally recommend to a close friend.</p>
+    <ul class="why-list">
+      <li class="why-item">
+        <div class="why-icon">🗺️</div>
+        <div class="why-text">
+          <strong>Curated, not generic</strong>
+          <span>No cookie-cutter packages. Every trip is thoughtfully put together with your group in mind.</span>
+        </div>
+      </li>
+      <li class="why-item">
+        <div class="why-icon">🤝</div>
+        <div class="why-text">
+          <strong>We handle everything</strong>
+          <span>Permits, transport, accommodation, guides — fully arranged so you travel without worry.</span>
+        </div>
+      </li>
+      <li class="why-item">
+        <div class="why-icon">💬</div>
+        <div class="why-text">
+          <strong>Real people, real service</strong>
+          <span>WhatsApp us anytime. We're based in KK and reachable before, during, and after your trip.</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="why-right">
+    <div class="why-card">
+      <div class="why-card-num">30+</div>
+      <div class="why-card-label">Years serving travellers from Sabah</div>
+    </div>
+    <div class="why-card">
+      <div class="why-card-num">500+</div>
+      <div class="why-card-label">Happy travellers</div>
+    </div>
+    <div class="why-card">
+      <div class="why-card-num">12+</div>
+      <div class="why-card-label">Destinations offered</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<div class="testimonial-section">
+  <div class="testimonial-accent"></div>
+  <blockquote class="testimonial-quote">
+    "Everything was arranged perfectly — the guide was knowledgeable, the hotel was excellent, and Blue Sky handled every single detail. We didn't have to worry about anything."
+  </blockquote>
+  <p class="testimonial-author">— Satisfied traveller, KK to Japan group tour</p>
+</div>
+
+<!-- CTA SPLIT -->
+<div class="cta-section" id="contact">
+  <div class="cta-left">
+    <p class="section-eyebrow" style="color:rgba(255,255,255,0.6)">Start planning</p>
+    <h2 class="section-title">Ready for your next trip?</h2>
+    <p class="section-body">Tell us where you want to go, when, and how many people — we'll put together a tailored itinerary and quote within 24 hours.</p>
+    <a href="mailto:info@blueskyvacation.com.my" class="btn-white">Send an enquiry</a>
+  </div>
+  <div class="cta-right">
+    <p class="section-eyebrow" style="color:rgba(255,255,255,0.6)">Prefer to chat?</p>
+    <h2 class="section-title">WhatsApp us directly.</h2>
+    <p class="section-body">Most of our clients start with a quick WhatsApp message. We're responsive and happy to answer any questions before you commit to anything.</p>
+    <a href="https://wa.me/60XXXXXXXXX?text=Hi%20Blue%20Sky%20Vacation%2C%20I'm%20interested%20in%20a%20tour." class="btn-whatsapp">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.535 5.862L.054 23.41a.75.75 0 00.917.917l5.548-1.481A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.5c-1.986 0-3.85-.538-5.45-1.477l-.39-.23-4.047 1.08 1.08-4.047-.23-.39A10.5 10.5 0 011.5 12C1.5 6.201 6.201 1.5 12 1.5S22.5 6.201 22.5 12 17.799 22.5 12 22.5z"/></svg>
+      Chat on WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Blue Sky <span>Vacation</span></div>
+  <ul class="footer-links">
+    <li><a href="#destinations">Destinations</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <p>© 2026 Blue Sky Vacation Sdn Bhd · KPK/LN:7700 · Kota Kinabalu, Sabah</p>
+</footer>
+
+</body>
+</html>

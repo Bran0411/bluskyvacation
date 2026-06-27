@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Hainan Island Carnival — 6-day direct flight tour from Kota Kinabalu. Haikou, Ocean Flower Island, Sanya, Phoenix Island 5-star, Atlantis, undersea dining. From RM 1,999.">
+<title>Hainan Island Carnival — 6 Days | Blue Sky Vacation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --sky: #0B4F8A; --teal: #0E7A6E; --sand: #F7F3EE;
+    --charcoal: #1A1A1A; --mid: #4A4A4A; --light-line: #E2DDD8;
+    --white: #FFFFFF; --accent: #C9793A;
+    --ocean: #0a6b8a; --coral: #e05a3a; --gold: #c49a2a;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: var(--charcoal); background: var(--white); font-weight: 300; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 3rem; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.07); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--sky); text-decoration: none; }
+  .nav-logo span { color: var(--accent); }
+  .nav-back { font-size: 0.78rem; color: var(--mid); text-decoration: none; }
+  .nav-back:hover { color: var(--sky); }
+
+  /* HERO */
+  .hero { min-height: 92vh; display: grid; grid-template-columns: 1.1fr 0.9fr; padding-top: 70px; }
+  .hero-left { padding: 5rem 4rem 5rem 5rem; display: flex; flex-direction: column; justify-content: center; background: linear-gradient(160deg, #041e2e 0%, #062d40 50%, #083844 100%); }
+  .hero-badges { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
+  .badge { padding: 0.3rem 0.8rem; border-radius: 2px; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; }
+  .badge-direct { background: var(--ocean); color: white; }
+  .badge-from { background: var(--coral); color: white; }
+  .badge-nights { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.18); }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.6rem, 3.8vw, 4rem); line-height: 1.06; font-weight: 600; color: var(--white); margin-bottom: 0.5rem; }
+  .hero-title em { color: #7DD4E8; font-style: italic; }
+  .hero-sub { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: rgba(255,255,255,0.5); font-style: italic; margin-bottom: 1.5rem; }
+  .hero-desc { font-size: 0.88rem; color: rgba(255,255,255,0.6); line-height: 1.85; max-width: 400px; margin-bottom: 2.5rem; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-ocean { background: var(--ocean); color: white; padding: 0.9rem 2rem; text-decoration: none; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; transition: opacity 0.2s; display: inline-block; }
+  .btn-ocean:hover { opacity: 0.88; }
+  .btn-outline { border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.8); padding: 0.9rem 2rem; text-decoration: none; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; display: inline-block; transition: border-color 0.2s; }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.6); }
+
+  .hero-right { display: grid; grid-template-rows: 1fr 1fr; }
+  .hero-img-top { background: linear-gradient(135deg, #0a5f7a 0%, #0e7a6e 100%); display: flex; align-items: center; justify-content: center; min-height: 200px; position: relative; overflow: hidden; }
+  .hero-img-bottom { background: linear-gradient(135deg, #8b3a1a 0%, #c9793a 100%); display: flex; align-items: center; justify-content: center; min-height: 200px; position: relative; overflow: hidden; }
+  .hero-img-label { position: absolute; bottom: 1.25rem; left: 1.25rem; font-size: 0.75rem; font-weight: 500; color: rgba(255,255,255,0.9); letter-spacing: 0.05em; }
+  .hero-img-icon { font-size: 4rem; opacity: 0.35; }
+
+  /* PRICE TABLES */
+  .pricing-section { padding: 4rem 5rem; background: var(--sand); }
+  .section-eyebrow { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 0.8rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 2.5vw, 2.4rem); font-weight: 600; line-height: 1.15; margin-bottom: 0.75rem; }
+  .section-sub { font-size: 0.88rem; color: var(--mid); margin-bottom: 2.5rem; }
+  .price-tabs { display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  .price-tab { padding: 0.5rem 1.25rem; border: 1px solid var(--light-line); border-radius: 2px; font-size: 0.78rem; font-weight: 500; cursor: pointer; background: var(--white); color: var(--mid); transition: all 0.2s; }
+  .price-tab.active { background: var(--ocean); color: white; border-color: var(--ocean); }
+  .price-table-wrap { display: none; }
+  .price-table-wrap.active { display: block; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+  th { background: var(--charcoal); color: white; padding: 0.75rem 1rem; text-align: left; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+  td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--light-line); }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+  .promo-row td { background: rgba(10,107,138,0.06) !important; font-weight: 500; }
+  .holiday-row td { background: rgba(201,121,58,0.06) !important; }
+  .promo-tag { background: var(--ocean); color: white; font-size: 0.6rem; padding: 0.1rem 0.4rem; border-radius: 2px; letter-spacing: 0.08em; text-transform: uppercase; margin-left: 0.4rem; vertical-align: middle; }
+  .holiday-tag { background: var(--coral); color: white; font-size: 0.6rem; padding: 0.1rem 0.4rem; border-radius: 2px; letter-spacing: 0.08em; text-transform: uppercase; margin-left: 0.4rem; vertical-align: middle; }
+
+  .price-notes { margin-top: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .price-note-item { background: var(--white); padding: 1.25rem; border-radius: 3px; border: 1px solid var(--light-line); }
+  .price-note-label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.4rem; font-weight: 500; }
+  .price-note-val { font-size: 0.85rem; color: var(--charcoal); }
+
+  /* WHAT'S INCLUDED */
+  .included-section { padding: 5rem 5rem; }
+  .included-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .included-col h4 { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); margin-bottom: 1rem; font-weight: 500; }
+  .included-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .included-list li { font-size: 0.85rem; color: var(--mid); display: flex; align-items: flex-start; gap: 0.6rem; line-height: 1.5; }
+  .check { color: var(--teal); flex-shrink: 0; margin-top: 1px; }
+  .cross { color: #c0392b; flex-shrink: 0; margin-top: 1px; }
+
+  /* HIGHLIGHTS */
+  .highlights-section { padding: 5rem 5rem; background: var(--sand); }
+  .highlights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
+  .highlight-card { background: var(--white); border-radius: 3px; overflow: hidden; border: 1px solid var(--light-line); }
+  .highlight-card-top { height: 6px; }
+  .highlight-card-body { padding: 1.5rem; }
+  .highlight-icon { font-size: 1.6rem; margin-bottom: 0.75rem; }
+  .highlight-day { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); font-weight: 500; margin-bottom: 0.4rem; }
+  .highlight-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+  .highlight-desc { font-size: 0.8rem; color: var(--mid); line-height: 1.65; }
+
+  /* ITINERARY */
+  .itinerary-section { padding: 5rem 5rem; }
+  .day-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 2.5rem; }
+  .day-item { border: 1px solid var(--light-line); border-radius: 3px; overflow: hidden; }
+  .day-header { display: flex; align-items: center; gap: 1.25rem; padding: 1.25rem 1.5rem; cursor: pointer; user-select: none; background: var(--white); }
+  .day-header:hover { background: var(--sand); }
+  .day-num { background: var(--ocean); color: white; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.3rem 0.7rem; border-radius: 2px; white-space: nowrap; flex-shrink: 0; }
+  .day-route { font-size: 0.78rem; color: var(--mid); flex-shrink: 0; font-weight: 500; }
+  .day-meals { display: flex; gap: 0.3rem; flex-shrink: 0; }
+  .meal-badge { font-size: 0.6rem; padding: 0.15rem 0.4rem; border-radius: 2px; background: var(--sand); color: var(--mid); letter-spacing: 0.05em; border: 1px solid var(--light-line); }
+  .meal-badge.included { background: rgba(14,122,110,0.08); color: var(--teal); border-color: rgba(14,122,110,0.2); }
+  .day-title { font-size: 0.88rem; font-weight: 500; flex: 1; }
+  .day-chevron { font-size: 0.8rem; color: var(--mid); transition: transform 0.3s; }
+  .day-item.open .day-chevron { transform: rotate(180deg); }
+  .day-body { display: none; border-top: 1px solid var(--light-line); background: var(--sand); }
+  .day-item.open .day-body { display: block; }
+  .timeline { padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+  .tl-item { display: flex; gap: 1rem; align-items: flex-start; }
+  .tl-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ocean); flex-shrink: 0; margin-top: 6px; }
+  .tl-content { font-size: 0.84rem; color: var(--charcoal); line-height: 1.6; flex: 1; }
+  .tl-content strong { display: block; font-weight: 500; margin-bottom: 0.15rem; }
+  .tl-content span { color: var(--mid); font-size: 0.8rem; }
+  .tl-star { background: rgba(196,154,42,0.12); border-left: 2px solid var(--gold); padding: 0.6rem 0.8rem; border-radius: 0 3px 3px 0; margin-top: 0.5rem; font-size: 0.8rem; color: var(--mid); }
+  .hotel-tag { display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(10,107,138,0.08); border: 1px solid rgba(10,107,138,0.2); border-radius: 2px; padding: 0.25rem 0.6rem; font-size: 0.72rem; color: var(--ocean); font-weight: 500; margin-top: 0.5rem; }
+
+  /* FLIGHT */
+  .flight-section { background: var(--charcoal); color: white; padding: 3.5rem 5rem; }
+  .flight-section .section-title { color: white; margin-bottom: 2rem; }
+  .flight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .flight-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 3px; padding: 1.5rem; }
+  .flight-route { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 0.75rem; }
+  .flight-main { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 0.4rem; }
+  .flight-detail { font-size: 0.8rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
+  .flight-badge { display: inline-block; background: var(--ocean); color: white; font-size: 0.65rem; padding: 0.2rem 0.5rem; border-radius: 2px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.75rem; }
+
+  /* BOOKING INFO */
+  .booking-section { padding: 4rem 5rem; background: var(--sand); display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
+  .booking-card { background: var(--white); padding: 1.75rem; border-radius: 3px; border: 1px solid var(--light-line); }
+  .booking-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+  .booking-title { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); font-weight: 500; margin-bottom: 0.6rem; }
+  .booking-body { font-size: 0.84rem; color: var(--mid); line-height: 1.7; }
+
+  /* CTA */
+  .cta-section { background: linear-gradient(135deg, #041e2e 0%, #062d40 100%); color: white; padding: 5rem; text-align: center; }
+  .cta-section .section-title { color: white; margin-bottom: 1rem; }
+  .cta-section p { color: rgba(255,255,255,0.65); margin-bottom: 2rem; font-size: 0.95rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-white { background: white; color: var(--charcoal); padding: 0.9rem 2.5rem; text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; display: inline-block; }
+  .btn-whatsapp { background: #25D366; color: white; padding: 0.9rem 2.5rem; text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; display: inline-block; }
+
+  footer { background: #0d0d0d; color: rgba(255,255,255,0.35); padding: 2rem 5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; }
+  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: rgba(255,255,255,0.75); }
+  .footer-logo span { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 3rem 1.5rem; }
+    .hero-right { min-height: 200px; grid-template-rows: 1fr; grid-template-columns: 1fr 1fr; }
+    .pricing-section, .included-section, .highlights-section, .itinerary-section, .cta-section { padding: 3.5rem 1.5rem; }
+    .flight-section, .booking-section { padding: 3rem 1.5rem; }
+    .included-grid, .flight-grid, .booking-section { grid-template-columns: 1fr; }
+    .highlights-grid { grid-template-columns: 1fr; }
+    .price-notes { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Blue Sky <span>Vacation</span></a>
+  <a href="index.html" class="nav-back">← Back to tours</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-badges">
+      <span class="badge badge-direct">✈ Direct KK–Haikou</span>
+      <span class="badge badge-from">From RM 1,999</span>
+      <span class="badge badge-nights">5 or 6 Days</span>
+    </div>
+    <h1 class="hero-title">Hainan Island<br><em>Carnival</em></h1>
+    <p class="hero-sub">海南岛嘉年华 · Direct from Kota Kinabalu</p>
+    <p class="hero-desc">China's tropical paradise — direct flight from KK to Haikou. Six days across Haikou's night waterfront, Ocean Flower Island, Sanya's Atlantis resort, Phoenix Island's seafood buffet, undersea dining at Yalong Bay, and a helicopter over the South China Sea.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/60XXXXXXXXX?text=Hi,%20I'm%20interested%20in%20the%20Hainan%20Island%20tour" class="btn-ocean">Check dates & book</a>
+      <a href="#itinerary" class="btn-outline">View itinerary</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-top">
+      <div class="hero-img-icon">🏝️</div>
+      <span class="hero-img-label">Ocean Flower Island · Sanya</span>
+    </div>
+    <div class="hero-img-bottom">
+      <div class="hero-img-icon">🦞</div>
+      <span class="hero-img-label">Phoenix Island Seafood Buffet · Unlimited</span>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <p class="section-eyebrow">Dates & pricing</p>
+  <h2 class="section-title">Choose your departure</h2>
+  <p class="section-sub">All prices per person, twin sharing. Fuel surcharge +RM200 applies to all dates. Minimum 10 adults to depart.</p>
+
+  <div class="price-tabs">
+    <div class="price-tab active" onclick="showTab('6sun')">6 Days · Sunday</div>
+    <div class="price-tab" onclick="showTab('6fri')">6 Days · Friday</div>
+    <div class="price-tab" onclick="showTab('5wed')">5 Days · Wednesday</div>
+  </div>
+
+  <div class="price-table-wrap active" id="tab-6sun">
+    <table>
+      <thead><tr><th>Departure date</th><th>Price / pax</th><th>Infant (nett)</th><th>Child (deduct)</th><th>Single supp.</th></tr></thead>
+      <tbody>
+        <tr class="promo-row"><td>11 Oct 2026 <span class="promo-tag">First flight promo</span></td><td><strong>RM 1,999</strong></td><td>RM 600</td><td>–RM 200</td><td>RM 550</td></tr>
+        <tr><td>25 Oct 2026</td><td><strong>RM 2,199</strong></td><td>RM 600</td><td>–RM 200</td><td>RM 550</td></tr>
+        <tr><td>8 Nov 2026</td><td><strong>RM 2,399</strong></td><td>RM 600</td><td>–RM 200</td><td>RM 550</td></tr>
+        <tr><td>22 Nov 2026</td><td><strong>RM 2,399</strong></td><td>RM 600</td><td>–RM 200</td><td>RM 550</td></tr>
+        <tr class="holiday-row"><td>6 Dec 2026 <span class="holiday-tag">Holiday</span></td><td><strong>RM 2,699</strong></td><td>RM 600</td><td>–RM 200</td><td>RM 550</td></tr>
+        <tr class="holiday-row"><td>20 Dec 2026 <span class="holiday-tag">Holiday</span></td><td><strong>RM 2,699</strong></td><td>RM 600</td><td>–RM 200</td><td>RM 550</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="price-table-wrap" id="tab-6fri">
+    <table>
+      <thead><tr><th>Departure date</th><th>Price / pax</th><th>Infant (nett)</th><th>Child (deduct)</th><th>Single supp.</th></tr></thead>
+      <tbody>
+        <tr><td>16 Oct 2026</td><td><strong>RM 2,199</strong></td><td>RM 600</td><td>–RM 200</td><td>RM 550</td></tr>
+        <tr><td>30 Oct 2026</td><td><strong>RM 2,199</strong></td><td>RM 600</td><td>–RM 200</td><td>RM 550</td></tr>
+        <tr><td>13 Nov 2026</td><td><strong>RM 2,399</strong></td><td>RM 600</td><td>–RM 200</td><td>RM 550</td></tr>
+        <tr><td>27 Nov 2026</td><td><strong>RM 2,399</strong></td><td>RM 600</td><td>–RM 200</td><td>RM 550</td></tr>
+        <tr class="holiday-row"><td>11 Dec 2026 <span class="holiday-tag">Holiday</span></td><td><strong>RM 2,699</strong></td><td>RM 600</td><td>–RM 200</td><td>RM 550</td></tr>
+        <tr class="holiday-row"><td>25 Dec 2026 <span class="holiday-tag">Christmas</span></td><td><strong>RM 2,899</strong></td><td>RM 600</td><td>–RM 200</td><td>RM 550</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="price-table-wrap" id="tab-5wed">
+    <table>
+      <thead><tr><th>Departure date</th><th>Price / pax</th><th>Infant (nett)</th><th>Child (deduct)</th><th>Single supp.</th></tr></thead>
+      <tbody>
+        <tr class="promo-row"><td>21 Oct 2026 <span class="promo-tag">Promo</span></td><td><strong>RM 1,799</strong></td><td>RM 600</td><td>–RM 150</td><td>RM 450</td></tr>
+        <tr><td>4 Nov 2026</td><td><strong>RM 1,999</strong></td><td>RM 600</td><td>–RM 150</td><td>RM 450</td></tr>
+        <tr><td>18 Nov 2026</td><td><strong>RM 1,999</strong></td><td>RM 600</td><td>–RM 150</td><td>RM 450</td></tr>
+        <tr><td>2 Dec 2026</td><td><strong>RM 2,199</strong></td><td>RM 600</td><td>–RM 150</td><td>RM 450</td></tr>
+        <tr class="holiday-row"><td>16 Dec 2026 <span class="holiday-tag">Holiday</span></td><td><strong>RM 2,399</strong></td><td>RM 600</td><td>–RM 150</td><td>RM 450</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="price-notes">
+    <div class="price-note-item">
+      <div class="price-note-label">Booking deposit</div>
+      <div class="price-note-val">RM 300 per person (non-refundable). Full payment due 20 days before departure.</div>
+    </div>
+    <div class="price-note-item">
+      <div class="price-note-label">Group size</div>
+      <div class="price-note-val">Min. 10 adults. Tour leader assigned for 16+ pax. Private group from 21 pax.</div>
+    </div>
+    <div class="price-note-item">
+      <div class="price-note-label">Fuel surcharge</div>
+      <div class="price-note-val">+RM 200 per person on all dates. Included in the prices shown above when you add it.</div>
+    </div>
+    <div class="price-note-item">
+      <div class="price-note-label">Included in price</div>
+      <div class="price-note-val">Arrival buffet breakfast, departure snack dinner, 20kg luggage allowance, 7kg carry-on, guide & driver gratuities, tour leader allowance.</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="included-section">
+  <p class="section-eyebrow">Package details</p>
+  <h2 class="section-title">What's included</h2>
+  <div class="included-grid">
+    <div class="included-col">
+      <h4>Included</h4>
+      <ul class="included-list">
+        <li><span class="check">✓</span>Return direct flight KK ↔ Haikou (AQ1220/AQ1219)</li>
+        <li><span class="check">✓</span>Buffet breakfast on arrival · Snack dinner on departure</li>
+        <li><span class="check">✓</span>20kg checked baggage + 7kg carry-on</li>
+        <li><span class="check">✓</span>Undersea lunch at Yalong Bay (1 portion for 2 pax)</li>
+        <li><span class="check">✓</span>Phoenix Island unlimited seafood buffet dinner + free-flow beer</li>
+        <li><span class="check">✓</span>Helicopter low-altitude 1km flight (complimentary, weather permitting)</li>
+        <li><span class="check">✓</span>All entrance tickets listed in itinerary</li>
+        <li><span class="check">✓</span>Electric shuttle at Nanshan Guanyin, Rose Valley, Binglang Valley</li>
+        <li><span class="check">✓</span>Yacht cruise on Haikou Bay (night 1)</li>
+        <li><span class="check">✓</span>Sanya Tourist Railway scenic train</li>
+        <li><span class="check">✓</span>Phoenix Island Iron Flower fire show (complimentary)</li>
+        <li><span class="check">✓</span>Driver & guide gratuities, tour leader allowance</li>
+        <li><span class="check">✓</span>4-star & 5-star hotels throughout</li>
+      </ul>
+    </div>
+    <div class="included-col">
+      <h4>Not included (own expense)</h4>
+      <ul class="included-list">
+        <li><span class="cross">✕</span>Fuel surcharge +RM 200 per person</li>
+        <li><span class="cross">✕</span>Individual meals not listed in itinerary</li>
+        <li><span class="cross">✕</span>Travel insurance (strongly recommended)</li>
+        <li><span class="cross">✕</span>Single room supplement (RM 450–550 depending on dates)</li>
+        <li><span class="cross">✕</span>Optional: SongCheng Romance Show CNY 320</li>
+        <li><span class="cross">✕</span>Personal shopping & extras</li>
+        <li><span class="cross">✕</span>Chinese visa (if required)</li>
+      </ul>
+      <div style="margin-top:1.5rem; background:var(--sand); padding:1.25rem; border-radius:3px; border-left:3px solid var(--ocean);">
+        <p style="font-size:0.82rem; color:var(--mid); line-height:1.65;"><strong style="color:var(--charcoal);">Payment in China:</strong> Download Alipay or Touch 'n Go and link your card before departure. Cash is also accepted — all merchants in China are legally required to accept it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section class="highlights-section">
+  <p class="section-eyebrow">Trip highlights</p>
+  <h2 class="section-title">Six days. Six unforgettable experiences.</h2>
+  <div class="highlights-grid">
+    <div class="highlight-card">
+      <div class="highlight-card-top" style="background: var(--ocean);"></div>
+      <div class="highlight-card-body">
+        <div class="highlight-icon">⛵</div>
+        <div class="highlight-day">Day 1 · Haikou</div>
+        <h3 class="highlight-name">Haikou Bay Yacht Night Cruise</h3>
+        <p class="highlight-desc">Depart from the historic Dongpo Old Wharf. Glide through the glittering city nightscape as skyscraper light shows reflect off the water. Cool sea breeze, dazzling lights, and the soul of coastal Haikou.</p>
+      </div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-card-top" style="background: #8a3a8a;"></div>
+      <div class="highlight-card-body">
+        <div class="highlight-icon">🛍️</div>
+        <div class="highlight-day">Day 2 · Ocean Flower Island</div>
+        <h3 class="highlight-name">Asia's Largest Duty-Free City</h3>
+        <p class="highlight-desc">Haikou International Duty-Free City — 800+ brands, the world's single largest duty-free store. Then Ocean Flower Island's 6 themed commercial streets, 8 food zones, and the stunning evening light show.</p>
+      </div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-card-top" style="background: var(--teal);"></div>
+      <div class="highlight-card-body">
+        <div class="highlight-icon">🕌</div>
+        <div class="highlight-day">Day 3 · Sanya</div>
+        <h3 class="highlight-name">108m Nanshan Guanyin + Scenic Railway</h3>
+        <p class="highlight-desc">Ascend to the feet of the world's tallest sea Guanyin statue. Then board the Sanya Tourist Railway through tropical coastal scenery to Tianya Town — blue-white buildings and ocean views like a Miyazaki world.</p>
+      </div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-card-top" style="background: #1a6b8a;"></div>
+      <div class="highlight-card-body">
+        <div class="highlight-icon">🐠</div>
+        <div class="highlight-day">Day 4 · Sanya</div>
+        <h3 class="highlight-name">Undersea Lunch · Atlantis · Phoenix Island</h3>
+        <p class="highlight-desc">Lunch at Yalong Bay Undersea Restaurant surrounded by marine life. Discover Atlantis Sanya — the world's third Atlantis resort. Check into shell-shaped Phoenix Island for the unlimited seafood buffet and Iron Flower fire show.</p>
+      </div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-card-top" style="background: #4a8a1a;"></div>
+      <div class="highlight-card-body">
+        <div class="highlight-icon">🚁</div>
+        <div class="highlight-day">Day 5 · Sanya → Haikou</div>
+        <h3 class="highlight-name">Helicopter Flight + Li & Miao Village</h3>
+        <p class="highlight-desc">Binglang Valley — China's first 5A ethnic cultural park, with original rainforest and live Li & Miao performances. Then a complimentary 1km low-altitude helicopter flight with 360° aerial views of Sanya.</p>
+      </div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-card-top" style="background: var(--accent);"></div>
+      <div class="highlight-card-body">
+        <div class="highlight-icon">☕</div>
+        <div class="highlight-day">Day 2 · En route</div>
+        <h3 class="highlight-name">Fushan Coffee Town</h3>
+        <p class="highlight-desc">Hainan's most beautiful small town and China's No. 1 coffee town. Coffee and snack tasting included — the perfect midpoint between the duty-free city and Ocean Flower Island.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ITINERARY -->
+<section class="itinerary-section" id="itinerary">
+  <p class="section-eyebrow">Day by day</p>
+  <h2 class="section-title">Full 6-day itinerary</h2>
+  <div class="day-list">
+
+    <div class="day-item open">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">Day 1</span>
+        <span class="day-route">KK → Haikou</span>
+        <div class="day-meals"><span class="meal-badge">B self</span><span class="meal-badge">L self</span><span class="meal-badge">D self</span></div>
+        <span class="day-title">Arrive Haikou · Qilou Old Street · Bay Yacht Cruise</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body"><div class="timeline">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>Depart KK 02:35 · Arrive Haikou 05:50 (AQ1220)</strong><span>Early morning direct flight. Buffet breakfast on arrival included.</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>Qilou Old Street 骑楼老街</strong><span>Historic shophouse district built by returning overseas Chinese in Southeast Asian style. Oldest building dates to the Song dynasty.</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>Cloud Tunnel Library 云洞图书馆</strong><span>One of China's Top 10 Architectural Landmarks. Panoramic view of the Century Bridge.</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>Hainan University South Gate Night Market 南门夜市</strong><span>The most authentic local night market in Haikou — students, locals, and tourists all converge here among sizzling street food stalls.</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>Yacht Cruise on Haikou Bay 夜游海口湾</strong><span>From the historic Dongpo Old Wharf, glide through the glittering city nightscape with light shows reflecting on the water.</span></div></div>
+        <div class="hotel-tag">🏨 Holiday Inn Express Haikou or similar 4★</div>
+      </div></div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">Day 2</span>
+        <span class="day-route">Haikou → Ocean Flower Island</span>
+        <div class="day-meals"><span class="meal-badge included">B incl.</span><span class="meal-badge">L self</span><span class="meal-badge">D self</span></div>
+        <span class="day-title">Duty-Free City · Fushan Coffee Town · Ocean Flower Island</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body"><div class="timeline">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>Haikou International Duty-Free City 海口国际免税城</strong><span>Asia's largest duty-free complex — 800+ international and domestic brands. World's single largest duty-free store.</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>Fushan Coffee Culture Town 福山咖啡文化风情小镇</strong><span>Coffee and snack tasting included. China's No. 1 coffee town and Hainan's most beautiful small town.</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>Ocean Flower Island No.1 海花岛1号岛</strong><span>6 themed commercial streets · 8 food zones · specialty theme bars · Ming & Qing Style Food Street · Wedding Manor.</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>Ocean Flower Island Light Show 海花岛灯光秀</strong></div></div>
+        <div class="hotel-tag">🏨 Ocean Flower Island Hotel or similar 5★ International</div>
+      </div></div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">Day 3</span>
+        <span class="day-route">Ocean Flower Island → Sanya</span>
+        <div class="day-meals"><span class="meal-badge included">B incl.</span><span class="meal-badge included">L incl.</span><span class="meal-badge included">D incl.</span></div>
+        <span class="day-title">108m Guanyin · Scenic Railway · Tianya Town</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body"><div class="timeline">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>Nanshan 108m Sea Guanyin 南山108米海上观音</strong><span>World-class Guanyin statue built on the sea at Nanshan. Take the elevator to her feet and pray for blessings. Electric buggy included.</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>Sanya Tourist Railway Sightseeing Train 三亚旅游铁路观光列车</strong><span>From Nanshan North Station to Tianya Haijiao Station. Tropical coastal scenery with auspicious clouds, ocean views, and bougainvillea.</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>Tianya Town 天涯小镇</strong><span>Blue-and-white buildings with breathtaking sea views at every corner — described as stepping into a Hayao Miyazaki world.</span></div></div>
+        <div class="hotel-tag">🏨 Sanya The Yun Collection Hotel or similar 4★</div>
+      </div></div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">Day 4</span>
+        <span class="day-route">Sanya</span>
+        <div class="day-meals"><span class="meal-badge included">B incl.</span><span class="meal-badge included">L incl.</span><span class="meal-badge included">Buffet D incl.</span></div>
+        <span class="day-title">Rose Valley · Undersea Lunch · Atlantis · Phoenix Island</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body"><div class="timeline">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>Seafood Products Centre 海产品</strong><span>90-minute visit.</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>Yalong Bay International Rose Valley 亚龙湾国际玫瑰谷</strong><span>Asia's largest rose garden. "Heaven's First Bay" — rose culture, creative culture, and flower sea leisure. Electric buggy included.</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>★ Yalong Bay Undersea Restaurant Lunch 亚龙湾海底餐厅</strong><span>1 portion for 2 people — dine amidst a vibrant underwater world with sea creatures swimming past your window.</span>
+        <div class="tl-star">⭐ Signature experience — included in your package price</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>Atlantis Sanya 三亚亚特兰蒂斯</strong><span>The world's third Atlantis resort after Dubai and The Bahamas. Pose with the massive aquatic fish wall, explore the myths and legends exhibition.</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>★ Phoenix Island Unlimited Seafood Buffet Dinner 凤凰岛自助海鲜餐</strong><span>Unlimited seafood, grilled meats, hot pot, desserts, fruit — plus free-flowing beer. Check in to the shell-shaped Phoenix Island Resort on its artificial island in Sanya Bay.</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>Phoenix Island Iron Flower Show 凤凰岛打铁花</strong><span>Brilliant sparks shower the night sky — traditional fire art performance. Complimentary; no refund if not performed.</span></div></div>
+        <div class="hotel-tag">🏨 Phoenix Island Resort Hotel or similar International 5★</div>
+      </div></div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">Day 5</span>
+        <span class="day-route">Sanya → Haikou</span>
+        <div class="day-meals"><span class="meal-badge included">B incl.</span><span class="meal-badge included">L incl.</span><span class="meal-badge included">D incl.</span></div>
+        <span class="day-title">Binglang Valley Li & Miao Culture · Helicopter Flight · Mission Hills</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body"><div class="timeline">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>Life Centre 生活馆</strong><span>90-minute visit.</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>Binglang Valley Li & Miao Cultural Tourism Area 槟榔谷黎苗文化旅游区</strong><span>China's first 5A ethnic cultural scenic area. Original rainforest landscapes, vibrant minority performances. Electric buggy included.</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>★ Helicopter Low-Altitude Flight Experience 直升飞机低空飞行体验 — 1km</strong><span>360° no-blind-spot helicopter sightseeing tour over Sanya. Complimentary activity — no refund if grounded by weather or airspace restrictions. Max weight 100kg.</span>
+        <div class="tl-star">⭐ Complimentary included experience — subject to weather</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>Mission Hills New Town 海口观澜湖新城</strong><span>One-stop destination combining entertainment, dining, shopping, culture, and hotels in Haikou.</span></div></div>
+        <div class="hotel-tag">🏨 Back in Haikou — hotel TBC based on group arrangements</div>
+      </div></div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">Day 6</span>
+        <span class="day-route">Haikou → KK</span>
+        <div class="day-meals"><span class="meal-badge included">Snack D incl.</span></div>
+        <span class="day-title">Return flight home</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body"><div class="timeline">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>Airport transfer arranged according to flight schedule</strong><span>Return flight HAK-BKI AQ1219 · Depart 22:10 · Arrive KK 01:35+1 · Snack dinner on board included.</span></div></div>
+      </div></div>
+    </div>
+
+  </div>
+
+  <div style="margin-top:1.5rem; background:var(--sand); padding:1.25rem 1.5rem; border-radius:3px; font-size:0.8rem; color:var(--mid); border-left:3px solid var(--light-line); line-height:1.7;">
+    <strong style="color:var(--charcoal);">Note:</strong> Final itinerary subject to local receiving agent arrangements. Company reserves the right to modify without prior notice in unforeseen circumstances. Optional: SongCheng Romance Show (CNY 320/person).
+  </div>
+</section>
+
+<!-- FLIGHT INFO -->
+<div class="flight-section">
+  <p class="section-eyebrow" style="color:rgba(255,255,255,0.4)">Direct flight</p>
+  <h2 class="section-title">Kota Kinabalu ↔ Haikou — nonstop</h2>
+  <div class="flight-grid">
+    <div class="flight-card">
+      <span class="flight-badge">Outbound</span>
+      <div class="flight-route">KK → Haikou</div>
+      <div class="flight-main">AQ1220</div>
+      <div class="flight-detail">Depart KK 02:35 · Arrive Haikou 05:50<br>Air Nine 九元航空 · Economy class<br>20kg checked + 7kg carry-on included</div>
+    </div>
+    <div class="flight-card">
+      <span class="flight-badge">Return</span>
+      <div class="flight-route">Haikou → KK</div>
+      <div class="flight-main">AQ1219</div>
+      <div class="flight-detail">Depart Haikou 22:10 · Arrive KK 01:35+1<br>Air Nine 九元航空 · Economy class<br>20kg checked + 7kg carry-on included</div>
+    </div>
+  </div>
+</div>
+
+<!-- BOOKING INFO -->
+<div class="booking-section">
+  <div class="booking-card">
+    <div class="booking-icon">📋</div>
+    <div class="booking-title">How to book</div>
+    <div class="booking-body">WhatsApp or email us your preferred departure date, number of pax, and room type. We'll confirm availability and collect your RM 300/person deposit to secure the booking.</div>
+  </div>
+  <div class="booking-card">
+    <div class="booking-icon">🛂</div>
+    <div class="booking-title">What you need</div>
+    <div class="booking-body">Valid passport (6+ months validity). Malaysian citizens do not require a Chinese visa for tourism stays under 30 days. Bring your MyKad as backup ID.</div>
+  </div>
+  <div class="booking-card">
+    <div class="booking-icon">💰</div>
+    <div class="booking-title">Payment in China</div>
+    <div class="booking-body">Download Alipay or Touch 'n Go and link your credit/debit card before departure for cashless payments. Cash (RM or CNY) also widely accepted — all merchants legally required to accept cash.</div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <p class="section-eyebrow" style="color:rgba(255,255,255,0.4)">Book your trip</p>
+  <h2 class="section-title">Ready for Hainan?</h2>
+  <p>Direct flight from KK. Promo dates from RM 1,799. Contact us to check availability and secure your spot.</p>
+  <div class="cta-buttons">
+    <a href="https://wa.me/60XXXXXXXXX?text=Hi,%20I'm%20interested%20in%20the%20Hainan%20Island%20tour.%20Please%20share%20available%20dates." class="btn-whatsapp">WhatsApp to book</a>
+    <a href="mailto:info@blueskyvacation.com.my?subject=Hainan Island Tour Enquiry" class="btn-white">Email enquiry</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Blue Sky <span>Vacation</span> · KPK/LN:7700</div>
+  <p>© 2026 Blue Sky Vacation Sdn Bhd · Kota Kinabalu, Sabah</p>
+</footer>
+
+<script>
+  function showTab(id) {
+    document.querySelectorAll('.price-table-wrap').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.price-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    event.target.classList.add('active');
+  }
+  document.querySelectorAll('.day-header').forEach(h => {
+    h.addEventListener('click', () => h.parentElement.classList.toggle('open'));
+  });
+</script>
+</body>
+</html>
