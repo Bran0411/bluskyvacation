@@ -7,35 +7,35 @@
 <title>Northern Xinjiang Odyssey | Blue Sky Vacation</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --sky: #0B4F8A; --teal: #0E7A6E; --sand: #F7F3EE;
+    --sky: #2f9be0; --teal: #0E7A6E; --sand: #F7F3EE;
     --charcoal: #1A1A1A; --mid: #4A4A4A; --light-line: #E2DDD8;
     --white: #FFFFFF; --accent: #C9793A;
     --grass: #2d6a2d; --alpine: #1a4a6e; --winter: #2a3a5a; --gold: #b8860b;
   }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; color: var(--charcoal); background: var(--white); font-weight: 300; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--charcoal); background: var(--white); font-weight: 300; line-height: 1.7; -webkit-font-smoothing: antialiased; }
 
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 3rem; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.07); }
-  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--sky); text-decoration: none; }
+  .nav-logo { font-family: 'Manrope', sans-serif; font-size: 1.3rem; font-weight: 600; color: var(--sky); text-decoration: none; }
   .nav-logo span { color: var(--accent); }
   .nav-back { font-size: 0.78rem; color: var(--mid); text-decoration: none; }
   .nav-back:hover { color: var(--sky); }
 
   /* HERO */
-  .hero { min-height: 90vh; background: linear-gradient(160deg, #0d1f0a 0%, #1a3012 40%, #0d2010 100%); display: flex; align-items: center; padding-top: 70px; position: relative; overflow: hidden; }
+  .hero { min-height: 90vh; background: linear-gradient(100deg, rgba(11,42,66,0.94) 0%, rgba(15,58,92,0.82) 38%, rgba(26,90,138,0.60) 68%, rgba(47,155,224,0.40) 100%), url('urumqi-0.jpg') center 30%/cover no-repeat; display: flex; align-items: center; padding-top: 70px; position: relative; overflow: hidden; }
   .hero-content { padding: 5rem; max-width: 700px; position: relative; z-index: 2; }
   .hero-badges { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
   .badge { padding: 0.3rem 0.8rem; border-radius: 2px; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; }
   .badge-summer { background: var(--grass); color: white; }
   .badge-winter { background: var(--winter); color: white; }
   .badge-days { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.18); }
-  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 4.5vw, 5rem); line-height: 1.05; font-weight: 600; color: var(--white); margin-bottom: 0.5rem; }
+  .hero-title { font-family: 'Manrope', sans-serif; font-size: clamp(2.8rem, 4.5vw, 5rem); line-height: 1.05; font-weight: 600; color: var(--white); margin-bottom: 0.5rem; }
   .hero-title em { color: #a8d8a8; font-style: italic; }
-  .hero-sub { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: rgba(255,255,255,0.45); font-style: italic; margin-bottom: 1.5rem; }
+  .hero-sub { font-family: 'Manrope', sans-serif; font-size: 1.2rem; color: rgba(255,255,255,0.45); font-style: italic; margin-bottom: 1.5rem; }
   .hero-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.85; max-width: 520px; margin-bottom: 2.5rem; }
   .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
   .btn-grass { background: var(--grass); color: white; padding: 0.9rem 2rem; text-decoration: none; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; transition: opacity 0.2s; display: inline-block; }
@@ -43,22 +43,22 @@
   .btn-outline { border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.8); padding: 0.9rem 2rem; text-decoration: none; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; display: inline-block; transition: border-color 0.2s; }
   .btn-outline:hover { border-color: rgba(255,255,255,0.6); }
   .hero-route { position: absolute; right: 0; top: 0; bottom: 0; width: 42%; display: flex; flex-direction: column; justify-content: center; padding: 3rem; gap: 0.75rem; }
-  .route-stop { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 3px; padding: 0.65rem 1rem; display: flex; align-items: center; gap: 0.75rem; }
+  .route-stop { background: rgba(9,28,46,0.42); backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.18); border-radius: 3px; padding: 0.65rem 1rem; display: flex; align-items: center; gap: 0.75rem; }
   .route-icon { font-size: 1rem; flex-shrink: 0; }
-  .route-name { font-size: 0.78rem; font-weight: 500; color: rgba(255,255,255,0.85); }
-  .route-sub { font-size: 0.68rem; color: rgba(255,255,255,0.4); }
+  .route-name { font-size: 0.78rem; font-weight: 500; color: rgba(255,255,255,0.92); }
+  .route-sub { font-size: 0.68rem; color: rgba(255,255,255,0.6); }
 
   /* PACKAGE SELECTOR */
   .packages-section { padding: 5rem 5rem 3rem; background: var(--sand); }
   .section-eyebrow { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 0.8rem; }
-  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 2.5vw, 2.4rem); font-weight: 600; line-height: 1.15; margin-bottom: 2rem; }
+  .section-title { font-family: 'Manrope', sans-serif; font-size: clamp(1.8rem, 2.5vw, 2.4rem); font-weight: 600; line-height: 1.15; margin-bottom: 2rem; }
   .pkg-tabs { display: flex; gap: 0; margin-bottom: 2.5rem; border: 1px solid var(--light-line); border-radius: 3px; overflow: hidden; }
   .pkg-tab { flex: 1; padding: 1.25rem 1.5rem; cursor: pointer; background: var(--white); border-right: 1px solid var(--light-line); transition: background 0.2s; text-align: center; }
   .pkg-tab:last-child { border-right: none; }
   .pkg-tab.active { background: var(--charcoal); }
   .pkg-tab-season { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); font-weight: 500; margin-bottom: 0.25rem; }
   .pkg-tab.active .pkg-tab-season { color: rgba(255,255,255,0.45); }
-  .pkg-tab-name { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: var(--charcoal); }
+  .pkg-tab-name { font-family: 'Manrope', sans-serif; font-size: 1.25rem; font-weight: 600; color: var(--charcoal); }
   .pkg-tab.active .pkg-tab-name { color: white; }
   .pkg-tab-days { font-size: 0.72rem; color: var(--mid); margin-top: 0.2rem; }
   .pkg-tab.active .pkg-tab-days { color: rgba(255,255,255,0.5); }
@@ -96,7 +96,7 @@
   .hl-body { padding: 1.5rem; }
   .hl-icon { font-size: 1.6rem; margin-bottom: 0.75rem; }
   .hl-tag { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); font-weight: 500; margin-bottom: 0.4rem; }
-  .hl-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+  .hl-name { font-family: 'Manrope', sans-serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
   .hl-desc { font-size: 0.8rem; color: var(--mid); line-height: 1.65; }
   .seasonal-note { display: inline-block; background: rgba(184,134,11,0.1); border: 1px solid rgba(184,134,11,0.3); border-radius: 2px; padding: 0.2rem 0.5rem; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-top: 0.5rem; font-weight: 500; }
 
@@ -132,7 +132,8 @@
   .food-section { padding: 4rem 5rem; background: var(--charcoal); color: white; }
   .food-section .section-title { color: white; }
   .food-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2rem; }
-  .food-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 3px; padding: 1.25rem; text-align: center; }
+  .food-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 3px; padding: 1.25rem; text-align: center; overflow: hidden; }
+  .food-photo { height: 110px; background-size: cover; background-position: center; margin: -1.25rem -1.25rem 0.75rem; }
   .food-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
   .food-name { font-size: 0.78rem; font-weight: 500; color: rgba(255,255,255,0.9); margin-bottom: 0.25rem; }
   .food-detail { font-size: 0.7rem; color: rgba(255,255,255,0.45); line-height: 1.5; }
@@ -145,7 +146,7 @@
   .prac-body { font-size: 0.83rem; color: var(--mid); line-height: 1.7; }
 
   /* CTA */
-  .cta-section { background: linear-gradient(135deg, #0d1f0a 0%, #1a3012 100%); color: white; padding: 5rem; text-align: center; }
+  .cta-section { background: linear-gradient(135deg, #0f3a5c 0%, #1a5a8a 100%); color: white; padding: 5rem; text-align: center; }
   .cta-section .section-title { color: white; margin-bottom: 1rem; }
   .cta-section p { color: rgba(255,255,255,0.6); margin-bottom: 2rem; max-width: 480px; margin-left: auto; margin-right: auto; font-size: 0.95rem; }
   .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
@@ -153,7 +154,7 @@
   .btn-whatsapp { background: #25D366; color: white; padding: 0.9rem 2.5rem; text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; display: inline-block; }
 
   footer { background: #0a0a0a; color: rgba(255,255,255,0.35); padding: 2rem 5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; }
-  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: rgba(255,255,255,0.75); }
+  .footer-logo { font-family: 'Manrope', sans-serif; font-size: 1.1rem; font-weight: 600; color: rgba(255,255,255,0.75); }
   .footer-logo span { color: var(--accent); }
 
   @media (max-width: 768px) {
@@ -172,8 +173,11 @@
 <body>
 
 <nav>
-  <a href="index.html" class="nav-logo">Blue Sky <span>Vacation</span></a>
-  <a href="index.html" class="nav-back">← Back to tours</a>
+  <a href="index.html" class="nav-logo"><img src="logo-mark.png" alt="" style="height:30px;width:30px;border-radius:7px;object-fit:cover;vertical-align:middle;margin-right:0.55rem;">Blue Sky <span style="color: #3FA2E1">Vacation</span></a>
+  <div style="display:flex;align-items:center;gap:1.25rem;">
+    <a href="index.html" class="nav-back">← All tours</a>
+    <a href="https://wa.me/60164802332?text=Hi%20Blue%20Sky%20Vacation%2C%20I'd%20like%20to%20plan%20a%20trip." style="background:#16384f;color:#fff;text-decoration:none;font-size:0.8rem;font-weight:600;padding:0.55rem 1.1rem;border-radius:100px;white-space:nowrap;">Plan my trip</a>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -188,7 +192,7 @@
     <p class="hero-sub">域见北疆 · Discover the Last Frontier of China</p>
     <p class="hero-desc">Three worlds in one destination — the fairy-tale birch forests and glacial lakes of Altay, the rolling sub-alpine meadows of Ili, and in winter, a frozen wonderland no photograph has ever fully captured. Kanas, Hemu, Sayram Lake, the Duku Highway, and Ghost City.</p>
     <div class="hero-actions">
-      <a href="https://wa.me/60XXXXXXXXX?text=Hi,%20I'm%20interested%20in%20the%20Northern%20Xinjiang%20tour" class="btn-grass">Enquire now</a>
+      <a href="https://wa.me/60164802332?text=Hi,%20I'm%20interested%20in%20the%20Northern%20Xinjiang%20tour" class="btn-grass">Enquire now</a>
       <a href="#packages" class="btn-outline">Compare packages</a>
     </div>
   </div>
@@ -277,7 +281,21 @@
         </div>
       </div>
     </div>
-    <p style="font-size:0.82rem; color:var(--mid); background:var(--white); padding:1rem 1.25rem; border-radius:3px; border:1px solid var(--light-line);">Contact us for pricing — tours are priced per departure date and group size. All tours conducted in Mandarin. Minimum group applies. Itinerary adjustable for May and October departures (Duku Highway not open; train alternative via Yining).</p>
+    <div style="background:linear-gradient(150deg,#0f3a5c,#1a5a8a 70%,#2f9be0);color:#fff;border-radius:4px;padding:1.75rem 2rem;display:flex;flex-wrap:wrap;gap:2rem 3rem;align-items:center;margin-bottom:1rem;">
+      <div><span style="font-family:'Manrope',sans-serif;font-size:2.2rem;font-weight:700;display:block;line-height:1;">RM 8,099</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">From · per person, twin share</span></div>
+      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">RM 1,500</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Single supp. (from)</span></div>
+      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">11D · 10N</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Summer · May–Oct 2026</span></div>
+      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">RM 2,000</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Deposit / person</span></div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.9rem;">
+      <span style="font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);font-weight:500;align-self:center;">Departures:</span>
+      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">23 May</span>
+      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">9–16 Jun</span>
+      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">27–28 Aug</span>
+      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">1–18 Sep</span>
+      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">8–10 Oct · train</span>
+    </div>
+    <p style="font-size:0.82rem; color:var(--mid); background:var(--white); padding:1rem 1.25rem; border-radius:3px; border:1px solid var(--light-line);">Fares vary by departure date and peak periods — we'll confirm the exact price for your dates. All tours conducted in Mandarin. May &amp; October departures use a high-speed train alternative via Yining (Duku Highway not yet open).</p>
   </div>
 
   <!-- ELITE -->
@@ -306,7 +324,21 @@
         </ul>
       </div>
     </div>
-    <p style="font-size:0.82rem; color:var(--mid); background:var(--white); padding:1rem 1.25rem; border-radius:3px; border:1px solid var(--light-line);">Elite pricing available on request. Contact us to compare Classic vs Elite for your travel dates and group size.</p>
+    <div style="background:linear-gradient(150deg,#0f3a5c,#1a5a8a 70%,#2f9be0);color:#fff;border-radius:4px;padding:1.75rem 2rem;display:flex;flex-wrap:wrap;gap:2rem 3rem;align-items:center;margin-bottom:1rem;">
+      <div><span style="font-family:'Manrope',sans-serif;font-size:2.2rem;font-weight:700;display:block;line-height:1;">RM 9,999</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">From · per person, twin share</span></div>
+      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">RM 2,590</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Single supp. (from)</span></div>
+      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">11D · 10N</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Summer · May–Oct 2026</span></div>
+      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">RM 2,000</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Deposit / person</span></div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.9rem;">
+      <span style="font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);font-weight:500;align-self:center;">Departures:</span>
+      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">23–24 May</span>
+      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">9–16 Jun</span>
+      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">27–28 Aug</span>
+      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">1–18 Sep</span>
+      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">8–10 Oct</span>
+    </div>
+    <p style="font-size:0.82rem; color:var(--mid); background:var(--white); padding:1rem 1.25rem; border-radius:3px; border:1px solid var(--light-line);">Elite runs a smaller group with upgraded hotels and dining on the same itinerary. Fares vary by departure date and peak periods — we'll confirm the exact price for your dates.</p>
   </div>
 
   <!-- WINTER -->
@@ -344,7 +376,63 @@
         </ul>
       </div>
     </div>
-    <p style="font-size:0.82rem; color:var(--mid); background:var(--white); padding:1rem 1.25rem; border-radius:3px; border:1px solid var(--light-line);">Winter pricing available on request. Tours conducted in Mandarin. All entrance fees included. Ski clothing not included for General Mountain Ski Resort. Scenery varies by weather conditions — the tour operator will advise on seasonal highlights at time of booking.</p>
+    <div style="background:linear-gradient(150deg,#0f3a5c,#1a5a8a 70%,#2f9be0);color:#fff;border-radius:4px;padding:1.75rem 2rem;display:flex;flex-wrap:wrap;gap:2rem 3rem;align-items:center;margin-bottom:1rem;">
+      <div><span style="font-family:'Manrope',sans-serif;font-size:2.2rem;font-weight:700;display:block;line-height:1;">RM 9,299</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Per person, twin share</span></div>
+      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">RM 1,670</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Single supplement</span></div>
+      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">9D · 8N</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Winter · Nov 2026–Feb 2027</span></div>
+      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">RM 2,000</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Deposit / person</span></div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.9rem;">
+      <span style="font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);font-weight:500;align-self:center;">Departures:</span>
+      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">20 Nov</span>
+      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">27 Nov</span>
+      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">5 Dec</span>
+      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">18 Dec</span>
+      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">8 Jan</span>
+      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">15 Jan</span>
+      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">14 Feb</span>
+      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">22 Feb</span>
+    </div>
+    <p style="font-size:0.82rem; color:var(--mid); background:var(--white); padding:1rem 1.25rem; border-radius:3px; border:1px solid var(--light-line);">1+1 luxury MPV throughout, 4&#9733;+5&#9733; hotels, all entrance fees included. Tours conducted in Mandarin. Ski clothing not included at General Mountain Ski Resort; seasonal scenery varies with weather.</p>
+  </div>
+
+  <!-- BOOKING ESSENTIALS -->
+  <div style="margin-top:2.5rem;">
+    <div class="compare-title" style="margin-bottom:1.25rem;">Booking essentials — all packages</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+      <div style="background:var(--white);border:1px solid var(--light-line);border-radius:3px;padding:1.4rem 1.5rem;">
+        <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--sky);font-weight:600;margin-bottom:0.7rem;">Child fares · under 11</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.45rem;font-size:0.83rem;color:var(--mid);line-height:1.5;">
+          <li><strong style="color:var(--charcoal);font-weight:600;">With bed</strong> — less 5% of adult fare</li>
+          <li><strong style="color:var(--charcoal);font-weight:600;">No bed</strong> — less 10% of adult fare</li>
+          <li><strong style="color:var(--charcoal);font-weight:600;">Infant</strong> — less 90% (under 24 months)</li>
+        </ul>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--light-line);border-radius:3px;padding:1.4rem 1.5rem;">
+        <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--sky);font-weight:600;margin-bottom:0.7rem;">Flights · China Southern</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.45rem;font-size:0.83rem;color:var(--mid);line-height:1.5;">
+          <li>KUL ✈ Guangzhou ✈ Ürümqi (CZ), return</li>
+          <li>23kg checked baggage included</li>
+          <li>Overnight KLIA1 departure</li>
+        </ul>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--light-line);border-radius:3px;padding:1.4rem 1.5rem;">
+        <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--sky);font-weight:600;margin-bottom:0.7rem;">Booking &amp; group</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.45rem;font-size:0.83rem;color:var(--mid);line-height:1.5;">
+          <li><strong style="color:var(--charcoal);font-weight:600;">RM 2,000</strong> deposit per person</li>
+          <li>10 to depart · tour leader from 16</li>
+          <li>Conducted in Mandarin</li>
+        </ul>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--light-line);border-radius:3px;padding:1.4rem 1.5rem;">
+        <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--sky);font-weight:600;margin-bottom:0.7rem;">Optional · Travel insurance</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.45rem;font-size:0.83rem;color:var(--mid);line-height:1.5;">
+          <li>Chubb Executive, Zone 1 (11–15 days)</li>
+          <li><strong style="color:var(--charcoal);font-weight:600;">From RM 88</strong> individual (under 65)</li>
+          <li>Family &amp; senior plans available</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -354,7 +442,7 @@
   <h2 class="section-title">Nine landscapes.<br>One extraordinary journey.</h2>
   <div class="highlights-grid">
     <div class="hl-card">
-      <div class="hl-top" style="background:#1a6b4a;"></div>
+      <div class="hl-top" style="height:180px;background:url('kanas.jpg') center/cover;"></div>
       <div class="hl-body">
         <div class="hl-icon">🏔️</div>
         <div class="hl-tag">Northern Altay</div>
@@ -363,7 +451,7 @@
       </div>
     </div>
     <div class="hl-card">
-      <div class="hl-top" style="background:#4a7a1a;"></div>
+      <div class="hl-top" style="height:180px;background:url('hemu.webp') center/cover;"></div>
       <div class="hl-body">
         <div class="hl-icon">🌲</div>
         <div class="hl-tag">Northern Altay · Autumn Gold</div>
@@ -373,7 +461,7 @@
       </div>
     </div>
     <div class="hl-card">
-      <div class="hl-top" style="background:#c85a1a;"></div>
+      <div class="hl-top" style="height:180px;background:url('wucai.jpg') center/cover;"></div>
       <div class="hl-body">
         <div class="hl-icon">🌈</div>
         <div class="hl-tag">Northern Altay · Sunset</div>
@@ -382,7 +470,7 @@
       </div>
     </div>
     <div class="hl-card">
-      <div class="hl-top" style="background:#5a3a8a;"></div>
+      <div class="hl-top" style="height:180px;background:url('ghostcity.jpg') center/cover;"></div>
       <div class="hl-body">
         <div class="hl-icon">👻</div>
         <div class="hl-tag">Karamay · Yadan Landforms</div>
@@ -391,7 +479,7 @@
       </div>
     </div>
     <div class="hl-card">
-      <div class="hl-top" style="background:#1a5a8a;"></div>
+      <div class="hl-top" style="height:180px;background:url('sayram.jpg') center/cover;"></div>
       <div class="hl-body">
         <div class="hl-icon">💎</div>
         <div class="hl-tag">Ili · Any season</div>
@@ -401,7 +489,7 @@
       </div>
     </div>
     <div class="hl-card">
-      <div class="hl-top" style="background:#2a6a2a;"></div>
+      <div class="hl-top" style="height:180px;background:url('nalati.jpg') center/cover;"></div>
       <div class="hl-body">
         <div class="hl-icon">🐎</div>
         <div class="hl-tag">Ili · Seasonal</div>
@@ -411,7 +499,7 @@
       </div>
     </div>
     <div class="hl-card">
-      <div class="hl-top" style="background:#8a2a0a;"></div>
+      <div class="hl-top" style="height:180px;background:url('duku.jpg') center/cover;"></div>
       <div class="hl-body">
         <div class="hl-icon">🛣️</div>
         <div class="hl-tag">Seasonal · Jun–Sep</div>
@@ -421,7 +509,7 @@
       </div>
     </div>
     <div class="hl-card">
-      <div class="hl-top" style="background:#4a6a1a;"></div>
+      <div class="hl-top" style="height:180px;background:url('lavender.jpg') center 30%/cover;"></div>
       <div class="hl-body">
         <div class="hl-icon">🌸</div>
         <div class="hl-tag">Ili · Seasonal</div>
@@ -431,7 +519,7 @@
       </div>
     </div>
     <div class="hl-card">
-      <div class="hl-top" style="background:#1a3a6a;"></div>
+      <div class="hl-top" style="height:180px;background:url('ski-resort.jpg') center/cover;"></div>
       <div class="hl-body">
         <div class="hl-icon">⛷️</div>
         <div class="hl-tag">Winter exclusive</div>
@@ -766,14 +854,14 @@
   <p class="section-eyebrow" style="color:rgba(255,255,255,0.4)">Xinjiang food culture</p>
   <h2 class="section-title">Eating your way across Northern Xinjiang</h2>
   <div class="food-grid">
-    <div class="food-card"><div class="food-icon">🐑</div><div class="food-name">Roast Whole Lamb 烤全羊</div><div class="food-detail">Farewell banquet on the final night — the most ceremonial meal in Xinjiang</div></div>
-    <div class="food-card"><div class="food-icon">🍚</div><div class="food-name">Hand-Grabbed Rice 手抓饭</div><div class="food-detail">The definitive Uyghur dish — lamb, carrots, raisins over slow-cooked rice</div></div>
-    <div class="food-card"><div class="food-icon">🍗</div><div class="food-name">Big Plate Chicken 大盘鸡</div><div class="food-detail">Xinjiang's most famous dish — spiced chicken and potato in a wide clay plate</div></div>
-    <div class="food-card"><div class="food-icon">🐟</div><div class="food-name">Burqin Cold-Water Fish 冷水鱼</div><div class="food-detail">Clear mountain stream trout from the Irtysh — simply grilled or steamed</div></div>
-    <div class="food-card"><div class="food-icon">🍢</div><div class="food-name">Xinjiang BBQ Skewers 烤串</div><div class="food-detail">Lamb skewers from the night market — seasoned with cumin and chilli</div></div>
-    <div class="food-card"><div class="food-icon">🍖</div><div class="food-name">Signature Lamb Ribs 羊排</div><div class="food-detail">Braised or grilled — Xinjiang's lamb is uniquely sweet from mountain grass</div></div>
-    <div class="food-card"><div class="food-icon">🍲</div><div class="food-name">Hemu Clay Pot Hotpot</div><div class="food-detail">Winter exclusive — warming clay pot with Tuva-style broth in the snow village</div></div>
-    <div class="food-card"><div class="food-icon">🍜</div><div class="food-name">Xinjiang Lagman Noodles 拌面</div><div class="food-detail">Hand-pulled noodles with lamb and vegetables — a Uyghur staple</div></div>
+    <div class="food-card"><div class="food-photo" style="background-image:url('food-roast-lamb.jpg');"></div><div class="food-icon">🐑</div><div class="food-name">Roast Whole Lamb 烤全羊</div><div class="food-detail">Farewell banquet on the final night — the most ceremonial meal in Xinjiang</div></div>
+    <div class="food-card"><div class="food-photo" style="background-image:url('food-hand-rice.webp');"></div><div class="food-icon">🍚</div><div class="food-name">Hand-Grabbed Rice 手抓饭</div><div class="food-detail">The definitive Uyghur dish — lamb, carrots, raisins over slow-cooked rice</div></div>
+    <div class="food-card"><div class="food-photo" style="background-image:url('food-bigplate-chicken.webp');"></div><div class="food-icon">🍗</div><div class="food-name">Big Plate Chicken 大盘鸡</div><div class="food-detail">Xinjiang's most famous dish — spiced chicken and potato in a wide clay plate</div></div>
+    <div class="food-card"><div class="food-photo" style="background-image:url('food-coldwater-fish.jpg');"></div><div class="food-icon">🐟</div><div class="food-name">Burqin Cold-Water Fish 冷水鱼</div><div class="food-detail">Clear mountain stream trout from the Irtysh — simply grilled or steamed</div></div>
+    <div class="food-card"><div class="food-photo" style="background-image:url('food-bbq-skewers.jpg');"></div><div class="food-icon">🍢</div><div class="food-name">Xinjiang BBQ Skewers 烤串</div><div class="food-detail">Lamb skewers from the night market — seasoned with cumin and chilli</div></div>
+    <div class="food-card"><div class="food-photo" style="background-image:url('food-lamb-ribs.jpg');"></div><div class="food-icon">🍖</div><div class="food-name">Signature Lamb Ribs 羊排</div><div class="food-detail">Braised or grilled — Xinjiang's lamb is uniquely sweet from mountain grass</div></div>
+    <div class="food-card"><div class="food-photo" style="background-image:url('food-hemu-hotpot.jpg');background-position:center 35%;"></div><div class="food-icon">🍲</div><div class="food-name">Hemu Clay Pot Hotpot</div><div class="food-detail">Winter exclusive — warming clay pot with Tuva-style broth in the snow village</div></div>
+    <div class="food-card"><div class="food-photo" style="background-image:url('food-lagman-noodles.jpg');"></div><div class="food-icon">🍜</div><div class="food-name">Xinjiang Lagman Noodles 拌面</div><div class="food-detail">Hand-pulled noodles with lamb and vegetables — a Uyghur staple</div></div>
   </div>
 </div>
 
@@ -802,14 +890,55 @@
   <h2 class="section-title">Xinjiang awaits.</h2>
   <p>Tell us your preferred travel season and group size. We'll recommend Classic, Elite, or Winter — and get you pricing and departure dates.</p>
   <div class="cta-buttons">
-    <a href="https://wa.me/60XXXXXXXXX?text=Hi,%20I'm%20interested%20in%20the%20Northern%20Xinjiang%20tour.%20Please%20advise%20on%20dates%20and%20pricing." class="btn-whatsapp">WhatsApp to enquire</a>
-    <a href="mailto:info@blueskyvacation.com.my?subject=Northern Xinjiang Tour Enquiry" class="btn-white">Email us</a>
+    <a href="https://wa.me/60164802332?text=Hi,%20I'm%20interested%20in%20the%20Northern%20Xinjiang%20tour.%20Please%20advise%20on%20dates%20and%20pricing." class="btn-whatsapp">WhatsApp to enquire</a>
+    <a href="mailto:bsvacation123@gmail.com?subject=Northern Xinjiang Tour Enquiry" class="btn-white">Email us</a>
   </div>
 </div>
 
-<footer>
-  <div class="footer-logo">Blue Sky <span>Vacation</span> · KPK/LN:7700</div>
-  <p>© 2026 Blue Sky Vacation Sdn Bhd · Kota Kinabalu, Sabah</p>
+<section style="padding:5rem 5rem;background:var(--white);border-top:1px solid var(--light-line);">
+  <p style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:0.8rem;">Keep exploring</p>
+  <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,2.5vw,2.4rem);font-weight:600;margin-bottom:2.5rem;color:var(--charcoal);">More tours from Blue Sky</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;">
+      <a href="tour-hangzhou.html" style="display:block;text-decoration:none;color:inherit;border:1px solid var(--light-line);border-radius:3px;overflow:hidden;background:var(--white);">
+        <div style="height:120px;background:linear-gradient(135deg,#0B4F8A,#062a4a);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🤖</div>
+        <div style="padding:1.25rem 1.5rem;">
+          <div style="font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:#1a7a3c;font-weight:600;margin-bottom:0.4rem;">100% HRDF · 8D6N</div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;margin-bottom:0.35rem;color:var(--charcoal);">Hangzhou AI Study Trip</h3>
+          <p style="font-size:0.8rem;color:var(--mid);line-height:1.6;">Alibaba, Geely EV, BrainCo, iFlytek &amp; Robot Town.</p>
+        </div>
+      </a>
+      <a href="tour-shenzhen.html" style="display:block;text-decoration:none;color:inherit;border:1px solid var(--light-line);border-radius:3px;overflow:hidden;background:var(--white);">
+        <div style="height:120px;background:linear-gradient(135deg,#1a0a2e,#0a2040);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🔋</div>
+        <div style="padding:1.25rem 1.5rem;">
+          <div style="font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:#1a7a3c;font-weight:600;margin-bottom:0.4rem;">100% HRDF · 7D6N</div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;margin-bottom:0.35rem;color:var(--charcoal);">Shenzhen AI Study Trip</h3>
+          <p style="font-size:0.8rem;color:var(--mid);line-height:1.6;">BYD, UBTECH humanoids, Baidu Apollo &amp; DJI drones.</p>
+        </div>
+      </a>
+      <a href="tour-hainan.html" style="display:block;text-decoration:none;color:inherit;border:1px solid var(--light-line);border-radius:3px;overflow:hidden;background:var(--white);">
+        <div style="height:120px;background:linear-gradient(135deg,#0a5f7a,#0e7a6e);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🏝️</div>
+        <div style="padding:1.25rem 1.5rem;">
+          <div style="font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:0.4rem;">Leisure · 6 Days</div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;margin-bottom:0.35rem;color:var(--charcoal);">Hainan Island Carnival</h3>
+          <p style="font-size:0.8rem;color:var(--mid);line-height:1.6;">Direct KK–Haikou. Ocean Flower Island &amp; Sanya Atlantis.</p>
+        </div>
+      </a>
+  </div>
+</section>
+
+<footer style="align-items:flex-start;gap:2rem;flex-wrap:wrap;">
+  <div style="max-width:300px;">
+    <div class="footer-logo">Blue Sky <span>Vacation</span></div>
+    <p style="margin-top:0.75rem;line-height:1.7;">D3-3, Block D, Tanjung Aru Plaza, Jalan Tun Mustapha, Tanjung Aru, 88100 Kota Kinabalu, Sabah</p>
+  </div>
+  <div style="line-height:1.9;">
+    <a href="https://wa.me/60164802332" style="color:rgba(255,255,255,0.65);text-decoration:none;display:block;">WhatsApp · +60 16-480 2332</a>
+    <a href="mailto:bsvacation123@gmail.com" style="color:rgba(255,255,255,0.65);text-decoration:none;display:block;">bsvacation123@gmail.com</a>
+    <a href="index.html" style="color:rgba(255,255,255,0.65);text-decoration:none;display:block;">← All tours</a>
+  </div>
+  <div style="line-height:1.7;opacity:0.8;">
+    © 2026 Blue Sky Vacation Sdn Bhd<br>Co. No. 1083236 · KPK/LN:7700<br>Kota Kinabalu, Sabah
+  </div>
 </footer>
 
 <script>

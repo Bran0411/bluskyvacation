@@ -3,846 +3,525 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Blue Sky Vacation — Curated travel experiences from Kota Kinabalu. Explore Borneo and beyond with a travel company that knows every detail.">
-<title>Blue Sky Vacation | Curated Travel from Kota Kinabalu</title>
+<meta name="description" content="Blue Sky Vacation — a curated travel company in Kota Kinabalu, Sabah. Thoughtfully designed journeys across Sabah, China and beyond. Plan a custom trip on WhatsApp.">
+<title>Blue Sky Vacation | Thoughtfully Designed Journeys from Kota Kinabalu</title>
+<link rel="icon" href="logo-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --sky: #0B4F8A;
-    --sky-light: #E8F2FB;
-    --teal: #0E7A6E;
-    --sand: #F7F3EE;
-    --charcoal: #1A1A1A;
-    --mid: #4A4A4A;
-    --light-line: #E2DDD8;
-    --white: #FFFFFF;
-    --accent: #C9793A;
+    --paper: #fbfcfd;
+    --ink: #16384f;
+    --ink2: #11202b;
+    --sky: #2f9be0;
+    --sky-deep: #1a4a6e;
+    --sand: #f6f0e6;
+    --sky-tint: #eef7f8;
+    --green-tint: #edf4ee;
+    --line: #e6edf1;
+    --muted: #5c6b76;
+    --white: #ffffff;
+    --hrdf: #1a7a3c;
   }
-
   html { scroll-behavior: smooth; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--ink); background: var(--paper); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  .display { font-family: 'Manrope', sans-serif; font-weight: 800; letter-spacing: -0.02em; line-height: 1.08; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
 
-  body {
-    font-family: 'Inter', sans-serif;
-    color: var(--charcoal);
-    background: var(--white);
-    font-weight: 300;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 2rem; }
 
   /* NAV */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.25rem 3rem;
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-    transition: padding 0.3s;
-  }
+  .nav { position: sticky; top: 0; z-index: 100; background: rgba(251,252,253,0.85); backdrop-filter: blur(14px); border-bottom: 1px solid transparent; transition: border-color 0.3s, box-shadow 0.3s; }
+  .nav.scrolled { border-color: var(--line); box-shadow: 0 4px 20px rgba(20,50,70,0.05); }
+  .nav-inner { max-width: 1240px; margin: 0 auto; padding: 0.9rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+  .brand { display: flex; align-items: center; gap: 0.55rem; font-weight: 700; font-size: 1.05rem; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+  .brand img { width: 30px; height: 30px; border-radius: 8px; }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a { text-decoration: none; font-size: 0.9rem; font-weight: 500; color: var(--ink); opacity: 0.78; transition: opacity 0.2s; }
+  .nav-links a:hover { opacity: 1; }
+  .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+  .nav-cta { background: var(--ink); color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.6rem 1.15rem; border-radius: 100px; transition: background 0.2s; white-space: nowrap; }
+  .nav-cta:hover { background: var(--sky-deep); }
+  .nav-burger { display: none; background: none; border: none; font-size: 1.3rem; color: var(--ink); cursor: pointer; }
 
-  .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--sky);
-    letter-spacing: 0.02em;
-    text-decoration: none;
-  }
-
-  .nav-logo span { color: var(--accent); }
-
-  .nav-links {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
-  }
-
-  .nav-links a {
-    text-decoration: none;
-    font-size: 0.82rem;
-    font-weight: 400;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--mid);
-    transition: color 0.2s;
-  }
-
-  .nav-links a:hover { color: var(--sky); }
-
-  .nav-cta {
-    background: var(--sky);
-    color: var(--white) !important;
-    padding: 0.6rem 1.4rem;
-    border-radius: 2px;
-    font-size: 0.78rem !important;
-    transition: background 0.2s !important;
-  }
-
-  .nav-cta:hover { background: var(--teal) !important; color: var(--white) !important; }
-
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-top: 80px;
-  }
-
-  .hero-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 6rem 4rem 6rem 5rem;
-    background: var(--sand);
-  }
-
-  .hero-eyebrow {
-    font-size: 0.72rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--accent);
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-  }
-
-  .hero-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.8rem, 4.5vw, 4.2rem);
-    line-height: 1.1;
-    font-weight: 600;
-    color: var(--charcoal);
-    margin-bottom: 1.5rem;
-  }
-
-  .hero-title em {
-    font-style: italic;
-    color: var(--sky);
-  }
-
-  .hero-sub {
-    font-size: 1rem;
-    color: var(--mid);
-    max-width: 380px;
-    line-height: 1.8;
-    margin-bottom: 2.5rem;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .btn-primary {
-    background: var(--sky);
-    color: var(--white);
-    padding: 0.9rem 2rem;
-    text-decoration: none;
-    font-size: 0.82rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    border-radius: 2px;
-    transition: background 0.2s;
-    display: inline-block;
-  }
-
-  .btn-primary:hover { background: var(--teal); }
-
-  .btn-secondary {
-    border: 1px solid var(--sky);
-    color: var(--sky);
-    padding: 0.9rem 2rem;
-    text-decoration: none;
-    font-size: 0.82rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    border-radius: 2px;
-    transition: all 0.2s;
-    display: inline-block;
-  }
-
-  .btn-secondary:hover { background: var(--sky-light); }
-
-  .hero-right {
-    position: relative;
-    overflow: hidden;
-    background: var(--sky);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hero-image-placeholder {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(160deg, #0B4F8A 0%, #0E7A6E 60%, #1a9a8a 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    color: rgba(255,255,255,0.5);
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 2rem;
-  }
-
-  .hero-image-placeholder svg {
-    opacity: 0.3;
-  }
-
-  /* Overlay stats on hero */
-  .hero-stat-bar {
-    position: absolute;
-    bottom: 2.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 0;
-    background: rgba(255,255,255,0.12);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 4px;
-    overflow: hidden;
-  }
-
-  .hero-stat {
-    padding: 1rem 1.75rem;
-    text-align: center;
-    border-right: 1px solid rgba(255,255,255,0.15);
-  }
-
-  .hero-stat:last-child { border-right: none; }
-
-  .hero-stat-num {
-    display: block;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: var(--white);
-    line-height: 1;
-    margin-bottom: 0.25rem;
-  }
-
-  .hero-stat-label {
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.65);
-  }
-
-  /* MARQUEE */
-  .marquee-bar {
-    background: var(--sky);
-    color: rgba(255,255,255,0.7);
-    padding: 0.85rem 0;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-
-  .marquee-inner {
-    display: inline-block;
-    animation: marquee 28s linear infinite;
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
-
-  @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
+  /* HERO (bright coastal) */
+  .hero { padding: 1.2rem 2rem 2rem; max-width: 1240px; margin: 0 auto; }
+  .hero-card { position: relative; border-radius: 30px; overflow: hidden; height: 640px; box-shadow: 0 24px 60px rgba(20,50,70,0.16); }
+  .hero-slideshow { position: absolute; inset: 0; }
+  .hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.1s ease; }
+  .hero-slide.active { opacity: 1; }
+  .hero-slide img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-tint { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,30,45,0.18) 0%, rgba(10,30,45,0.05) 38%, rgba(8,24,38,0.78) 100%); }
+  .hero-copy { position: absolute; left: 0; right: 0; bottom: 0; padding: 3rem 3.2rem; color: #fff; }
+  .hero-eyebrow { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: rgba(255,255,255,0.88); margin-bottom: 1rem; }
+  .hero-h { font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2.6rem, 5vw, 4.4rem); font-weight: 800; letter-spacing: -0.025em; line-height: 1.02; max-width: 14ch; margin-bottom: 1.1rem; }
+  .hero-sub { font-size: 1.05rem; line-height: 1.6; color: rgba(255,255,255,0.9); max-width: 440px; margin-bottom: 1.9rem; }
+  .hero-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+  .btn { font-size: 0.92rem; font-weight: 600; padding: 0.95rem 1.7rem; border-radius: 100px; text-decoration: none; transition: transform 0.15s, background 0.2s; display: inline-block; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-sky { background: var(--sky); color: #fff; }
+  .btn-glass { background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.45); color: #fff; backdrop-filter: blur(6px); }
+  .hero-dots { position: absolute; top: 1.6rem; right: 1.8rem; display: flex; gap: 0.5rem; z-index: 3; }
+  .hero-dot { width: 8px; height: 8px; padding: 0; border: none; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer; transition: background 0.3s, width 0.3s; }
+  .hero-dot.active { background: #fff; width: 22px; border-radius: 4px; }
 
   /* SECTION BASE */
-  section { padding: 6rem 5rem; }
+  section.block { padding: 5.5rem 0; }
+  .kicker { font-size: 0.76rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sky); font-weight: 700; margin-bottom: 0.9rem; }
+  .sec-h { font-size: clamp(1.9rem, 3.2vw, 2.9rem); margin-bottom: 1rem; color: var(--ink); }
+  .lead { font-size: 1.05rem; color: var(--muted); line-height: 1.7; max-width: 560px; }
+  .sec-head { margin-bottom: 2.6rem; }
+  .sec-head.center { text-align: center; }
+  .sec-head.center .lead { margin: 0 auto; }
 
-  .section-eyebrow {
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--accent);
-    font-weight: 500;
-    margin-bottom: 1rem;
-  }
-
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 3vw, 2.8rem);
-    font-weight: 600;
-    line-height: 1.15;
-    margin-bottom: 1.25rem;
-  }
-
-  .section-body {
-    font-size: 0.95rem;
-    color: var(--mid);
-    max-width: 520px;
-    line-height: 1.85;
-  }
+  /* WHY */
+  .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.1rem; }
+  .why-card { background: var(--white); border: 1px solid var(--line); border-radius: 20px; padding: 1.8rem 1.6rem; transition: transform 0.2s, box-shadow 0.2s; }
+  .why-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(20,50,70,0.08); }
+  .why-ic { width: 46px; height: 46px; border-radius: 13px; display: flex; align-items: center; justify-content: center; font-size: 1.35rem; margin-bottom: 1.1rem; background: var(--sky-tint); }
+  .why-card:nth-child(2) .why-ic { background: var(--sand); }
+  .why-card:nth-child(3) .why-ic { background: var(--green-tint); }
+  .why-card:nth-child(4) .why-ic { background: #eaf1f8; }
+  .why-t { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 1.08rem; margin-bottom: 0.4rem; letter-spacing: -0.01em; }
+  .why-d { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
 
   /* DESTINATIONS */
-  .destinations {
-    background: var(--sand);
-  }
+  .dest { background: linear-gradient(180deg, var(--paper) 0%, var(--sky-tint) 100%); }
+  .dest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.3rem; }
+  .dcard { position: relative; height: 340px; border-radius: 24px; overflow: hidden; text-decoration: none; color: #fff; box-shadow: 0 14px 34px rgba(20,50,70,0.1); transition: transform 0.25s; display: block; }
+  .dcard:hover { transform: translateY(-5px); }
+  .dcard .ph { position: absolute; inset: 0; background-size: cover; background-position: center; }
+  .dcard .ph-label { position: absolute; top: 1rem; left: 1.1rem; font-family: 'Plus Jakarta Sans', monospace; font-size: 0.62rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.75); }
+  .dcard-tint { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(8,24,38,0.72) 100%); }
+  .dcard-copy { position: absolute; left: 0; bottom: 0; padding: 1.6rem 1.7rem; }
+  .dcard-name { font-family: 'Manrope', sans-serif; font-size: 1.7rem; font-weight: 800; letter-spacing: -0.02em; }
+  .dcard-tag { font-size: 0.86rem; font-weight: 500; color: rgba(255,255,255,0.85); margin-top: 0.2rem; }
+  .soon-badge { position: absolute; top: 1.1rem; right: 1.1rem; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35); backdrop-filter: blur(6px); color: #fff; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.32rem 0.7rem; border-radius: 100px; }
 
-  .destinations-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 3.5rem;
-  }
+  /* JOURNEYS */
+  .jrn-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.1rem; }
+  .jcard { position: relative; border-radius: 20px; overflow: hidden; text-decoration: none; color: #fff; box-shadow: 0 12px 30px rgba(20,50,70,0.1); transition: transform 0.25s; display: block; height: 360px; }
+  .jcard:hover { transform: translateY(-5px); }
+  .jcard-bg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 3.2rem; }
+  .jcard-tint { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 35%, rgba(8,18,30,0.82) 100%); }
+  .jcard-copy { position: absolute; left: 0; right: 0; bottom: 0; padding: 1.3rem 1.35rem; }
+  .jcard-badge { display: inline-block; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.28rem 0.6rem; border-radius: 5px; margin-bottom: 0.7rem; }
+  .b-hrdf { background: var(--hrdf); color: #fff; }
+  .b-leisure { background: rgba(255,255,255,0.22); border: 1px solid rgba(255,255,255,0.4); color: #fff; }
+  .jcard-name { font-family: 'Manrope', sans-serif; font-size: 1.18rem; font-weight: 700; letter-spacing: -0.01em; line-height: 1.15; }
+  .jcard-meta { font-size: 0.78rem; color: rgba(255,255,255,0.82); margin-top: 0.35rem; }
+  .jcard-link { font-size: 0.82rem; font-weight: 600; margin-top: 0.8rem; color: #fff; }
 
-  .destinations-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
+  /* EXPERIENCES */
+  .exp { background: var(--ink); color: #fff; }
+  .exp .kicker { color: #7ec8e8; }
+  .exp .sec-h { color: #fff; }
+  .exp .lead { color: rgba(255,255,255,0.72); }
+  .chip-row { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+  .chip { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); border-radius: 100px; padding: 0.75rem 1.3rem; font-size: 0.95rem; font-weight: 600; transition: background 0.2s, transform 0.15s; cursor: default; }
+  .chip:hover { background: rgba(255,255,255,0.16); transform: translateY(-2px); }
 
-  .dest-card {
-    background: var(--white);
-    border-radius: 3px;
-    overflow: hidden;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.3s;
-    display: block;
-  }
+  /* CUSTOM */
+  .custom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
+  .step { display: flex; gap: 1.1rem; align-items: flex-start; padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
+  .step:last-child { border-bottom: none; }
+  .step-n { flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%; background: var(--sky-tint); color: var(--sky-deep); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.95rem; font-family: 'Manrope', sans-serif; }
+  .step-t { font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 1.02rem; margin-bottom: 0.15rem; }
+  .step-d { font-size: 0.88rem; color: var(--muted); line-height: 1.55; }
+  .custom-visual { position: relative; height: 420px; border-radius: 26px; overflow: hidden; background: linear-gradient(155deg, #1a4a6e, #2f9be0 70%, #38b6c4); display: flex; align-items: flex-end; padding: 2rem; box-shadow: 0 20px 46px rgba(20,50,70,0.18); }
+  .custom-visual .ph-label { font-family: 'Plus Jakarta Sans', monospace; font-size: 0.66rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.8); }
+  .custom-quote { color: #fff; }
+  .custom-quote p { font-family: 'Manrope', sans-serif; font-size: 1.4rem; font-weight: 700; line-height: 1.3; letter-spacing: -0.01em; }
 
-  .dest-card:hover { transform: translateY(-4px); }
+  /* TESTIMONIALS */
+  .quotes { background: var(--sand); }
+  .q-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+  .qcard { background: var(--white); border-radius: 20px; padding: 1.9rem 1.7rem; box-shadow: 0 8px 24px rgba(20,50,70,0.05); }
+  .q-stars { color: #e7a93a; font-size: 0.85rem; letter-spacing: 0.1em; margin-bottom: 0.9rem; }
+  .q-text { font-size: 0.98rem; line-height: 1.6; color: var(--ink); margin-bottom: 1.1rem; }
+  .q-who { font-size: 0.8rem; font-weight: 600; color: var(--muted); letter-spacing: 0.02em; }
 
-  .dest-img {
-    height: 220px;
-    display: flex;
-    align-items: flex-end;
-    padding: 1.25rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .dest-img-bg {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 4rem;
-  }
-
-  .dest-img-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 60%);
-  }
-
-  .dest-badge {
-    position: relative;
-    z-index: 1;
-    background: var(--accent);
-    color: white;
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.3rem 0.7rem;
-    border-radius: 2px;
-    font-weight: 500;
-  }
-
-  .dest-body {
-    padding: 1.25rem 1.5rem 1.5rem;
-  }
-
-  .dest-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 0.4rem;
-  }
-
-  .dest-desc {
-    font-size: 0.82rem;
-    color: var(--mid);
-    line-height: 1.7;
-    margin-bottom: 1rem;
-  }
-
-  .dest-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--light-line);
-    font-size: 0.78rem;
-  }
-
-  .dest-duration { color: var(--mid); }
-  .dest-link { color: var(--sky); font-weight: 500; }
-
-  /* WHY US */
-  .why {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: center;
-    padding: 6rem 5rem;
-  }
-
-  .why-left .section-body { margin-bottom: 2rem; }
-
-  .why-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  }
-
-  .why-item {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-  }
-
-  .why-icon {
-    width: 36px;
-    height: 36px;
-    background: var(--sky-light);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    font-size: 0.9rem;
-    margin-top: 2px;
-  }
-
-  .why-text strong {
-    display: block;
-    font-size: 0.88rem;
-    font-weight: 500;
-    color: var(--charcoal);
-    margin-bottom: 0.2rem;
-  }
-
-  .why-text span {
-    font-size: 0.82rem;
-    color: var(--mid);
-    line-height: 1.6;
-  }
-
-  .why-right {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-
-  .why-card {
-    background: var(--sand);
-    padding: 1.75rem 1.5rem;
-    border-radius: 3px;
-  }
-
-  .why-card:first-child {
-    grid-column: span 2;
-    background: var(--sky);
-    color: var(--white);
-  }
-
-  .why-card-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.5rem;
-    font-weight: 600;
-    line-height: 1;
-    margin-bottom: 0.4rem;
-  }
-
-  .why-card:first-child .why-card-num { color: rgba(255,255,255,0.95); }
-
-  .why-card-label {
-    font-size: 0.78rem;
-    color: var(--mid);
-  }
-
-  .why-card:first-child .why-card-label { color: rgba(255,255,255,0.65); }
-
-  /* TESTIMONIAL */
-  .testimonial-section {
-    background: var(--charcoal);
-    color: var(--white);
-    text-align: center;
-    padding: 5rem;
-  }
-
-  .testimonial-quote {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.5rem, 2.5vw, 2.1rem);
-    font-style: italic;
-    font-weight: 400;
-    max-width: 720px;
-    margin: 0 auto 2rem;
-    line-height: 1.5;
-    color: rgba(255,255,255,0.9);
-  }
-
-  .testimonial-author {
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.45);
-  }
-
-  .testimonial-accent {
-    width: 40px;
-    height: 2px;
-    background: var(--accent);
-    margin: 0 auto 2.5rem;
-  }
-
-  /* CTA SECTION */
-  .cta-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 420px;
-  }
-
-  .cta-left {
-    background: var(--teal);
-    padding: 5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: var(--white);
-  }
-
-  .cta-left .section-title { color: var(--white); margin-bottom: 1rem; }
-  .cta-left .section-body { color: rgba(255,255,255,0.75); margin-bottom: 2rem; max-width: 360px; }
-
-  .btn-white {
-    background: var(--white);
-    color: var(--teal);
-    padding: 0.9rem 2rem;
-    text-decoration: none;
-    font-size: 0.82rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    border-radius: 2px;
-    transition: opacity 0.2s;
-    display: inline-block;
-    align-self: flex-start;
-  }
-
-  .btn-white:hover { opacity: 0.9; }
-
-  .cta-right {
-    background: var(--sky);
-    padding: 5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: var(--white);
-  }
-
-  .cta-right .section-title { color: var(--white); margin-bottom: 1rem; }
-  .cta-right .section-body { color: rgba(255,255,255,0.75); margin-bottom: 2rem; max-width: 360px; }
-
-  .btn-whatsapp {
-    background: #25D366;
-    color: var(--white);
-    padding: 0.9rem 2rem;
-    text-decoration: none;
-    font-size: 0.82rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    border-radius: 2px;
-    transition: opacity 0.2s;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    align-self: flex-start;
-  }
-
-  .btn-whatsapp:hover { opacity: 0.9; }
+  /* CTA */
+  .cta-block { padding: 2rem 0 5.5rem; }
+  .cta-card { background: linear-gradient(150deg, #11202b 0%, #1a4a6e 55%, #2f9be0 130%); border-radius: 30px; padding: 4.5rem 3rem; text-align: center; color: #fff; box-shadow: 0 24px 60px rgba(20,50,70,0.22); }
+  .cta-card h2 { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.025em; line-height: 1.05; margin-bottom: 1rem; }
+  .cta-card p { font-size: 1.05rem; color: rgba(255,255,255,0.82); max-width: 480px; margin: 0 auto 2rem; }
+  .cta-actions { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; }
+  .btn-wa { background: #25D366; color: #fff; }
+  .btn-white { background: #fff; color: var(--ink); }
 
   /* FOOTER */
-  footer {
-    background: var(--charcoal);
-    color: rgba(255,255,255,0.5);
-    padding: 3rem 5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.78rem;
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
-
-  .footer-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: rgba(255,255,255,0.85);
-  }
-
-  .footer-logo span { color: var(--accent); }
-
-  .footer-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
-
-  .footer-links a {
-    color: rgba(255,255,255,0.45);
-    text-decoration: none;
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    transition: color 0.2s;
-  }
-
-  .footer-links a:hover { color: rgba(255,255,255,0.8); }
+  footer { background: var(--ink2); color: rgba(255,255,255,0.6); padding: 4rem 0 2.5rem; }
+  .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.4fr; gap: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .foot-brand { display: flex; align-items: center; gap: 0.55rem; font-weight: 700; font-size: 1.1rem; color: #fff; margin-bottom: 1rem; }
+  .foot-brand img { width: 30px; height: 30px; border-radius: 8px; }
+  .foot-addr { font-size: 0.88rem; line-height: 1.7; max-width: 280px; }
+  .foot-col h4 { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 1rem; font-weight: 700; }
+  .foot-col a { display: block; font-size: 0.9rem; color: rgba(255,255,255,0.7); text-decoration: none; margin-bottom: 0.6rem; transition: color 0.2s; }
+  .foot-col a:hover { color: #fff; }
+  .foot-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 1.8rem; font-size: 0.78rem; color: rgba(255,255,255,0.4); flex-wrap: wrap; gap: 0.8rem; }
 
   /* MOBILE */
-  @media (max-width: 768px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
-    .hero { grid-template-columns: 1fr; }
-    .hero-right { min-height: 280px; }
-    .hero-left { padding: 3rem 1.5rem; }
-    section { padding: 4rem 1.5rem; }
-    .destinations-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
-    .destinations-grid { grid-template-columns: 1fr; }
-    .why { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 3rem; }
-    .why-right { grid-template-columns: 1fr 1fr; }
-    .why-card:first-child { grid-column: span 2; }
-    .testimonial-section { padding: 4rem 1.5rem; }
-    .cta-section { grid-template-columns: 1fr; }
-    .cta-left, .cta-right { padding: 3.5rem 1.5rem; }
-    footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2.5rem 1.5rem; }
-    .hero-stat-bar { display: none; }
+  @media (max-width: 980px) {
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .jrn-grid { grid-template-columns: 1fr 1fr; }
+    .q-grid { grid-template-columns: 1fr; }
+    .foot-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .custom-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+  @media (max-width: 680px) {
+    .wrap { padding: 0 1.25rem; }
+    .nav-inner { padding: 0.8rem 1.25rem; }
+    .nav-links { position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--paper); border-bottom: 1px solid var(--line); padding: 0.5rem 1.25rem 1rem; box-shadow: 0 14px 30px rgba(20,50,70,0.08); display: none; }
+    .nav-links.open { display: flex; }
+    .nav-links a { padding: 0.85rem 0; border-bottom: 1px solid var(--line); opacity: 1; font-size: 1rem; }
+    .nav-burger { display: block; }
+    .hero { padding: 0.75rem 1rem 1.5rem; }
+    .hero-card { height: 560px; border-radius: 24px; }
+    .hero-copy { padding: 1.8rem 1.6rem; }
+    .dest-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .jrn-grid { grid-template-columns: 1fr; }
+    .jcard { height: 300px; }
+    .foot-grid { grid-template-columns: 1fr; gap: 1.8rem; }
+    section.block { padding: 4rem 0; }
+    .cta-card { padding: 3rem 1.5rem; }
+    .custom-visual { height: 300px; }
   }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav>
-  <a href="#" class="nav-logo">Blue Sky <span>Vacation</span></a>
-  <ul class="nav-links">
-    <li><a href="#destinations">Destinations</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="https://wa.me/60XXXXXXXXX" class="nav-cta">Plan a trip</a></li>
-  </ul>
-</nav>
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><img src="logo-mark.png" alt="Blue Sky Vacation">Blue Sky Vacation</a>
+    <nav class="nav-links" id="navlinks">
+      <a href="#destinations">Destinations</a>
+      <a href="#experiences">Experiences</a>
+      <a href="#journeys">Journeys</a>
+      <a href="#about">About</a>
+    </nav>
+    <div class="nav-right">
+      <a href="https://wa.me/60164802332" class="nav-cta">Plan my trip</a>
+      <button class="nav-burger" id="burger" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
 
 <!-- HERO -->
-<div class="hero">
-  <div class="hero-left">
-    <p class="hero-eyebrow">Kota Kinabalu · Sabah · Malaysia</p>
-    <h1 class="hero-title">
-      Travel the way it<br>
-      was <em>meant to feel.</em>
-    </h1>
-    <p class="hero-sub">
-      Blue Sky Vacation crafts curated journeys across Borneo and beyond — 
-      guided by people who know every trail, every tide, and every hidden table worth sitting at.
-    </p>
-    <div class="hero-actions">
-      <a href="#destinations" class="btn-primary">Explore tours</a>
-      <a href="https://wa.me/60XXXXXXXXX" class="btn-secondary">WhatsApp us</a>
+<section class="hero">
+  <div class="hero-card">
+    <div class="hero-slideshow">
+      <div class="hero-slide active"><img src="489609458_4051532918497248_1940284714742493010_n.jpg" alt="Blue Sky Vacation group at the Library of Celsus, Ephesus"></div>
+      <div class="hero-slide"><img src="485982727_1184343729815511_5118358137774656538_n.jpg" alt="Tour group on a seaside street in China"></div>
+      <div class="hero-slide"><img src="641052910_1446697950246753_6674012609998891816_n.jpg" alt="Tour group at the Sardis gymnasium ruins"></div>
+      <div class="hero-slide"><img src="641202067_1446697946913420_8097102355757341920_n.jpg" alt="Tour group beside ancient ruins and a minaret"></div>
     </div>
-  </div>
-  <div class="hero-right">
-    <div class="hero-image-placeholder">
-      <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-        <rect x="8" y="32" width="48" height="24" rx="2" stroke="white" stroke-width="1.5"/>
-        <path d="M8 32 L32 12 L56 32" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-        <circle cx="32" cy="44" r="6" stroke="white" stroke-width="1.5"/>
-        <path d="M20 56 L20 44 C20 37.4 25.4 32 32 32 C38.6 32 44 37.4 44 44 L44 56" stroke="white" stroke-width="1.5"/>
-      </svg>
-      <span>Add your hero photo here</span>
-      <span style="font-size:0.65rem; opacity:0.6">Replace this section with a stunning Borneo image</span>
+    <div class="hero-tint"></div>
+    <div class="hero-dots">
+      <button class="hero-dot active" data-i="0" aria-label="Show photo 1"></button>
+      <button class="hero-dot" data-i="1" aria-label="Show photo 2"></button>
+      <button class="hero-dot" data-i="2" aria-label="Show photo 3"></button>
+      <button class="hero-dot" data-i="3" aria-label="Show photo 4"></button>
     </div>
-    <div class="hero-stat-bar">
-      <div class="hero-stat">
-        <span class="hero-stat-num">30+</span>
-        <span class="hero-stat-label">Years experience</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-num">500+</span>
-        <span class="hero-stat-label">Happy travellers</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-num">12+</span>
-        <span class="hero-stat-label">Destinations</span>
+    <div class="hero-copy">
+      <p class="hero-eyebrow">Curated travel · Kota Kinabalu, Sabah</p>
+      <h1 class="hero-h">Travel that means something.</h1>
+      <p class="hero-sub">Thoughtfully designed journeys — not packages. We shape the trip around you, then handle every single detail.</p>
+      <div class="hero-actions">
+        <a class="btn btn-sky" href="#destinations">Explore destinations</a>
+        <a class="btn btn-glass" href="https://wa.me/60164802332?text=Hi%20Blue%20Sky%20Vacation%2C%20I'd%20like%20to%20plan%20a%20trip.">Plan my trip</a>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- MARQUEE -->
-<div class="marquee-bar" aria-hidden="true">
-  <span class="marquee-inner">
-    &nbsp;&nbsp;&nbsp;&nbsp;Kota Kinabalu &nbsp;·&nbsp; Mount Kinabalu &nbsp;·&nbsp; Sepilok Orangutan Sanctuary &nbsp;·&nbsp; Kinabatangan River &nbsp;·&nbsp; Semporna Islands &nbsp;·&nbsp; North Borneo Railway &nbsp;·&nbsp; Desa Dairy Farm &nbsp;·&nbsp; Japan &nbsp;·&nbsp; South Korea &nbsp;·&nbsp; Taiwan &nbsp;·&nbsp; Vietnam &nbsp;·&nbsp; 
-    Kota Kinabalu &nbsp;·&nbsp; Mount Kinabalu &nbsp;·&nbsp; Sepilok Orangutan Sanctuary &nbsp;·&nbsp; Kinabatangan River &nbsp;·&nbsp; Semporna Islands &nbsp;·&nbsp; North Borneo Railway &nbsp;·&nbsp; Desa Dairy Farm &nbsp;·&nbsp; Japan &nbsp;·&nbsp; South Korea &nbsp;·&nbsp; Taiwan &nbsp;·&nbsp; Vietnam &nbsp;·&nbsp;
-  </span>
-</div>
+<!-- WHY -->
+<section class="block" id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker">Why Blue Sky</p>
+      <h2 class="display sec-h">Travel curators,<br>not a booking site.</h2>
+      <p class="lead">People come to us for the planning and the recommendations — the trips you couldn't build on your own. Every journey is shaped by a team who actually knows the ground, here in Sabah and across the region.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-ic">🧭</div>
+        <div class="why-t">Curated, not generic</div>
+        <div class="why-d">Every itinerary is built by hand around your group — never an off-the-shelf package.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-ic">📍</div>
+        <div class="why-t">Local expertise</div>
+        <div class="why-d">The right table, the right hour, the hidden gem you'd never find on your own.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-ic">✓</div>
+        <div class="why-t">Stress-free planning</div>
+        <div class="why-d">Permits, transport, stays and guides — all handled, start to finish.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-ic">💼</div>
+        <div class="why-t">HRDF for teams</div>
+        <div class="why-d">Our corporate study trips are 100% HRDF claimable — we guide the grant from start to finish.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- DESTINATIONS -->
-<section class="destinations" id="destinations">
-  <div class="destinations-header">
-    <div>
-      <p class="section-eyebrow">Curated journeys</p>
-      <h2 class="section-title">Where would you<br>like to go?</h2>
+<section class="block dest" id="destinations">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker">Featured destinations</p>
+      <h2 class="display sec-h">Where to next.</h2>
+      <p class="lead">From our home islands in Sabah to the far corners of China — with more of Asia opening up soon.</p>
     </div>
-    <a href="https://wa.me/60XXXXXXXXX" class="btn-secondary" style="white-space:nowrap">View all tours →</a>
-  </div>
-  <div class="destinations-grid">
-    <a href="tour-hangzhou.html" class="dest-card">
-      <div class="dest-img" style="background: linear-gradient(135deg, #1a5276, #0e7a6e);">
-        <div class="dest-img-bg">🦧</div>
-        <div class="dest-img-overlay"></div>
-        <span class="dest-badge">Borneo Wildlife</span>
-      </div>
-      <div class="dest-body">
-        <h3 class="dest-name">Sepilok & Kinabatangan</h3>
-        <p class="dest-desc">Witness orangutans in sanctuary, proboscis monkeys along the river, and fireflies lighting the mangroves at dusk.</p>
-        <div class="dest-footer">
-          <span class="dest-duration">3 – 5 days</span>
-          <span class="dest-link">Enquire →</span>
-        </div>
-      </div>
-    </a>
-    <a href="tour-hangzhou.html" class="dest-card">
-      <div class="dest-img" style="background: linear-gradient(135deg, #1a3a5c, #2e86c1);">
-        <div class="dest-img-bg">🏔️</div>
-        <div class="dest-img-overlay"></div>
-        <span class="dest-badge">Adventure</span>
-      </div>
-      <div class="dest-body">
-        <h3 class="dest-name">Mount Kinabalu</h3>
-        <p class="dest-desc">Summit Southeast Asia's highest peak. We handle permits, guides, and acclimatisation so you can focus on the climb.</p>
-        <div class="dest-footer">
-          <span class="dest-duration">2 days</span>
-          <span class="dest-link">Enquire →</span>
-        </div>
-      </div>
-    </a>
-    <a href="tour-hangzhou.html" class="dest-card">
-      <div class="dest-img" style="background: linear-gradient(135deg, #c97d3a, #e67e22);">
-        <div class="dest-img-bg">⛩️</div>
-        <div class="dest-img-overlay"></div>
-        <span class="dest-badge">Overseas</span>
-      </div>
-      <div class="dest-body">
-        <h3 class="dest-name">Japan & South Korea</h3>
-        <p class="dest-desc">Cherry blossoms, temple walks, street food, and skylines. Group departures with everything arranged from KK.</p>
-        <div class="dest-footer">
-          <span class="dest-duration">7 – 10 days</span>
-          <span class="dest-link">Enquire →</span>
-        </div>
-      </div>
-    </a>
-  </div>
-</section>
-
-<!-- WHY US -->
-<section class="why" id="about">
-  <div class="why-left">
-    <p class="section-eyebrow">Why Blue Sky Vacation</p>
-    <h2 class="section-title">Local knowledge.<br>Seamless journeys.</h2>
-    <p class="section-body">We've been showing people the real Sabah — and the world beyond it — since 1991. Every itinerary is shaped around what we'd personally recommend to a close friend.</p>
-    <ul class="why-list">
-      <li class="why-item">
-        <div class="why-icon">🗺️</div>
-        <div class="why-text">
-          <strong>Curated, not generic</strong>
-          <span>No cookie-cutter packages. Every trip is thoughtfully put together with your group in mind.</span>
-        </div>
-      </li>
-      <li class="why-item">
-        <div class="why-icon">🤝</div>
-        <div class="why-text">
-          <strong>We handle everything</strong>
-          <span>Permits, transport, accommodation, guides — fully arranged so you travel without worry.</span>
-        </div>
-      </li>
-      <li class="why-item">
-        <div class="why-icon">💬</div>
-        <div class="why-text">
-          <strong>Real people, real service</strong>
-          <span>WhatsApp us anytime. We're based in KK and reachable before, during, and after your trip.</span>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div class="why-right">
-    <div class="why-card">
-      <div class="why-card-num">30+</div>
-      <div class="why-card-label">Years serving travellers from Sabah</div>
-    </div>
-    <div class="why-card">
-      <div class="why-card-num">500+</div>
-      <div class="why-card-label">Happy travellers</div>
-    </div>
-    <div class="why-card">
-      <div class="why-card-num">12+</div>
-      <div class="why-card-label">Destinations offered</div>
+    <div class="dest-grid">
+      <a class="dcard" href="https://wa.me/60164802332?text=Hi%2C%20I'd%20like%20to%20explore%20a%20Sabah%20trip.">
+        <div class="ph" style="background:linear-gradient(150deg,#0e7a6e,#1a6b8a);"><span class="ph-label">SABAH — drop hero image</span></div>
+        <div class="dcard-tint"></div>
+        <div class="dcard-copy"><div class="dcard-name">Sabah</div><div class="dcard-tag">Islands, rainforest &amp; Mount Kinabalu — our home ground</div></div>
+      </a>
+      <a class="dcard" href="#journeys">
+        <div class="ph" style="background:linear-gradient(150deg,#1a3a5c,#2e86c1);"><span class="ph-label">CHINA — drop hero image</span></div>
+        <div class="dcard-tint"></div>
+        <div class="dcard-copy"><div class="dcard-name">China</div><div class="dcard-tag">Hainan · Xinjiang · AI study trips</div></div>
+      </a>
+      <a class="dcard" href="https://wa.me/60164802332?text=Hi%2C%20please%20tell%20me%20when%20Vietnam%20trips%20open.">
+        <div class="ph" style="background:linear-gradient(150deg,#2d6a2d,#7a8a4a);"><span class="ph-label">VIETNAM — drop hero image</span></div>
+        <div class="dcard-tint"></div>
+        <span class="soon-badge">Coming soon</span>
+        <div class="dcard-copy"><div class="dcard-name">Vietnam</div><div class="dcard-tag">Old quarters, street food &amp; emerald bays</div></div>
+      </a>
+      <a class="dcard" href="https://wa.me/60164802332?text=Hi%2C%20please%20tell%20me%20when%20Indonesia%20trips%20open.">
+        <div class="ph" style="background:linear-gradient(150deg,#8b5a2b,#c9793a);"><span class="ph-label">INDONESIA — drop hero image</span></div>
+        <div class="dcard-tint"></div>
+        <span class="soon-badge">Coming soon</span>
+        <div class="dcard-copy"><div class="dcard-name">Indonesia</div><div class="dcard-tag">Bali, Java &amp; islands beyond</div></div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIAL -->
-<div class="testimonial-section">
-  <div class="testimonial-accent"></div>
-  <blockquote class="testimonial-quote">
-    "Everything was arranged perfectly — the guide was knowledgeable, the hotel was excellent, and Blue Sky handled every single detail. We didn't have to worry about anything."
-  </blockquote>
-  <p class="testimonial-author">— Satisfied traveller, KK to Japan group tour</p>
-</div>
+<!-- JOURNEYS -->
+<section class="block" id="journeys">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker">Featured journeys</p>
+      <h2 class="display sec-h">Trips ready when you are.</h2>
+      <p class="lead">Fixed-departure journeys we run from Kota Kinabalu — or the starting point for something we design just for you.</p>
+    </div>
+    <div class="jrn-grid">
+      <a class="jcard" href="tour-hangzhou.html">
+        <div class="jcard-bg" style="background:linear-gradient(150deg,#0B4F8A,#062a4a);">🤖</div>
+        <div class="jcard-tint"></div>
+        <div class="jcard-copy">
+          <span class="jcard-badge b-hrdf">✓ 100% HRDF</span>
+          <div class="jcard-name">Hangzhou AI Study Trip</div>
+          <div class="jcard-meta">8D6N · 11–17 Oct 2026</div>
+          <div class="jcard-link">View trip →</div>
+        </div>
+      </a>
+      <a class="jcard" href="tour-shenzhen.html">
+        <div class="jcard-bg" style="background:linear-gradient(150deg,#1a0a2e,#0a2040);">🔋</div>
+        <div class="jcard-tint"></div>
+        <div class="jcard-copy">
+          <span class="jcard-badge b-hrdf">✓ 100% HRDF</span>
+          <div class="jcard-name">Shenzhen AI Study Trip</div>
+          <div class="jcard-meta">7D6N · 10–16 Nov 2026</div>
+          <div class="jcard-link">View trip →</div>
+        </div>
+      </a>
+      <a class="jcard" href="tour-hainan.html">
+        <div class="jcard-bg" style="background:linear-gradient(150deg,#0a5f7a,#0e7a6e);">🏝️</div>
+        <div class="jcard-tint"></div>
+        <div class="jcard-copy">
+          <span class="jcard-badge b-leisure">Direct from KK</span>
+          <div class="jcard-name">Hainan Island Carnival</div>
+          <div class="jcard-meta">6 Days · From RM 1,999</div>
+          <div class="jcard-link">View trip →</div>
+        </div>
+      </a>
+      <a class="jcard" href="tour-xinjiang.html">
+        <div class="jcard-bg" style="background:linear-gradient(150deg,#1a4a6e,#2d6a2d);">🏔️</div>
+        <div class="jcard-tint"></div>
+        <div class="jcard-copy">
+          <span class="jcard-badge b-leisure">Summer &amp; Winter</span>
+          <div class="jcard-name">Northern Xinjiang Odyssey</div>
+          <div class="jcard-meta">11D10N / 9D8N</div>
+          <div class="jcard-link">View trip →</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
 
-<!-- CTA SPLIT -->
-<div class="cta-section" id="contact">
-  <div class="cta-left">
-    <p class="section-eyebrow" style="color:rgba(255,255,255,0.6)">Start planning</p>
-    <h2 class="section-title">Ready for your next trip?</h2>
-    <p class="section-body">Tell us where you want to go, when, and how many people — we'll put together a tailored itinerary and quote within 24 hours.</p>
-    <a href="mailto:info@blueskyvacation.com.my" class="btn-white">Send an enquiry</a>
+<!-- EXPERIENCES -->
+<section class="block exp" id="experiences">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker">Travel by experience</p>
+      <h2 class="display sec-h">Choose a feeling,<br>not just a place.</h2>
+      <p class="lead">Tell us the kind of trip you're dreaming of — we'll find the destination that fits.</p>
+    </div>
+    <div class="chip-row">
+      <span class="chip">🌿 Nature</span>
+      <span class="chip">🍜 Food</span>
+      <span class="chip">🏯 Culture</span>
+      <span class="chip">⛰ Adventure</span>
+      <span class="chip">👨‍👩‍👧 Family</span>
+      <span class="chip">✦ Luxury</span>
+      <span class="chip">⛪ Church &amp; Mission</span>
+      <span class="chip">🧭 Private tours</span>
+      <span class="chip">🏢 Corporate retreats</span>
+    </div>
   </div>
-  <div class="cta-right">
-    <p class="section-eyebrow" style="color:rgba(255,255,255,0.6)">Prefer to chat?</p>
-    <h2 class="section-title">WhatsApp us directly.</h2>
-    <p class="section-body">Most of our clients start with a quick WhatsApp message. We're responsive and happy to answer any questions before you commit to anything.</p>
-    <a href="https://wa.me/60XXXXXXXXX?text=Hi%20Blue%20Sky%20Vacation%2C%20I'm%20interested%20in%20a%20tour." class="btn-whatsapp">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.535 5.862L.054 23.41a.75.75 0 00.917.917l5.548-1.481A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22.5c-1.986 0-3.85-.538-5.45-1.477l-.39-.23-4.047 1.08 1.08-4.047-.23-.39A10.5 10.5 0 011.5 12C1.5 6.201 6.201 1.5 12 1.5S22.5 6.201 22.5 12 17.799 22.5 12 22.5z"/></svg>
-      Chat on WhatsApp
-    </a>
+</section>
+
+<!-- CUSTOM TRIPS -->
+<section class="block" >
+  <div class="wrap">
+    <div class="custom-grid">
+      <div>
+        <p class="kicker">Custom trips</p>
+        <h2 class="display sec-h">Every traveller<br>is different.</h2>
+        <p class="lead" style="margin-bottom:1.8rem;">No two groups want the same thing. Tell us your dates, your people and your dream — we'll design a journey that's entirely yours.</p>
+        <div class="step">
+          <div class="step-n">1</div>
+          <div><div class="step-t">Tell us your dream</div><div class="step-d">A quick WhatsApp message — where, when, who's coming, and what you love.</div></div>
+        </div>
+        <div class="step">
+          <div class="step-n">2</div>
+          <div><div class="step-t">We design it</div><div class="step-d">A tailored itinerary and quote, usually back to you within 24 hours.</div></div>
+        </div>
+        <div class="step">
+          <div class="step-n">3</div>
+          <div><div class="step-t">You travel, we handle everything</div><div class="step-d">Flights, stays, guides and the little details — all taken care of.</div></div>
+        </div>
+        <a class="btn btn-sky" href="https://wa.me/60164802332?text=Hi%2C%20I'd%20like%20to%20plan%20a%20custom%20trip." style="margin-top:1.6rem;">Start my custom trip</a>
+      </div>
+      <div class="custom-visual">
+        <div class="custom-quote">
+          <p>"Every journey should be thoughtfully designed, not simply booked."</p>
+          <span class="ph-label" style="display:block;margin-top:1rem;">Optional: drop a signature travel photo here</span>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="block quotes">
+  <div class="wrap">
+    <div class="sec-head center">
+      <p class="kicker">Travellers' words</p>
+      <h2 class="display sec-h">Trusted by groups<br>across Sabah.</h2>
+    </div>
+    <div class="q-grid">
+      <div class="qcard">
+        <div class="q-stars">★★★★★</div>
+        <p class="q-text">"Everything was arranged perfectly — the guide, the hotels, every detail. We didn't have to worry about a single thing."</p>
+        <div class="q-who">— Corporate group · Hangzhou study trip</div>
+      </div>
+      <div class="qcard">
+        <div class="q-stars">★★★★★</div>
+        <p class="q-text">"They planned a trip we could never have put together ourselves. It felt personal, not packaged."</p>
+        <div class="q-who">— Family of 9 · Hainan Island</div>
+      </div>
+      <div class="qcard">
+        <div class="q-stars">★★★★★</div>
+        <p class="q-text">"Responsive on WhatsApp before, during and after. That's why we keep travelling with Blue Sky."</p>
+        <div class="q-who">— Church group · overseas tour</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-block">
+  <div class="wrap">
+    <div class="cta-card">
+      <h2>Your next journey starts<br>with a message.</h2>
+      <p>Tell us where you dream of going — we'll design the rest, and reply within a day.</p>
+      <div class="cta-actions">
+        <a class="btn btn-wa" href="https://wa.me/60164802332?text=Hi%20Blue%20Sky%20Vacation%2C%20I'd%20like%20to%20plan%20a%20trip.">Chat on WhatsApp</a>
+        <a class="btn btn-white" href="mailto:bsvacation123@gmail.com">Email an enquiry</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Blue Sky <span>Vacation</span></div>
-  <ul class="footer-links">
-    <li><a href="#destinations">Destinations</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <p>© 2026 Blue Sky Vacation Sdn Bhd · KPK/LN:7700 · Kota Kinabalu, Sabah</p>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><img src="logo-mark.png" alt="">Blue Sky Vacation</div>
+        <p class="foot-addr">D3-3, Block D, Tanjung Aru Plaza, Jalan Tun Mustapha, Tanjung Aru, 88100 Kota Kinabalu, Sabah</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="#destinations">Destinations</a>
+        <a href="#experiences">Experiences</a>
+        <a href="#journeys">Journeys</a>
+        <a href="#about">About us</a>
+      </div>
+      <div class="foot-col">
+        <h4>Journeys</h4>
+        <a href="tour-hangzhou.html">Hangzhou Study Trip</a>
+        <a href="tour-shenzhen.html">Shenzhen Study Trip</a>
+        <a href="tour-hainan.html">Hainan Island</a>
+        <a href="tour-xinjiang.html">Northern Xinjiang</a>
+      </div>
+      <div class="foot-col">
+        <h4>Get in touch</h4>
+        <a href="https://wa.me/60164802332">WhatsApp · +60 16-480 2332</a>
+        <a href="mailto:bsvacation123@gmail.com">bsvacation123@gmail.com</a>
+        <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Blue Sky Vacation Sdn Bhd · Co. No. 1083236 · KPK/LN:7700</span>
+      <span>Curated travel from Kota Kinabalu, Sabah · since 2015</span>
+    </div>
+  </div>
 </footer>
 
+<script>
+  // nav shadow on scroll
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function () {
+    nav.classList.toggle('scrolled', window.scrollY > 12);
+  });
+  // mobile menu
+  var burger = document.getElementById('burger'), links = document.getElementById('navlinks');
+  burger.addEventListener('click', function () { links.classList.toggle('open'); });
+  links.addEventListener('click', function (e) { if (e.target.tagName === 'A') links.classList.remove('open'); });
+  // hero slideshow
+  (function () {
+    var slides = [].slice.call(document.querySelectorAll('.hero-slide'));
+    var dots = [].slice.call(document.querySelectorAll('.hero-dot'));
+    var stage = document.querySelector('.hero-slideshow');
+    if (slides.length < 2) return;
+    var i = 0, timer = null;
+    function go(n) {
+      i = (n + slides.length) % slides.length;
+      slides.forEach(function (s, k) { s.classList.toggle('active', k === i); });
+      dots.forEach(function (d, k) { d.classList.toggle('active', k === i); });
+    }
+    function start() { timer = setInterval(function () { go(i + 1); }, 4800); }
+    function stop() { clearInterval(timer); }
+    dots.forEach(function (d) { d.addEventListener('click', function () { go(parseInt(d.dataset.i, 10)); stop(); start(); }); });
+    stage.addEventListener('mouseenter', stop);
+    stage.addEventListener('mouseleave', start);
+    start();
+  })();
+</script>
 </body>
 </html>
