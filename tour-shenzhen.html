@@ -20,7 +20,7 @@
   body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--charcoal); background: var(--white); font-weight: 300; line-height: 1.7; -webkit-font-smoothing: antialiased; }
 
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 3rem; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.07); }
-  .nav-logo { font-family: 'Manrope', sans-serif; font-size: 1.3rem; font-weight: 600; color: var(--sky); text-decoration: none; }
+  .nav-logo { font-family: 'Manrope', sans-serif; font-size: 1.3rem; font-weight: 600; color: var(--sky); text-decoration: none; white-space: nowrap; display: flex; align-items: center; flex-shrink: 0; }
   .nav-logo span { color: var(--accent); }
   .nav-back { font-size: 0.78rem; color: var(--mid); text-decoration: none; letter-spacing: 0.06em; }
   .nav-back:hover { color: var(--sky); }
@@ -42,8 +42,8 @@
   .btn-outline { border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.8); padding: 0.9rem 2rem; text-decoration: none; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; display: inline-block; transition: border-color 0.2s; }
   .btn-outline:hover { border-color: rgba(255,255,255,0.6); }
 
-  .hero-right { background: linear-gradient(160deg, #1a5a8a 0%, #12456e 50%, #0f3a5c 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 3rem; position: relative; overflow: hidden; }
-  .hero-label { position: absolute; top: 2.5rem; right: 2.5rem; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.25); }
+  .hero-right { background: linear-gradient(160deg, rgba(10,30,48,0.82) 0%, rgba(12,40,64,0.8) 50%, rgba(8,22,36,0.9) 100%), url('shenzhen-hero-ubtech.jpg') center/cover; display: flex; flex-direction: column; justify-content: flex-end; padding: 3rem; position: relative; overflow: hidden; }
+  .hero-label { position: absolute; top: 2.5rem; right: 2.5rem; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.85); text-shadow: 0 1px 4px rgba(0,0,0,0.6); }
   .hero-companies { display: flex; flex-direction: column; gap: 0.8rem; position: relative; z-index: 1; }
   .company-pill { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 3px; padding: 0.75rem 1.25rem; display: flex; align-items: center; gap: 0.8rem; }
   .company-icon { width: 28px; height: 28px; background: #C9793A; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; flex-shrink: 0; }
@@ -71,7 +71,8 @@
   .cross { color: #c0392b; flex-shrink: 0; margin-top: 1px; }
 
   .companies-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
-  .company-card { border: 1px solid var(--light-line); border-radius: 3px; padding: 1.75rem; transition: border-color 0.2s, transform 0.2s; }
+  .company-card { border: 1px solid var(--light-line); border-radius: 3px; padding: 1.75rem; transition: border-color 0.2s, transform 0.2s; overflow: hidden; }
+  .company-card-photo { height: 150px; margin: -1.75rem -1.75rem 1.25rem; background-size: cover; background-position: center; }
   .company-card:hover { border-color: var(--accent); transform: translateY(-2px); }
   .company-card-icon { font-size: 1.8rem; margin-bottom: 1rem; }
   .company-card-name { font-family: 'Manrope', sans-serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 0.4rem; }
@@ -131,10 +132,23 @@
     .price-divider { display: none; }
     section { padding: 3.5rem 1.5rem; }
     .included-grid, .companies-grid, .highlights-grid { grid-template-columns: 1fr; }
+    .day-header { flex-wrap: wrap; row-gap: 0.4rem; }
+    .day-title { flex-basis: 100%; order: 4; }
+    .day-chevron { margin-left: auto; }
     .info-section { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; }
     .highlight-strip { padding: 3rem 1.5rem; }
     .cta-section { padding: 3.5rem 1.5rem; }
     footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+  }
+
+  @media (max-width: 480px) {
+    nav { padding: 0.8rem 1rem; }
+    .nav-logo { font-size: 0.85rem !important; }
+    .nav-logo img { width: 24px !important; height: 24px !important; margin-right: 0.35rem !important; }
+    nav > div { gap: 0.5rem !important; }
+    .nav-back { font-size: 0.68rem !important; }
+    .nav-alltours { display: none; }
+    .nav-cta-btn { font-size: 0.68rem !important; padding: 0.45rem 0.7rem !important; }
   }
 </style>
 </head>
@@ -143,8 +157,9 @@
 <nav>
   <a href="index.html" class="nav-logo"><img src="logo-mark.png" alt="" style="height:30px;width:30px;border-radius:7px;object-fit:cover;vertical-align:middle;margin-right:0.55rem;">Blue Sky <span>Vacation</span></a>
   <div style="display:flex;align-items:center;gap:1.25rem;">
-    <a href="index.html" class="nav-back">← All tours</a>
-    <a href="https://wa.me/60164802332?text=Hi%20Blue%20Sky%20Vacation%2C%20I'd%20like%20to%20plan%20a%20trip." style="background:#16384f;color:#fff;text-decoration:none;font-size:0.8rem;font-weight:600;padding:0.55rem 1.1rem;border-radius:100px;white-space:nowrap;">Plan my trip</a>
+    <a href="tour-shenzhen-zh.html" class="nav-back">中文</a>
+    <a href="index.html" class="nav-back nav-alltours">← All tours</a>
+    <a href="https://wa.me/60164802332?text=Hi%20Blue%20Sky%20Vacation%2C%20I'd%20like%20to%20plan%20a%20trip." class="nav-cta-btn" style="background:#16384f;color:#fff;text-decoration:none;font-size:0.8rem;font-weight:600;padding:0.55rem 1.1rem;border-radius:100px;white-space:nowrap;">Plan my trip</a>
   </div>
 </nav>
 
@@ -231,36 +246,42 @@
   <h2 class="section-title">Five AI pioneers.<br>One future city.</h2>
   <div class="companies-grid">
     <div class="company-card">
+      <div class="company-card-photo" style="background-image:url('shenzhen-byd.jpg');"></div>
       <div class="company-card-icon">🔋</div>
       <div class="company-card-theme">EV & Energy</div>
       <h3 class="company-card-name">BYD + Yunba</h3>
       <p class="company-card-desc">From battery startup to the world's largest EV maker. Walk through BYD Museum, hand-roll a battery cell as a souvenir, eat the legendary "Tongle Chicken Leg Rice," and see Yunba's autonomous rail system.</p>
     </div>
     <div class="company-card">
+      <div class="company-card-photo" style="background-image:url('shenzhen-ubtech.jpg');"></div>
       <div class="company-card-icon">🤖</div>
       <div class="company-card-theme">Humanoid Robots</div>
       <h3 class="company-card-name">UBTECH 优必选</h3>
       <p class="company-card-desc">Listed on Hong Kong Stock Exchange in 2023. Their Walker S2 robot performed at the 2025 National Games opening. See humanoid robots working in logistics, retail, education and smart manufacturing.</p>
     </div>
     <div class="company-card">
+      <div class="company-card-photo" style="background-image:url('shenzhen-busgroup.jpg');"></div>
       <div class="company-card-icon">🚌</div>
       <div class="company-card-theme">Smart City Transit</div>
       <h3 class="company-card-name">Shenzhen Bus Group</h3>
       <p class="company-card-desc">China's most advanced autonomous bus demonstration base. 20 driverless vehicles on active routes. Ride one. Understand how a city-scale AI traffic system operates and what it means for future urban mobility.</p>
     </div>
     <div class="company-card">
+      <div class="company-card-photo" style="background-image:url('shenzhen-drone.png');"></div>
       <div class="company-card-icon">🚁</div>
       <div class="company-card-theme">Drone Logistics</div>
       <h3 class="company-card-name">SF Fengyi 丰翼科技</h3>
       <p class="company-card-desc">China's first UAV operating license holder. Active in logistics, medical supply, emergency response across 12 countries. See drones launching from the rooftop and understand the full uncrewed logistics chain.</p>
     </div>
     <div class="company-card">
+      <div class="company-card-photo" style="background-image:url('shenzhen-baidu.jpeg');"></div>
       <div class="company-card-icon">🚗</div>
       <div class="company-card-theme">Autonomous Driving</div>
       <h3 class="company-card-name">Baidu Apollo 萝卜快跑</h3>
       <p class="company-card-desc">The world's largest autonomous driving operator and biggest 5G cloud fleet. Shenzhen is the first city to open self-driving taxis in its CBD. You'll ride one — 3 people per car, 5-minute technology park loop.</p>
     </div>
     <div class="company-card">
+      <div class="company-card-photo" style="background-image:url('shenzhen-bridge.jpg');"></div>
       <div class="company-card-icon">🌉</div>
       <div class="company-card-theme">Iconic Experience</div>
       <h3 class="company-card-name">HZM Bridge Cruise + Ping'an Tower</h3>

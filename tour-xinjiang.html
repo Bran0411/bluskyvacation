@@ -20,7 +20,7 @@
   body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--charcoal); background: var(--white); font-weight: 300; line-height: 1.7; -webkit-font-smoothing: antialiased; }
 
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 3rem; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.07); }
-  .nav-logo { font-family: 'Manrope', sans-serif; font-size: 1.3rem; font-weight: 600; color: var(--sky); text-decoration: none; }
+  .nav-logo { font-family: 'Manrope', sans-serif; font-size: 1.3rem; font-weight: 600; color: var(--sky); text-decoration: none; white-space: nowrap; display: flex; align-items: center; flex-shrink: 0; }
   .nav-logo span { color: var(--accent); }
   .nav-back { font-size: 0.78rem; color: var(--mid); text-decoration: none; }
   .nav-back:hover { color: var(--sky); }
@@ -166,7 +166,20 @@
     .pkg-tabs { flex-direction: column; }
     .pkg-tab { border-right: none; border-bottom: 1px solid var(--light-line); }
     .pkg-grid, .compare-grid, .highlights-grid, .food-grid, .practical-section { grid-template-columns: 1fr; }
+    .day-header { flex-wrap: wrap; row-gap: 0.4rem; }
+    .day-title { flex-basis: 100%; order: 4; }
+    .day-chevron { margin-left: auto; }
     footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+  }
+
+  @media (max-width: 480px) {
+    nav { padding: 0.8rem 1rem; }
+    .nav-logo { font-size: 0.85rem !important; }
+    .nav-logo img { width: 24px !important; height: 24px !important; margin-right: 0.35rem !important; }
+    nav > div { gap: 0.5rem !important; }
+    .nav-back { font-size: 0.68rem !important; }
+    .nav-alltours { display: none; }
+    .nav-cta-btn { font-size: 0.68rem !important; padding: 0.45rem 0.7rem !important; }
   }
 </style>
 </head>
@@ -175,8 +188,9 @@
 <nav>
   <a href="index.html" class="nav-logo"><img src="logo-mark.png" alt="" style="height:30px;width:30px;border-radius:7px;object-fit:cover;vertical-align:middle;margin-right:0.55rem;">Blue Sky <span style="color: #3FA2E1">Vacation</span></a>
   <div style="display:flex;align-items:center;gap:1.25rem;">
-    <a href="index.html" class="nav-back">← All tours</a>
-    <a href="https://wa.me/60164802332?text=Hi%20Blue%20Sky%20Vacation%2C%20I'd%20like%20to%20plan%20a%20trip." style="background:#16384f;color:#fff;text-decoration:none;font-size:0.8rem;font-weight:600;padding:0.55rem 1.1rem;border-radius:100px;white-space:nowrap;">Plan my trip</a>
+    <a href="tour-xinjiang-zh.html" class="nav-back">中文</a>
+    <a href="index.html" class="nav-back nav-alltours">← All tours</a>
+    <a href="https://wa.me/60164802332?text=Hi%20Blue%20Sky%20Vacation%2C%20I'd%20like%20to%20plan%20a%20trip." class="nav-cta-btn" style="background:#16384f;color:#fff;text-decoration:none;font-size:0.8rem;font-weight:600;padding:0.55rem 1.1rem;border-radius:100px;white-space:nowrap;">Plan my trip</a>
   </div>
 </nav>
 
@@ -282,20 +296,43 @@
       </div>
     </div>
     <div style="background:linear-gradient(150deg,#0f3a5c,#1a5a8a 70%,#2f9be0);color:#fff;border-radius:4px;padding:1.75rem 2rem;display:flex;flex-wrap:wrap;gap:2rem 3rem;align-items:center;margin-bottom:1rem;">
-      <div><span style="font-family:'Manrope',sans-serif;font-size:2.2rem;font-weight:700;display:block;line-height:1;">RM 8,099</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">From · per person, twin share</span></div>
-      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">RM 1,500</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Single supp. (from)</span></div>
+      <div><span style="font-family:'Manrope',sans-serif;font-size:2.2rem;font-weight:700;display:block;line-height:1;">RM 8,599</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">From · per person, twin share</span></div>
+      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">RM 2,000</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Single supp. (from)</span></div>
       <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">11D · 10N</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Summer · May–Oct 2026</span></div>
       <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">RM 2,000</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Deposit / person</span></div>
     </div>
-    <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.9rem;">
-      <span style="font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);font-weight:500;align-self:center;">Departures:</span>
-      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">23 May</span>
-      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">9–16 Jun</span>
-      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">27–28 Aug</span>
-      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">1–18 Sep</span>
-      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">8–10 Oct · train</span>
+    <div style="overflow-x:auto; margin-bottom:1rem; border:1px solid var(--light-line); border-radius:3px;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.84rem;">
+        <thead>
+          <tr style="background:var(--charcoal); color:#fff;">
+            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.72rem; font-weight:600;">Departure Dates</th>
+            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.72rem; font-weight:600;">Tour Fare (with flight)</th>
+            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.72rem; font-weight:600;">Ground Fare (no flight)</th>
+            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.72rem; font-weight:600;">Single Supp.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">27 Aug – 6 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 8,999</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">28 Aug – 7 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,399</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">1 – 11 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 8,999</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">3 – 13 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 8,999</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">4 – 14 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 8,999</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">5 – 15 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 8,999</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">6 – 16 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 8,999</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">7 – 17 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 8,999</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">12 – 22 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,399</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">13 – 23 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,399</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">14 – 24 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,399</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">15 – 25 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,399</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">17 – 27 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,399</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">18 – 28 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,399</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
+          <tr><td style="padding:0.65rem 1rem;">8 – 18 Oct <span style="color:var(--mid); font-size:0.72rem;">· train</span></td><td style="padding:0.65rem 1rem;"><strong>RM 8,599</strong></td><td style="padding:0.65rem 1rem;">RM 6,600</td><td style="padding:0.65rem 1rem;">RM 2,000</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem;">9 – 19 Oct <span style="color:var(--mid); font-size:0.72rem;">· train</span></td><td style="padding:0.65rem 1rem;"><strong>RM 8,599</strong></td><td style="padding:0.65rem 1rem;">RM 6,600</td><td style="padding:0.65rem 1rem;">RM 2,000</td></tr>
+          <tr><td style="padding:0.65rem 1rem;">10 – 20 Oct <span style="color:var(--mid); font-size:0.72rem;">· train</span></td><td style="padding:0.65rem 1rem;"><strong>RM 8,599</strong></td><td style="padding:0.65rem 1rem;">RM 6,600</td><td style="padding:0.65rem 1rem;">RM 2,000</td></tr>
+        </tbody>
+      </table>
     </div>
-    <p style="font-size:0.82rem; color:var(--mid); background:var(--white); padding:1rem 1.25rem; border-radius:3px; border:1px solid var(--light-line);">Fares vary by departure date and peak periods — we'll confirm the exact price for your dates. All tours conducted in Mandarin. May &amp; October departures use a high-speed train alternative via Yining (Duku Highway not yet open).</p>
+    <p style="font-size:0.82rem; color:var(--mid); background:var(--white); padding:1rem 1.25rem; border-radius:3px; border:1px solid var(--light-line);">Ground fare = no international flights, land arrangements only. All tours conducted in Mandarin. October departures use a high-speed train alternative via Yining (Duku Highway closed for the season). Fares subject to seat availability at time of booking.</p>
   </div>
 
   <!-- ELITE -->
@@ -325,25 +362,44 @@
       </div>
     </div>
     <div style="background:linear-gradient(150deg,#0f3a5c,#1a5a8a 70%,#2f9be0);color:#fff;border-radius:4px;padding:1.75rem 2rem;display:flex;flex-wrap:wrap;gap:2rem 3rem;align-items:center;margin-bottom:1rem;">
-      <div><span style="font-family:'Manrope',sans-serif;font-size:2.2rem;font-weight:700;display:block;line-height:1;">RM 9,999</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">From · per person, twin share</span></div>
-      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">RM 2,590</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Single supp. (from)</span></div>
-      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">11D · 10N</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Summer · May–Oct 2026</span></div>
+      <div><span style="font-family:'Manrope',sans-serif;font-size:2.2rem;font-weight:700;display:block;line-height:1;">RM 12,499</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Per person, twin share</span></div>
+      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">RM 2,890</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Single supp.</span></div>
+      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">11D · 10N</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Summer · Sep–Oct 2026</span></div>
       <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">RM 2,000</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Deposit / person</span></div>
     </div>
-    <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.9rem;">
-      <span style="font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);font-weight:500;align-self:center;">Departures:</span>
-      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">23–24 May</span>
-      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">9–16 Jun</span>
-      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">27–28 Aug</span>
-      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">1–18 Sep</span>
-      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">8–10 Oct</span>
+    <div style="overflow-x:auto; margin-bottom:1rem; border:1px solid var(--light-line); border-radius:3px;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.84rem;">
+        <thead>
+          <tr style="background:var(--charcoal); color:#fff;">
+            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.72rem; font-weight:600;">Departure Dates</th>
+            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.72rem; font-weight:600;">Tour Fare (with flight)</th>
+            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.72rem; font-weight:600;">Ground Fare (no flight)</th>
+            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.72rem; font-weight:600;">Single Supp.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">2 – 12 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">3 – 13 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">4 – 14 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">6 – 16 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">7 – 17 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">8 – 18 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">14 – 24 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">15 – 25 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">17 – 27 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">18 – 28 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
+          <tr><td style="padding:0.65rem 1rem;">8 – 18 Oct</td><td style="padding:0.65rem 1rem;"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem;">RM 8,800</td><td style="padding:0.65rem 1rem;">RM 2,890</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem;">9 – 19 Oct</td><td style="padding:0.65rem 1rem;"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem;">RM 8,800</td><td style="padding:0.65rem 1rem;">RM 2,890</td></tr>
+          <tr><td style="padding:0.65rem 1rem;">10 – 20 Oct</td><td style="padding:0.65rem 1rem;"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem;">RM 8,800</td><td style="padding:0.65rem 1rem;">RM 2,890</td></tr>
+        </tbody>
+      </table>
     </div>
-    <p style="font-size:0.82rem; color:var(--mid); background:var(--white); padding:1rem 1.25rem; border-radius:3px; border:1px solid var(--light-line);">Elite runs a smaller group with upgraded hotels and dining on the same itinerary. Fares vary by departure date and peak periods — we'll confirm the exact price for your dates.</p>
+    <p style="font-size:0.82rem; color:var(--mid); background:var(--white); padding:1rem 1.25rem; border-radius:3px; border:1px solid var(--light-line);">Elite runs a smaller group with upgraded hotels and dining on the same itinerary. Ground fare = no international flights, land arrangements only. All tours conducted in Mandarin. Fares subject to seat availability at time of booking.</p>
   </div>
 
   <!-- WINTER -->
   <div class="pkg-content" id="pkg-winter">
-    <div class="pkg-grid">
+    <div class="pkg-grid" style="grid-template-columns: 1fr;">
       <div class="pkg-card">
         <div class="pkg-card-label">Winter Exclusive inclusions</div>
         <ul class="pkg-highlight-list">
@@ -352,8 +408,8 @@
           <li><div class="ph-dot"></div>Complimentary Yunxiao Peak cable car at Hemu</li>
           <li><div class="ph-dot"></div>Complimentary afternoon tea at Hemu snow view</li>
           <li><div class="ph-dot"></div>Free snow tubing and horse-drawn sled at Hemu</li>
-          <li><div class="ph-dot"></div>Milky Way starry sky viewing at Hemu (clear nights)</div></li>
-          <li><div class="ph-dot"></div>General Mountain Ski Resort with snow rave + cable car</li>
+          <li><div class="ph-dot"></div>Milky Way starry sky viewing at Hemu (clear nights)</li>
+          <li><div class="ph-dot"></div>Jiangjunshan Ski Resort with snow party + cable car</li>
           <li><div class="ph-dot"></div>Self-drive around Sayram Lake in ice season</li>
           <li><div class="ph-dot"></div>Sayram Lake sunrise over blue ice</li>
           <li><div class="ph-dot"></div>Shawan Natural Hot Spring Hotel — soak in mineral springs</li>
@@ -369,31 +425,38 @@
           <li><div class="ph-dot"></div><strong>January</strong> — Blue icefalls shimmering under sunlight — like an ice palace</li>
           <li><div class="ph-dot"></div><strong>February</strong> — Blue ice, ice flowers and ice bubbles — magical dreamscape</li>
         </ul>
-        <br>
+      </div>
+      <div class="pkg-card">
         <div class="pkg-card-label">Optional add-on</div>
         <ul class="pkg-highlight-list">
           <li><div class="ph-dot"></div>Ice Floating Experience — RMB 400/person (drift along a frozen river through an icy canyon)</li>
         </ul>
       </div>
     </div>
-    <div style="background:linear-gradient(150deg,#0f3a5c,#1a5a8a 70%,#2f9be0);color:#fff;border-radius:4px;padding:1.75rem 2rem;display:flex;flex-wrap:wrap;gap:2rem 3rem;align-items:center;margin-bottom:1rem;">
-      <div><span style="font-family:'Manrope',sans-serif;font-size:2.2rem;font-weight:700;display:block;line-height:1;">RM 9,299</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Per person, twin share</span></div>
-      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">RM 1,670</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Single supplement</span></div>
-      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">9D · 8N</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Winter · Nov 2026–Feb 2027</span></div>
-      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">RM 2,000</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Deposit / person</span></div>
+    <p style="font-size:0.86rem; color:var(--mid); background:var(--white); padding:1rem 1.25rem; border-radius:3px; border:1px solid var(--light-line); margin-bottom:1.5rem;"><strong style="color:var(--charcoal);">RM 9,299</strong> includes return flights from Kuala Lumpur (China Southern).</p>
+    <div style="overflow-x:auto; margin-bottom:1rem; border:1px solid var(--light-line); border-radius:3px;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.84rem;">
+        <thead>
+          <tr style="background:var(--charcoal); color:#fff;">
+            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.72rem; font-weight:600;">Departure Dates</th>
+            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.72rem; font-weight:600;">Tour Fare (with flight)</th>
+            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.72rem; font-weight:600;">Ground Fare (no flight)</th>
+            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.72rem; font-weight:600;">Single Supp.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">20 – 28 Nov</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,299</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,599</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 1,670</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">27 Nov – 5 Dec</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,299</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,599</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 1,670</td></tr>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">5 – 13 Dec</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,299</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,599</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 1,670</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">18 – 26 Dec</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,299</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,599</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 1,670</td></tr>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">8 – 16 Jan</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,299</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,599</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 1,670</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">15 – 23 Jan</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,299</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,599</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 1,670</td></tr>
+          <tr><td style="padding:0.65rem 1rem;">14 – 22 Feb</td><td style="padding:0.65rem 1rem;"><strong>RM 9,299</strong></td><td style="padding:0.65rem 1rem;">RM 7,599</td><td style="padding:0.65rem 1rem;">RM 1,670</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem;">22 Feb – 2 Mar</td><td style="padding:0.65rem 1rem;"><strong>RM 9,299</strong></td><td style="padding:0.65rem 1rem;">RM 7,599</td><td style="padding:0.65rem 1rem;">RM 1,670</td></tr>
+        </tbody>
+      </table>
     </div>
-    <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.9rem;">
-      <span style="font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);font-weight:500;align-self:center;">Departures:</span>
-      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">20 Nov</span>
-      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">27 Nov</span>
-      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">5 Dec</span>
-      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">18 Dec</span>
-      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">8 Jan</span>
-      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">15 Jan</span>
-      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">14 Feb</span>
-      <span style="background:var(--white);border:1px solid var(--light-line);border-radius:100px;padding:0.35rem 0.85rem;font-size:0.78rem;color:var(--charcoal);">22 Feb</span>
-    </div>
-    <p style="font-size:0.82rem; color:var(--mid); background:var(--white); padding:1rem 1.25rem; border-radius:3px; border:1px solid var(--light-line);">1+1 luxury MPV throughout, 4&#9733;+5&#9733; hotels, all entrance fees included. Tours conducted in Mandarin. Ski clothing not included at General Mountain Ski Resort; seasonal scenery varies with weather.</p>
+    <p style="font-size:0.82rem; color:var(--mid); background:var(--white); padding:1rem 1.25rem; border-radius:3px; border:1px solid var(--light-line);">1+1 luxury MPV throughout, 4&#9733;+5&#9733; hotels, all entrance fees included. Ground fare = no international flights, land arrangements only. Tours conducted in Mandarin. Ski clothing not included at Jiangjunshan Ski Resort; seasonal scenery varies with weather.</p>
   </div>
 
   <!-- BOOKING ESSENTIALS -->
@@ -523,8 +586,8 @@
       <div class="hl-body">
         <div class="hl-icon">⛷️</div>
         <div class="hl-tag">Winter exclusive</div>
-        <h3 class="hl-name">General Mountain Ski Resort + Yunxiao Cable Car</h3>
-        <p class="hl-desc">Winter adds experiences no other season offers: skiing in Altay (some of China's best snow), a snow rave on the mountain, the Yunxiao Peak cable car with views across four countries (China, Russia, Kazakhstan, Mongolia), and a hot spring soak at Shawan.</p>
+        <h3 class="hl-name">Jiangjunshan Ski Resort + Yunxiao Cable Car</h3>
+        <p class="hl-desc">Winter unlocks experiences no other season offers: skiing in Altay (some of China's best snow), a snow party on the mountain, the Yunxiao Peak cable car with views across four countries (China, Russia, Kazakhstan, Mongolia), and a hot spring soak at Shawan.</p>
         <span class="seasonal-note">Winter only: Nov–Feb</span>
       </div>
     </div>
@@ -731,12 +794,12 @@
         <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
           <span class="day-num" style="background:#2a3a5a">D2</span>
           <span class="day-route">Urumqi → Altay · 665km · 9hrs</span>
-          <span class="day-title">S21 Desert Highway · General Mountain Ski Resort + Snow Rave</span>
+          <span class="day-title">S21 Desert Highway · Jiangjunshan Ski Resort + Snow Party</span>
           <span class="day-chevron">▼</span>
         </div>
         <div class="day-body"><div class="day-stops">
           <div class="stop"><div class="stop-dot" style="background:#2a3a5a"></div><div class="stop-text"><strong>S21 Desert Highway</strong><span>Drive through the Gobi Desert — a landscape of vast deserts, rugged terrain, and snowy plains in winter.</span></div></div>
-          <div class="stop"><div class="stop-dot" style="background:#1a4a8a"></div><div class="stop-text"><strong>★ General Mountain Ski Resort 将军山滑雪场</strong><span>Ski resort in Altay City with excellent snow quality. Cable car to summit. Snow rave experience included. (Ski clothing not included — rent on-site.)</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#1a4a8a"></div><div class="stop-text"><strong>★ Jiangjunshan Ski Resort 将军山滑雪场</strong><span>Ski resort in Altay City with excellent snow quality, a cable car to the summit, and a snow party on the slopes. (Ski clothing not included — rent on-site.)</span></div></div>
           <div class="stop"><div class="stop-dot" style="background:#c85a1a"></div><div class="stop-text"><strong>Optional: Ice Floating Experience — RMB 400</strong><span>Drift along a frozen river through an icy canyon. Unique and unforgettable.</span></div></div>
           <div class="meal-line">L: Xinjiang-style mixed noodles</div>
           <div class="hotel-line">🏨 Wanda Moments Altay or similar ★★★★</div>

@@ -21,7 +21,7 @@
 
   /* NAV */
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 3rem; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.07); }
-  .nav-logo { font-family: 'Manrope', sans-serif; font-size: 1.3rem; font-weight: 600; color: var(--sky); text-decoration: none; }
+  .nav-logo { font-family: 'Manrope', sans-serif; font-size: 1.3rem; font-weight: 600; color: var(--sky); text-decoration: none; white-space: nowrap; display: flex; align-items: center; flex-shrink: 0; }
   .nav-logo span { color: var(--accent); }
   .nav-back { font-size: 0.78rem; color: var(--mid); text-decoration: none; letter-spacing: 0.06em; display: flex; align-items: center; gap: 0.4rem; }
   .nav-back:hover { color: var(--sky); }
@@ -43,13 +43,13 @@
   .btn-primary:hover { background: var(--teal); }
   .btn-outline { border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.85); padding: 0.9rem 2rem; text-decoration: none; font-size: 0.8rem; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; transition: all 0.2s; display: inline-block; }
   .btn-outline:hover { border-color: rgba(255,255,255,0.7); }
-  .hero-right { background: linear-gradient(160deg, #1a5a8a 0%, #12456e 50%, #0f3a5c 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 3rem; position: relative; overflow: hidden; }
+  .hero-right { background: linear-gradient(160deg, rgba(10,30,48,0.82) 0%, rgba(12,40,64,0.8) 50%, rgba(8,22,36,0.9) 100%), url('hangzhou-alibaba.jpg') center/cover; display: flex; flex-direction: column; justify-content: flex-end; padding: 3rem; position: relative; overflow: hidden; }
   .hero-companies { display: flex; flex-direction: column; gap: 0.8rem; position: relative; z-index: 1; }
   .company-pill { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 3px; padding: 0.75rem 1.25rem; display: flex; align-items: center; gap: 0.8rem; }
   .company-icon { width: 28px; height: 28px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; flex-shrink: 0; }
   .company-name { font-size: 0.82rem; font-weight: 500; color: rgba(255,255,255,0.9); }
   .company-desc { font-size: 0.72rem; color: rgba(255,255,255,0.45); }
-  .hero-label { position: absolute; top: 2.5rem; right: 2.5rem; font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+  .hero-label { position: absolute; top: 2.5rem; right: 2.5rem; font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.85); text-shadow: 0 1px 4px rgba(0,0,0,0.6); }
 
   /* PRICING BAND */
   .pricing-band { background: var(--hrdf); color: white; padding: 2rem 5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
@@ -74,7 +74,8 @@
   /* COMPANIES */
   .companies-section { padding: 5rem 5rem; }
   .companies-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
-  .company-card { border: 1px solid var(--light-line); border-radius: 3px; padding: 1.75rem; transition: border-color 0.2s, transform 0.2s; }
+  .company-card { border: 1px solid var(--light-line); border-radius: 3px; padding: 1.75rem; transition: border-color 0.2s, transform 0.2s; overflow: hidden; }
+  .company-card-photo { height: 150px; margin: -1.75rem -1.75rem 1.25rem; background-size: cover; background-position: center; }
   .company-card:hover { border-color: var(--sky); transform: translateY(-2px); }
   .company-card-icon { font-size: 1.8rem; margin-bottom: 1rem; }
   .company-card-name { font-family: 'Manrope', sans-serif; font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; }
@@ -134,8 +135,21 @@
     .included-section, .companies-section, .itinerary-section, .cta-section { padding: 3.5rem 1.5rem; }
     .included-grid { grid-template-columns: 1fr; }
     .companies-grid { grid-template-columns: 1fr; }
+    .day-header { flex-wrap: wrap; row-gap: 0.4rem; }
+    .day-title { flex-basis: 100%; order: 4; }
+    .day-chevron { margin-left: auto; }
     .info-section { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; }
     footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+  }
+
+  @media (max-width: 480px) {
+    nav { padding: 0.8rem 1rem; }
+    .nav-logo { font-size: 0.85rem !important; }
+    .nav-logo img { width: 24px !important; height: 24px !important; margin-right: 0.35rem !important; }
+    nav > div { gap: 0.5rem !important; }
+    .nav-back { font-size: 0.68rem !important; }
+    .nav-alltours { display: none; }
+    .nav-cta-btn { font-size: 0.68rem !important; padding: 0.45rem 0.7rem !important; }
   }
 </style>
 </head>
@@ -144,8 +158,9 @@
 <nav>
   <a href="index.html" class="nav-logo"><img src="logo-mark.png" alt="" style="height:30px;width:30px;border-radius:7px;object-fit:cover;vertical-align:middle;margin-right:0.55rem;">Blue Sky <span>Vacation</span></a>
   <div style="display:flex;align-items:center;gap:1.25rem;">
-    <a href="index.html" class="nav-back">← All tours</a>
-    <a href="https://wa.me/60164802332?text=Hi%20Blue%20Sky%20Vacation%2C%20I'd%20like%20to%20plan%20a%20trip." style="background:#16384f;color:#fff;text-decoration:none;font-size:0.8rem;font-weight:600;padding:0.55rem 1.1rem;border-radius:100px;white-space:nowrap;">Plan my trip</a>
+    <a href="tour-hangzhou-zh.html" class="nav-back" style="color:var(--mid);">中文</a>
+    <a href="index.html" class="nav-back nav-alltours">← All tours</a>
+    <a href="https://wa.me/60164802332?text=Hi%20Blue%20Sky%20Vacation%2C%20I'd%20like%20to%20plan%20a%20trip." class="nav-cta-btn" style="background:#16384f;color:#fff;text-decoration:none;font-size:0.8rem;font-weight:600;padding:0.55rem 1.1rem;border-radius:100px;white-space:nowrap;">Plan my trip</a>
   </div>
 </nav>
 
@@ -235,36 +250,42 @@
   <h2 class="section-title">Six world-class companies.<br>Six learning sessions.</h2>
   <div class="companies-grid">
     <div class="company-card">
+      <div class="company-card-photo" style="background-image:url('hangzhou-alibaba.jpg');"></div>
       <div class="company-card-icon">🛒</div>
       <div class="company-card-theme">Strategy & Culture</div>
       <h3 class="company-card-name">Alibaba Group</h3>
       <p class="company-card-desc">Inside Alibaba's Xixi Campus. Learn the "Three Axes" leadership framework — strategy, culture, people. Tour the cultural wall, Alibaba's growth milestones, and dine at the Alibaba canteen.</p>
     </div>
     <div class="company-card">
+      <div class="company-card-photo" style="background-image:url('hangzhou-geely.jpg');"></div>
       <div class="company-card-icon">🚗</div>
       <div class="company-card-theme">Smart Manufacturing</div>
       <h3 class="company-card-name">Geely EV Factory</h3>
       <p class="company-card-desc">Walk through the full stamping-welding-assembly line. See how a robot assembles a full electric vehicle in 6 minutes on Geely's AMA EV platform — one of China's most advanced.</p>
     </div>
     <div class="company-card">
+      <div class="company-card-photo" style="background-image:url('hangzhou-robot-humanoid.jpg');"></div>
       <div class="company-card-icon">🤖</div>
       <div class="company-card-theme">Industrial AI</div>
       <h3 class="company-card-name">Shenhao Robotics 申昊科技</h3>
       <p class="company-card-desc">20+ years in fault detection. 3,000+ inspection robot deployments. Tour their new production quality science park — rail, power grid, emergency and marine inspection robots.</p>
     </div>
     <div class="company-card">
+      <div class="company-card-photo" style="background-image:url('hangzhou-brainco.jpg');"></div>
       <div class="company-card-icon">🧠</div>
       <div class="company-card-theme">Brain-Computer Interface</div>
       <h3 class="company-card-name">BrainCo 强脑科技</h3>
       <p class="company-card-desc">The first Chinese team admitted to Harvard Innovation Lab. Their bionic hand — controlled by brainwaves — lit the torch at the 2022 Asian Para Games. Hands-on experience with BCI technology.</p>
     </div>
     <div class="company-card">
+      <div class="company-card-photo" style="background-image:url('hangzhou-iflytek.jpg');"></div>
       <div class="company-card-icon">🎤</div>
       <div class="company-card-theme">AI & Language</div>
       <h3 class="company-card-name">iFlytek 科大讯飞</h3>
       <p class="company-card-desc">China's leading AI speech and cognitive company. Test their live voice recognition accuracy, experience virtual human creation, and learn about the Spark LLM and its industry deployments.</p>
     </div>
     <div class="company-card">
+      <div class="company-card-photo" style="background-image:url('hangzhou-shenhao.jpg');"></div>
       <div class="company-card-icon">🏙️</div>
       <div class="company-card-theme">Future City</div>
       <h3 class="company-card-name">Robot Town 机器人小镇</h3>

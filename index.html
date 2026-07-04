@@ -26,6 +26,7 @@
     --hrdf: #1a7a3c;
   }
   html { scroll-behavior: smooth; }
+  html, body { overflow-x: hidden; max-width: 100%; }
   body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--ink); background: var(--paper); line-height: 1.65; -webkit-font-smoothing: antialiased; }
   .display { font-family: 'Manrope', sans-serif; font-weight: 800; letter-spacing: -0.02em; line-height: 1.08; }
   img { display: block; max-width: 100%; }
@@ -45,7 +46,9 @@
   .nav-right { display: flex; align-items: center; gap: 0.75rem; }
   .nav-cta { background: var(--ink); color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.6rem 1.15rem; border-radius: 100px; transition: background 0.2s; white-space: nowrap; }
   .nav-cta:hover { background: var(--sky-deep); }
-  .nav-burger { display: none; background: none; border: none; font-size: 1.3rem; color: var(--ink); cursor: pointer; }
+  .lang-switch { font-size: 0.85rem; font-weight: 600; color: var(--muted); text-decoration: none; padding: 0.4rem 0.6rem; border-radius: 6px; white-space: nowrap; }
+  .lang-switch:hover { color: var(--sky); }
+  .nav-burger { display: none; background: none; border: none; font-size: 1.3rem; color: var(--ink); cursor: pointer; width: 44px; height: 44px; align-items: center; justify-content: center; flex-shrink: 0; }
 
   /* HERO (bright coastal) */
   .hero { padding: 1.2rem 2rem 2rem; max-width: 1240px; margin: 0 auto; }
@@ -65,8 +68,9 @@
   .btn-sky { background: var(--sky); color: #fff; }
   .btn-glass { background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.45); color: #fff; backdrop-filter: blur(6px); }
   .hero-dots { position: absolute; top: 1.6rem; right: 1.8rem; display: flex; gap: 0.5rem; z-index: 3; }
-  .hero-dot { width: 8px; height: 8px; padding: 0; border: none; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer; transition: background 0.3s, width 0.3s; }
+  .hero-dot { width: 8px; height: 8px; padding: 0; border: none; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer; transition: background 0.3s, width 0.3s; position: relative; }
   .hero-dot.active { background: #fff; width: 22px; border-radius: 4px; }
+  .hero-dot::before { content: ''; position: absolute; inset: -12px; }
 
   /* SECTION BASE */
   section.block { padding: 5.5rem 0; }
@@ -138,8 +142,9 @@
 
   /* TESTIMONIALS */
   .quotes { background: var(--sand); }
-  .q-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+  .q-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; }
   .qcard { background: var(--white); border-radius: 20px; padding: 1.9rem 1.7rem; box-shadow: 0 8px 24px rgba(20,50,70,0.05); }
+  .qcard-photo { width: 100%; height: 140px; object-fit: cover; object-position: center 25%; border-radius: 12px; margin-bottom: 1.1rem; }
   .q-stars { color: #e7a93a; font-size: 0.85rem; letter-spacing: 0.1em; margin-bottom: 0.9rem; }
   .q-text { font-size: 0.98rem; line-height: 1.6; color: var(--ink); margin-bottom: 1.1rem; }
   .q-who { font-size: 0.8rem; font-weight: 600; color: var(--muted); letter-spacing: 0.02em; }
@@ -174,22 +179,47 @@
   }
   @media (max-width: 680px) {
     .wrap { padding: 0 1.25rem; }
-    .nav-inner { padding: 0.8rem 1.25rem; }
+    .nav-inner { padding: 0.75rem 1.1rem; gap: 0.6rem; }
+    .brand { font-size: 0.92rem; gap: 0.4rem; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .brand img { width: 26px; height: 26px; flex-shrink: 0; }
+    .nav-right { gap: 0.4rem; flex-shrink: 0; }
+    .nav-cta { padding: 0.6rem 0.85rem; font-size: 0.78rem; }
+    .lang-switch { font-size: 0.76rem; padding: 0.4rem 0.35rem; flex-shrink: 0; }
     .nav-links { position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--paper); border-bottom: 1px solid var(--line); padding: 0.5rem 1.25rem 1rem; box-shadow: 0 14px 30px rgba(20,50,70,0.08); display: none; }
     .nav-links.open { display: flex; }
-    .nav-links a { padding: 0.85rem 0; border-bottom: 1px solid var(--line); opacity: 1; font-size: 1rem; }
-    .nav-burger { display: block; }
-    .hero { padding: 0.75rem 1rem 1.5rem; }
-    .hero-card { height: 560px; border-radius: 24px; }
-    .hero-copy { padding: 1.8rem 1.6rem; }
+    .nav-links a { padding: 0.95rem 0; border-bottom: 1px solid var(--line); opacity: 1; font-size: 1.05rem; }
+    .nav-burger { display: flex; }
+    .hero { padding: 0.6rem 0.85rem 1.25rem; }
+    .hero-card { height: 76vh; min-height: 460px; max-height: 600px; border-radius: 20px; }
+    .hero-copy { padding: 1.5rem 1.3rem; }
+    .hero-eyebrow { font-size: 0.68rem; margin-bottom: 0.7rem; }
+    .hero-h { font-size: clamp(2.1rem, 8vw, 2.8rem); margin-bottom: 0.8rem; }
+    .hero-sub { font-size: 0.92rem; margin-bottom: 1.4rem; max-width: 100%; }
+    .hero-actions { gap: 0.6rem; }
+    .hero-actions .btn { flex: 1 1 auto; text-align: center; padding: 0.9rem 1.2rem; font-size: 0.86rem; }
     .dest-grid { grid-template-columns: 1fr; }
+    .dcard { height: 260px; }
     .why-grid { grid-template-columns: 1fr; }
+    .why-card { padding: 1.5rem 1.4rem; }
     .jrn-grid { grid-template-columns: 1fr; }
-    .jcard { height: 300px; }
+    .jcard { height: 280px; }
+    .chip-row { gap: 0.55rem; }
+    .chip { padding: 0.65rem 1.1rem; font-size: 0.88rem; }
+    .step { padding: 1rem 0; }
     .foot-grid { grid-template-columns: 1fr; gap: 1.8rem; }
-    section.block { padding: 4rem 0; }
+    .foot-bottom { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    section.block { padding: 3.5rem 0; }
+    .sec-head { margin-bottom: 2rem; }
     .cta-card { padding: 3rem 1.5rem; }
-    .custom-visual { height: 300px; }
+    .cta-card h2 { font-size: clamp(1.7rem, 7vw, 2.2rem); }
+    .cta-actions { flex-direction: column; }
+    .cta-actions .btn { width: 100%; text-align: center; }
+    .custom-visual { height: 260px; }
+  }
+  @media (max-width: 380px) {
+    .brand { font-size: 0.82rem; }
+    .nav-cta { padding: 0.55rem 0.7rem; font-size: 0.72rem; }
+    .lang-switch { font-size: 0.7rem; padding: 0.35rem 0.25rem; }
   }
 </style>
 </head>
@@ -200,12 +230,13 @@
   <div class="nav-inner">
     <a href="index.html" class="brand"><img src="logo-mark.png" alt="Blue Sky Vacation">Blue Sky Vacation</a>
     <nav class="nav-links" id="navlinks">
-      <a href="#destinations">Destinations</a>
-      <a href="#experiences">Experiences</a>
       <a href="#journeys">Journeys</a>
       <a href="#about">About</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#experiences">Experiences</a>
     </nav>
     <div class="nav-right">
+      <a href="index-zh.html" class="lang-switch">中文</a>
       <a href="https://wa.me/60164802332" class="nav-cta">Plan my trip</a>
       <button class="nav-burger" id="burger" aria-label="Open menu">☰</button>
     </div>
@@ -230,12 +261,65 @@
     </div>
     <div class="hero-copy">
       <p class="hero-eyebrow">Curated travel · Kota Kinabalu, Sabah</p>
-      <h1 class="hero-h">Travel that means something.</h1>
+      <h1 class="hero-h">Travel under blue skies.</h1>
       <p class="hero-sub">Thoughtfully designed journeys — not packages. We shape the trip around you, then handle every single detail.</p>
       <div class="hero-actions">
         <a class="btn btn-sky" href="#destinations">Explore destinations</a>
         <a class="btn btn-glass" href="https://wa.me/60164802332?text=Hi%20Blue%20Sky%20Vacation%2C%20I'd%20like%20to%20plan%20a%20trip.">Plan my trip</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEYS -->
+<section class="block" id="journeys">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="kicker">Featured journeys</p>
+      <h2 class="display sec-h">Trips ready when you are.</h2>
+      <p class="lead">Fixed-departure journeys we run from Kota Kinabalu — or the starting point for something we design just for you.</p>
+    </div>
+    <div class="jrn-grid">
+      <a class="jcard" href="tour-hangzhou.html">
+        <div class="jcard-bg" style="background:url('hangzhou-alibaba.jpg') center/cover;"></div>
+        <div class="jcard-tint"></div>
+        <div class="jcard-copy">
+          <span class="jcard-badge b-hrdf">✓ 100% HRDF</span>
+          <div class="jcard-name">Hangzhou AI Study Trip</div>
+          <div class="jcard-meta">8D6N · 11–17 Oct 2026</div>
+          <div class="jcard-link">View trip →</div>
+        </div>
+      </a>
+      <a class="jcard" href="tour-shenzhen.html">
+        <div class="jcard-bg" style="background:url('shenzhen-card-robot.jpg') center/cover;"></div>
+        <div class="jcard-tint"></div>
+        <div class="jcard-copy">
+          <span class="jcard-badge b-hrdf">✓ 100% HRDF</span>
+          <div class="jcard-name">Shenzhen AI Study Trip</div>
+          <div class="jcard-meta">7D6N · 10–16 Nov 2026</div>
+          <div class="jcard-link">View trip →</div>
+        </div>
+      </a>
+      <a class="jcard" href="tour-hainan.html">
+        <div class="jcard-bg" style="background:url('hainan-card-main.jpg') center/cover;"></div>
+        <div class="jcard-tint"></div>
+        <div class="jcard-copy">
+          <span class="jcard-badge b-leisure">Direct from KK</span>
+          <div class="jcard-name">Hainan Island Carnival</div>
+          <div class="jcard-meta">6 Days · From RM 2,199</div>
+          <div class="jcard-link">View trip →</div>
+        </div>
+      </a>
+      <a class="jcard" href="tour-xinjiang.html">
+        <div class="jcard-bg" style="background:url('xinjiang-card-main.jpg') center/cover;"></div>
+        <div class="jcard-tint"></div>
+        <div class="jcard-copy">
+          <span class="jcard-badge b-leisure">Summer &amp; Winter</span>
+          <div class="jcard-name">Northern Xinjiang Odyssey</div>
+          <div class="jcard-meta">11D10N / 9D8N</div>
+          <div class="jcard-link">View trip →</div>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -283,79 +367,27 @@
     </div>
     <div class="dest-grid">
       <a class="dcard" href="https://wa.me/60164802332?text=Hi%2C%20I'd%20like%20to%20explore%20a%20Sabah%20trip.">
-        <div class="ph" style="background:linear-gradient(150deg,#0e7a6e,#1a6b8a);"><span class="ph-label">SABAH — drop hero image</span></div>
+        <div class="ph" style="background:url('sabah-water-village.jpg') center/cover;"></div>
         <div class="dcard-tint"></div>
+        <span class="soon-badge">Itinerary coming soon</span>
         <div class="dcard-copy"><div class="dcard-name">Sabah</div><div class="dcard-tag">Islands, rainforest &amp; Mount Kinabalu — our home ground</div></div>
       </a>
       <a class="dcard" href="#journeys">
-        <div class="ph" style="background:linear-gradient(150deg,#1a3a5c,#2e86c1);"><span class="ph-label">CHINA — drop hero image</span></div>
+        <div class="ph" style="background:url('china-great-wall.jpg') center/cover;"></div>
         <div class="dcard-tint"></div>
         <div class="dcard-copy"><div class="dcard-name">China</div><div class="dcard-tag">Hainan · Xinjiang · AI study trips</div></div>
       </a>
       <a class="dcard" href="https://wa.me/60164802332?text=Hi%2C%20please%20tell%20me%20when%20Vietnam%20trips%20open.">
-        <div class="ph" style="background:linear-gradient(150deg,#2d6a2d,#7a8a4a);"><span class="ph-label">VIETNAM — drop hero image</span></div>
+        <div class="ph" style="background:url('vietnam-fansipan.jpg') center/cover;"></div>
         <div class="dcard-tint"></div>
         <span class="soon-badge">Coming soon</span>
         <div class="dcard-copy"><div class="dcard-name">Vietnam</div><div class="dcard-tag">Old quarters, street food &amp; emerald bays</div></div>
       </a>
       <a class="dcard" href="https://wa.me/60164802332?text=Hi%2C%20please%20tell%20me%20when%20Indonesia%20trips%20open.">
-        <div class="ph" style="background:linear-gradient(150deg,#8b5a2b,#c9793a);"><span class="ph-label">INDONESIA — drop hero image</span></div>
+        <div class="ph" style="background:url('indonesia-ijen.jpg') center/cover;"></div>
         <div class="dcard-tint"></div>
         <span class="soon-badge">Coming soon</span>
         <div class="dcard-copy"><div class="dcard-name">Indonesia</div><div class="dcard-tag">Bali, Java &amp; islands beyond</div></div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- JOURNEYS -->
-<section class="block" id="journeys">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="kicker">Featured journeys</p>
-      <h2 class="display sec-h">Trips ready when you are.</h2>
-      <p class="lead">Fixed-departure journeys we run from Kota Kinabalu — or the starting point for something we design just for you.</p>
-    </div>
-    <div class="jrn-grid">
-      <a class="jcard" href="tour-hangzhou.html">
-        <div class="jcard-bg" style="background:linear-gradient(150deg,#0B4F8A,#062a4a);">🤖</div>
-        <div class="jcard-tint"></div>
-        <div class="jcard-copy">
-          <span class="jcard-badge b-hrdf">✓ 100% HRDF</span>
-          <div class="jcard-name">Hangzhou AI Study Trip</div>
-          <div class="jcard-meta">8D6N · 11–17 Oct 2026</div>
-          <div class="jcard-link">View trip →</div>
-        </div>
-      </a>
-      <a class="jcard" href="tour-shenzhen.html">
-        <div class="jcard-bg" style="background:linear-gradient(150deg,#1a0a2e,#0a2040);">🔋</div>
-        <div class="jcard-tint"></div>
-        <div class="jcard-copy">
-          <span class="jcard-badge b-hrdf">✓ 100% HRDF</span>
-          <div class="jcard-name">Shenzhen AI Study Trip</div>
-          <div class="jcard-meta">7D6N · 10–16 Nov 2026</div>
-          <div class="jcard-link">View trip →</div>
-        </div>
-      </a>
-      <a class="jcard" href="tour-hainan.html">
-        <div class="jcard-bg" style="background:linear-gradient(150deg,#0a5f7a,#0e7a6e);">🏝️</div>
-        <div class="jcard-tint"></div>
-        <div class="jcard-copy">
-          <span class="jcard-badge b-leisure">Direct from KK</span>
-          <div class="jcard-name">Hainan Island Carnival</div>
-          <div class="jcard-meta">6 Days · From RM 1,999</div>
-          <div class="jcard-link">View trip →</div>
-        </div>
-      </a>
-      <a class="jcard" href="tour-xinjiang.html">
-        <div class="jcard-bg" style="background:linear-gradient(150deg,#1a4a6e,#2d6a2d);">🏔️</div>
-        <div class="jcard-tint"></div>
-        <div class="jcard-copy">
-          <span class="jcard-badge b-leisure">Summer &amp; Winter</span>
-          <div class="jcard-name">Northern Xinjiang Odyssey</div>
-          <div class="jcard-meta">11D10N / 9D8N</div>
-          <div class="jcard-link">View trip →</div>
-        </div>
       </a>
     </div>
   </div>
@@ -422,21 +454,12 @@
       <p class="kicker">Travellers' words</p>
       <h2 class="display sec-h">Trusted by groups<br>across Sabah.</h2>
     </div>
-    <div class="q-grid">
+    <div class="q-grid" style="max-width:480px; margin:0 auto;">
       <div class="qcard">
+        <img class="qcard-photo" src="turkey-review-photo.jpg" alt="Bro. Quek & Mimi in a poppy field at the ruins of Laodicea, Turkey">
         <div class="q-stars">★★★★★</div>
-        <p class="q-text">"Everything was arranged perfectly — the guide, the hotels, every detail. We didn't have to worry about a single thing."</p>
-        <div class="q-who">— Corporate group · Hangzhou study trip</div>
-      </div>
-      <div class="qcard">
-        <div class="q-stars">★★★★★</div>
-        <p class="q-text">"They planned a trip we could never have put together ourselves. It felt personal, not packaged."</p>
-        <div class="q-who">— Family of 9 · Hainan Island</div>
-      </div>
-      <div class="qcard">
-        <div class="q-stars">★★★★★</div>
-        <p class="q-text">"Responsive on WhatsApp before, during and after. That's why we keep travelling with Blue Sky."</p>
-        <div class="q-who">— Church group · overseas tour</div>
+        <p class="q-text">"Reflecting on Turkey's early Christian heritage reminds us to remain vigilant and steadfast in strengthening the church today — a deeply meaningful first big trip after retirement."</p>
+        <div class="q-who">— Bro. Quek &amp; Mimi · St. Paul's 7 Churches Missionary Journey</div>
       </div>
     </div>
   </div>
@@ -466,10 +489,10 @@
       </div>
       <div class="foot-col">
         <h4>Explore</h4>
-        <a href="#destinations">Destinations</a>
-        <a href="#experiences">Experiences</a>
         <a href="#journeys">Journeys</a>
         <a href="#about">About us</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#experiences">Experiences</a>
       </div>
       <div class="foot-col">
         <h4>Journeys</h4>

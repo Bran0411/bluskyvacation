@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="海南岛狂欢之旅 — 从亚庇直飞海口的6天行程。海口、海花岛、三亚、凤凰岛五星海鲜自助、海底餐厅。起价 RM 2,199。">
+<title>海南岛狂欢之旅 — 6天 | 蓝天假期</title>
+<link rel="icon" href="logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --sky: #2f9be0; --teal: #0E7A6E; --sand: #F7F3EE;
+    --charcoal: #1A1A1A; --mid: #4A4A4A; --light-line: #E2DDD8;
+    --white: #FFFFFF; --accent: #C9793A;
+    --ocean: #2f9be0; --coral: #e05a3a; --gold: #c49a2a;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Noto Sans SC', 'Plus Jakarta Sans', sans-serif; color: var(--charcoal); background: var(--white); font-weight: 400; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 3rem; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.07); }
+  .nav-logo { font-family: 'Manrope', sans-serif; font-size: 1.3rem; font-weight: 600; color: var(--sky); text-decoration: none; display: flex; align-items: center; }
+  .nav-logo span { color: var(--accent); }
+  .nav-back { font-size: 0.8rem; color: var(--mid); text-decoration: none; }
+  .nav-back:hover { color: var(--sky); }
+
+  .hero { min-height: 92vh; display: grid; grid-template-columns: 1.1fr 0.9fr; padding-top: 70px; }
+  .hero-left { padding: 5rem 4rem 5rem 5rem; display: flex; flex-direction: column; justify-content: center; background: linear-gradient(155deg, #0f3a5c 0%, #1a5a8a 48%, #2f9be0 130%); }
+  .hero-badges { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
+  .badge { padding: 0.35rem 0.85rem; border-radius: 2px; font-size: 0.75rem; font-weight: 500; }
+  .badge-direct { background: var(--ocean); color: white; }
+  .badge-from { background: var(--coral); color: white; }
+  .badge-nights { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.18); }
+  .hero-title { font-family: 'Noto Sans SC', 'Manrope', sans-serif; font-size: clamp(2.2rem, 3.4vw, 3.3rem); line-height: 1.45; font-weight: 700; color: var(--white); margin-bottom: 0.7rem; }
+  .hero-title em { color: #7DD4E8; font-style: normal; }
+  .hero-sub { font-family: 'Noto Sans SC', 'Manrope', sans-serif; font-size: 1.1rem; color: rgba(255,255,255,0.55); margin-bottom: 1.5rem; }
+  .hero-desc { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.9; max-width: 420px; margin-bottom: 2.5rem; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-ocean { background: var(--ocean); color: white; padding: 0.9rem 2rem; text-decoration: none; font-size: 0.85rem; font-weight: 500; border-radius: 2px; transition: opacity 0.2s; display: inline-block; }
+  .btn-ocean:hover { opacity: 0.88; }
+  .btn-outline { border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.8); padding: 0.9rem 2rem; text-decoration: none; font-size: 0.85rem; border-radius: 2px; display: inline-block; transition: border-color 0.2s; }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.6); }
+
+  .hero-right { display: grid; grid-template-rows: 1fr 1fr; }
+  .hero-img-top { background: linear-gradient(135deg, #0a5f7a 0%, #0e7a6e 100%); display: flex; align-items: center; justify-content: center; min-height: 200px; position: relative; overflow: hidden; }
+  .hero-img-bottom { background: linear-gradient(135deg, #8b3a1a 0%, #c9793a 100%); display: flex; align-items: center; justify-content: center; min-height: 200px; position: relative; overflow: hidden; }
+  .hero-img-label { position: absolute; bottom: 1.25rem; left: 1.25rem; font-size: 0.8rem; font-weight: 500; color: rgba(255,255,255,0.9); }
+  .hero-img-icon { font-size: 4rem; opacity: 0.35; }
+
+  .pricing-section { padding: 4rem 5rem; background: var(--sand); }
+  .section-eyebrow { font-size: 0.78rem; color: var(--accent); font-weight: 600; margin-bottom: 0.8rem; }
+  .section-title { font-family: 'Noto Sans SC', 'Manrope', sans-serif; font-size: clamp(1.6rem, 2.2vw, 2.1rem); font-weight: 700; line-height: 1.4; margin-bottom: 0.75rem; }
+  .section-sub { font-size: 0.9rem; color: var(--mid); margin-bottom: 2.5rem; }
+  .price-tabs { display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  .price-tab { padding: 0.5rem 1.25rem; border: 1px solid var(--light-line); border-radius: 2px; font-size: 0.82rem; font-weight: 500; cursor: pointer; background: var(--white); color: var(--mid); transition: all 0.2s; }
+  .price-tab.active { background: var(--ocean); color: white; border-color: var(--ocean); }
+  .price-table-wrap { display: none; }
+  .price-table-wrap.active { display: block; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+  th { background: var(--charcoal); color: white; padding: 0.75rem 1rem; text-align: left; font-size: 0.78rem; font-weight: 600; }
+  td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--light-line); }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+  .promo-row td { background: rgba(10,107,138,0.06) !important; font-weight: 500; }
+  .holiday-row td { background: rgba(201,121,58,0.06) !important; }
+  .promo-tag { background: var(--ocean); color: white; font-size: 0.65rem; padding: 0.1rem 0.4rem; border-radius: 2px; margin-left: 0.4rem; vertical-align: middle; }
+  .holiday-tag { background: var(--coral); color: white; font-size: 0.65rem; padding: 0.1rem 0.4rem; border-radius: 2px; margin-left: 0.4rem; vertical-align: middle; }
+
+  .price-notes { margin-top: 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .price-note-item { background: var(--white); padding: 1.25rem; border-radius: 3px; border: 1px solid var(--light-line); }
+  .price-note-label { font-size: 0.78rem; color: var(--mid); margin-bottom: 0.4rem; font-weight: 600; }
+  .price-note-val { font-size: 0.86rem; color: var(--charcoal); line-height: 1.7; }
+
+  .included-section { padding: 5rem 5rem; }
+  .included-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .included-col h4 { font-size: 0.8rem; color: var(--mid); margin-bottom: 1rem; font-weight: 600; }
+  .included-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .included-list li { font-size: 0.88rem; color: var(--mid); display: flex; align-items: flex-start; gap: 0.6rem; line-height: 1.7; }
+  .check { color: var(--teal); flex-shrink: 0; margin-top: 1px; }
+  .cross { color: #c0392b; flex-shrink: 0; margin-top: 1px; }
+
+  .highlights-section { padding: 5rem 5rem; background: var(--sand); }
+  .highlights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
+  .highlight-card { background: var(--white); border-radius: 3px; overflow: hidden; border: 1px solid var(--light-line); }
+  .highlight-card-top { height: 130px; background-size: cover; background-position: center; }
+  .highlight-card-body { padding: 1.5rem; }
+  .highlight-icon { font-size: 1.6rem; margin-bottom: 0.75rem; }
+  .highlight-day { font-size: 0.72rem; color: var(--mid); font-weight: 600; margin-bottom: 0.4rem; }
+  .highlight-name { font-family: 'Noto Sans SC', 'Manrope', sans-serif; font-size: 1.08rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .highlight-desc { font-size: 0.84rem; color: var(--mid); line-height: 1.75; }
+
+  .itinerary-section { padding: 5rem 5rem; }
+  .day-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 2.5rem; }
+  .day-item { border: 1px solid var(--light-line); border-radius: 3px; overflow: hidden; }
+  .day-header { display: flex; align-items: center; gap: 1.25rem; padding: 1.25rem 1.5rem; cursor: pointer; user-select: none; background: var(--white); flex-wrap: wrap; }
+  .day-header:hover { background: var(--sand); }
+  .day-num { background: var(--ocean); color: white; font-size: 0.75rem; font-weight: 600; padding: 0.3rem 0.7rem; border-radius: 2px; white-space: nowrap; flex-shrink: 0; }
+  .day-route { font-size: 0.82rem; color: var(--mid); flex-shrink: 0; font-weight: 500; }
+  .day-meals { display: flex; gap: 0.3rem; flex-shrink: 0; }
+  .meal-badge { font-size: 0.66rem; padding: 0.15rem 0.4rem; border-radius: 2px; background: var(--sand); color: var(--mid); border: 1px solid var(--light-line); }
+  .meal-badge.included { background: rgba(14,122,110,0.08); color: var(--teal); border-color: rgba(14,122,110,0.2); }
+  .day-title { font-size: 0.9rem; font-weight: 600; flex: 1; }
+  .day-chevron { font-size: 0.8rem; color: var(--mid); transition: transform 0.3s; }
+  .day-item.open .day-chevron { transform: rotate(180deg); }
+  .day-body { display: none; border-top: 1px solid var(--light-line); background: var(--sand); }
+  .day-item.open .day-body { display: block; }
+  .timeline { padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+  .tl-item { display: flex; gap: 1rem; align-items: flex-start; }
+  .tl-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ocean); flex-shrink: 0; margin-top: 6px; }
+  .tl-content { font-size: 0.86rem; color: var(--charcoal); line-height: 1.75; flex: 1; }
+  .tl-content strong { display: block; font-weight: 600; margin-bottom: 0.2rem; }
+  .tl-content span { color: var(--mid); font-size: 0.82rem; }
+  .tl-star { background: rgba(196,154,42,0.12); border-left: 2px solid var(--gold); padding: 0.6rem 0.8rem; border-radius: 0 3px 3px 0; margin-top: 0.5rem; font-size: 0.82rem; color: var(--mid); }
+  .hotel-tag { display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(10,107,138,0.08); border: 1px solid rgba(10,107,138,0.2); border-radius: 2px; padding: 0.25rem 0.6rem; font-size: 0.78rem; color: var(--ocean); font-weight: 500; margin-top: 0.5rem; }
+
+  .flight-section { background: var(--charcoal); color: white; padding: 3.5rem 5rem; }
+  .flight-section .section-title { color: white; margin-bottom: 2rem; }
+  .flight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .flight-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 3px; padding: 1.5rem; }
+  .flight-route { font-size: 0.75rem; color: rgba(255,255,255,0.45); margin-bottom: 0.75rem; }
+  .flight-main { font-family: 'Manrope', sans-serif; font-size: 1.4rem; font-weight: 600; color: white; margin-bottom: 0.4rem; }
+  .flight-detail { font-size: 0.84rem; color: rgba(255,255,255,0.55); line-height: 1.8; }
+  .flight-badge { display: inline-block; background: var(--ocean); color: white; font-size: 0.68rem; padding: 0.2rem 0.5rem; border-radius: 2px; margin-bottom: 0.75rem; }
+
+  .booking-section { padding: 4rem 5rem; background: var(--sand); display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
+  .booking-card { background: var(--white); padding: 1.75rem; border-radius: 3px; border: 1px solid var(--light-line); }
+  .booking-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+  .booking-title { font-size: 0.8rem; color: var(--mid); font-weight: 600; margin-bottom: 0.6rem; }
+  .booking-body { font-size: 0.86rem; color: var(--mid); line-height: 1.8; }
+
+  .cta-section { background: linear-gradient(135deg, #041e2e 0%, #062d40 100%); color: white; padding: 5rem; text-align: center; }
+  .cta-section .section-title { color: white; margin-bottom: 1rem; }
+  .cta-section p { color: rgba(255,255,255,0.65); margin-bottom: 2rem; font-size: 0.98rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-white { background: white; color: var(--charcoal); padding: 0.9rem 2.5rem; text-decoration: none; font-size: 0.86rem; font-weight: 600; border-radius: 2px; display: inline-block; }
+  .btn-whatsapp { background: #25D366; color: white; padding: 0.9rem 2.5rem; text-decoration: none; font-size: 0.86rem; font-weight: 600; border-radius: 2px; display: inline-block; }
+
+  footer { background: #0d0d0d; color: rgba(255,255,255,0.35); padding: 2rem 5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; }
+  .footer-logo { font-family: 'Noto Sans SC', 'Manrope', sans-serif; font-size: 1.1rem; font-weight: 700; color: rgba(255,255,255,0.75); }
+  .footer-logo span { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 3rem 1.5rem; }
+    .hero-right { min-height: 200px; grid-template-rows: 1fr; grid-template-columns: 1fr 1fr; }
+    .pricing-section, .included-section, .highlights-section, .itinerary-section, .cta-section { padding: 3.5rem 1.5rem; }
+    .flight-section, .booking-section { padding: 3rem 1.5rem; }
+    .included-grid, .flight-grid, .booking-section { grid-template-columns: 1fr; }
+    .highlights-grid { grid-template-columns: 1fr; }
+    .price-notes { grid-template-columns: 1fr; }
+    .day-header { flex-wrap: wrap; row-gap: 0.5rem; }
+    .day-title { flex-basis: 100%; order: 4; }
+    .day-chevron { margin-left: auto; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 0.6rem 0.5rem; }
+  }
+
+  @media (max-width: 480px) {
+    nav { padding: 0.8rem 1rem; }
+    .nav-logo { font-size: 0.85rem !important; }
+    .nav-logo img { width: 24px !important; height: 24px !important; margin-right: 0.35rem !important; }
+    nav > div { gap: 0.5rem !important; }
+    .nav-back { font-size: 0.68rem !important; }
+    .nav-alltours { display: none; }
+    .nav-cta-btn { font-size: 0.68rem !important; padding: 0.45rem 0.7rem !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index-zh.html" class="nav-logo"><img src="logo-mark.png" alt="" style="height:30px;width:30px;border-radius:7px;object-fit:cover;vertical-align:middle;margin-right:0.55rem;">蓝天假期</a>
+  <div style="display:flex;align-items:center;gap:1.25rem;">
+    <a href="tour-hainan.html" class="nav-back">EN</a>
+    <a href="index-zh.html" class="nav-back nav-alltours">← 所有行程</a>
+    <a href="https://wa.me/60164802332?text=您好,我对海南岛之旅感兴趣。" class="nav-cta-btn" style="background:#16384f;color:#fff;text-decoration:none;font-size:0.82rem;font-weight:600;padding:0.55rem 1.1rem;border-radius:100px;white-space:nowrap;">立即咨询</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-badges">
+      <span class="badge badge-direct">✈ 亚庇直飞海口</span>
+      <span class="badge badge-from">起价 RM 2,199</span>
+      <span class="badge badge-nights">5天或6天</span>
+    </div>
+    <h1 class="hero-title">海南岛<br><em>狂欢之旅</em></h1>
+    <p class="hero-sub">海南岛嘉年华 · 亚庇直飞</p>
+    <p class="hero-desc">中国的热带天堂 — 亚庇直飞海口。六天畅游海口夜色海滨、海花岛、三亚亚特兰蒂斯度假村、凤凰岛海鲜自助餐、亚龙湾海底餐厅,以及南海直升机体验。</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/60164802332?text=您好,我对海南岛之旅感兴趣。" class="btn-ocean">查看日期与预订</a>
+      <a href="#itinerary" class="btn-outline">查看行程</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-top">
+      <div class="hero-img-icon">🏝️</div>
+      <span class="hero-img-label">海花岛 · 三亚</span>
+    </div>
+    <div class="hero-img-bottom">
+      <div class="hero-img-icon">🦞</div>
+      <span class="hero-img-label">凤凰岛无限量海鲜自助餐</span>
+    </div>
+  </div>
+</div>
+
+<section class="pricing-section" id="pricing">
+  <p class="section-eyebrow">日期与价格</p>
+  <h2 class="section-title">选择您的出发团期</h2>
+  <p class="section-sub">所有价格为每人双人间价格,已含燃油附加费。最低10位成人成团。</p>
+
+  <div class="price-tabs">
+    <div class="price-tab active" onclick="showTab('6sun')">6天 · 周日团</div>
+    <div class="price-tab" onclick="showTab('6fri')">6天 · 周五团</div>
+    <div class="price-tab" onclick="showTab('5wed')">5天 · 周三团</div>
+  </div>
+
+  <div class="price-table-wrap active" id="tab-6sun">
+    <table>
+      <thead><tr><th>出发日期</th><th>每人价格</th><th>婴儿(净价)</th><th>儿童(减免)</th><th>单人房差</th></tr></thead>
+      <tbody>
+        <tr class="promo-row"><td>2026年10月11日 <span class="promo-tag">首航优惠</span></td><td><strong>RM 2,199</strong></td><td>RM 600</td><td>–RM 200</td><td>RM 550</td></tr>
+        <tr><td>2026年10月25日</td><td><strong>RM 2,399</strong></td><td>RM 600</td><td>–RM 200</td><td>RM 550</td></tr>
+        <tr><td>2026年11月8日</td><td><strong>RM 2,599</strong></td><td>RM 600</td><td>–RM 200</td><td>RM 550</td></tr>
+        <tr><td>2026年11月22日</td><td><strong>RM 2,599</strong></td><td>RM 600</td><td>–RM 200</td><td>RM 550</td></tr>
+        <tr class="holiday-row"><td>2026年12月6日 <span class="holiday-tag">假期团</span></td><td><strong>RM 2,899</strong></td><td>RM 600</td><td>–RM 200</td><td>RM 550</td></tr>
+        <tr class="holiday-row"><td>2026年12月20日 <span class="holiday-tag">假期团</span></td><td><strong>RM 2,899</strong></td><td>RM 600</td><td>–RM 200</td><td>RM 550</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="price-table-wrap" id="tab-6fri">
+    <table>
+      <thead><tr><th>出发日期</th><th>每人价格</th><th>婴儿(净价)</th><th>儿童(减免)</th><th>单人房差</th></tr></thead>
+      <tbody>
+        <tr><td>2026年10月16日</td><td><strong>RM 2,399</strong></td><td>RM 600</td><td>–RM 200</td><td>RM 550</td></tr>
+        <tr><td>2026年10月30日</td><td><strong>RM 2,399</strong></td><td>RM 600</td><td>–RM 200</td><td>RM 550</td></tr>
+        <tr><td>2026年11月13日</td><td><strong>RM 2,599</strong></td><td>RM 600</td><td>–RM 200</td><td>RM 550</td></tr>
+        <tr><td>2026年11月27日</td><td><strong>RM 2,599</strong></td><td>RM 600</td><td>–RM 200</td><td>RM 550</td></tr>
+        <tr class="holiday-row"><td>2026年12月11日 <span class="holiday-tag">假期团</span></td><td><strong>RM 2,899</strong></td><td>RM 600</td><td>–RM 200</td><td>RM 550</td></tr>
+        <tr class="holiday-row"><td>2026年12月25日 <span class="holiday-tag">圣诞团</span></td><td><strong>RM 3,099</strong></td><td>RM 600</td><td>–RM 200</td><td>RM 550</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="price-table-wrap" id="tab-5wed">
+    <table>
+      <thead><tr><th>出发日期</th><th>每人价格</th><th>婴儿(净价)</th><th>儿童(减免)</th><th>单人房差</th></tr></thead>
+      <tbody>
+        <tr class="promo-row"><td>2026年10月21日 <span class="promo-tag">优惠团</span></td><td><strong>RM 1,999</strong></td><td>RM 600</td><td>–RM 150</td><td>RM 450</td></tr>
+        <tr><td>2026年11月4日</td><td><strong>RM 2,199</strong></td><td>RM 600</td><td>–RM 150</td><td>RM 450</td></tr>
+        <tr><td>2026年11月18日</td><td><strong>RM 2,199</strong></td><td>RM 600</td><td>–RM 150</td><td>RM 450</td></tr>
+        <tr><td>2026年12月2日</td><td><strong>RM 2,399</strong></td><td>RM 600</td><td>–RM 150</td><td>RM 450</td></tr>
+        <tr class="holiday-row"><td>2026年12月16日 <span class="holiday-tag">假期团</span></td><td><strong>RM 2,599</strong></td><td>RM 600</td><td>–RM 150</td><td>RM 450</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="price-notes">
+    <div class="price-note-item">
+      <div class="price-note-label">订金</div>
+      <div class="price-note-val">每人RM 300(不可退还)。出发前20天须付清全款。</div>
+    </div>
+    <div class="price-note-item">
+      <div class="price-note-label">成团人数</div>
+      <div class="price-note-val">最低10位成人。16人以上配领队。21人以上可包团。</div>
+    </div>
+    <div class="price-note-item">
+      <div class="price-note-label">燃油附加费</div>
+      <div class="price-note-val">已包含在以上显示的所有价格中,预订时无需额外支付。</div>
+    </div>
+    <div class="price-note-item">
+      <div class="price-note-label">价格包含</div>
+      <div class="price-note-val">抵达自助早餐、离境点心晚餐、20公斤托运行李、7公斤手提行李、导游及司机小费、领队津贴。</div>
+    </div>
+  </div>
+</section>
+
+<section class="included-section">
+  <p class="section-eyebrow">套餐详情</p>
+  <h2 class="section-title">费用包含项目</h2>
+  <div class="included-grid">
+    <div class="included-col">
+      <h4>包含项目</h4>
+      <ul class="included-list">
+        <li><span class="check">✓</span>亚庇↔海口往返直飞机票(AQ1220/AQ1219)</li>
+        <li><span class="check">✓</span>抵达自助早餐 · 离境点心晚餐</li>
+        <li><span class="check">✓</span>20公斤托运行李 + 7公斤手提行李</li>
+        <li><span class="check">✓</span>亚龙湾海底午餐(2人1份)</li>
+        <li><span class="check">✓</span>凤凰岛无限量海鲜自助晚餐 + 无限量畅饮啤酒</li>
+        <li><span class="check">✓</span>直升机1公里低空飞行(赠送,视天气而定)</li>
+        <li><span class="check">✓</span>行程中列明的所有门票</li>
+        <li><span class="check">✓</span>南山观音、玫瑰谷、槟榔谷电瓶车</li>
+        <li><span class="check">✓</span>海口湾夜游游艇(第一晚)</li>
+        <li><span class="check">✓</span>三亚旅游观光小火车</li>
+        <li><span class="check">✓</span>凤凰岛打铁花表演(赠送)</li>
+        <li><span class="check">✓</span>司机及导游小费、领队津贴</li>
+        <li><span class="check">✓</span>全程入住四星及五星级酒店</li>
+      </ul>
+    </div>
+    <div class="included-col">
+      <h4>不包含项目(自费)</h4>
+      <ul class="included-list">
+                <li><span class="cross">✕</span>行程中未列明的个别餐食</li>
+        <li><span class="cross">✕</span>旅游保险(强烈建议购买)</li>
+        <li><span class="cross">✕</span>单人房差(依团期RM 450–550不等)</li>
+        <li><span class="cross">✕</span>自费项目:宋城千古情演出 CNY 320</li>
+        <li><span class="cross">✕</span>个人购物及其他额外消费</li>
+        <li><span class="cross">✕</span>中国签证(如需)</li>
+      </ul>
+      <div style="margin-top:1.5rem; background:var(--sand); padding:1.25rem; border-radius:3px; border-left:3px solid var(--ocean);">
+        <p style="font-size:0.86rem; color:var(--mid); line-height:1.75;"><strong style="color:var(--charcoal);">中国境内支付:</strong>出发前请下载支付宝或Touch 'n Go并绑定您的信用卡/借记卡。现金同样可用 — 中国法律规定所有商户须接受现金支付。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="highlights-section">
+  <p class="section-eyebrow">行程亮点</p>
+  <h2 class="section-title">六天。六段难忘体验。</h2>
+  <div class="highlights-grid">
+    <div class="highlight-card">
+      <div class="highlight-card-top" style="background-image:url('hainan-yacht.jpg');"></div>
+      <div class="highlight-card-body">
+        <div class="highlight-icon">⛵</div>
+        <div class="highlight-day">第1天 · 海口</div>
+        <h3 class="highlight-name">海口湾夜游游艇</h3>
+        <p class="highlight-desc">从历史悠久的东坡老码头出发。滑行穿越璀璨的城市夜色,摩天大楼的灯光秀在水面上闪耀。凉爽的海风、炫目的灯光,尽显海口滨海之魂。</p>
+      </div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-card-top" style="background-image:url('hainan-dutyfree.jpg');"></div>
+      <div class="highlight-card-body">
+        <div class="highlight-icon">🛍️</div>
+        <div class="highlight-day">第2天 · 海花岛</div>
+        <h3 class="highlight-name">亚洲最大免税城</h3>
+        <p class="highlight-desc">海口国际免税城 — 800多个品牌,全球单体最大的免税店。随后前往海花岛的6条主题商业街、8大美食区,以及震撼的夜间灯光秀。</p>
+      </div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-card-top" style="background-image:url('hainan-guanyin.jpg');"></div>
+      <div class="highlight-card-body">
+        <div class="highlight-icon">🕌</div>
+        <div class="highlight-day">第3天 · 三亚</div>
+        <h3 class="highlight-name">108米南山观音 + 观光小火车</h3>
+        <p class="highlight-desc">登临世界最高的海上观音像脚下。随后乘坐三亚旅游观光小火车穿越热带海岸风光前往天涯小镇 — 蓝白建筑与海景宛如走进宫崎骏的世界。</p>
+      </div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-card-top" style="background-image:url('hainan-undersea.jpg');"></div>
+      <div class="highlight-card-body">
+        <div class="highlight-icon">🐠</div>
+        <div class="highlight-day">第4天 · 三亚</div>
+        <h3 class="highlight-name">海底午餐 · 亚特兰蒂斯 · 凤凰岛</h3>
+        <p class="highlight-desc">在亚龙湾海底餐厅用餐,周围环绕着海洋生物。探索三亚亚特兰蒂斯 — 全球第三座亚特兰蒂斯度假村。入住贝壳造型的凤凰岛,享用无限量海鲜自助餐及打铁花表演。</p>
+      </div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-card-top" style="background-image:url('hainan-helicopter.jpg');"></div>
+      <div class="highlight-card-body">
+        <div class="highlight-icon">🚁</div>
+        <div class="highlight-day">第5天 · 三亚 → 海口</div>
+        <h3 class="highlight-name">直升机体验 + 黎苗村寨</h3>
+        <p class="highlight-desc">槟榔谷 — 中国首个5A级民族文化公园,原始雨林景观与黎苗民族现场表演。随后赠送1公里低空直升机飞行体验,360°俯瞰三亚全景。</p>
+      </div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-card-top" style="background-image:url('hainan-fushan.jpg');"></div>
+      <div class="highlight-card-body">
+        <div class="highlight-icon">☕</div>
+        <div class="highlight-day">第2天 · 途中</div>
+        <h3 class="highlight-name">福山咖啡小镇</h3>
+        <p class="highlight-desc">海南最美小镇,中国第一咖啡小镇。包含咖啡与小吃品鉴 — 免税城与海花岛之间的完美中转站。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="itinerary-section" id="itinerary">
+  <p class="section-eyebrow">逐日行程</p>
+  <h2 class="section-title">完整6天行程</h2>
+  <div class="day-list">
+
+    <div class="day-item open">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">第1天</span>
+        <span class="day-route">亚庇 → 海口</span>
+        <div class="day-meals"><span class="meal-badge">早餐自理</span><span class="meal-badge">午餐自理</span><span class="meal-badge">晚餐自理</span></div>
+        <span class="day-title">抵达海口 · 骑楼老街 · 海湾夜游</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body"><div class="timeline">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>亚庇02:35出发 · 海口05:50抵达(AQ1220)</strong><span>清晨直飞航班。包含抵达自助早餐。</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>骑楼老街</strong><span>由归国华侨以东南亚风格建造的历史骑楼街区。最古老的建筑可追溯至宋代。</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>云洞图书馆</strong><span>中国十大建筑地标之一,可俯瞰世纪大桥全景。</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>海南大学南门夜市</strong><span>海口最地道的本地夜市 — 学生、当地人与游客齐聚于此,尽享街头美食。</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>海口湾夜游游艇</strong><span>从历史悠久的东坡老码头出发,滑行穿越璀璨城市夜色,灯光秀在水面上闪耀。</span></div></div>
+        <div class="hotel-tag">🏨 海口智选假日酒店或同级四星酒店</div>
+      </div></div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">第2天</span>
+        <span class="day-route">海口 → 海花岛</span>
+        <div class="day-meals"><span class="meal-badge included">早餐含</span><span class="meal-badge">午餐自理</span><span class="meal-badge">晚餐自理</span></div>
+        <span class="day-title">免税城 · 福山咖啡小镇 · 海花岛</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body"><div class="timeline">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>海口国际免税城</strong><span>亚洲最大免税城 — 800多个国际及本土品牌。全球单体最大的免税店。</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>福山咖啡文化风情小镇</strong><span>包含咖啡与小吃品鉴。中国第一咖啡小镇,海南最美小镇。</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>海花岛1号岛</strong><span>6条主题商业街 · 8大美食区 · 特色主题酒吧 · 明清风情美食街 · 婚礼庄园。</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>海花岛灯光秀</strong></div></div>
+        <div class="hotel-tag">🏨 海花岛酒店或同级五星国际酒店</div>
+      </div></div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">第3天</span>
+        <span class="day-route">海花岛 → 三亚</span>
+        <div class="day-meals"><span class="meal-badge included">早餐含</span><span class="meal-badge included">午餐含</span><span class="meal-badge included">晚餐含</span></div>
+        <span class="day-title">108米观音 · 观光小火车 · 天涯小镇</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body"><div class="timeline">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>南山108米海上观音</strong><span>建于南山海上的世界级观音像。乘电梯直达观音脚下祈福。含电瓶车。</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>三亚旅游铁路观光列车</strong><span>从南山北站到天涯海角站。热带海岸风光,祥云、海景与三角梅相映成趣。</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>天涯小镇</strong><span>蓝白建筑映衬绝美海景,每个转角都令人惊叹 — 宛如走进宫崎骏的世界。</span></div></div>
+        <div class="hotel-tag">🏨 三亚云上酒店或同级四星酒店</div>
+      </div></div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">第4天</span>
+        <span class="day-route">三亚</span>
+        <div class="day-meals"><span class="meal-badge included">早餐含</span><span class="meal-badge included">午餐含</span><span class="meal-badge included">自助晚餐含</span></div>
+        <span class="day-title">玫瑰谷 · 海底午餐 · 亚特兰蒂斯 · 凤凰岛</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body"><div class="timeline">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>海产品中心</strong><span>90分钟参观。</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>亚龙湾国际玫瑰谷</strong><span>亚洲最大玫瑰园。"天下第一湾" — 玫瑰文化、创意文化与花海休闲。含电瓶车。</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>★ 亚龙湾海底餐厅午餐</strong><span>2人1份 — 在充满生机的海底世界用餐,海洋生物在您窗前游过。</span>
+        <div class="tl-star">⭐ 招牌体验 — 已包含在套餐价格内</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>三亚亚特兰蒂斯</strong><span>继迪拜和巴哈马之后,全球第三座亚特兰蒂斯度假村。在巨型水族鱼墙前拍照留念,探索神话传说展览。</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>★ 凤凰岛无限量海鲜自助晚餐</strong><span>无限量海鲜、烤肉、火锅、甜品、水果 — 外加无限量畅饮啤酒。入住三亚湾人工岛上贝壳造型的凤凰岛度假酒店。</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>凤凰岛打铁花表演</strong><span>璀璨火花洒满夜空 — 传统火艺表演。赠送项目,若未能演出恕不退款。</span></div></div>
+        <div class="hotel-tag">🏨 凤凰岛度假酒店或同级国际五星酒店</div>
+      </div></div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">第5天</span>
+        <span class="day-route">三亚 → 海口</span>
+        <div class="day-meals"><span class="meal-badge included">早餐含</span><span class="meal-badge included">午餐含</span><span class="meal-badge included">晚餐含</span></div>
+        <span class="day-title">槟榔谷黎苗文化 · 直升机体验 · 观澜湖新城</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body"><div class="timeline">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>生活馆</strong><span>90分钟参观。</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>槟榔谷黎苗文化旅游区</strong><span>中国首个5A级民族文化景区。原始雨林景观,生动的少数民族表演。含电瓶车。</span></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>★ 直升飞机低空飞行体验 — 1公里</strong><span>360°无死角直升机观光三亚全景。赠送活动 — 若因天气或空域管制无法进行恕不退款。限重100公斤。</span>
+        <div class="tl-star">⭐ 赠送体验 — 视天气情况而定</div></div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>海口观澜湖新城</strong><span>集娱乐、餐饮、购物、文化与酒店于一体的海口一站式目的地。</span></div></div>
+        <div class="hotel-tag">🏨 返回海口 — 酒店视团队安排另行通知</div>
+      </div></div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">第6天</span>
+        <span class="day-route">海口 → 亚庇</span>
+        <div class="day-meals"><span class="meal-badge included">点心晚餐含</span></div>
+        <span class="day-title">返程回家</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body"><div class="timeline">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><strong>根据航班时间安排机场接送</strong><span>回程航班 HAK-BKI AQ1219 · 22:10起飞 · 次日01:35抵达亚庇。含机上点心晚餐。</span></div></div>
+      </div></div>
+    </div>
+
+  </div>
+
+  <div style="margin-top:1.5rem; background:var(--sand); padding:1.25rem 1.5rem; border-radius:3px; font-size:0.84rem; color:var(--mid); border-left:3px solid var(--light-line); line-height:1.75;">
+    <strong style="color:var(--charcoal);">备注:</strong>最终行程视当地接待社安排而定。如遇不可抗力情况,本公司保留不预先通知而修改行程的权利。自费项目:宋城千古情演出(每人CNY 320)。
+  </div>
+</section>
+
+<div class="flight-section">
+  <p class="section-eyebrow" style="color:rgba(255,255,255,0.4)">直飞航班</p>
+  <h2 class="section-title">亚庇 ↔ 海口 — 直飞不经停</h2>
+  <div class="flight-grid">
+    <div class="flight-card">
+      <span class="flight-badge">去程</span>
+      <div class="flight-route">亚庇 → 海口</div>
+      <div class="flight-main">AQ1220</div>
+      <div class="flight-detail">亚庇02:35出发 · 海口05:50抵达<br>九元航空 · 经济舱<br>含20公斤托运 + 7公斤手提行李</div>
+    </div>
+    <div class="flight-card">
+      <span class="flight-badge">回程</span>
+      <div class="flight-route">海口 → 亚庇</div>
+      <div class="flight-main">AQ1219</div>
+      <div class="flight-detail">海口22:10出发 · 次日01:35抵达亚庇<br>九元航空 · 经济舱<br>含20公斤托运 + 7公斤手提行李</div>
+    </div>
+  </div>
+</div>
+
+<div class="booking-section">
+  <div class="booking-card">
+    <div class="booking-icon">📋</div>
+    <div class="booking-title">如何预订</div>
+    <div class="booking-body">通过WhatsApp或邮件告知我们您心仪的出发日期、人数及房型。我们将确认名额,并收取每人RM 300订金以确认预订。</div>
+  </div>
+  <div class="booking-card">
+    <div class="booking-icon">🛂</div>
+    <div class="booking-title">所需证件</div>
+    <div class="booking-body">有效护照(有效期6个月以上)。马来西亚公民30天以内旅游无需中国签证。请携带身份证作为备用证件。</div>
+  </div>
+  <div class="booking-card">
+    <div class="booking-icon">💰</div>
+    <div class="booking-title">中国境内支付</div>
+    <div class="booking-body">出发前请下载支付宝或Touch 'n Go并绑定您的信用卡/借记卡,方便无现金支付。现金(令吉或人民币)同样广泛适用 — 中国法律规定商户须接受现金支付。</div>
+  </div>
+</div>
+
+<div class="cta-section">
+  <p class="section-eyebrow" style="color:rgba(255,255,255,0.4)">预订您的旅程</p>
+  <h2 class="section-title">准备好前往海南了吗?</h2>
+  <p>亚庇直飞。优惠团期起价RM 1,999。联系我们查询名额,立即锁定您的位置。</p>
+  <div class="cta-buttons">
+    <a href="https://wa.me/60164802332?text=您好,我对海南岛之旅感兴趣,请提供可预订的日期。" class="btn-whatsapp">WhatsApp 预订</a>
+    <a href="mailto:bsvacation123@gmail.com?subject=海南岛之旅咨询" class="btn-white">邮件咨询</a>
+  </div>
+</div>
+
+<section style="padding:5rem 5rem;background:var(--white);border-top:1px solid var(--light-line);">
+  <p style="font-size:0.78rem;color:var(--accent);font-weight:600;margin-bottom:0.8rem;">继续探索</p>
+  <h2 style="font-family:'Noto Sans SC','Manrope',sans-serif;font-size:clamp(1.6rem,2.2vw,2.1rem);font-weight:700;margin-bottom:2.5rem;color:var(--charcoal);">蓝天假期更多行程</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;">
+      <a href="tour-hangzhou-zh.html" style="display:block;text-decoration:none;color:inherit;border:1px solid var(--light-line);border-radius:3px;overflow:hidden;background:var(--white);">
+        <div style="height:120px;background:linear-gradient(135deg,#0B4F8A,#062a4a);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🤖</div>
+        <div style="padding:1.25rem 1.5rem;">
+          <div style="font-size:0.72rem;color:#1a7a3c;font-weight:600;margin-bottom:0.4rem;">100% HRDF · 8天6夜</div>
+          <h3 style="font-family:'Noto Sans SC','Manrope',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.4rem;color:var(--charcoal);">杭州人工智能研学之旅</h3>
+          <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;">阿里巴巴、吉利电动车、强脑科技、科大讯飞与机器人小镇。</p>
+        </div>
+      </a>
+      <a href="tour-shenzhen-zh.html" style="display:block;text-decoration:none;color:inherit;border:1px solid var(--light-line);border-radius:3px;overflow:hidden;background:var(--white);">
+        <div style="height:120px;background:linear-gradient(135deg,#1a0a2e,#0a2040);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🔋</div>
+        <div style="padding:1.25rem 1.5rem;">
+          <div style="font-size:0.72rem;color:#1a7a3c;font-weight:600;margin-bottom:0.4rem;">100% HRDF · 7天6夜</div>
+          <h3 style="font-family:'Noto Sans SC','Manrope',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.4rem;color:var(--charcoal);">深圳人工智能研学之旅</h3>
+          <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;">比亚迪、优必选人形机器人、百度Apollo与大疆无人机。</p>
+        </div>
+      </a>
+      <a href="tour-xinjiang-zh.html" style="display:block;text-decoration:none;color:inherit;border:1px solid var(--light-line);border-radius:3px;overflow:hidden;background:var(--white);">
+        <div style="height:120px;background:linear-gradient(135deg,#1a4a6e,#2d6a2d);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🏔️</div>
+        <div style="padding:1.25rem 1.5rem;">
+          <div style="font-size:0.72rem;color:var(--accent);font-weight:600;margin-bottom:0.4rem;">休闲游 · 11天 / 9天</div>
+          <h3 style="font-family:'Noto Sans SC','Manrope',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.4rem;color:var(--charcoal);">北疆奇境之旅</h3>
+          <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;">喀纳斯湖、赛里木湖、独库公路与魔鬼城。</p>
+        </div>
+      </a>
+  </div>
+</section>
+
+<footer style="align-items:flex-start;gap:2rem;flex-wrap:wrap;">
+  <div style="max-width:300px;">
+    <div class="footer-logo">蓝天假期 <span>Blue Sky Vacation</span></div>
+    <p style="margin-top:0.75rem;line-height:1.8;">D3-3, Block D, Tanjung Aru Plaza, Jalan Tun Mustapha, Tanjung Aru, 88100 Kota Kinabalu, Sabah</p>
+  </div>
+  <div style="line-height:2;">
+    <a href="https://wa.me/60164802332" style="color:rgba(255,255,255,0.65);text-decoration:none;display:block;">WhatsApp · +60 16-480 2332</a>
+    <a href="mailto:bsvacation123@gmail.com" style="color:rgba(255,255,255,0.65);text-decoration:none;display:block;">bsvacation123@gmail.com</a>
+    <a href="index-zh.html" style="color:rgba(255,255,255,0.65);text-decoration:none;display:block;">← 所有行程</a>
+  </div>
+  <div style="line-height:1.8;opacity:0.8;">
+    © 2026 Blue Sky Vacation Sdn Bhd<br>公司注册号 1083236 · KPK/LN:7700<br>沙巴亚庇
+  </div>
+</footer>
+
+<script>
+  function showTab(id) {
+    document.querySelectorAll('.price-table-wrap').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.price-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    event.target.classList.add('active');
+  }
+  document.querySelectorAll('.day-header').forEach(h => {
+    h.addEventListener('click', () => h.parentElement.classList.toggle('open'));
+  });
+</script>
+</body>
+</html>

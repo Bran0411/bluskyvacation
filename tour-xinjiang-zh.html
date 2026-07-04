@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="北疆奇境之旅 — 11天10夜经典团与精英团(夏季),9天8夜冬季独家团。喀纳斯湖、禾木村、赛里木湖、独库公路、魔鬼城。吉隆坡出发,南方航空。">
+<title>北疆奇境之旅 | 蓝天假期</title>
+<link rel="icon" href="logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --sky: #2f9be0; --teal: #0E7A6E; --sand: #F7F3EE;
+    --charcoal: #1A1A1A; --mid: #4A4A4A; --light-line: #E2DDD8;
+    --white: #FFFFFF; --accent: #C9793A;
+    --grass: #2d6a2d; --alpine: #1a4a6e; --winter: #2a3a5a; --gold: #b8860b;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Noto Sans SC', 'Plus Jakarta Sans', sans-serif; color: var(--charcoal); background: var(--white); font-weight: 400; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 3rem; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.07); }
+  .nav-logo { font-family: 'Manrope', sans-serif; font-size: 1.3rem; font-weight: 600; color: var(--sky); text-decoration: none; display: flex; align-items: center; }
+  .nav-logo span { color: var(--accent); }
+  .nav-back { font-size: 0.8rem; color: var(--mid); text-decoration: none; }
+  .nav-back:hover { color: var(--sky); }
+
+  .hero { min-height: 90vh; background: linear-gradient(100deg, rgba(11,42,66,0.94) 0%, rgba(15,58,92,0.82) 38%, rgba(26,90,138,0.60) 68%, rgba(47,155,224,0.40) 100%), url('urumqi-0.jpg') center 30%/cover no-repeat; display: flex; align-items: center; padding-top: 70px; position: relative; overflow: hidden; }
+  .hero-content { padding: 5rem; max-width: 700px; position: relative; z-index: 2; }
+  .hero-badges { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
+  .badge { padding: 0.35rem 0.85rem; border-radius: 2px; font-size: 0.75rem; font-weight: 500; }
+  .badge-summer { background: var(--grass); color: white; }
+  .badge-winter { background: var(--winter); color: white; }
+  .badge-days { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.18); }
+  .hero-title { font-family: 'Noto Sans SC', 'Manrope', sans-serif; font-size: clamp(2.3rem, 4vw, 4rem); line-height: 1.35; font-weight: 700; color: var(--white); margin-bottom: 0.7rem; }
+  .hero-title em { color: #a8d8a8; font-style: normal; }
+  .hero-sub { font-family: 'Noto Sans SC', 'Manrope', sans-serif; font-size: 1.15rem; color: rgba(255,255,255,0.5); margin-bottom: 1.5rem; }
+  .hero-desc { font-size: 0.92rem; color: rgba(255,255,255,0.65); line-height: 1.9; max-width: 520px; margin-bottom: 2.5rem; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-grass { background: var(--grass); color: white; padding: 0.9rem 2rem; text-decoration: none; font-size: 0.85rem; font-weight: 500; border-radius: 2px; transition: opacity 0.2s; display: inline-block; }
+  .btn-grass:hover { opacity: 0.88; }
+  .btn-outline { border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.8); padding: 0.9rem 2rem; text-decoration: none; font-size: 0.85rem; border-radius: 2px; display: inline-block; transition: border-color 0.2s; }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.6); }
+  .hero-route { position: absolute; right: 0; top: 0; bottom: 0; width: 42%; display: flex; flex-direction: column; justify-content: center; padding: 3rem; gap: 0.75rem; }
+  .route-stop { background: rgba(9,28,46,0.42); backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.18); border-radius: 3px; padding: 0.65rem 1rem; display: flex; align-items: center; gap: 0.75rem; }
+  .route-icon { font-size: 1rem; flex-shrink: 0; }
+  .route-name { font-size: 0.82rem; font-weight: 500; color: rgba(255,255,255,0.92); }
+  .route-sub { font-size: 0.72rem; color: rgba(255,255,255,0.6); }
+
+  .packages-section { padding: 5rem 5rem 3rem; background: var(--sand); }
+  .section-eyebrow { font-size: 0.78rem; color: var(--accent); font-weight: 600; margin-bottom: 0.8rem; }
+  .section-title { font-family: 'Noto Sans SC', 'Manrope', sans-serif; font-size: clamp(1.6rem, 2.2vw, 2.1rem); font-weight: 700; line-height: 1.4; margin-bottom: 2rem; }
+  .pkg-tabs { display: flex; gap: 0; margin-bottom: 2.5rem; border: 1px solid var(--light-line); border-radius: 3px; overflow: hidden; }
+  .pkg-tab { flex: 1; padding: 1.25rem 1.5rem; cursor: pointer; background: var(--white); border-right: 1px solid var(--light-line); transition: background 0.2s; text-align: center; }
+  .pkg-tab:last-child { border-right: none; }
+  .pkg-tab.active { background: var(--charcoal); }
+  .pkg-tab-season { font-size: 0.72rem; color: var(--mid); font-weight: 500; margin-bottom: 0.25rem; }
+  .pkg-tab.active .pkg-tab-season { color: rgba(255,255,255,0.45); }
+  .pkg-tab-name { font-family: 'Noto Sans SC', 'Manrope', sans-serif; font-size: 1.15rem; font-weight: 700; color: var(--charcoal); }
+  .pkg-tab.active .pkg-tab-name { color: white; }
+  .pkg-tab-days { font-size: 0.78rem; color: var(--mid); margin-top: 0.2rem; }
+  .pkg-tab.active .pkg-tab-days { color: rgba(255,255,255,0.5); }
+  .pkg-content { display: none; }
+  .pkg-content.active { display: block; }
+
+  .pkg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem; }
+  .pkg-card { background: var(--white); border-radius: 3px; padding: 2rem; border: 1px solid var(--light-line); }
+  .pkg-card-label { font-size: 0.76rem; color: var(--mid); font-weight: 600; margin-bottom: 1rem; }
+  .pkg-highlight-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .pkg-highlight-list li { font-size: 0.86rem; color: var(--mid); display: flex; gap: 0.6rem; align-items: flex-start; line-height: 1.7; }
+  .ph-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 6px; }
+
+  .compare-section { background: var(--white); border: 1px solid var(--light-line); border-radius: 3px; padding: 2rem; margin-bottom: 2rem; }
+  .compare-title { font-size: 0.8rem; color: var(--mid); font-weight: 600; margin-bottom: 1.25rem; }
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .compare-col h4 { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--charcoal); }
+  .compare-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .compare-list li { font-size: 0.84rem; color: var(--mid); display: flex; gap: 0.5rem; align-items: flex-start; }
+  .ci { color: var(--grass); flex-shrink: 0; margin-top: 1px; }
+  .cx { color: var(--accent); flex-shrink: 0; margin-top: 1px; }
+
+  .highlights-section { padding: 5rem 5rem; }
+  .highlights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
+  .hl-card { border: 1px solid var(--light-line); border-radius: 3px; overflow: hidden; }
+  .hl-top { height: 5px; }
+  .hl-body { padding: 1.5rem; }
+  .hl-icon { font-size: 1.6rem; margin-bottom: 0.75rem; }
+  .hl-tag { font-size: 0.72rem; color: var(--mid); font-weight: 500; margin-bottom: 0.4rem; }
+  .hl-name { font-family: 'Noto Sans SC', 'Manrope', sans-serif; font-size: 1.08rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .hl-desc { font-size: 0.84rem; color: var(--mid); line-height: 1.8; }
+  .seasonal-note { display: inline-block; background: rgba(184,134,11,0.1); border: 1px solid rgba(184,134,11,0.3); border-radius: 2px; padding: 0.2rem 0.5rem; font-size: 0.72rem; color: var(--gold); margin-top: 0.5rem; font-weight: 500; }
+
+  .itinerary-section { padding: 5rem 5rem; background: var(--sand); }
+  .itin-tabs { display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  .itin-tab { padding: 0.5rem 1.25rem; border: 1px solid var(--light-line); border-radius: 2px; font-size: 0.82rem; font-weight: 500; cursor: pointer; background: var(--white); color: var(--mid); transition: all 0.2s; }
+  .itin-tab.active { background: var(--charcoal); color: white; border-color: var(--charcoal); }
+  .itin-content { display: none; }
+  .itin-content.active { display: block; }
+  .day-list { display: flex; flex-direction: column; gap: 0.75rem; }
+  .day-item { background: var(--white); border-radius: 3px; overflow: hidden; border: 1px solid var(--light-line); }
+  .day-header { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem; cursor: pointer; flex-wrap: wrap; }
+  .day-header:hover { background: rgba(0,0,0,0.02); }
+  .day-num { font-size: 0.74rem; font-weight: 600; padding: 0.25rem 0.6rem; border-radius: 2px; white-space: nowrap; flex-shrink: 0; color: white; }
+  .day-route { font-size: 0.8rem; color: var(--mid); flex-shrink: 0; }
+  .day-title { font-size: 0.88rem; font-weight: 600; flex: 1; }
+  .day-chevron { font-size: 0.75rem; color: var(--mid); transition: transform 0.3s; }
+  .day-item.open .day-chevron { transform: rotate(180deg); }
+  .day-body { display: none; border-top: 1px solid var(--light-line); padding: 1.25rem; background: var(--sand); }
+  .day-item.open .day-body { display: block; }
+  .day-stops { display: flex; flex-direction: column; gap: 0.75rem; }
+  .stop { display: flex; gap: 0.75rem; align-items: flex-start; }
+  .stop-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+  .stop-text { font-size: 0.86rem; color: var(--charcoal); line-height: 1.75; }
+  .stop-text strong { font-weight: 600; }
+  .stop-text span { color: var(--mid); font-size: 0.82rem; display: block; margin-top: 0.1rem; }
+  .hotel-line { display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(11,79,138,0.07); border: 1px solid rgba(11,79,138,0.15); border-radius: 2px; padding: 0.2rem 0.6rem; font-size: 0.76rem; color: var(--sky); font-weight: 500; margin-top: 0.75rem; }
+  .meal-line { display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(45,106,45,0.07); border: 1px solid rgba(45,106,45,0.15); border-radius: 2px; padding: 0.2rem 0.6rem; font-size: 0.76rem; color: var(--grass); font-weight: 500; margin-top: 0.5rem; margin-right: 0.4rem; }
+
+  .food-section { padding: 4rem 5rem; background: var(--charcoal); color: white; }
+  .food-section .section-title { color: white; }
+  .food-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2rem; }
+  .food-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 3px; padding: 1.25rem; text-align: center; overflow: hidden; }
+  .food-photo { height: 110px; background-size: cover; background-position: center; margin: -1.25rem -1.25rem 0.75rem; }
+  .food-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .food-name { font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.9); margin-bottom: 0.25rem; }
+  .food-detail { font-size: 0.74rem; color: rgba(255,255,255,0.45); line-height: 1.6; }
+
+  .practical-section { padding: 4rem 5rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
+  .prac-card { padding: 1.75rem; border: 1px solid var(--light-line); border-radius: 3px; }
+  .prac-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+  .prac-title { font-size: 0.78rem; color: var(--mid); font-weight: 600; margin-bottom: 0.6rem; }
+  .prac-body { font-size: 0.86rem; color: var(--mid); line-height: 1.8; }
+
+  .cta-section { background: linear-gradient(135deg, #0f3a5c 0%, #1a5a8a 100%); color: white; padding: 5rem; text-align: center; }
+  .cta-section .section-title { color: white; margin-bottom: 1rem; }
+  .cta-section p { color: rgba(255,255,255,0.6); margin-bottom: 2rem; max-width: 480px; margin-left: auto; margin-right: auto; font-size: 0.98rem; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-white { background: white; color: var(--charcoal); padding: 0.9rem 2.5rem; text-decoration: none; font-size: 0.86rem; font-weight: 600; border-radius: 2px; display: inline-block; }
+  .btn-whatsapp { background: #25D366; color: white; padding: 0.9rem 2.5rem; text-decoration: none; font-size: 0.86rem; font-weight: 600; border-radius: 2px; display: inline-block; }
+
+  footer { background: #0a0a0a; color: rgba(255,255,255,0.35); padding: 2rem 5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; }
+  .footer-logo { font-family: 'Noto Sans SC', 'Manrope', sans-serif; font-size: 1.1rem; font-weight: 700; color: rgba(255,255,255,0.75); }
+  .footer-logo span { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .hero-content { padding: 3rem 1.5rem; }
+    .hero-route { display: none; }
+    .packages-section, .highlights-section, .itinerary-section, .cta-section { padding: 3.5rem 1.5rem; }
+    .food-section, .practical-section { padding: 3rem 1.5rem; }
+    .pkg-tabs { flex-direction: column; }
+    .pkg-tab { border-right: none; border-bottom: 1px solid var(--light-line); }
+    .pkg-grid, .compare-grid, .highlights-grid, .food-grid, .practical-section { grid-template-columns: 1fr; }
+    .day-header { flex-wrap: wrap; row-gap: 0.4rem; }
+    .day-title { flex-basis: 100%; order: 4; }
+    .day-chevron { margin-left: auto; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+  }
+
+  @media (max-width: 480px) {
+    nav { padding: 0.8rem 1rem; }
+    .nav-logo { font-size: 0.85rem !important; }
+    .nav-logo img { width: 24px !important; height: 24px !important; margin-right: 0.35rem !important; }
+    nav > div { gap: 0.5rem !important; }
+    .nav-back { font-size: 0.68rem !important; }
+    .nav-alltours { display: none; }
+    .nav-cta-btn { font-size: 0.68rem !important; padding: 0.45rem 0.7rem !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index-zh.html" class="nav-logo"><img src="logo-mark.png" alt="" style="height:30px;width:30px;border-radius:7px;object-fit:cover;vertical-align:middle;margin-right:0.55rem;">蓝天假期</a>
+  <div style="display:flex;align-items:center;gap:1.25rem;">
+    <a href="tour-xinjiang.html" class="nav-back">EN</a>
+    <a href="index-zh.html" class="nav-back nav-alltours">← 所有行程</a>
+    <a href="https://wa.me/60164802332?text=您好,我对北疆之旅感兴趣。" class="nav-cta-btn" style="background:#16384f;color:#fff;text-decoration:none;font-size:0.82rem;font-weight:600;padding:0.55rem 1.1rem;border-radius:100px;white-space:nowrap;">立即咨询</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-badges">
+      <span class="badge badge-summer">夏季 · 11天10夜</span>
+      <span class="badge badge-winter">冬季 · 9天8夜</span>
+      <span class="badge badge-days">经典团 · 精英团 · 冬季团</span>
+    </div>
+    <h1 class="hero-title">北疆<br><em>奇境</em>之旅</h1>
+    <p class="hero-sub">域见北疆 · 探索中国最后的边境秘境</p>
+    <p class="hero-desc">一趟旅程,三个世界 — 阿勒泰童话般的白桦林与冰川湖泊、伊犁连绵起伏的亚高山草甸,以及冬季那片任何照片都无法完全捕捉的冰雪奇境。喀纳斯、禾木、赛里木湖、独库公路与魔鬼城。</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/60164802332?text=您好,我对北疆之旅感兴趣。" class="btn-grass">立即咨询</a>
+      <a href="#packages" class="btn-outline">比较套餐</a>
+    </div>
+  </div>
+  <div class="hero-route">
+    <div class="route-stop"><div class="route-icon">🏙️</div><div><div class="route-name">乌鲁木齐</div><div class="route-sub">门户城市 · 第1天及第10-11天</div></div></div>
+    <div class="route-stop"><div class="route-icon">🏔️</div><div><div class="route-name">喀纳斯国家地质公园</div><div class="route-sub">卧龙湾 · 神仙湾 · 月亮湾</div></div></div>
+    <div class="route-stop"><div class="route-icon">🌲</div><div><div class="route-name">禾木村</div><div class="route-sub">中国最美童话村庄</div></div></div>
+    <div class="route-stop"><div class="route-icon">🌈</div><div><div class="route-name">五彩滩</div><div class="route-sub">额尔齐斯河畔的日落彩崖</div></div></div>
+    <div class="route-stop"><div class="route-icon">👻</div><div><div class="route-name">魔鬼城 — 乌尔禾</div><div class="route-sub">风蚀雅丹地貌</div></div></div>
+    <div class="route-stop"><div class="route-icon">💎</div><div><div class="route-name">赛里木湖</div><div class="route-sub">大西洋最后一滴眼泪</div></div></div>
+    <div class="route-stop"><div class="route-icon">🐎</div><div><div class="route-name">那拉提草原</div><div class="route-sub">空中草原 · 伊犁河谷</div></div></div>
+    <div class="route-stop"><div class="route-icon">🛣️</div><div><div class="route-name">独库公路</div><div class="route-sub">季节限定 · 一日四季</div></div></div>
+  </div>
+</div>
+
+<section class="packages-section" id="packages">
+  <p class="section-eyebrow">三种探索新疆的方式</p>
+  <h2 class="section-title">选择您的旅程</h2>
+
+  <div class="pkg-tabs">
+    <div class="pkg-tab active" onclick="showPkg('classic')">
+      <div class="pkg-tab-season">夏季 · 5月–10月</div>
+      <div class="pkg-tab-name">经典团</div>
+      <div class="pkg-tab-days">11天 · 10夜</div>
+    </div>
+    <div class="pkg-tab" onclick="showPkg('elite')">
+      <div class="pkg-tab-season">夏季 · 5月–10月</div>
+      <div class="pkg-tab-name">精英团</div>
+      <div class="pkg-tab-days">11天 · 10夜</div>
+    </div>
+    <div class="pkg-tab" onclick="showPkg('winter')">
+      <div class="pkg-tab-season">冬季 · 11月–2月</div>
+      <div class="pkg-tab-name">冬季独家团</div>
+      <div class="pkg-tab-days">9天 · 8夜</div>
+    </div>
+  </div>
+
+  <div class="pkg-content active" id="pkg-classic">
+    <div class="pkg-grid">
+      <div class="pkg-card">
+        <div class="pkg-card-label">包含项目</div>
+        <ul class="pkg-highlight-list">
+          <li><div class="ph-dot"></div>全程所有景点门票已包含</li>
+          <li><div class="ph-dot"></div>2+1豪华VIP大巴 — 宽敞座位,长途更舒适</li>
+          <li><div class="ph-dot"></div>喀纳斯、禾木村、魔鬼城、那拉提草原区间车</li>
+          <li><div class="ph-dot"></div>全程三餐:酒店早餐 + 每日午晚餐</li>
+          <li><div class="ph-dot"></div>全程入住四星级酒店(逐晚列明)</li>
+          <li><div class="ph-dot"></div>季节性独库公路(6-9月)或高铁替代方案</li>
+          <li><div class="ph-dot"></div>第10天烤全羊惜别晚宴</li>
+        </ul>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-card-label">招牌美食</div>
+        <ul class="pkg-highlight-list">
+          <li><div class="ph-dot"></div>布尔津冷水鱼(第2天)</li>
+          <li><div class="ph-dot"></div>手抓饭(第5天)</li>
+          <li><div class="ph-dot"></div>新疆大盘鸡(第6天)</li>
+          <li><div class="ph-dot"></div>招牌羊排(第7天)</li>
+          <li><div class="ph-dot"></div>新疆烤串(第9天)</li>
+          <li><div class="ph-dot"></div>烤全羊惜别晚宴(第10天)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="compare-section">
+      <div class="compare-title">经典团 vs 精英团 — 主要区别</div>
+      <div class="compare-grid">
+        <div class="compare-col">
+          <h4>经典团包含</h4>
+          <ul class="compare-list">
+            <li><span class="ci">✓</span>2+1豪华VIP大巴(标准团)</li>
+            <li><span class="ci">✓</span>全程四星级酒店</li>
+            <li><span class="ci">✓</span>行程列明的完整餐食</li>
+            <li><span class="ci">✓</span>相同的景点及行程安排</li>
+          </ul>
+        </div>
+        <div class="compare-col">
+          <h4>精英团升级项目</h4>
+          <ul class="compare-list">
+            <li><span class="ci">✓</span>更小团队规模,更专属的体验</li>
+            <li><span class="ci">✓</span>升级酒店选择</li>
+            <li><span class="ci">✓</span>更精致的餐饮选择</li>
+            <li><span class="ci">✓</span>请联系我们获取完整精英团报价及详情</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div style="background:linear-gradient(150deg,#0f3a5c,#1a5a8a 70%,#2f9be0);color:#fff;border-radius:4px;padding:1.75rem 2rem;display:flex;flex-wrap:wrap;gap:2rem 3rem;align-items:center;margin-bottom:1rem;">
+      <div><span style="font-family:'Manrope',sans-serif;font-size:2.2rem;font-weight:700;display:block;line-height:1;">RM 8,599</span><span style="font-size:0.78rem;color:rgba(255,255,255,0.7);">起价 · 每人双人房价格</span></div>
+      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">RM 2,000</span><span style="font-size:0.78rem;color:rgba(255,255,255,0.7);">单人房差(起)</span></div>
+      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">11天 · 10夜</span><span style="font-size:0.78rem;color:rgba(255,255,255,0.7);">夏季 · 2026年5-10月</span></div>
+      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">RM 2,000</span><span style="font-size:0.78rem;color:rgba(255,255,255,0.7);">每人订金</span></div>
+    </div>
+    <div style="overflow-x:auto; margin-bottom:1rem; border:1px solid var(--light-line); border-radius:3px;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.84rem;">
+        <thead>
+          <tr style="background:var(--charcoal); color:#fff;">
+            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.76rem; font-weight:600;">出发日期</th>
+            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.76rem; font-weight:600;">团费(含机票)</th>
+            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.76rem; font-weight:600;">地接价(不含机票)</th>
+            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.76rem; font-weight:600;">单人房差</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">8月27日–9月6日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 8,999</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">8月28日–9月7日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,399</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">9月1–11日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 8,999</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">9月3–13日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 8,999</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">9月4–14日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 8,999</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">9月5–15日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 8,999</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">9月6–16日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 8,999</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">9月7–17日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 8,999</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">9月12–22日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,399</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">9月13–23日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,399</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">9月14–24日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,399</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">9月15–25日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,399</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">9月17–27日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,399</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">9月18–28日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,399</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
+          <tr><td style="padding:0.65rem 1rem;">10月8–18日 <span style="color:var(--mid); font-size:0.74rem;">· 高铁</span></td><td style="padding:0.65rem 1rem;"><strong>RM 8,599</strong></td><td style="padding:0.65rem 1rem;">RM 6,600</td><td style="padding:0.65rem 1rem;">RM 2,000</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem;">10月9–19日 <span style="color:var(--mid); font-size:0.74rem;">· 高铁</span></td><td style="padding:0.65rem 1rem;"><strong>RM 8,599</strong></td><td style="padding:0.65rem 1rem;">RM 6,600</td><td style="padding:0.65rem 1rem;">RM 2,000</td></tr>
+          <tr><td style="padding:0.65rem 1rem;">10月10–20日 <span style="color:var(--mid); font-size:0.74rem;">· 高铁</span></td><td style="padding:0.65rem 1rem;"><strong>RM 8,599</strong></td><td style="padding:0.65rem 1rem;">RM 6,600</td><td style="padding:0.65rem 1rem;">RM 2,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.86rem; color:var(--mid); background:var(--white); padding:1rem 1.25rem; border-radius:3px; border:1px solid var(--light-line);">地接价为不含国际机票、仅含地面行程的价格。全程以华语导览。10月出发团经伊宁改乘高铁往返(独库公路已进入季节性封闭)。团费视订位当下的名额情况而定。</p>
+  </div>
+
+  <div class="pkg-content" id="pkg-elite">
+    <div class="pkg-grid">
+      <div class="pkg-card">
+        <div class="pkg-card-label">精英团相较经典团的升级</div>
+        <ul class="pkg-highlight-list">
+          <li><div class="ph-dot"></div>更小、更精致的团队规模</li>
+          <li><div class="ph-dot"></div>全程升级酒店</li>
+          <li><div class="ph-dot"></div>升级餐饮及当地体验</li>
+          <li><div class="ph-dot"></div>相同的完整行程,涵盖全部9大景点</li>
+          <li><div class="ph-dot"></div>2+1豪华大巴或视团队人数配置的高端车辆</li>
+          <li><div class="ph-dot"></div>所有门票、区间车及独库公路(季节性)均已包含</li>
+        </ul>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-card-label">同样精彩的行程</div>
+        <ul class="pkg-highlight-list">
+          <li><div class="ph-dot"></div>喀纳斯:卧龙湾、神仙湾、月亮湾 + 观鱼台</li>
+          <li><div class="ph-dot"></div>禾木村:白桦林、禾木桥、禾木河</li>
+          <li><div class="ph-dot"></div>五彩滩日落 · 布尔津夜市</li>
+          <li><div class="ph-dot"></div>魔鬼城乌尔禾 — 风蚀雅丹地貌</li>
+          <li><div class="ph-dot"></div>赛里木湖环湖游 · 果子沟大桥(伊犁第一景)</li>
+          <li><div class="ph-dot"></div>那拉提空中草原 + 独库公路(季节性)</li>
+        </ul>
+      </div>
+    </div>
+    <div style="background:linear-gradient(150deg,#0f3a5c,#1a5a8a 70%,#2f9be0);color:#fff;border-radius:4px;padding:1.75rem 2rem;display:flex;flex-wrap:wrap;gap:2rem 3rem;align-items:center;margin-bottom:1rem;">
+      <div><span style="font-family:'Manrope',sans-serif;font-size:2.2rem;font-weight:700;display:block;line-height:1;">RM 12,499</span><span style="font-size:0.78rem;color:rgba(255,255,255,0.7);">每人双人房价格</span></div>
+      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">RM 2,890</span><span style="font-size:0.78rem;color:rgba(255,255,255,0.7);">单人房差</span></div>
+      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">11天 · 10夜</span><span style="font-size:0.78rem;color:rgba(255,255,255,0.7);">夏季 · 2026年9-10月</span></div>
+      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">RM 2,000</span><span style="font-size:0.78rem;color:rgba(255,255,255,0.7);">每人订金</span></div>
+    </div>
+    <div style="overflow-x:auto; margin-bottom:1rem; border:1px solid var(--light-line); border-radius:3px;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.84rem;">
+        <thead>
+          <tr style="background:var(--charcoal); color:#fff;">
+            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.76rem; font-weight:600;">出发日期</th>
+            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.76rem; font-weight:600;">团费(含机票)</th>
+            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.76rem; font-weight:600;">地接价(不含机票)</th>
+            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.76rem; font-weight:600;">单人房差</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">9月2–12日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">9月3–13日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">9月4–14日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">9月6–16日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">9月7–17日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">9月8–18日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">9月14–24日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">9月15–25日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">9月17–27日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">9月18–28日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
+          <tr><td style="padding:0.65rem 1rem;">10月8–18日</td><td style="padding:0.65rem 1rem;"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem;">RM 8,800</td><td style="padding:0.65rem 1rem;">RM 2,890</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem;">10月9–19日</td><td style="padding:0.65rem 1rem;"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem;">RM 8,800</td><td style="padding:0.65rem 1rem;">RM 2,890</td></tr>
+          <tr><td style="padding:0.65rem 1rem;">10月10–20日</td><td style="padding:0.65rem 1rem;"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem;">RM 8,800</td><td style="padding:0.65rem 1rem;">RM 2,890</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.86rem; color:var(--mid); background:var(--white); padding:1rem 1.25rem; border-radius:3px; border:1px solid var(--light-line);">精英团采用更小团规模,相同行程但升级酒店与餐饮。地接价为不含国际机票、仅含地面行程的价格。全程以华语导览。团费视订位当下的名额情况而定。</p>
+  </div>
+
+  <div class="pkg-content" id="pkg-winter">
+    <div class="pkg-grid" style="grid-template-columns: 1fr;">
+      <div class="pkg-card">
+        <div class="pkg-card-label">冬季独家团包含项目</div>
+        <ul class="pkg-highlight-list">
+          <li><div class="ph-dot"></div>全程1+1豪华MPV — 宽敞高端座驾</li>
+          <li><div class="ph-dot"></div>入住禾木村内金莲花酒店(村内停留时间更长)</li>
+          <li><div class="ph-dot"></div>禾木云霄峰缆车(赠送)</li>
+          <li><div class="ph-dot"></div>禾木赏雪下午茶(赠送)</li>
+          <li><div class="ph-dot"></div>禾木免费雪圈及马拉爬犁体验</li>
+          <li><div class="ph-dot"></div>禾木银河星空观赏(晴朗夜晚)</li>
+          <li><div class="ph-dot"></div>将军山滑雪场雪地嘉年华 + 缆车</li>
+          <li><div class="ph-dot"></div>冰季赛里木湖自驾环湖</li>
+          <li><div class="ph-dot"></div>赛里木湖蓝冰日出</li>
+          <li><div class="ph-dot"></div>沙湾天然温泉酒店 — 浸泡矿物温泉</li>
+          <li><div class="ph-dot"></div>冬季雪景中的天山天池</li>
+          <li><div class="ph-dot"></div>全程入住四星+五星级酒店</li>
+        </ul>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-card-label">赛里木湖 — 按月份的景致</div>
+        <ul class="pkg-highlight-list">
+          <li><div class="ph-dot"></div><strong>11月</strong> — 湖面未结冰,粉色天空,飘雪,天鹅</li>
+          <li><div class="ph-dot"></div><strong>12月</strong> — "涌浪推冰"奇观:浮冰被推上岸,半蓝半冰的湖面</li>
+          <li><div class="ph-dot"></div><strong>1月</strong> — 阳光下闪耀的蓝色冰瀑 — 宛如冰之宫殿</li>
+          <li><div class="ph-dot"></div><strong>2月</strong> — 蓝冰、冰花与冰泡 — 梦幻般的奇景</li>
+        </ul>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-card-label">自费项目</div>
+        <ul class="pkg-highlight-list">
+          <li><div class="ph-dot"></div>冰上漂流体验 — 每人RMB 400(沿结冰河流穿越冰谷)</li>
+        </ul>
+      </div>
+    </div>
+    <p style="font-size:0.86rem; color:var(--mid); background:var(--white); padding:1rem 1.25rem; border-radius:3px; border:1px solid var(--light-line); margin-bottom:1.5rem;"><strong style="color:var(--charcoal);">RM 9,299</strong> 已含吉隆坡往返机票(中国南方航空)。</p>
+    <div style="overflow-x:auto; margin-bottom:1rem; border:1px solid var(--light-line); border-radius:3px;">
+      <table style="width:100%; border-collapse:collapse; font-size:0.84rem;">
+        <thead>
+          <tr style="background:var(--charcoal); color:#fff;">
+            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.76rem; font-weight:600;">出发日期</th>
+            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.76rem; font-weight:600;">团费(含机票)</th>
+            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.76rem; font-weight:600;">地接价(不含机票)</th>
+            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.76rem; font-weight:600;">单人房差</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">11月20–28日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,299</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,599</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 1,670</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">11月27日–12月5日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,299</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,599</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 1,670</td></tr>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">12月5–13日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,299</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,599</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 1,670</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">12月18–26日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,299</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,599</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 1,670</td></tr>
+          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">1月8–16日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,299</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,599</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 1,670</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">1月15–23日</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,299</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,599</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 1,670</td></tr>
+          <tr><td style="padding:0.65rem 1rem;">2月14–22日</td><td style="padding:0.65rem 1rem;"><strong>RM 9,299</strong></td><td style="padding:0.65rem 1rem;">RM 7,599</td><td style="padding:0.65rem 1rem;">RM 1,670</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem;">2月22日–3月2日</td><td style="padding:0.65rem 1rem;"><strong>RM 9,299</strong></td><td style="padding:0.65rem 1rem;">RM 7,599</td><td style="padding:0.65rem 1rem;">RM 1,670</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.86rem; color:var(--mid); background:var(--white); padding:1rem 1.25rem; border-radius:3px; border:1px solid var(--light-line);">全程1+1豪华MPV,四星+五星级酒店,所有门票已包含。地接价为不含国际机票、仅含地面行程的价格。全程以华语导览。将军山滑雪场不含滑雪装备;季节景致视天气而定。</p>
+  </div>
+
+  <div style="margin-top:2.5rem;">
+    <div class="compare-title" style="margin-bottom:1.25rem;">预订须知 — 所有套餐通用</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+      <div style="background:var(--white);border:1px solid var(--light-line);border-radius:3px;padding:1.4rem 1.5rem;">
+        <div style="font-size:0.76rem;color:var(--sky);font-weight:700;margin-bottom:0.7rem;">儿童票价 · 11岁以下</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.45rem;font-size:0.86rem;color:var(--mid);line-height:1.6;">
+          <li><strong style="color:var(--charcoal);font-weight:700;">占床</strong> — 成人价减5%</li>
+          <li><strong style="color:var(--charcoal);font-weight:700;">不占床</strong> — 成人价减10%</li>
+          <li><strong style="color:var(--charcoal);font-weight:700;">婴儿</strong> — 减90%(24个月以下)</li>
+        </ul>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--light-line);border-radius:3px;padding:1.4rem 1.5rem;">
+        <div style="font-size:0.76rem;color:var(--sky);font-weight:700;margin-bottom:0.7rem;">航班 · 中国南方航空</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.45rem;font-size:0.86rem;color:var(--mid);line-height:1.6;">
+          <li>吉隆坡 ✈ 广州 ✈ 乌鲁木齐(南航),往返</li>
+          <li>含23公斤托运行李</li>
+          <li>吉隆坡第一国际机场(KLIA1)夜间出发</li>
+        </ul>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--light-line);border-radius:3px;padding:1.4rem 1.5rem;">
+        <div style="font-size:0.76rem;color:var(--sky);font-weight:700;margin-bottom:0.7rem;">预订与成团</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.45rem;font-size:0.86rem;color:var(--mid);line-height:1.6;">
+          <li><strong style="color:var(--charcoal);font-weight:700;">RM 2,000</strong> 每人订金</li>
+          <li>10人成团 · 16人以上配领队</li>
+          <li>全程华语导览</li>
+        </ul>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--light-line);border-radius:3px;padding:1.4rem 1.5rem;">
+        <div style="font-size:0.76rem;color:var(--sky);font-weight:700;margin-bottom:0.7rem;">自费 · 旅游保险</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.45rem;font-size:0.86rem;color:var(--mid);line-height:1.6;">
+          <li>安达 Chubb Executive,第1区(11-15天)</li>
+          <li><strong style="color:var(--charcoal);font-weight:700;">起价RM 88</strong>(65岁以下个人)</li>
+          <li>另有家庭及银发族保险方案</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="highlights-section">
+  <p class="section-eyebrow">必赏体验</p>
+  <h2 class="section-title">九大景致。<br>一趟非凡旅程。</h2>
+  <div class="highlights-grid">
+    <div class="hl-card">
+      <div class="hl-top" style="height:180px;background:url('kanas.jpg') center/cover;"></div>
+      <div class="hl-body">
+        <div class="hl-icon">🏔️</div>
+        <div class="hl-tag">北阿勒泰</div>
+        <h3 class="hl-name">喀纳斯湖与三湾</h3>
+        <p class="hl-desc">深藏于阿尔泰山脉之中,中国最原始纯净的高山湖泊。卧龙湾、神仙湾、月亮湾各具特色 — 薄雾缭绕,弯月形的河道穿行于白桦林间。观鱼台俯瞰全景。</p>
+      </div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-top" style="height:180px;background:url('hemu.webp') center/cover;"></div>
+      <div class="hl-body">
+        <div class="hl-icon">🌲</div>
+        <div class="hl-tag">北阿勒泰 · 金色秋季</div>
+        <h3 class="hl-name">禾木村</h3>
+        <p class="hl-desc">中国最美村庄之一。木质图瓦人房屋、白桦林与禾木河谷。秋季白桦金黄一片 — 冬季则银装素裹。从观景台望去,整个村庄如画卷般在你脚下展开。</p>
+        <span class="seasonal-note">夏季:白桦与野花 · 冬季:雪村</span>
+      </div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-top" style="height:180px;background:url('wucai.jpg') center/cover;"></div>
+      <div class="hl-body">
+        <div class="hl-icon">🌈</div>
+        <div class="hl-tag">北阿勒泰 · 日落</div>
+        <h3 class="hl-name">五彩滩</h3>
+        <p class="hl-desc">沿额尔齐斯河而生的丹霞地貌。日落时分,岩层泛着红、橙、黄的色泽 — 河对岸的绿杨林与之形成鲜明对比。新疆最上镜的地方之一。</p>
+      </div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-top" style="height:180px;background:url('ghostcity.jpg') center/cover;"></div>
+      <div class="hl-body">
+        <div class="hl-icon">👻</div>
+        <div class="hl-tag">克拉玛依 · 雅丹地貌</div>
+        <h3 class="hl-name">魔鬼城 — 乌尔禾</h3>
+        <p class="hl-desc">又称"风城"。风蚀而成的奇形怪状岩柱在戈壁滩上耸立。当狂风穿梭于岩石间时,发出的声响宛如鬼哭般诡异。地球上独一无二的景致。</p>
+      </div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-top" style="height:180px;background:url('sayram.jpg') center/cover;"></div>
+      <div class="hl-body">
+        <div class="hl-icon">💎</div>
+        <div class="hl-tag">伊犁 · 四季皆宜</div>
+        <h3 class="hl-name">赛里木湖</h3>
+        <p class="hl-desc">被誉为"大西洋最后一滴眼泪" — 中国最西端与大洋相连的湖泊。晶莹碧蓝的湖水被雪山环绕。夏季天鹅与野花点缀,冬季则是蓝冰、冰瀑与冰泡,宛如另一个星球。</p>
+        <span class="seasonal-note">夏季:蓝色明镜 · 冬季:冰之宫殿</span>
+      </div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-top" style="height:180px;background:url('nalati.jpg') center/cover;"></div>
+      <div class="hl-body">
+        <div class="hl-icon">🐎</div>
+        <div class="hl-tag">伊犁 · 季节限定</div>
+        <h3 class="hl-name">那拉提空中草原</h3>
+        <p class="hl-desc">海拔近2000米的亚高山草甸 — 起伏的绿色丘陵、野花花海与雪峰环绕。被誉为"人间天堂"。特定月份可见成群天马奔腾于昭苏湿地之上。含区间车。</p>
+        <span class="seasonal-note">最佳季节:5月–9月</span>
+      </div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-top" style="height:180px;background:url('duku.jpg') center/cover;"></div>
+      <div class="hl-body">
+        <div class="hl-icon">🛣️</div>
+        <div class="hl-tag">季节限定 · 6月–9月</div>
+        <h3 class="hl-name">独库公路</h3>
+        <p class="hl-desc">中国最美公路之一 — 全长560公里,横穿天山山脉。一天之内从高山积雪到草原峡谷再到荒漠,尽显"一日四季"的奇观。季节性开放(6-9月);其他月份改乘高铁。</p>
+        <span class="seasonal-note">季节性:仅限6月至9月</span>
+      </div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-top" style="height:180px;background:url('lavender.jpg') center 30%/cover;"></div>
+      <div class="hl-body">
+        <div class="hl-icon">🌸</div>
+        <div class="hl-tag">伊犁 · 季节限定</div>
+        <h3 class="hl-name">天山花海与喀赞其民俗区</h3>
+        <p class="hl-desc">5-6月,牡丹与薰衣草铺满天山山麓。8-9月,喀赞其民俗区开放 — 乘马车穿行于维吾尔族街巷,品尝著名的马拉洪冰淇淋,观赏乌兹别克族民俗表演。</p>
+        <span class="seasonal-note">花期:5-6月 · 文化:8-9月</span>
+      </div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-top" style="height:180px;background:url('ski-resort.jpg') center/cover;"></div>
+      <div class="hl-body">
+        <div class="hl-icon">⛷️</div>
+        <div class="hl-tag">冬季独家</div>
+        <h3 class="hl-name">将军山滑雪场 + 云霄缆车</h3>
+        <p class="hl-desc">冬季独享其他季节无法体验的项目:在阿勒泰滑雪(中国顶级雪质之一)、山顶雪地嘉年华、云霄峰缆车俯瞰四国边境(中国、俄罗斯、哈萨克斯坦、蒙古),以及沙湾温泉浸泡。</p>
+        <span class="seasonal-note">仅限冬季:11月–2月</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="itinerary-section" id="itinerary">
+  <p class="section-eyebrow">逐日行程</p>
+  <h2 class="section-title">完整行程安排</h2>
+  <div class="itin-tabs">
+    <div class="itin-tab active" onclick="showItin('sum')">夏季经典/精英团 · 11天10夜</div>
+    <div class="itin-tab" onclick="showItin('win')">冬季独家团 · 9天8夜</div>
+  </div>
+
+  <div class="itin-content active" id="itin-sum">
+    <div class="day-list">
+
+      <div class="day-item open">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2d6a2d">D1</span>
+          <span class="day-route">吉隆坡 → 乌鲁木齐</span>
+          <span class="day-title">离开吉隆坡 · 抵达乌鲁木齐 · 自由活动夜晚</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#2d6a2d"></div><div class="stop-text"><strong>吉隆坡国际机场集合 · 飞往乌鲁木齐</strong><span>中国南方航空。办理入住并休息,或自由活动。</span></div></div>
+          <div class="meal-line">晚餐:新疆特色欢迎晚宴</div>
+          <div class="hotel-line">🏨 乌鲁木齐汉庭酒店或同级★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2d6a2d">D2</span>
+          <span class="day-route">乌鲁木齐 → 布尔津 · 520公里 · 6.5小时</span>
+          <span class="day-title">S21沙漠公路 · 克拉美丽沙漠公园</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#c85a1a"></div><div class="stop-text"><strong>克拉美丽沙漠公园</strong><span>途经 — 广袤戈壁地貌,波纹状沙丘与风蚀地形。</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#2d6a2d"></div><div class="stop-text"><strong>S21沙漠公路</strong><span>穿越中国第二大沙漠 — 古尔班通古特沙漠。沿途的卡拉麦里山自然保护区是蒙古野驴与鹅喉羚的栖息地。</span></div></div>
+          <div class="meal-line">午餐:新疆特色</div><div class="meal-line">晚餐:布尔津冷水鱼</div>
+          <div class="hotel-line">🏨 布尔津河畔艺术别墅度假酒店或同级★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2d6a2d">D3</span>
+          <span class="day-route">布尔津 → 贾登峪 · 180公里 · 4小时</span>
+          <span class="day-title">喀纳斯国家地质公园 · 三湾 · 观鱼台</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#2d6a2d"></div><div class="stop-text"><strong>★ 喀纳斯国家地质公园</strong><span>含区间车。卧龙湾、神仙湾、月亮湾 — 三处标志性河湾,穿越林木葱郁的高山峡谷。</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#2d6a2d"></div><div class="stop-text"><strong>★ 喀纳斯观鱼台</strong><span>喀纳斯的最高观景点。俯瞰整个湖面 — 因传说游客可能在此目睹"湖怪"而得名。北疆最具代表性的观景点。</span></div></div>
+          <div class="meal-line">午餐:景区内用餐</div><div class="meal-line">晚餐:新疆特色</div>
+          <div class="hotel-line">🏨 喀纳斯鸿福生态度假酒店或同级★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2d6a2d">D4</span>
+          <span class="day-route">贾登峪 → 禾木 → 布尔津 · 50公里 + 170公里</span>
+          <span class="day-title">禾木公路 · 禾木村 · 五彩滩 · 夜市</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#4a7a1a"></div><div class="stop-text"><strong>禾木公路</strong><span>前往禾木的风景公路 — 群山、白桦林与蜿蜒的河谷。沿途设有摄影停靠点。</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#4a7a1a"></div><div class="stop-text"><strong>★ 禾木风景区 — 禾木村</strong><span>含区间车。白桦林、禾木桥、禾木河。登上观景台俯瞰全村美景 — 木屋、袅袅炊烟、背后群山。</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#c85a1a"></div><div class="stop-text"><strong>★ 五彩滩</strong><span>沿额尔齐斯河的丹霞多彩岩层。红、黄、橙的悬崖 — 日落时分尤为壮观。</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#2d6a2d"></div><div class="stop-text"><strong>河堤夜市</strong><span>布尔津最热闹的市集。烤鱼、羊肉串、手抓饭 — 丝绸之路的味道。</span></div></div>
+          <div class="meal-line">午餐:中式套餐</div><div class="meal-line">晚餐:中式套餐</div>
+          <div class="hotel-line">🏨 布尔津河畔艺术别墅度假酒店或同级★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#5a3a8a">D5</span>
+          <span class="day-route">布尔津 → 乌尔禾 → 奎屯 · 270公里 + 280公里</span>
+          <span class="day-title">魔鬼城 · 独山子大峡谷</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#5a3a8a"></div><div class="stop-text"><strong>★ 乌尔禾魔鬼城</strong><span>含区间车。经典雅丹地貌 — 风蚀岩柱、迷宫般的通道、诡异呼啸的风声。阳光下呈现层次分明的岩石色彩。</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#5a3a8a"></div><div class="stop-text"><strong>★ 独山子大峡谷</strong><span>由天山融雪水侵蚀而成。层叠的峡谷壁,阶梯状悬崖与雕琢般的岩石造型。</span></div></div>
+          <div class="meal-line">午餐:手抓饭</div><div class="meal-line">晚餐:廖记招牌排骨</div>
+          <div class="hotel-line">🏨 奎屯瑞泽恩酒店或同级★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#1a5a8a">D6</span>
+          <span class="day-route">奎屯 → 赛里木湖 → 霍城 · 210公里 + 80公里</span>
+          <span class="day-title">赛里木湖环湖游 · 果子沟大桥</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#1a5a8a"></div><div class="stop-text"><strong>★ 赛里木湖 — 环湖全景游</strong><span>"大西洋最后一滴眼泪"。晶莹碧蓝的湖水被雪山环绕。环湖而行,可在不同光线下欣赏截然不同的风情。</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#1a5a8a"></div><div class="stop-text"><strong>果子沟大桥</strong><span>途经 — "伊犁第一景",横跨壮观果子沟峡谷的标志性大桥。</span></div></div>
+          <div class="meal-line">午餐:中式套餐</div><div class="meal-line">晚餐:新疆大盘鸡</div>
+          <div class="hotel-line">🏨 霍城清水河圣都酒店或同级★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2d6a2d">D7</span>
+          <span class="day-route">霍城 → 伊宁 → 昭苏 · 70公里 + 180公里</span>
+          <span class="day-title">季节限定:天山花海(5-6月)或喀赞其民俗区(8-9月) · 昭苏湿地</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#4a7a1a"></div><div class="stop-text"><strong>★ 天山花海</strong><span>季节限定:仅限5-6月。牡丹、薰衣草与野花铺满天山山麓,层层叠叠的色彩海洋。</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#c85a1a"></div><div class="stop-text"><strong>★ 喀赞其民俗旅游区</strong><span>季节限定:仅限8-9月。乘马车穿行维吾尔街巷、传统民居建筑、欧式风情建筑、马拉洪冰淇淋、桂花眉习俗、乌兹别克民俗表演。</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#2d6a2d"></div><div class="stop-text"><strong>★ 昭苏湿地公园 — 天马饮水河畔</strong><span>新疆最大的天然湿地之一(近5000公顷)。成群骏马在河中畅饮 — 这一景象是昭苏独有、也是马来西亚旅行团独享的画面。设有木栈道与观景平台。</span></div></div>
+          <div class="meal-line">午餐:招牌羊排</div><div class="meal-line">晚餐:中式套餐</div>
+          <div class="hotel-line">🏨 昭苏天马酒店或同级★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2d6a2d">D8</span>
+          <span class="day-route">昭苏 → 那拉提 · 170公里 · 3.5小时</span>
+          <span class="day-title">那拉提空中草原</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#2d6a2d"></div><div class="stop-text"><strong>★ 那拉提空中草原</strong><span>含区间车。高海拔亚高山草甸 — 起伏的绿色丘陵、野花花海、地平线上的雪峰。被誉为"人间天堂"。世界级的草原景观之一。</span></div></div>
+          <div class="meal-line">午餐:中式套餐</div><div class="meal-line">晚餐:新疆特色</div>
+          <div class="hotel-line">🏨 文旅那拉提度假酒店或同级★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#8a2a0a">D9</span>
+          <span class="day-route">那拉提 → 独山子 · 270公里 · 约5-6小时(经独库公路)</span>
+          <span class="day-title">独库公路 — 一日四季(季节限定)</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#8a2a0a"></div><div class="stop-text"><strong>独库公路</strong><span>季节限定(6-9月)。中国最美公路之一 — 全长560公里,横穿天山,历经高山积雪、峡谷与草原。5月及10月团改经伊宁乘高铁往返。若当日公路封闭,则采用高铁替代方案。</span></div></div>
+          <div class="meal-line">午餐:中式套餐</div><div class="meal-line">晚餐:新疆烤串</div>
+          <div class="hotel-line">🏨 独山子西格玛国际酒店或同级★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2d6a2d">D10</span>
+          <span class="day-route">独山子 → 乌鲁木齐 · 260公里 · 3.5小时</span>
+          <span class="day-title">汗血马基地 · 新疆国际大巴扎 · 惜别烤全羊晚宴</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#c85a1a"></div><div class="stop-text"><strong>★ 新疆远古生态园 — 汗血马基地</strong><span>硅化木、化石树、黑铁陨石、草原石人、普氏野马与传说中的汗血宝马。观赏马术表演 —"一带一路"文化交流基地。</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#2d6a2d"></div><div class="stop-text"><strong>新疆国际大巴扎</strong><span>"新疆之窗" — 伊斯兰建筑、民族手工艺、美食及鲜活的市集文化。</span></div></div>
+          <div class="meal-line">午餐:中式套餐</div><div class="meal-line">晚餐:烤全羊惜别晚宴</div>
+          <div class="hotel-line">🏨 乌鲁木齐汉庭酒店或同级★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2d6a2d">D11</span>
+          <span class="day-route">乌鲁木齐 → 吉隆坡</span>
+          <span class="day-title">返程回家</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#2d6a2d"></div><div class="stop-text"><strong>乌鲁木齐机场集合 · 飞往吉隆坡</strong><span>行程可能根据最终确认的航班时间而调整。</span></div></div>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="itin-content" id="itin-win">
+    <div class="day-list">
+
+      <div class="day-item open">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2a3a5a">D1</span>
+          <span class="day-route">吉隆坡 → 转机 → 乌鲁木齐</span>
+          <span class="day-title">离开吉隆坡 · 经转机(广州)抵达乌鲁木齐</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#2a3a5a"></div><div class="stop-text"><strong>吉隆坡 → 广州 → 乌鲁木齐</strong><span>办理酒店入住。新疆特色餐厅欢迎晚宴。</span></div></div>
+          <div class="meal-line">晚餐:新疆特色欢迎晚宴</div>
+          <div class="hotel-line">🏨 乌鲁木齐利思顿国际酒店或同级★★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2a3a5a">D2</span>
+          <span class="day-route">乌鲁木齐 → 阿勒泰 · 665公里 · 9小时</span>
+          <span class="day-title">S21沙漠公路 · 将军山滑雪场 + 雪地嘉年华</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#2a3a5a"></div><div class="stop-text"><strong>S21沙漠公路</strong><span>穿越戈壁沙漠 — 冬季呈现广袤沙漠、崎岖地形与雪白平原交织的景观。</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#1a4a8a"></div><div class="stop-text"><strong>★ 将军山滑雪场</strong><span>阿勒泰市内雪质极佳的滑雪场。缆车直达山顶,含雪地嘉年华体验。(滑雪装备不包含 — 可现场租借。)</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#c85a1a"></div><div class="stop-text"><strong>自费:冰上漂流体验 — RMB 400</strong><span>沿结冰河流穿越冰谷,独特而难忘的体验。</span></div></div>
+          <div class="meal-line">午餐:新疆风味拌面</div>
+          <div class="hotel-line">🏨 阿勒泰万达文华酒店或同级★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2a3a5a">D3</span>
+          <span class="day-route">阿勒泰 → 禾木 · 287公里 · 6小时</span>
+          <span class="day-title">禾木风景区 · 银河星空 · 云霄缆车</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#4a7a1a"></div><div class="stop-text"><strong>★ 禾木风景区</strong><span>含区间车与云霄峰缆车。禾木最具代表性的美景来自观景台 — 俯瞰整个村庄,炊烟袅袅升起,远处雪峰入镜。晨雾令人宛如置身童话世界。</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#1a3a6a"></div><div class="stop-text"><strong>★ 云霄峰缆车</strong><span>赠送项目。俯瞰雪林全景 — 晴朗天气下,甚至可以望见中国、俄罗斯、哈萨克斯坦与蒙古四国边境。</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#4a7a1a"></div><div class="stop-text"><strong>银河星空观赏</strong><span>禾木村冬季几乎没有光害 — 是中国最佳的观星地点之一。</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#c85a1a"></div><div class="stop-text"><strong>禾木免费活动</strong><span>赏雪下午茶(赠送)· 免费雪圈体验 · 免费马拉爬犁体验。</span></div></div>
+          <div class="meal-line">午餐:中式套餐</div><div class="meal-line">晚餐:冷水鱼</div>
+          <div class="hotel-line">🏨 禾木金莲花名宿或同级(村内)</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2a3a5a">D4</span>
+          <span class="day-route">禾木 → 喀纳斯 · 70公里 · 2小时</span>
+          <span class="day-title">禾木村观景台 · 喀纳斯湖</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#4a7a1a"></div><div class="stop-text"><strong>禾木村 — 哈登观景台</strong><span>日出时,金色阳光洒满雪原,晨雾与光线交织。脚下的木质村落一片银白,每一帧都令人屏息。</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#1a5a8a"></div><div class="stop-text"><strong>★ 喀纳斯湖</strong><span>以随光线变幻色泽的深蓝湖水闻名。冬季被雪山与冰封森林环绕。挂满雾凇的树木,湖边结冰 — 一片冬日仙境。</span></div></div>
+          <div class="meal-line">午餐:景区简餐</div><div class="meal-line">晚餐:中式套餐</div>
+          <div class="hotel-line">🏨 喀纳斯坤舍豪华私人度假屋或同级★★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2a3a5a">D5</span>
+          <span class="day-route">喀纳斯 → 魔鬼城 → 克拉玛依 · 358公里 + 98公里</span>
+          <span class="day-title">乌尔禾魔鬼城 · 克拉玛依</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#5a3a8a"></div><div class="stop-text"><strong>★ 乌尔禾魔鬼城</strong><span>含区间车。风蚀岩柱矗立戈壁滩。又称"风城" — 狂风在岩石间呼啸而过,发出诡异声响,因此得名。</span></div></div>
+          <div class="meal-line">午餐:景区简餐</div><div class="meal-line">晚餐:风味烧烤</div>
+          <div class="hotel-line">🏨 克拉玛依景辉大酒店或同级★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#1a4a8a">D6</span>
+          <span class="day-route">克拉玛依 → 赛里木湖 · 420公里 · 6小时</span>
+          <span class="day-title">赛里木湖 — 自驾冰湖环游</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#1a5a8a"></div><div class="stop-text"><strong>★ 赛里木湖自驾环湖</strong><span>冬季湖面结冻,形成奇特景观 — 蓝冰、冰泡、冰花与蓝色冰瀑。依所在月份不同:11月(湖面未冻+天鹅)、12月("涌浪推冰")、1月(蓝色冰瀑)、2月(完整冰雪世界)。景致视天气而定。</span></div></div>
+          <div class="meal-line">午餐:中式套餐</div><div class="meal-line">晚餐:新疆大盘鸡</div>
+          <div class="hotel-line">🏨 赛里木湖水云杉酒店或同级★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#1a4a8a">D7</span>
+          <span class="day-route">赛里木湖 → 沙湾 · 379公里 · 5小时</span>
+          <span class="day-title">赛里木湖日出 · 沙湾温泉酒店</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#1a5a8a"></div><div class="stop-text"><strong>★ 赛里木湖日出</strong><span>金色晨光洒满晶莹剔透的冰面,光影交织,远处雪峰相衬。中国最浪漫的冬日景致之一。</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#4a7a1a"></div><div class="stop-text"><strong>★ 沙湾天然温泉</strong><span>源自天山山脉的地热温泉。数日严寒之后,浸泡在富含矿物质的温泉中,蒸汽袅袅升起,倍感舒缓。请自备泳装。</span></div></div>
+          <div class="meal-line">午餐:新疆特色丸子汤</div><div class="meal-line">晚餐:新疆大盘鸡</div>
+          <div class="hotel-line">🏨 沙湾天赐温泉酒店或同级★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2a3a5a">D8</span>
+          <span class="day-route">沙湾 → 乌鲁木齐 · 171公里 · 2小时</span>
+          <span class="day-title">天山天池 · 新疆国际大巴扎</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#1a5a8a"></div><div class="stop-text"><strong>★ 天山天池</strong><span>含区间车。高海拔冰川湖泊,雪峰倒映在清澈湖面。冬季湖面结冰并覆盖积雪 — 一片纯净与壮丽交织的景象。</span></div></div>
+          <div class="stop"><div class="stop-dot" style="background:#c85a1a"></div><div class="stop-text"><strong>新疆国际大巴扎</strong><span>乌鲁木齐的地标文化街区。伊斯兰建筑、民族美食、手工艺品与鲜活的文化氛围。</span></div></div>
+          <div class="meal-line">午餐:新疆特色炒面</div>
+          <div class="hotel-line">🏨 乌鲁木齐利思顿国际酒店或同级★★★★★</div>
+        </div></div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num" style="background:#2a3a5a">D9</span>
+          <span class="day-route">乌鲁木齐 → 转机 → 吉隆坡</span>
+          <span class="day-title">返程回家</span>
+          <span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot" style="background:#2a3a5a"></div><div class="stop-text"><strong>乌鲁木齐国际机场集合 · 经转机城市飞往吉隆坡</strong></div></div>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="food-section">
+  <p class="section-eyebrow" style="color:rgba(255,255,255,0.4)">新疆饮食文化</p>
+  <h2 class="section-title">舌尖上的北疆之旅</h2>
+  <div class="food-grid">
+    <div class="food-card"><div class="food-photo" style="background-image:url('food-roast-lamb.jpg');"></div><div class="food-icon">🐑</div><div class="food-name">烤全羊</div><div class="food-detail">最后一晚的惜别晚宴 — 新疆最具仪式感的美食</div></div>
+    <div class="food-card"><div class="food-photo" style="background-image:url('food-hand-rice.webp');"></div><div class="food-icon">🍚</div><div class="food-name">手抓饭</div><div class="food-detail">维吾尔族的经典美食 — 羊肉、胡萝卜、葡萄干与慢煮米饭</div></div>
+    <div class="food-card"><div class="food-photo" style="background-image:url('food-bigplate-chicken.webp');"></div><div class="food-icon">🍗</div><div class="food-name">大盘鸡</div><div class="food-detail">新疆最著名的菜肴 — 香辣鸡肉与土豆盛于宽口陶盘</div></div>
+    <div class="food-card"><div class="food-photo" style="background-image:url('food-coldwater-fish.jpg');"></div><div class="food-icon">🐟</div><div class="food-name">布尔津冷水鱼</div><div class="food-detail">来自额尔齐斯河的清澈山涧鳟鱼 — 简单烧烤或清蒸</div></div>
+    <div class="food-card"><div class="food-photo" style="background-image:url('food-bbq-skewers.jpg');"></div><div class="food-icon">🍢</div><div class="food-name">新疆烤串</div><div class="food-detail">夜市的羊肉串 — 孜然与辣椒调味</div></div>
+    <div class="food-card"><div class="food-photo" style="background-image:url('food-lamb-ribs.jpg');"></div><div class="food-icon">🍖</div><div class="food-name">招牌羊排</div><div class="food-detail">红烧或炭烤 — 新疆的羊肉因山间牧草而格外清甜</div></div>
+    <div class="food-card"><div class="food-photo" style="background-image:url('food-hemu-hotpot.jpg');background-position:center 35%;"></div><div class="food-icon">🍲</div><div class="food-name">禾木土火锅</div><div class="food-detail">冬季限定 — 雪村中暖身的图瓦式浓汤火锅</div></div>
+    <div class="food-card"><div class="food-photo" style="background-image:url('food-lagman-noodles.jpg');"></div><div class="food-icon">🍜</div><div class="food-name">新疆拌面</div><div class="food-detail">手工拉面配羊肉与蔬菜 — 维吾尔族的日常主食</div></div>
+  </div>
+</div>
+
+<div class="practical-section">
+  <div class="prac-card">
+    <div class="prac-icon">✈️</div>
+    <div class="prac-title">出发安排</div>
+    <div class="prac-body">从吉隆坡国际机场出发。夏季:南方航空直飞或一次转机。冬季:经广州转机。乌鲁木齐比马来西亚早2个时区(时钟相同 — 心理上需加2小时)。</div>
+  </div>
+  <div class="prac-card">
+    <div class="prac-icon">🌡️</div>
+    <div class="prac-title">气候概览</div>
+    <div class="prac-body">夏季(5-9月):白天15-28°C,夜晚凉爽。请依海拔准备保暖衣物。秋季(9-10月):5-18°C,赏叶最佳时期。冬季(11-2月):阿勒泰-10°C至-25°C — 必备全套冬装。保暖内衣、羽绒服、雪地靴、手套。</div>
+  </div>
+  <div class="prac-card">
+    <div class="prac-icon">💳</div>
+    <div class="prac-title">支付与须知</div>
+    <div class="prac-body">出发前请下载支付宝或微信支付并绑定您的银行卡。现金(人民币)随处适用。全程以华语导览。所有门票已包含 — 未使用的门票不予个别退款。行程从吉隆坡出发。</div>
+  </div>
+</div>
+
+<div class="cta-section">
+  <p class="section-eyebrow" style="color:rgba(255,255,255,0.4)">准备好探索了吗</p>
+  <h2 class="section-title">新疆,静候您的到来。</h2>
+  <p>告诉我们您偏好的出游季节与团队人数。我们将为您推荐经典团、精英团或冬季团 — 并提供报价与出发日期。</p>
+  <div class="cta-buttons">
+    <a href="https://wa.me/60164802332?text=您好,我对北疆之旅感兴趣,请提供日期与价格。" class="btn-whatsapp">WhatsApp 咨询</a>
+    <a href="mailto:bsvacation123@gmail.com?subject=北疆之旅咨询" class="btn-white">邮件咨询</a>
+  </div>
+</div>
+
+<section style="padding:5rem 5rem;background:var(--white);border-top:1px solid var(--light-line);">
+  <p style="font-size:0.78rem;color:var(--accent);font-weight:600;margin-bottom:0.8rem;">继续探索</p>
+  <h2 style="font-family:'Noto Sans SC','Manrope',sans-serif;font-size:clamp(1.6rem,2.2vw,2.1rem);font-weight:700;margin-bottom:2.5rem;color:var(--charcoal);">蓝天假期更多行程</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;">
+      <a href="tour-hangzhou-zh.html" style="display:block;text-decoration:none;color:inherit;border:1px solid var(--light-line);border-radius:3px;overflow:hidden;background:var(--white);">
+        <div style="height:120px;background:linear-gradient(135deg,#0B4F8A,#062a4a);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🤖</div>
+        <div style="padding:1.25rem 1.5rem;">
+          <div style="font-size:0.72rem;color:#1a7a3c;font-weight:600;margin-bottom:0.4rem;">100% HRDF · 8天6夜</div>
+          <h3 style="font-family:'Noto Sans SC','Manrope',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.4rem;color:var(--charcoal);">杭州人工智能研学之旅</h3>
+          <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;">阿里巴巴、吉利电动车、强脑科技、科大讯飞与机器人小镇。</p>
+        </div>
+      </a>
+      <a href="tour-shenzhen-zh.html" style="display:block;text-decoration:none;color:inherit;border:1px solid var(--light-line);border-radius:3px;overflow:hidden;background:var(--white);">
+        <div style="height:120px;background:linear-gradient(135deg,#1a0a2e,#0a2040);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🔋</div>
+        <div style="padding:1.25rem 1.5rem;">
+          <div style="font-size:0.72rem;color:#1a7a3c;font-weight:600;margin-bottom:0.4rem;">100% HRDF · 7天6夜</div>
+          <h3 style="font-family:'Noto Sans SC','Manrope',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.4rem;color:var(--charcoal);">深圳人工智能研学之旅</h3>
+          <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;">比亚迪、优必选人形机器人、百度Apollo与大疆无人机。</p>
+        </div>
+      </a>
+      <a href="tour-hainan-zh.html" style="display:block;text-decoration:none;color:inherit;border:1px solid var(--light-line);border-radius:3px;overflow:hidden;background:var(--white);">
+        <div style="height:120px;background:linear-gradient(135deg,#0a5f7a,#0e7a6e);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🏝️</div>
+        <div style="padding:1.25rem 1.5rem;">
+          <div style="font-size:0.72rem;color:var(--accent);font-weight:600;margin-bottom:0.4rem;">休闲游 · 6天</div>
+          <h3 style="font-family:'Noto Sans SC','Manrope',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.4rem;color:var(--charcoal);">海南岛狂欢之旅</h3>
+          <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;">亚庇直飞海口。海花岛与三亚亚特兰蒂斯。</p>
+        </div>
+      </a>
+  </div>
+</section>
+
+<footer style="align-items:flex-start;gap:2rem;flex-wrap:wrap;">
+  <div style="max-width:300px;">
+    <div class="footer-logo">蓝天假期 <span>Blue Sky Vacation</span></div>
+    <p style="margin-top:0.75rem;line-height:1.8;">D3-3, Block D, Tanjung Aru Plaza, Jalan Tun Mustapha, Tanjung Aru, 88100 Kota Kinabalu, Sabah</p>
+  </div>
+  <div style="line-height:2;">
+    <a href="https://wa.me/60164802332" style="color:rgba(255,255,255,0.65);text-decoration:none;display:block;">WhatsApp · +60 16-480 2332</a>
+    <a href="mailto:bsvacation123@gmail.com" style="color:rgba(255,255,255,0.65);text-decoration:none;display:block;">bsvacation123@gmail.com</a>
+    <a href="index-zh.html" style="color:rgba(255,255,255,0.65);text-decoration:none;display:block;">← 所有行程</a>
+  </div>
+  <div style="line-height:1.8;opacity:0.8;">
+    © 2026 Blue Sky Vacation Sdn Bhd<br>公司注册号 1083236 · KPK/LN:7700<br>沙巴亚庇
+  </div>
+</footer>
+
+<script>
+  function showPkg(id) {
+    document.querySelectorAll('.pkg-content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.pkg-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('pkg-' + id).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+  function showItin(id) {
+    document.querySelectorAll('.itin-content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.itin-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('itin-' + id).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+  document.querySelectorAll('.day-header').forEach(h => {
+    h.addEventListener('click', () => h.parentElement.classList.toggle('open'));
+  });
+</script>
+</body>
+</html>

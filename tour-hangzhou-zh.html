@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="杭州人工智能研学之旅 — 走进阿里巴巴、吉利电动车工厂、强脑科技、科大讯飞与机器人小镇。8天6夜,2026年10月11-17日。100% HRDF全额索赔。">
+<title>杭州人工智能研学之旅 — 2026年10月 | 蓝天假期</title>
+<link rel="icon" href="logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --sky: #2f9be0; --sky-light: #E8F2FB; --teal: #0E7A6E;
+    --sand: #F7F3EE; --charcoal: #1A1A1A; --mid: #4A4A4A;
+    --light-line: #E2DDD8; --white: #FFFFFF; --accent: #C9793A;
+    --hrdf: #1a7a3c;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Noto Sans SC', 'Plus Jakarta Sans', sans-serif; color: var(--charcoal); background: var(--white); font-weight: 400; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 3rem; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.07); }
+  .nav-logo { font-family: 'Manrope', sans-serif; font-size: 1.3rem; font-weight: 600; color: var(--sky); text-decoration: none; white-space: nowrap; display: flex; align-items: center; flex-shrink: 0; }
+  .nav-logo span { color: var(--accent); }
+  .nav-back { font-size: 0.8rem; color: var(--mid); text-decoration: none; display: flex; align-items: center; gap: 0.4rem; }
+  .nav-back:hover { color: var(--sky); }
+  .lang-switch { font-size: 0.82rem; font-weight: 600; color: var(--mid); text-decoration: none; padding: 0.4rem 0.5rem; }
+  .lang-switch:hover { color: var(--sky); }
+
+  /* HERO */
+  .hero { min-height: 88vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 70px; }
+  .hero-left { background: linear-gradient(155deg, #0f3a5c 0%, #1a5a8a 48%, #2f9be0 130%); padding: 5rem 4rem 5rem 5rem; display: flex; flex-direction: column; justify-content: center; }
+  .hero-badges { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
+  .badge { padding: 0.35rem 0.85rem; border-radius: 2px; font-size: 0.75rem; font-weight: 500; }
+  .badge-hrdf { background: var(--hrdf); color: white; }
+  .badge-date { background: var(--accent); color: white; }
+  .badge-limit { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.2); }
+  .hero-title { font-family: 'Noto Sans SC', 'Manrope', sans-serif; font-size: clamp(2.1rem, 3vw, 3.1rem); line-height: 1.45; font-weight: 700; color: var(--white); margin-bottom: 0.8rem; }
+  .hero-title em { color: #7EC8E3; font-style: normal; }
+  .hero-sub-title { font-family: 'Noto Sans SC', 'Manrope', sans-serif; font-size: 1.15rem; color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; }
+  .hero-desc { font-size: 0.92rem; color: rgba(255,255,255,0.68); line-height: 1.9; max-width: 420px; margin-bottom: 2.5rem; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary { background: var(--sky); color: white; padding: 0.9rem 2rem; text-decoration: none; font-size: 0.85rem; font-weight: 500; border-radius: 2px; transition: background 0.2s; display: inline-block; }
+  .btn-primary:hover { background: var(--teal); }
+  .btn-outline { border: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.85); padding: 0.9rem 2rem; text-decoration: none; font-size: 0.85rem; font-weight: 400; border-radius: 2px; transition: all 0.2s; display: inline-block; }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.7); }
+  .hero-right { background: linear-gradient(160deg, rgba(10,30,48,0.82) 0%, rgba(12,40,64,0.8) 50%, rgba(8,22,36,0.9) 100%), url('hangzhou-alibaba.jpg') center/cover; display: flex; flex-direction: column; justify-content: flex-end; padding: 3rem; position: relative; overflow: hidden; }
+  .hero-companies { display: flex; flex-direction: column; gap: 0.8rem; position: relative; z-index: 1; }
+  .company-pill { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 3px; padding: 0.75rem 1.25rem; display: flex; align-items: center; gap: 0.8rem; }
+  .company-icon { width: 28px; height: 28px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; flex-shrink: 0; }
+  .company-name { font-size: 0.85rem; font-weight: 500; color: rgba(255,255,255,0.9); }
+  .company-desc { font-size: 0.75rem; color: rgba(255,255,255,0.45); }
+  .hero-label { position: absolute; top: 2.5rem; right: 2.5rem; font-size: 0.72rem; color: rgba(255,255,255,0.85); text-shadow: 0 1px 4px rgba(0,0,0,0.6); }
+
+  /* PRICING BAND */
+  .pricing-band { background: var(--hrdf); color: white; padding: 2rem 5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+  .price-item { text-align: center; }
+  .price-num { font-family: 'Manrope', sans-serif; font-size: 2.2rem; font-weight: 600; display: block; line-height: 1; }
+  .price-label { font-size: 0.78rem; color: rgba(255,255,255,0.65); margin-top: 0.3rem; display: block; }
+  .price-divider { width: 1px; height: 50px; background: rgba(255,255,255,0.2); }
+  .price-note { font-size: 0.82rem; color: rgba(255,255,255,0.75); max-width: 280px; line-height: 1.7; }
+  .hrdf-badge-big { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); border-radius: 3px; padding: 0.5rem 1.2rem; font-size: 0.82rem; font-weight: 500; white-space: nowrap; }
+
+  /* WHAT'S INCLUDED */
+  .included-section { padding: 5rem 5rem; background: var(--sand); }
+  .section-eyebrow { font-size: 0.78rem; color: var(--accent); font-weight: 600; margin-bottom: 0.8rem; }
+  .section-title { font-family: 'Noto Sans SC', 'Manrope', sans-serif; font-size: clamp(1.6rem, 2.2vw, 2.1rem); font-weight: 700; line-height: 1.4; margin-bottom: 2.5rem; }
+  .included-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .included-col h4 { font-size: 0.8rem; color: var(--mid); margin-bottom: 1rem; font-weight: 600; }
+  .included-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .included-list li { font-size: 0.88rem; color: var(--mid); display: flex; align-items: flex-start; gap: 0.6rem; line-height: 1.7; }
+  .check { color: var(--hrdf); font-size: 0.9rem; flex-shrink: 0; margin-top: 1px; }
+  .cross { color: #c0392b; font-size: 0.9rem; flex-shrink: 0; margin-top: 1px; }
+
+  /* COMPANIES */
+  .companies-section { padding: 5rem 5rem; }
+  .companies-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
+  .company-card { border: 1px solid var(--light-line); border-radius: 3px; padding: 1.75rem; transition: border-color 0.2s, transform 0.2s; overflow: hidden; }
+  .company-card-photo { height: 150px; margin: -1.75rem -1.75rem 1.25rem; background-size: cover; background-position: center; }
+  .company-card:hover { border-color: var(--sky); transform: translateY(-2px); }
+  .company-card-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+  .company-card-name { font-family: 'Noto Sans SC', 'Manrope', sans-serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .company-card-theme { font-size: 0.75rem; color: var(--sky); font-weight: 600; margin-bottom: 0.75rem; }
+  .company-card-desc { font-size: 0.85rem; color: var(--mid); line-height: 1.8; }
+
+  /* ITINERARY */
+  .itinerary-section { padding: 5rem 5rem; background: var(--sand); }
+  .day-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 2.5rem; }
+  .day-item { background: var(--white); border-radius: 3px; overflow: hidden; }
+  .day-header { display: flex; align-items: center; gap: 1.25rem; padding: 1.25rem 1.5rem; cursor: pointer; user-select: none; }
+  .day-num { background: var(--sky); color: white; font-size: 0.75rem; font-weight: 600; padding: 0.3rem 0.7rem; border-radius: 2px; white-space: nowrap; flex-shrink: 0; }
+  .day-date { font-size: 0.82rem; color: var(--mid); flex-shrink: 0; }
+  .day-title { font-size: 0.92rem; font-weight: 600; flex: 1; }
+  .day-chevron { font-size: 0.8rem; color: var(--mid); transition: transform 0.3s; }
+  .day-item.open .day-chevron { transform: rotate(180deg); }
+  .day-body { display: none; border-top: 1px solid var(--light-line); }
+  .day-item.open .day-body { display: block; }
+  .timeline { padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+  .tl-item { display: flex; gap: 1rem; align-items: flex-start; }
+  .tl-time { font-size: 0.75rem; color: var(--mid); min-width: 48px; padding-top: 3px; font-weight: 500; }
+  .tl-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--sky); flex-shrink: 0; margin-top: 6px; }
+  .tl-content { font-size: 0.86rem; color: var(--charcoal); line-height: 1.75; flex: 1; }
+  .tl-content strong { display: block; font-weight: 600; margin-bottom: 0.2rem; }
+  .tl-content span { color: var(--mid); font-size: 0.82rem; }
+
+  /* WEATHER */
+  .info-section { padding: 4rem 5rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
+  .info-card { padding: 2rem; border: 1px solid var(--light-line); border-radius: 3px; }
+  .info-icon { font-size: 1.5rem; margin-bottom: 1rem; }
+  .info-title { font-size: 0.8rem; color: var(--mid); font-weight: 600; margin-bottom: 0.75rem; }
+  .info-body { font-size: 0.86rem; color: var(--mid); line-height: 1.8; }
+
+  /* CTA */
+  .cta-section { background: var(--sky); color: white; padding: 5rem; text-align: center; }
+  .cta-section .section-title { color: white; margin-bottom: 1rem; }
+  .cta-section p { color: rgba(255,255,255,0.7); margin-bottom: 2rem; font-size: 0.98rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .cta-limit { display: inline-block; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 3px; padding: 0.5rem 1.25rem; font-size: 0.8rem; margin-bottom: 2.5rem; color: rgba(255,255,255,0.75); }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-white { background: white; color: var(--sky); padding: 0.9rem 2.5rem; text-decoration: none; font-size: 0.86rem; font-weight: 600; border-radius: 2px; transition: opacity 0.2s; display: inline-block; }
+  .btn-white:hover { opacity: 0.9; }
+  .btn-whatsapp { background: #25D366; color: white; padding: 0.9rem 2.5rem; text-decoration: none; font-size: 0.86rem; font-weight: 600; border-radius: 2px; transition: opacity 0.2s; display: inline-block; }
+  .btn-whatsapp:hover { opacity: 0.9; }
+
+  /* FOOTER */
+  footer { background: var(--charcoal); color: rgba(255,255,255,0.4); padding: 2rem 5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; }
+  .footer-logo { font-family: 'Noto Sans SC', 'Manrope', sans-serif; font-size: 1.1rem; font-weight: 700; color: rgba(255,255,255,0.8); }
+  .footer-logo span { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 3rem 1.5rem; }
+    .hero-right { min-height: 340px; padding: 2rem 1.5rem; }
+    .pricing-band { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
+    .price-divider { display: none; }
+    .included-section, .companies-section, .itinerary-section, .cta-section { padding: 3.5rem 1.5rem; }
+    .included-grid { grid-template-columns: 1fr; }
+    .companies-grid { grid-template-columns: 1fr; }
+    .day-header { flex-wrap: wrap; row-gap: 0.4rem; }
+    .day-title { flex-basis: 100%; order: 4; }
+    .day-chevron { margin-left: auto; }
+    .info-section { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+  }
+
+  @media (max-width: 480px) {
+    nav { padding: 0.8rem 1rem; }
+    .nav-logo { font-size: 0.85rem !important; }
+    .nav-logo img { width: 24px !important; height: 24px !important; margin-right: 0.35rem !important; }
+    nav > div { gap: 0.5rem !important; }
+    .nav-back { font-size: 0.68rem !important; }
+    .nav-alltours { display: none; }
+    .nav-cta-btn { font-size: 0.68rem !important; padding: 0.45rem 0.7rem !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index-zh.html" class="nav-logo"><img src="logo-mark.png" alt="" style="height:30px;width:30px;border-radius:7px;object-fit:cover;vertical-align:middle;margin-right:0.55rem;">蓝天假期</a>
+  <div style="display:flex;align-items:center;gap:1.25rem;">
+    <a href="tour-hangzhou.html" class="lang-switch">EN</a>
+    <a href="index-zh.html" class="nav-back nav-alltours">← 所有行程</a>
+    <a href="https://wa.me/60164802332?text=您好,我对2026年10月的杭州HRDF研学之旅感兴趣。" class="nav-cta-btn" style="background:#16384f;color:#fff;text-decoration:none;font-size:0.82rem;font-weight:600;padding:0.55rem 1.1rem;border-radius:100px;white-space:nowrap;">立即咨询</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-badges">
+      <span class="badge badge-hrdf">✓ 100% HRDF 全额索赔</span>
+      <span class="badge badge-date">2026年10月11–17日</span>
+      <span class="badge badge-limit">限额40人</span>
+    </div>
+    <h1 class="hero-title">走进<em>阿里巴巴</em><br>与中国AI领军企业</h1>
+    <p class="hero-sub-title">杭州 · 8天6夜研学之旅</p>
+    <p class="hero-desc">一趟沉浸式的杭州商业研学之旅 — 走进阿里巴巴总部、吉利电动车工厂、强脑科技脑机接口实验室、科大讯飞AI中心,以及中国机器人小镇。专为企业主、高管与新生代领导者设计。</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/60164802332?text=您好,我对2026年10月的杭州HRDF研学之旅感兴趣。" class="btn-primary">登记咨询</a>
+      <a href="#itinerary" class="btn-outline">查看行程</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <span class="hero-label">您将走访的企业</span>
+    <div class="hero-companies">
+      <div class="company-pill"><div class="company-icon">🛒</div><div><div class="company-name">阿里巴巴集团</div><div class="company-desc">企业文化、战略与数字生态之旅</div></div></div>
+      <div class="company-pill"><div class="company-icon">🚗</div><div><div class="company-name">吉利钱塘电动车工厂</div><div class="company-desc">智能制造与电动车生产线</div></div></div>
+      <div class="company-pill"><div class="company-icon">🤖</div><div><div class="company-name">申昊科技</div><div class="company-desc">AI工业巡检机器人</div></div></div>
+      <div class="company-pill"><div class="company-icon">🧠</div><div><div class="company-name">强脑科技 BrainCo</div><div class="company-desc">世界领先的脑机接口技术</div></div></div>
+      <div class="company-pill"><div class="company-icon">🎤</div><div><div class="company-name">科大讯飞</div><div class="company-desc">AI语音识别与认知大模型</div></div></div>
+      <div class="company-pill"><div class="company-icon">🏙️</div><div><div class="company-name">机器人小镇</div><div class="company-desc">中国首个机器人主题创新小镇</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING BAND -->
+<div class="pricing-band">
+  <div class="price-item">
+    <span class="price-num">RM 8,250</span>
+    <span class="price-label">HRDF 价格(100%可索赔)</span>
+  </div>
+  <div class="price-divider"></div>
+  <div class="price-item">
+    <span class="price-num">RM 8,000</span>
+    <span class="price-label">现金价</span>
+  </div>
+  <div class="price-divider"></div>
+  <div class="price-item">
+    <span class="price-num">RM 5,250 + RM 3,000</span>
+    <span class="price-label">课程费 + 旅行团费</span>
+  </div>
+  <div class="price-divider"></div>
+  <p class="price-note">机票费用不包含在内,但往返机票的50%同样可申请HRDF索赔。单人房差价:RM 1,200。</p>
+  <div class="hrdf-badge-big">提供HRDF申请全程指导</div>
+</div>
+
+<!-- WHAT'S INCLUDED -->
+<section class="included-section">
+  <p class="section-eyebrow">套餐详情</p>
+  <h2 class="section-title">费用包含项目</h2>
+  <div class="included-grid">
+    <div class="included-col">
+      <h4>包含项目</h4>
+      <ul class="included-list">
+        <li><span class="check">✓</span>3天课程 + 完整企业参访行程</li>
+        <li><span class="check">✓</span>五星级酒店住宿(双人间)</li>
+        <li><span class="check">✓</span>行程中列明的所有餐食</li>
+        <li><span class="check">✓</span>全程豪华巴士接送</li>
+        <li><span class="check">✓</span>所有门票及企业参访费用</li>
+        <li><span class="check">✓</span>司机及导游服务费</li>
+        <li><span class="check">✓</span>HRDF申请指导与协助</li>
+      </ul>
+    </div>
+    <div class="included-col">
+      <h4>不包含项目(自费)</h4>
+      <ul class="included-list">
+        <li><span class="cross">✕</span>往返机票(50%可申请HRDF索赔)</li>
+        <li><span class="cross">✕</span>个人旅游保险</li>
+        <li><span class="cross">✕</span>乌镇午餐(自由活动日)</li>
+        <li><span class="cross">✕</span>单人房差价:RM 1,200</li>
+        <li><span class="cross">✕</span>个人购物及其他额外消费</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANIES -->
+<section class="companies-section">
+  <p class="section-eyebrow">您将向谁学习</p>
+  <h2 class="section-title">六家世界级企业。<br>六场学习课程。</h2>
+  <div class="companies-grid">
+    <div class="company-card">
+      <div class="company-card-photo" style="background-image:url('hangzhou-alibaba.jpg');"></div>
+      <div class="company-card-icon">🛒</div>
+      <div class="company-card-theme">战略与文化</div>
+      <h3 class="company-card-name">阿里巴巴集团</h3>
+      <p class="company-card-desc">走进阿里巴巴西溪园区。学习"三板斧"领导力框架 — 战略、文化、人才。参观文化墙、阿里发展历程展示,并在阿里食堂用餐。</p>
+    </div>
+    <div class="company-card">
+      <div class="company-card-photo" style="background-image:url('hangzhou-geely.jpg');"></div>
+      <div class="company-card-icon">🚗</div>
+      <div class="company-card-theme">智能制造</div>
+      <h3 class="company-card-name">吉利电动车工厂</h3>
+      <p class="company-card-desc">走完完整的冲压-焊接-总装生产线。亲眼见证机器人如何在吉利AMA电动车平台上,仅用6分钟完成一辆整车的组装 — 中国最先进的产线之一。</p>
+    </div>
+    <div class="company-card">
+      <div class="company-card-photo" style="background-image:url('hangzhou-robot-humanoid.jpg');"></div>
+      <div class="company-card-icon">🤖</div>
+      <div class="company-card-theme">工业人工智能</div>
+      <h3 class="company-card-name">申昊科技</h3>
+      <p class="company-card-desc">20多年故障检测经验,3000多台巡检机器人部署案例。参观其全新的生产质量科技园 — 铁路、电网、应急及海事巡检机器人。</p>
+    </div>
+    <div class="company-card">
+      <div class="company-card-photo" style="background-image:url('hangzhou-brainco.jpg');"></div>
+      <div class="company-card-icon">🧠</div>
+      <div class="company-card-theme">脑机接口</div>
+      <h3 class="company-card-name">强脑科技 BrainCo</h3>
+      <p class="company-card-desc">首个进入哈佛创新实验室的中国团队。其脑控仿生手曾在2022年亚残运会上点燃圣火。亲身体验脑机接口技术。</p>
+    </div>
+    <div class="company-card">
+      <div class="company-card-photo" style="background-image:url('hangzhou-iflytek.jpg');"></div>
+      <div class="company-card-icon">🎤</div>
+      <div class="company-card-theme">人工智能与语言</div>
+      <h3 class="company-card-name">科大讯飞</h3>
+      <p class="company-card-desc">中国领先的AI语音与认知科技公司。亲测其实时语音识别准确度、体验虚拟人生成,并了解讯飞星火大模型及其行业应用。</p>
+    </div>
+    <div class="company-card">
+      <div class="company-card-photo" style="background-image:url('hangzhou-shenhao.jpg');"></div>
+      <div class="company-card-icon">🏙️</div>
+      <div class="company-card-theme">未来之城</div>
+      <h3 class="company-card-name">机器人小镇</h3>
+      <p class="company-card-desc">中国首个以机器人命名的创新街区。展出40多款机器人产品 — 跳舞机器人、书法机器人、下棋机器人、VR智能工厂。两层楼的互动体验空间。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ITINERARY -->
+<section class="itinerary-section" id="itinerary">
+  <p class="section-eyebrow">逐日行程</p>
+  <h2 class="section-title">完整行程</h2>
+  <div class="day-list">
+
+    <div class="day-item open">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">第1天</span>
+        <span class="day-date">10月11日 周六</span>
+        <span class="day-title">离开马来西亚 · 入住阿里巴巴AI酒店</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-time">夜间</div><div class="tl-dot"></div><div class="tl-content"><strong>从吉隆坡第二国际机场(KLIA2)出发</strong><span>所有团员从吉隆坡出发。古晋、诗巫、民都鲁、美里可通过转机安排前往。</span></div></div>
+          <div class="tl-item"><div class="tl-time">23:00</div><div class="tl-dot"></div><div class="tl-content"><strong>抵达杭州萧山国际机场</strong><span>入住阿里巴巴旗下全AI运营的菲住布渴酒店。人脸识别入住、机器人客房服务、语音控制客房、3D打印拿铁咖啡。</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">第2天</span>
+        <span class="day-date">10月12日 周日</span>
+        <span class="day-title">阿里巴巴总部 · AI前沿课程</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-time">12:00</div><div class="tl-dot"></div><div class="tl-content"><strong>阿里巴巴数字生态创新园区</strong><span>在著名的阿里食堂享用午餐。</span></div></div>
+          <div class="tl-item"><div class="tl-time">13:30</div><div class="tl-dot"></div><div class="tl-content"><strong>阿里巴巴集团文化之旅</strong><span>阿里发展历程 · 文化墙与功夫文化 · 阿里公益日 · 阿里微电影展映。</span></div></div>
+          <div class="tl-item"><div class="tl-time">下午</div><div class="tl-dot"></div><div class="tl-content"><strong>课程:AI前沿技术与真实商业案例</strong><span>关于AI应用的课堂学习模块。</span></div></div>
+          <div class="tl-item"><div class="tl-time">16:00</div><div class="tl-dot"></div><div class="tl-content"><strong>阿里西溪园区观光车游览</strong></div></div>
+          <div class="tl-item"><div class="tl-time">18:00</div><div class="tl-dot"></div><div class="tl-content"><strong>晚餐</strong></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">第3天</span>
+        <span class="day-date">10月13日 周一</span>
+        <span class="day-title">申昊科技 · 强脑科技实验室 · 石墨烯博物馆</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-time">09:00</div><div class="tl-dot"></div><div class="tl-content"><strong>申昊科学生产园区</strong><span>铁路、电网、应急、公安安防、海事及生态应用机器人实验室。课程:工业特殊场景中的AI机器人应用。</span></div></div>
+          <div class="tl-item"><div class="tl-time">13:00</div><div class="tl-dot"></div><div class="tl-content"><strong>强脑科技 BrainCo</strong><span>科技展示厅 · 课程:脑机接口技术 — 最新进展与应用前景。仿生假肢实操演示。</span></div></div>
+          <div class="tl-item"><div class="tl-time">15:30</div><div class="tl-dot"></div><div class="tl-content"><strong>石墨烯博物馆</strong></div></div>
+          <div class="tl-item"><div class="tl-time">17:00</div><div class="tl-dot"></div><div class="tl-content"><strong>在西溪天堂商业街享用晚餐</strong></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">第4天</span>
+        <span class="day-date">10月14日 周二</span>
+        <span class="day-title">机器人小镇 · 科大讯飞AI中心 · 杭州友好饭店</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-time">09:30</div><div class="tl-dot"></div><div class="tl-content"><strong>机器人小镇</strong><span>40多款机器人产品:PEPPER服务机器人、书法机器人、VR智能工厂。二楼互动体验:跳舞、人像绘制、下棋机器人。</span></div></div>
+          <div class="tl-item"><div class="tl-time">13:30</div><div class="tl-dot"></div><div class="tl-content"><strong>科大讯飞</strong><span>实测实时语音识别准确度 · 虚拟人生成体验 · 课程:讯飞星火认知大模型及行业应用。</span></div></div>
+          <div class="tl-item"><div class="tl-time">15:00</div><div class="tl-dot"></div><div class="tl-content"><strong>入住杭州友好饭店</strong><span>位于龙井桥历史街区的酒店,步行5分钟即达西湖。设有360°城市与湖景旋转餐厅。</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">第5天</span>
+        <span class="day-date">10月15日 周三</span>
+        <span class="day-title">大马弄美食街 · 吉利电动车工厂</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-time">09:00</div><div class="tl-dot"></div><div class="tl-content"><strong>大马弄</strong><span>杭州最地道的本地美食街。葱包桧、臭豆腐、定胜糕、片儿川面。纯正的本地生活气息。</span></div></div>
+          <div class="tl-item"><div class="tl-time">13:30</div><div class="tl-dot"></div><div class="tl-content"><strong>吉利钱塘电动车工厂</strong><span>完整冲压-焊接-总装生产线参观。见证智能机器人在6分钟内完成一辆电动车的组装。课程:精益智能制造 — 数字化转型方法论。</span></div></div>
+          <div class="tl-item"><div class="tl-time">18:00</div><div class="tl-dot"></div><div class="tl-content"><strong>晚餐</strong></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">第6天</span>
+        <span class="day-date">10月16日 周四</span>
+        <span class="day-title">西湖 · 河坊街(南宋文化)</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-time">08:40</div><div class="tl-dot"></div><div class="tl-content"><strong>西湖 — 联合国教科文组织世界遗产</strong><span>观光巴士环湖游览。断桥、苏堤、雷峰塔。白素贞、苏东坡与岳飞的故事。</span></div></div>
+          <div class="tl-item"><div class="tl-time">13:30</div><div class="tl-dot"></div><div class="tl-content"><strong>河坊街</strong><span>南宋商业街区。传统杭州小吃、手工艺品店、胡庆余堂百年中医药堂。</span></div></div>
+          <div class="tl-item"><div class="tl-time">17:00</div><div class="tl-dot"></div><div class="tl-content"><strong>晚餐</strong></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">第7天</span>
+        <span class="day-date">10月17日 周五</span>
+        <span class="day-title">乌镇水乡 · 返程</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-time">09:00</div><div class="tl-dot"></div><div class="tl-content"><strong>乌镇西栅</strong><span>中国保存最完好的古镇之一,拥有千年以上历史。白墙黑瓦、石板小径、水乡石桥。自由活动享用午餐。</span></div></div>
+          <div class="tl-item"><div class="tl-time">15:30</div><div class="tl-dot"></div><div class="tl-content"><strong>离开乌镇</strong></div></div>
+          <div class="tl-item"><div class="tl-time">17:00</div><div class="tl-dot"></div><div class="tl-content"><strong>惜别晚宴</strong></div></div>
+          <div class="tl-item"><div class="tl-time">19:00</div><div class="tl-dot"></div><div class="tl-content"><strong>前往杭州萧山机场</strong><span>23:40起飞 · 10月18日05:05抵达吉隆坡 · 转机返回各自居住城市</span></div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRACTICAL INFO -->
+<div class="info-section">
+  <div class="info-card">
+    <div class="info-icon">🌡️</div>
+    <div class="info-title">10月气候</div>
+    <div class="info-body">白天:20–24°C<br>夜间:14–18°C<br><br>秋季 — 杭州最宜人的季节之一。凉爽舒适,偶有小雨,酒店提供免费雨伞。</div>
+  </div>
+  <div class="info-card">
+    <div class="info-icon">💳</div>
+    <div class="info-title">中国境内支付</div>
+    <div class="info-body">出发前请下载<strong>支付宝</strong>或<strong>Touch 'n Go</strong>并绑定您的信用卡/借记卡。现金同样可用 — 中国法律规定商户须接受现金支付。</div>
+  </div>
+  <div class="info-card">
+    <div class="info-icon">🧳</div>
+    <div class="info-title">出发安排</div>
+    <div class="info-body">所有团员从吉隆坡第二国际机场出发。古晋、诗巫、民都鲁、美里均可通过转机前往吉隆坡再出发。建议购票时一并购买行李额度 — 事后加购在亚航平台费用会高出许多。</div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <p class="section-eyebrow" style="color:rgba(255,255,255,0.5)">立即预留名额</p>
+  <h2 class="section-title">准备好加入了吗?</h2>
+  <p>名额限定40人。联系我们登记咨询,或立即开始您的HRDF申请。</p>
+  <div class="cta-limit">⚠ 仅剩40个名额 — 先到先得</div>
+  <div class="cta-buttons">
+    <a href="https://wa.me/60164802332?text=您好,我对2026年10月的杭州HRDF研学之旅感兴趣。" class="btn-whatsapp">WhatsApp 登记</a>
+    <a href="mailto:bsvacation123@gmail.com?subject=杭州HRDF研学之旅 2026年10月" class="btn-white">邮件咨询</a>
+  </div>
+</div>
+
+<section style="padding:5rem 5rem;background:var(--white);border-top:1px solid var(--light-line);">
+  <p style="font-size:0.78rem;color:var(--accent);font-weight:600;margin-bottom:0.8rem;">继续探索</p>
+  <h2 style="font-family:'Noto Sans SC','Manrope',sans-serif;font-size:clamp(1.6rem,2.2vw,2.1rem);font-weight:700;margin-bottom:2.5rem;color:var(--charcoal);">蓝天假期更多行程</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;">
+      <a href="tour-shenzhen-zh.html" style="display:block;text-decoration:none;color:inherit;border:1px solid var(--light-line);border-radius:3px;overflow:hidden;background:var(--white);">
+        <div style="height:120px;background:linear-gradient(135deg,#1a0a2e,#0a2040);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🔋</div>
+        <div style="padding:1.25rem 1.5rem;">
+          <div style="font-size:0.72rem;color:#1a7a3c;font-weight:600;margin-bottom:0.4rem;">100% HRDF · 7天6夜</div>
+          <h3 style="font-family:'Noto Sans SC','Manrope',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.4rem;color:var(--charcoal);">深圳人工智能研学之旅</h3>
+          <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;">比亚迪、优必选人形机器人、百度Apollo与大疆无人机。</p>
+        </div>
+      </a>
+      <a href="tour-hainan-zh.html" style="display:block;text-decoration:none;color:inherit;border:1px solid var(--light-line);border-radius:3px;overflow:hidden;background:var(--white);">
+        <div style="height:120px;background:linear-gradient(135deg,#0a5f7a,#0e7a6e);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🏝️</div>
+        <div style="padding:1.25rem 1.5rem;">
+          <div style="font-size:0.72rem;color:var(--accent);font-weight:600;margin-bottom:0.4rem;">休闲游 · 6天</div>
+          <h3 style="font-family:'Noto Sans SC','Manrope',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.4rem;color:var(--charcoal);">海南岛狂欢之旅</h3>
+          <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;">亚庇直飞海口。海花岛与三亚亚特兰蒂斯。</p>
+        </div>
+      </a>
+      <a href="tour-xinjiang-zh.html" style="display:block;text-decoration:none;color:inherit;border:1px solid var(--light-line);border-radius:3px;overflow:hidden;background:var(--white);">
+        <div style="height:120px;background:linear-gradient(135deg,#1a4a6e,#2d6a2d);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🏔️</div>
+        <div style="padding:1.25rem 1.5rem;">
+          <div style="font-size:0.72rem;color:var(--accent);font-weight:600;margin-bottom:0.4rem;">休闲游 · 11天 / 9天</div>
+          <h3 style="font-family:'Noto Sans SC','Manrope',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.4rem;color:var(--charcoal);">北疆奇境之旅</h3>
+          <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;">喀纳斯湖、赛里木湖、独库公路与魔鬼城。</p>
+        </div>
+      </a>
+  </div>
+</section>
+
+<footer style="align-items:flex-start;gap:2rem;flex-wrap:wrap;">
+  <div style="max-width:300px;">
+    <div class="footer-logo">蓝天假期 <span>Blue Sky Vacation</span></div>
+    <p style="margin-top:0.75rem;line-height:1.8;">D3-3, Block D, Tanjung Aru Plaza, Jalan Tun Mustapha, Tanjung Aru, 88100 Kota Kinabalu, Sabah</p>
+  </div>
+  <div style="line-height:2;">
+    <a href="https://wa.me/60164802332" style="color:rgba(255,255,255,0.65);text-decoration:none;display:block;">WhatsApp · +60 16-480 2332</a>
+    <a href="mailto:bsvacation123@gmail.com" style="color:rgba(255,255,255,0.65);text-decoration:none;display:block;">bsvacation123@gmail.com</a>
+    <a href="index-zh.html" style="color:rgba(255,255,255,0.65);text-decoration:none;display:block;">← 所有行程</a>
+  </div>
+  <div style="line-height:1.8;opacity:0.8;">
+    © 2026 Blue Sky Vacation Sdn Bhd<br>公司注册号 1083236 · KPK/LN:7700<br>沙巴亚庇
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.day-header').forEach(h => {
+    h.addEventListener('click', () => {
+      const item = h.parentElement;
+      const wasOpen = item.classList.contains('open');
+      item.classList.toggle('open', !wasOpen);
+    });
+  });
+</script>
+</body>
+</html>

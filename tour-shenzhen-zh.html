@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="深圳人工智能研学之旅 — 走进比亚迪、优必选人形机器人、百度Apollo自动驾驶、顺丰丰翼无人机及港珠澳大桥游船之旅。2026年11月10-16日。">
+<title>深圳人工智能研学之旅 — 2026年11月 | 蓝天假期</title>
+<link rel="icon" href="logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --sky: #2f9be0; --sky-light: #E8F2FB; --teal: #0E7A6E;
+    --sand: #F7F3EE; --charcoal: #1A1A1A; --mid: #4A4A4A;
+    --light-line: #E2DDD8; --white: #FFFFFF; --accent: #C9793A;
+    --hrdf: #1a7a3c; --deep: #0a1628;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Noto Sans SC', 'Plus Jakarta Sans', sans-serif; color: var(--charcoal); background: var(--white); font-weight: 400; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 3rem; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.07); }
+  .nav-logo { font-family: 'Manrope', sans-serif; font-size: 1.3rem; font-weight: 600; color: var(--sky); text-decoration: none; display: flex; align-items: center; }
+  .nav-logo span { color: var(--accent); }
+  .nav-back { font-size: 0.8rem; color: var(--mid); text-decoration: none; }
+  .nav-back:hover { color: var(--sky); }
+
+  .hero { min-height: 88vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 70px; }
+  .hero-left { background: linear-gradient(155deg, #0f3a5c 0%, #1a5a8a 48%, #2f9be0 130%); padding: 5rem 4rem 5rem 5rem; display: flex; flex-direction: column; justify-content: center; }
+  .hero-badges { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
+  .badge { padding: 0.35rem 0.85rem; border-radius: 2px; font-size: 0.75rem; font-weight: 500; }
+  .badge-hrdf { background: var(--hrdf); color: white; }
+  .badge-date { background: var(--accent); color: white; }
+  .badge-limit { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.75); border: 1px solid rgba(255,255,255,0.18); }
+  .hero-title { font-family: 'Noto Sans SC', 'Manrope', sans-serif; font-size: clamp(2.1rem, 3vw, 3.1rem); line-height: 1.45; font-weight: 700; color: var(--white); margin-bottom: 0.8rem; }
+  .hero-title em { color: #FFB347; font-style: normal; }
+  .hero-sub-title { font-family: 'Noto Sans SC', 'Manrope', sans-serif; font-size: 1.15rem; color: rgba(255,255,255,0.55); margin-bottom: 1.5rem; }
+  .hero-desc { font-size: 0.92rem; color: rgba(255,255,255,0.65); line-height: 1.9; max-width: 420px; margin-bottom: 2.5rem; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary { background: var(--accent); color: white; padding: 0.9rem 2rem; text-decoration: none; font-size: 0.85rem; font-weight: 500; border-radius: 2px; transition: opacity 0.2s; display: inline-block; }
+  .btn-primary:hover { opacity: 0.9; }
+  .btn-outline { border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.8); padding: 0.9rem 2rem; text-decoration: none; font-size: 0.85rem; font-weight: 400; border-radius: 2px; display: inline-block; transition: border-color 0.2s; }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.6); }
+
+  .hero-right { background: linear-gradient(160deg, rgba(10,30,48,0.82) 0%, rgba(12,40,64,0.8) 50%, rgba(8,22,36,0.9) 100%), url('shenzhen-hero-ubtech.jpg') center/cover; display: flex; flex-direction: column; justify-content: flex-end; padding: 3rem; position: relative; overflow: hidden; }
+  .hero-label { position: absolute; top: 2.5rem; right: 2.5rem; font-size: 0.72rem; color: rgba(255,255,255,0.85); text-shadow: 0 1px 4px rgba(0,0,0,0.6); }
+  .hero-companies { display: flex; flex-direction: column; gap: 0.8rem; position: relative; z-index: 1; }
+  .company-pill { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 3px; padding: 0.75rem 1.25rem; display: flex; align-items: center; gap: 0.8rem; }
+  .company-icon { width: 28px; height: 28px; background: #C9793A; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; flex-shrink: 0; }
+  .company-name { font-size: 0.85rem; font-weight: 500; color: rgba(255,255,255,0.9); }
+  .company-desc { font-size: 0.75rem; color: rgba(255,255,255,0.42); }
+
+  .pricing-band { background: var(--hrdf); color: white; padding: 2rem 5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+  .price-item { text-align: center; }
+  .price-num { font-family: 'Manrope', sans-serif; font-size: 2.2rem; font-weight: 600; display: block; line-height: 1; }
+  .price-label { font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-top: 0.3rem; display: block; }
+  .price-divider { width: 1px; height: 50px; background: rgba(255,255,255,0.2); }
+  .price-note { font-size: 0.82rem; color: rgba(255,255,255,0.7); max-width: 280px; line-height: 1.7; }
+  .hrdf-badge-big { background: rgba(255,255,255,0.13); border: 1px solid rgba(255,255,255,0.22); border-radius: 3px; padding: 0.5rem 1.2rem; font-size: 0.82rem; font-weight: 500; white-space: nowrap; }
+
+  section { padding: 5rem 5rem; }
+  .section-eyebrow { font-size: 0.78rem; color: var(--accent); font-weight: 600; margin-bottom: 0.8rem; }
+  .section-title { font-family: 'Noto Sans SC', 'Manrope', sans-serif; font-size: clamp(1.6rem, 2.2vw, 2.1rem); font-weight: 700; line-height: 1.4; margin-bottom: 2rem; }
+
+  .included-section { background: var(--sand); }
+  .included-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .included-col h4 { font-size: 0.8rem; color: var(--mid); margin-bottom: 1rem; font-weight: 600; }
+  .included-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .included-list li { font-size: 0.88rem; color: var(--mid); display: flex; align-items: flex-start; gap: 0.6rem; line-height: 1.7; }
+  .check { color: var(--hrdf); flex-shrink: 0; margin-top: 1px; }
+  .cross { color: #c0392b; flex-shrink: 0; margin-top: 1px; }
+
+  .companies-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
+  .company-card { border: 1px solid var(--light-line); border-radius: 3px; padding: 1.75rem; transition: border-color 0.2s, transform 0.2s; overflow: hidden; }
+  .company-card-photo { height: 150px; margin: -1.75rem -1.75rem 1.25rem; background-size: cover; background-position: center; }
+  .company-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .company-card-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+  .company-card-name { font-family: 'Noto Sans SC', 'Manrope', sans-serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .company-card-theme { font-size: 0.75rem; color: var(--accent); font-weight: 600; margin-bottom: 0.75rem; }
+  .company-card-desc { font-size: 0.85rem; color: var(--mid); line-height: 1.8; }
+
+  .itinerary-section { background: var(--sand); }
+  .day-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 2.5rem; }
+  .day-item { background: var(--white); border-radius: 3px; overflow: hidden; }
+  .day-header { display: flex; align-items: center; gap: 1.25rem; padding: 1.25rem 1.5rem; cursor: pointer; user-select: none; }
+  .day-num { background: var(--charcoal); color: white; font-size: 0.75rem; font-weight: 600; padding: 0.3rem 0.7rem; border-radius: 2px; white-space: nowrap; flex-shrink: 0; }
+  .day-date { font-size: 0.82rem; color: var(--mid); flex-shrink: 0; }
+  .day-title { font-size: 0.92rem; font-weight: 600; flex: 1; }
+  .day-chevron { font-size: 0.8rem; color: var(--mid); transition: transform 0.3s; }
+  .day-item.open .day-chevron { transform: rotate(180deg); }
+  .day-body { display: none; border-top: 1px solid var(--light-line); }
+  .day-item.open .day-body { display: block; }
+  .timeline { padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+  .tl-item { display: flex; gap: 1rem; align-items: flex-start; }
+  .tl-time { font-size: 0.75rem; color: var(--mid); min-width: 48px; padding-top: 3px; font-weight: 500; }
+  .tl-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 6px; }
+  .tl-content { font-size: 0.86rem; color: var(--charcoal); line-height: 1.75; flex: 1; }
+  .tl-content strong { display: block; font-weight: 600; margin-bottom: 0.2rem; }
+  .tl-content span { color: var(--mid); font-size: 0.82rem; }
+
+  .highlight-strip { background: var(--charcoal); color: white; padding: 3.5rem 5rem; }
+  .highlight-strip .section-title { color: white; margin-bottom: 2rem; }
+  .highlights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .highlight-item { border-left: 2px solid var(--accent); padding-left: 1.25rem; }
+  .highlight-item h4 { font-size: 0.9rem; font-weight: 600; color: rgba(255,255,255,0.9); margin-bottom: 0.4rem; }
+  .highlight-item p { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.75; }
+
+  .info-section { padding: 4rem 5rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
+  .info-card { padding: 2rem; border: 1px solid var(--light-line); border-radius: 3px; }
+  .info-icon { font-size: 1.5rem; margin-bottom: 1rem; }
+  .info-title { font-size: 0.8rem; color: var(--mid); font-weight: 600; margin-bottom: 0.75rem; }
+  .info-body { font-size: 0.86rem; color: var(--mid); line-height: 1.8; }
+
+  .cta-section { background: var(--charcoal); color: white; padding: 5rem; text-align: center; }
+  .cta-section .section-title { color: white; margin-bottom: 1rem; }
+  .cta-section p { color: rgba(255,255,255,0.65); margin-bottom: 2rem; font-size: 0.98rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .cta-limit { display: inline-block; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: 3px; padding: 0.5rem 1.25rem; font-size: 0.8rem; margin-bottom: 2.5rem; color: rgba(255,255,255,0.65); }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-white { background: white; color: var(--charcoal); padding: 0.9rem 2.5rem; text-decoration: none; font-size: 0.86rem; font-weight: 600; border-radius: 2px; display: inline-block; }
+  .btn-whatsapp { background: #25D366; color: white; padding: 0.9rem 2.5rem; text-decoration: none; font-size: 0.86rem; font-weight: 600; border-radius: 2px; display: inline-block; }
+
+  footer { background: #0d0d0d; color: rgba(255,255,255,0.35); padding: 2rem 5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; }
+  .footer-logo { font-family: 'Noto Sans SC', 'Manrope', sans-serif; font-size: 1.1rem; font-weight: 700; color: rgba(255,255,255,0.75); }
+  .footer-logo span { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left, .hero-right { padding: 2.5rem 1.5rem; }
+    .hero-right { min-height: 320px; }
+    .pricing-band { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
+    .price-divider { display: none; }
+    section { padding: 3.5rem 1.5rem; }
+    .included-grid, .companies-grid, .highlights-grid { grid-template-columns: 1fr; }
+    .day-header { flex-wrap: wrap; row-gap: 0.4rem; }
+    .day-title { flex-basis: 100%; order: 4; }
+    .day-chevron { margin-left: auto; }
+    .info-section { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; }
+    .highlight-strip { padding: 3rem 1.5rem; }
+    .cta-section { padding: 3.5rem 1.5rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+  }
+
+  @media (max-width: 480px) {
+    nav { padding: 0.8rem 1rem; }
+    .nav-logo { font-size: 0.85rem !important; }
+    .nav-logo img { width: 24px !important; height: 24px !important; margin-right: 0.35rem !important; }
+    nav > div { gap: 0.5rem !important; }
+    .nav-back { font-size: 0.68rem !important; }
+    .nav-alltours { display: none; }
+    .nav-cta-btn { font-size: 0.68rem !important; padding: 0.45rem 0.7rem !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index-zh.html" class="nav-logo"><img src="logo-mark.png" alt="" style="height:30px;width:30px;border-radius:7px;object-fit:cover;vertical-align:middle;margin-right:0.55rem;">蓝天假期</a>
+  <div style="display:flex;align-items:center;gap:1.25rem;">
+    <a href="tour-shenzhen.html" class="nav-back">EN</a>
+    <a href="index-zh.html" class="nav-back nav-alltours">← 所有行程</a>
+    <a href="https://wa.me/60164802332?text=您好,我对2026年11月的深圳HRDF研学之旅感兴趣。" class="nav-cta-btn" style="background:#16384f;color:#fff;text-decoration:none;font-size:0.82rem;font-weight:600;padding:0.55rem 1.1rem;border-radius:100px;white-space:nowrap;">立即咨询</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-badges">
+      <span class="badge badge-hrdf">✓ 100% HRDF 全额索赔</span>
+      <span class="badge badge-date">2026年11月10–16日</span>
+      <span class="badge badge-limit">限额30人</span>
+    </div>
+    <h1 class="hero-title">AI赋能商业:<br><em>走进深圳</em>科技巨头</h1>
+    <p class="hero-sub-title">深圳 · 7天6夜研学之旅</p>
+    <p class="hero-desc">从比亚迪的生产车间到百度的自动驾驶汽车、优必选的人形机器人、顺丰的无人机物流,再到港珠澳大桥下的日落游船。7天沉浸式体验中国创新之都。</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/60164802332?text=您好,我对2026年11月的深圳HRDF研学之旅感兴趣。" class="btn-primary">登记咨询</a>
+      <a href="#itinerary" class="btn-outline">查看行程</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <span class="hero-label">您将走访的企业</span>
+    <div class="hero-companies">
+      <div class="company-pill"><div class="company-icon">🔋</div><div><div class="company-name">比亚迪 + 云巴</div><div class="company-desc">博物馆、电池体验与电动车生态</div></div></div>
+      <div class="company-pill"><div class="company-icon">🤖</div><div><div class="company-name">优必选机器人</div><div class="company-desc">真实商用场景中的人形机器人</div></div></div>
+      <div class="company-pill"><div class="company-icon">🚌</div><div><div class="company-name">深圳巴士集团</div><div class="company-desc">自动驾驶城市巴士演示与试乘</div></div></div>
+      <div class="company-pill"><div class="company-icon">🚁</div><div><div class="company-name">顺丰丰翼无人机</div><div class="company-desc">物流、医疗与应急无人机运营</div></div></div>
+      <div class="company-pill"><div class="company-icon">🚗</div><div><div class="company-name">百度萝卜快跑</div><div class="company-desc">在深圳CBD乘坐全自动驾驶汽车</div></div></div>
+      <div class="company-pill"><div class="company-icon">🌉</div><div><div class="company-name">港珠澳大桥日落游船</div><div class="company-desc">日落、蓝调时刻与海上大桥灯光秀</div></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="pricing-band">
+  <div class="price-item">
+    <span class="price-num">RM 8,250</span>
+    <span class="price-label">HRDF 价格(100%可索赔)</span>
+  </div>
+  <div class="price-divider"></div>
+  <div class="price-item">
+    <span class="price-num">RM 8,000</span>
+    <span class="price-label">现金价</span>
+  </div>
+  <div class="price-divider"></div>
+  <div class="price-item">
+    <span class="price-num">RM 5,250 + RM 3,000</span>
+    <span class="price-label">课程费 + 旅行团费</span>
+  </div>
+  <div class="price-divider"></div>
+  <p class="price-note">机票费用不包含在内,但往返机票的50%同样可申请HRDF索赔。单人房差价:RM 1,400。</p>
+  <div class="hrdf-badge-big">提供专属HRDF申请协助</div>
+</div>
+
+<section class="included-section">
+  <p class="section-eyebrow">套餐详情</p>
+  <h2 class="section-title">费用包含项目</h2>
+  <div class="included-grid">
+    <div class="included-col">
+      <h4>包含项目</h4>
+      <ul class="included-list">
+        <li><span class="check">✓</span>完整研学课程 + 所有企业参访</li>
+        <li><span class="check">✓</span>五星级酒店住宿(双人间)</li>
+        <li><span class="check">✓</span>行程中列明的所有餐食</li>
+        <li><span class="check">✓</span>全程豪华巴士接送</li>
+        <li><span class="check">✓</span>所有门票及企业参访费用</li>
+        <li><span class="check">✓</span>港珠澳大桥日落游船连自助晚餐</li>
+        <li><span class="check">✓</span>司机及导游服务费</li>
+        <li><span class="check">✓</span>HRDF申请指导协助</li>
+      </ul>
+    </div>
+    <div class="included-col">
+      <h4>不包含项目(自费)</h4>
+      <ul class="included-list">
+        <li><span class="cross">✕</span>往返机票(50%可申请HRDF索赔)</li>
+        <li><span class="cross">✕</span>个人旅游保险</li>
+        <li><span class="cross">✕</span>11月14日午餐 · 11月15日午晚餐(自由活动日)</li>
+        <li><span class="cross">✕</span>单人房差价:RM 1,400</li>
+        <li><span class="cross">✕</span>个人购物及其他额外消费</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <p class="section-eyebrow">您将向谁学习</p>
+  <h2 class="section-title">五家人工智能先驱企业。<br>一座未来之城。</h2>
+  <div class="companies-grid">
+    <div class="company-card">
+      <div class="company-card-photo" style="background-image:url('shenzhen-byd.jpg');"></div>
+      <div class="company-card-icon">🔋</div>
+      <div class="company-card-theme">电动车与能源</div>
+      <h3 class="company-card-name">比亚迪 + 云巴</h3>
+      <p class="company-card-desc">从电池初创企业成长为全球最大的电动车制造商。参观比亚迪博物馆,亲手卷制一颗电池芯作纪念,品尝传奇的"同乐鸡腿饭",并了解云巴自动化轨道系统。</p>
+    </div>
+    <div class="company-card">
+      <div class="company-card-photo" style="background-image:url('shenzhen-ubtech.jpg');"></div>
+      <div class="company-card-icon">🤖</div>
+      <div class="company-card-theme">人形机器人</div>
+      <h3 class="company-card-name">优必选</h3>
+      <p class="company-card-desc">2023年于香港交易所上市。旗下Walker S2机器人曾亮相2025年全运会开幕式。见证人形机器人在物流、零售、教育及智能制造领域的实际应用。</p>
+    </div>
+    <div class="company-card">
+      <div class="company-card-photo" style="background-image:url('shenzhen-busgroup.jpg');"></div>
+      <div class="company-card-icon">🚌</div>
+      <div class="company-card-theme">智慧城市交通</div>
+      <h3 class="company-card-name">深圳巴士集团</h3>
+      <p class="company-card-desc">中国最先进的自动驾驶巴士示范基地。20辆无人驾驶车辆投入实际运营路线。亲自试乘,了解城市级AI交通系统如何运作,以及它对未来城市出行的意义。</p>
+    </div>
+    <div class="company-card">
+      <div class="company-card-photo" style="background-image:url('shenzhen-drone.png');"></div>
+      <div class="company-card-icon">🚁</div>
+      <div class="company-card-theme">无人机物流</div>
+      <h3 class="company-card-name">顺丰丰翼科技</h3>
+      <p class="company-card-desc">中国首个获得无人机运营牌照的企业。业务遍及12个国家,涵盖物流、医疗供应及应急响应。观看无人机从楼顶起飞,了解完整的无人化物流链条。</p>
+    </div>
+    <div class="company-card">
+      <div class="company-card-photo" style="background-image:url('shenzhen-baidu.jpeg');"></div>
+      <div class="company-card-icon">🚗</div>
+      <div class="company-card-theme">自动驾驶</div>
+      <h3 class="company-card-name">百度萝卜快跑</h3>
+      <p class="company-card-desc">全球最大的自动驾驶运营商及最大的5G云代驾车队。深圳是中国首个在CBD开放自动驾驶出租车的城市。您将亲自乘坐 — 每车3人,5分钟科技园环线。</p>
+    </div>
+    <div class="company-card">
+      <div class="company-card-photo" style="background-image:url('shenzhen-bridge.jpg');"></div>
+      <div class="company-card-icon">🌉</div>
+      <div class="company-card-theme">标志性体验</div>
+      <h3 class="company-card-name">港珠澳大桥游船 + 平安大厦</h3>
+      <p class="company-card-desc">在日落时分,乘船穿越世界最长的跨海大桥 — 黄昏、蓝调时刻与大桥灯光秀。当晚早些时候,登上平安金融中心116层,547米高空,360°俯瞰深圳湾及周边景色。</p>
+    </div>
+  </div>
+</section>
+
+<div class="highlight-strip">
+  <p class="section-eyebrow" style="color:rgba(255,255,255,0.4)">适合谁参加</p>
+  <h2 class="section-title">专为企业领导者打造。</h2>
+  <div class="highlights-grid">
+    <div class="highlight-item"><h4>中小企业主与创业者</h4><p>了解中国AI企业如何实现规模化增长,以及这对您自身商业战略的启示。</p></div>
+    <div class="highlight-item"><h4>企业二代接班人</h4><p>亲眼见证AI正在颠覆的行业,并与站在同一十字路口的同行建立联系。</p></div>
+    <div class="highlight-item"><h4>企业高管</h4><p>第4天与百度共度的全天AI商业沙龙 — 涵盖大模型行业应用、真实案例分析与现场讨论。</p></div>
+  </div>
+</div>
+
+<section class="itinerary-section" id="itinerary">
+  <p class="section-eyebrow">逐日行程</p>
+  <h2 class="section-title">完整行程</h2>
+  <div class="day-list">
+
+    <div class="day-item open">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">第1天</span><span class="day-date">11月10日 周二</span>
+        <span class="day-title">离开马来西亚 · 抵达深圳</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body"><div class="timeline">
+        <div class="tl-item"><div class="tl-time">全天</div><div class="tl-dot"></div><div class="tl-content"><strong>从马来西亚出发 — 于KLIA1登机口集合</strong><span>古晋、美里可通过转机吉隆坡前往。领队将在登机口等候。</span></div></div>
+        <div class="tl-item"><div class="tl-time">19:55</div><div class="tl-dot"></div><div class="tl-content"><strong>抵达深圳宝安国际机场</strong><span>入住酒店休息,为明日行程做准备。</span></div></div>
+      </div></div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">第2天</span><span class="day-date">11月11日 周三</span>
+        <span class="day-title">比亚迪博物馆 · 云巴 · 传奇鸡腿饭</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body"><div class="timeline">
+        <div class="tl-item"><div class="tl-time">09:00</div><div class="tl-dot"></div><div class="tl-content"><strong>云巴自动化轨道系统</strong><span>体验比亚迪的城市轨道创新 — 穿梭于深圳街道的云巴自动化系统。</span></div></div>
+        <div class="tl-item"><div class="tl-time">12:00</div><div class="tl-dot"></div><div class="tl-content"><strong>午餐 — 同乐鸡腿饭</strong><span>比亚迪创业初期的标志性餐食,在比亚迪博物馆内以"创业者记忆套餐"重现。这不只是美食,更是一段文化体验。</span></div></div>
+        <div class="tl-item"><div class="tl-time">13:00</div><div class="tl-dot"></div><div class="tl-content"><strong>比亚迪历史博物馆</strong><span>比亚迪从电池工厂成长为全球电动车领军企业的历程。亲手卷制一颗电池芯并带回家留念。近距离参观完整的工业生产链。</span></div></div>
+        <div class="tl-item"><div class="tl-time">17:00</div><div class="tl-dot"></div><div class="tl-content"><strong>晚餐</strong></div></div>
+      </div></div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">第3天</span><span class="day-date">11月12日 周四</span>
+        <span class="day-title">优必选人形机器人 · 巴士自动驾驶基地 · 顺丰无人机</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body"><div class="timeline">
+        <div class="tl-item"><div class="tl-time">09:00</div><div class="tl-dot"></div><div class="tl-content"><strong>优必选科技</strong><span>见证人形机器人的真实应用场景:物流、护理、教育、智能工厂。从曾在央视春晚舞台上表演的540台阿尔法机器人,到如今的Walker S2。</span></div></div>
+        <div class="tl-item"><div class="tl-time">12:30</div><div class="tl-dot"></div><div class="tl-content"><strong>深圳巴士集团 — 前海自动驾驶基地</strong><span>参观AI控制中心 · 试乘无人驾驶巴士 · 了解中国如何在城市级规模上部署自动驾驶。</span></div></div>
+        <div class="tl-item"><div class="tl-time">15:00</div><div class="tl-dot"></div><div class="tl-content"><strong>顺丰丰翼无人机</strong><span>展示厅、控制中心、行业交流,以及楼顶无人机观摩。了解无人机在12个国家开展的物流、医疗冷链及应急响应业务。</span></div></div>
+        <div class="tl-item"><div class="tl-time">17:00</div><div class="tl-dot"></div><div class="tl-content"><strong>晚餐</strong></div></div>
+      </div></div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">第4天</span><span class="day-date">11月13日 周五</span>
+        <span class="day-title">百度萝卜快跑 — 试乘自动驾驶汽车 · 全天AI沙龙</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body"><div class="timeline">
+        <div class="tl-item"><div class="tl-time">08:30</div><div class="tl-dot"></div><div class="tl-content"><strong>百度萝卜快跑自动驾驶中心</strong><span>深圳是中国首个在CBD开放全自动驾驶出租车的城市。您将亲自乘坐 — 每车3人,5分钟科技园环线,无安全员,全程AI驾驶。</span></div></div>
+        <div class="tl-item"><div class="tl-time">全天</div><div class="tl-dot"></div><div class="tl-content"><strong>全天课程:AI商业沙龙 — 算法深度解析</strong><span>第一部分:AI基础知识(45分钟)· 第二部分:行业案例分析 — 大模型应用与产业升级(70分钟)· 第三部分:实操演示 — 企业级AI工具(35分钟)· 第四部分:问答与行业交流(20分钟)+ 自动驾驶半日实地课程。</span></div></div>
+        <div class="tl-item"><div class="tl-time">18:00</div><div class="tl-dot"></div><div class="tl-content"><strong>平安金融中心 — 116层</strong><span>深圳上空547米。270°–360°俯瞰福田CBD、深圳湾、大鹏湾。一次登顶,尽览日落、黄金时刻与城市夜景。</span></div></div>
+      </div></div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">第5天</span><span class="day-date">11月14日 周六</span>
+        <span class="day-title">COCO Park · 港珠澳大桥日落游船</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body"><div class="timeline">
+        <div class="tl-item"><div class="tl-time">10:00</div><div class="tl-dot"></div><div class="tl-content"><strong>深圳COCO Park</strong><span>深圳最受欢迎的生活方式与购物目的地。午餐自理。</span></div></div>
+        <div class="tl-item"><div class="tl-time">17:30</div><div class="tl-dot"></div><div class="tl-content"><strong>港珠澳大桥海上游船</strong><span>登上18:00–21:00班次的游船,享用船上自助晚餐。观赏南海日落、大桥笼罩在蓝调时刻中的景致,以及夜幕降临后大桥点亮的完整灯光秀。绝佳的摄影时刻。</span></div></div>
+      </div></div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">第6天</span><span class="day-date">11月15日 周日</span>
+        <span class="day-title">深圳自由活动日</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body"><div class="timeline">
+        <div class="tl-item"><div class="tl-time">全天</div><div class="tl-dot"></div><div class="tl-content"><strong>自由活动日 — 按自己的节奏探索深圳</strong><span>推荐:大芬油画村、锦绣中华民俗村、世界之窗、华侨城创意园,或前往罗湖口岸购物。</span></div></div>
+      </div></div>
+    </div>
+
+    <div class="day-item">
+      <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+        <span class="day-num">第7天</span><span class="day-date">11月16日 周一</span>
+        <span class="day-title">返程</span>
+        <span class="day-chevron">▼</span>
+      </div>
+      <div class="day-body"><div class="timeline">
+        <div class="tl-item"><div class="tl-time">07:00</div><div class="tl-dot"></div><div class="tl-content"><strong>退房并前往深圳宝安机场</strong><span>10:40起飞 · 14:40抵达吉隆坡 · 可转机前往古晋、美里、民都鲁。</span></div></div>
+      </div></div>
+    </div>
+
+  </div>
+</section>
+
+<div class="info-section">
+  <div class="info-card">
+    <div class="info-icon">🌡️</div>
+    <div class="info-title">11月气候</div>
+    <div class="info-body">深圳大多为晴天。<br>白天:24–28°C<br>夜晚:17–22°C<br><br>建议夜间携带薄外套。无雨季 — 是拍摄大桥游船的绝佳天气条件。</div>
+  </div>
+  <div class="info-card">
+    <div class="info-icon">💳</div>
+    <div class="info-title">中国境内支付</div>
+    <div class="info-body">出发前请下载<strong>Touch 'n Go</strong>或<strong>支付宝</strong>并绑定您的银行卡。现金同样广泛适用 — 中国法律规定所有商户须接受现金支付。</div>
+  </div>
+  <div class="info-card">
+    <div class="info-icon">✈️</div>
+    <div class="info-title">出发安排</div>
+    <div class="info-body">请于KLIA1登机口集合(注意:与杭州行程不同,不是KLIA2)。古晋、美里可通过转机吉隆坡前往。建议购票时一并购买行李额度 — 事后加购费用会高出许多。</div>
+  </div>
+</div>
+
+<div class="cta-section">
+  <p class="section-eyebrow" style="color:rgba(255,255,255,0.4)">立即预留名额</p>
+  <h2 class="section-title">准备好加入了吗?</h2>
+  <p>名额限定30人。立即登记咨询,或在我们指导团队的协助下开始您的HRDF申请。</p>
+  <div class="cta-limit">⚠ 仅剩30个名额 — 先到先得</div>
+  <div class="cta-buttons">
+    <a href="https://wa.me/60164802332?text=您好,我对2026年11月的深圳HRDF研学之旅感兴趣。" class="btn-whatsapp">WhatsApp 登记</a>
+    <a href="mailto:bsvacation123@gmail.com?subject=深圳HRDF研学之旅 2026年11月" class="btn-white">邮件咨询</a>
+  </div>
+</div>
+
+<section style="padding:5rem 5rem;background:var(--white);border-top:1px solid var(--light-line);">
+  <p style="font-size:0.78rem;color:var(--accent);font-weight:600;margin-bottom:0.8rem;">继续探索</p>
+  <h2 style="font-family:'Noto Sans SC','Manrope',sans-serif;font-size:clamp(1.6rem,2.2vw,2.1rem);font-weight:700;margin-bottom:2.5rem;color:var(--charcoal);">蓝天假期更多行程</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;">
+      <a href="tour-hangzhou-zh.html" style="display:block;text-decoration:none;color:inherit;border:1px solid var(--light-line);border-radius:3px;overflow:hidden;background:var(--white);">
+        <div style="height:120px;background:linear-gradient(135deg,#0B4F8A,#062a4a);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🤖</div>
+        <div style="padding:1.25rem 1.5rem;">
+          <div style="font-size:0.72rem;color:#1a7a3c;font-weight:600;margin-bottom:0.4rem;">100% HRDF · 8天6夜</div>
+          <h3 style="font-family:'Noto Sans SC','Manrope',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.4rem;color:var(--charcoal);">杭州人工智能研学之旅</h3>
+          <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;">阿里巴巴、吉利电动车、强脑科技、科大讯飞与机器人小镇。</p>
+        </div>
+      </a>
+      <a href="tour-hainan-zh.html" style="display:block;text-decoration:none;color:inherit;border:1px solid var(--light-line);border-radius:3px;overflow:hidden;background:var(--white);">
+        <div style="height:120px;background:linear-gradient(135deg,#0a5f7a,#0e7a6e);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🏝️</div>
+        <div style="padding:1.25rem 1.5rem;">
+          <div style="font-size:0.72rem;color:var(--accent);font-weight:600;margin-bottom:0.4rem;">休闲游 · 6天</div>
+          <h3 style="font-family:'Noto Sans SC','Manrope',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.4rem;color:var(--charcoal);">海南岛狂欢之旅</h3>
+          <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;">亚庇直飞海口。海花岛与三亚亚特兰蒂斯。</p>
+        </div>
+      </a>
+      <a href="tour-xinjiang-zh.html" style="display:block;text-decoration:none;color:inherit;border:1px solid var(--light-line);border-radius:3px;overflow:hidden;background:var(--white);">
+        <div style="height:120px;background:linear-gradient(135deg,#1a4a6e,#2d6a2d);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🏔️</div>
+        <div style="padding:1.25rem 1.5rem;">
+          <div style="font-size:0.72rem;color:var(--accent);font-weight:600;margin-bottom:0.4rem;">休闲游 · 11天 / 9天</div>
+          <h3 style="font-family:'Noto Sans SC','Manrope',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:0.4rem;color:var(--charcoal);">北疆奇境之旅</h3>
+          <p style="font-size:0.85rem;color:var(--mid);line-height:1.7;">喀纳斯湖、赛里木湖、独库公路与魔鬼城。</p>
+        </div>
+      </a>
+  </div>
+</section>
+
+<footer style="align-items:flex-start;gap:2rem;flex-wrap:wrap;">
+  <div style="max-width:300px;">
+    <div class="footer-logo">蓝天假期 <span>Blue Sky Vacation</span></div>
+    <p style="margin-top:0.75rem;line-height:1.8;">D3-3, Block D, Tanjung Aru Plaza, Jalan Tun Mustapha, Tanjung Aru, 88100 Kota Kinabalu, Sabah</p>
+  </div>
+  <div style="line-height:2;">
+    <a href="https://wa.me/60164802332" style="color:rgba(255,255,255,0.65);text-decoration:none;display:block;">WhatsApp · +60 16-480 2332</a>
+    <a href="mailto:bsvacation123@gmail.com" style="color:rgba(255,255,255,0.65);text-decoration:none;display:block;">bsvacation123@gmail.com</a>
+    <a href="index-zh.html" style="color:rgba(255,255,255,0.65);text-decoration:none;display:block;">← 所有行程</a>
+  </div>
+  <div style="line-height:1.8;opacity:0.8;">
+    © 2026 Blue Sky Vacation Sdn Bhd<br>公司注册号 1083236 · KPK/LN:7700<br>沙巴亚庇
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.day-header').forEach(h => {
+    h.addEventListener('click', () => { h.parentElement.classList.toggle('open'); });
+  });
+</script>
+</body>
+</html>
