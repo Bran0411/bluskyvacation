@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="蓝天假期无障碍旅行 — 写给轮椅使用者与家人的真心话,关于旅行、关于陪伴、关于重新出发。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="无障碍旅行 | 蓝天假期">
+<meta property="og:description" content="蓝天假期无障碍旅行 — 写给轮椅使用者与家人的真心话,关于旅行、关于陪伴、关于重新出发。">
+<meta property="og:url" content="https://bran0411.github.io/bluskyvacation/barrier-free-travel-zh.html">
+<meta property="og:image" content="https://bran0411.github.io/bluskyvacation/logo-mark.png">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="蓝天假期">
+<title>无障碍旅行 | 蓝天假期</title>
+<link rel="icon" href="logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --paper: #ffffff;
+    --ink: #16384f;
+    --ink2: #0f2836;
+    --sky: #2f9be0;
+    --sky-deep: #1a4a6e;
+    --sky-tint: #EAF6FF;
+    --sand: #f6f0e6;
+    --line: #e6edf1;
+    --muted: #5c6b76;
+    --white: #ffffff;
+  }
+  html { scroll-behavior: smooth; }
+  html, body { overflow-x: hidden; max-width: 100%; }
+  body { font-family: 'Noto Sans SC', 'Plus Jakarta Sans', sans-serif; color: var(--ink); background: var(--paper); line-height: 1.75; -webkit-font-smoothing: antialiased; }
+  .display { font-family: 'Manrope', 'Noto Sans SC', sans-serif; font-weight: 800; letter-spacing: -0.01em; line-height: 1.28; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  a:hover { color: var(--sky); }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 2rem; }
+
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s cubic-bezier(.2,.7,.3,1), transform 0.9s cubic-bezier(.2,.7,.3,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* NAV */
+  .nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.86); backdrop-filter: blur(14px); border-bottom: 1px solid transparent; transition: border-color 0.3s, box-shadow 0.3s; }
+  .nav.scrolled { border-color: var(--line); box-shadow: 0 4px 20px rgba(20,50,70,0.05); }
+  .nav-inner { max-width: 1240px; margin: 0 auto; padding: 0.9rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+  .brand { display: flex; align-items: center; gap: 0.55rem; font-weight: 700; font-size: 1.05rem; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; white-space: nowrap; }
+  .brand img { width: 30px; height: 30px; border-radius: 8px; flex-shrink: 0; }
+  .nav-links { display: flex; gap: 2rem; align-items: center; }
+  .nav-links a { text-decoration: none; font-size: 0.9rem; font-weight: 500; color: var(--ink); opacity: 0.78; transition: opacity 0.2s; }
+  .nav-links a:hover { opacity: 1; color: var(--ink); }
+  .lang-badge { font-size: 0.8rem; font-weight: 700; padding: 0.3rem 0.7rem; border-radius: 100px; border: 1px solid var(--line); opacity: 1 !important; white-space: nowrap; }
+  .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+  .nav-cta { background: var(--ink); color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 600; padding: 0.6rem 1.15rem; border-radius: 100px; transition: background 0.2s; white-space: nowrap; }
+  .nav-cta:hover { background: var(--sky-deep); color: #fff; }
+  .nav-burger { display: none; background: none; border: none; font-size: 1.3rem; color: var(--ink); cursor: pointer; width: 44px; height: 44px; align-items: center; justify-content: center; flex-shrink: 0; }
+
+  /* HERO */
+  .hero { padding: 3.2rem 2rem 5.5rem; max-width: 1240px; margin: 0 auto; }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 4rem; align-items: center; }
+  .hero-eyebrow { display: inline-block; font-size: 0.82rem; letter-spacing: 0.04em; font-weight: 700; color: var(--sky-deep); background: var(--sky-tint); padding: 0.5rem 1rem; border-radius: 100px; margin-bottom: 1.6rem; }
+  .hero-h { font-size: clamp(2.2rem, 4vw, 3.6rem); letter-spacing: -0.01em; line-height: 1.3; margin-bottom: 1.6rem; color: var(--ink); }
+  .hero-sub { font-size: 1.14rem; line-height: 1.9; color: var(--muted); max-width: 480px; margin-bottom: 2.4rem; }
+  .hero-actions { display: flex; gap: 0.9rem; flex-wrap: wrap; }
+  .btn { font-size: 0.94rem; font-weight: 600; padding: 1rem 1.8rem; border-radius: 100px; text-decoration: none; transition: transform 0.15s, background 0.2s, box-shadow 0.2s; display: inline-block; }
+  .btn:hover { transform: translateY(-2px); color: inherit; }
+  .btn-sky { background: var(--sky-deep); color: #fff; box-shadow: 0 10px 26px rgba(26,74,110,0.25); }
+  .btn-sky:hover { background: var(--ink); color: #fff; }
+  .btn-outline { background: transparent; border: 1.5px solid var(--line); color: var(--ink); }
+  .btn-outline:hover { border-color: var(--sky-deep); color: var(--sky-deep); }
+  .btn-wa { background: #25D366; color: #fff; }
+  .btn-glass { background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.45); color: #fff; backdrop-filter: blur(6px); }
+  .hero-visual { position: relative; border-radius: 28px; overflow: hidden; aspect-ratio: 4/5; box-shadow: 0 30px 70px rgba(20,50,70,0.16); }
+  .hero-visual video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+  section.block { padding: 6.5rem 0; }
+  .kicker { font-size: 0.82rem; letter-spacing: 0.04em; color: var(--sky); font-weight: 700; margin-bottom: 1.1rem; }
+  .sec-h { font-size: clamp(1.9rem, 3vw, 2.7rem); margin-bottom: 1.2rem; color: var(--ink); }
+  .lead { font-size: 1.08rem; color: var(--muted); line-height: 1.9; max-width: 620px; }
+
+  .statement { text-align: center; max-width: 780px; margin: 0 auto; }
+  .statement h2 { font-size: clamp(1.9rem, 3.4vw, 2.8rem); line-height: 1.4; margin-bottom: 1.8rem; }
+  .statement p { font-size: 1.16rem; line-height: 2; color: var(--muted); max-width: 640px; margin: 0 auto; }
+
+  .uncertain { background: var(--sky-tint); }
+  .uncertain-inner { max-width: 760px; margin: 0 auto; text-align: center; }
+  .uncertain h2 { font-size: clamp(1.9rem, 3vw, 2.5rem); margin-bottom: 0.6rem; }
+  .uncertain h3 { font-family: 'Manrope', 'Noto Sans SC', sans-serif; font-weight: 600; font-size: 1.3rem; color: var(--sky-deep); margin-bottom: 2.2rem; }
+  .fear-list { display: flex; flex-direction: column; gap: 0; margin: 0 auto 2.2rem; max-width: 560px; text-align: left; }
+  .fear-item { font-size: 1.1rem; font-weight: 500; color: var(--ink); padding: 1.3rem 0; border-top: 1px solid rgba(22,56,79,0.12); }
+  .fear-item:last-child { border-bottom: 1px solid rgba(22,56,79,0.12); }
+  .uncertain-close { font-size: 1.08rem; color: var(--muted); line-height: 1.9; max-width: 600px; margin: 0 auto; }
+
+  .split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .split-copy h2 { font-size: clamp(1.9rem, 3vw, 2.6rem); margin-bottom: 1.5rem; }
+  .split-copy p { font-size: 1.06rem; line-height: 1.95; color: var(--muted); margin-bottom: 1.2rem; max-width: 520px; }
+  .split-copy p:last-child { margin-bottom: 0; }
+  .visual-col .ph { position: relative; border-radius: 26px; overflow: hidden; aspect-ratio: 1/1; background-size: cover; background-position: center; box-shadow: 0 20px 46px rgba(20,50,70,0.12); }
+
+  .gallery-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  .gallery-strip .g-item { position: relative; border-radius: 18px; overflow: hidden; aspect-ratio: 3/4; box-shadow: 0 10px 26px rgba(20,50,70,0.1); }
+  .gallery-strip .g-item img { width: 100%; height: 100%; object-fit: cover; }
+  .gallery-strip .g-item.tall { grid-row: span 2; aspect-ratio: 3/5; }
+  .gallery-cap { text-align: center; font-size: 0.9rem; color: var(--muted); margin-top: 1.6rem; }
+
+  .honest { background: var(--ink2); color: rgba(255,255,255,0.92); }
+  .honest .kicker { color: #9fd4f5; }
+  .honest .sec-h { color: #fff; max-width: 640px; }
+  .honest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; margin-top: 2.4rem; }
+  .honest-list { list-style: none; display: flex; flex-direction: column; gap: 1.1rem; }
+  .honest-list li { display: flex; gap: 0.9rem; font-size: 1rem; line-height: 1.85; color: rgba(255,255,255,0.78); }
+  .honest-list li::before { content: '—'; color: #9fd4f5; flex-shrink: 0; }
+  .honest-close { font-family: 'Manrope', 'Noto Sans SC', sans-serif; font-weight: 700; font-size: 1.4rem; line-height: 1.65; letter-spacing: -0.01em; }
+  .honest-close .no { color: rgba(255,255,255,0.45); display: block; margin-bottom: 0.4rem; }
+  .honest-close .yes { color: #fff; display: block; }
+
+  .steps { counter-reset: stepnum; }
+  .step-row { display: grid; grid-template-columns: 90px 1fr; gap: 1.8rem; padding: 2.1rem 0; border-top: 1px solid var(--line); align-items: start; }
+  .step-row:first-child { border-top: none; }
+  .step-n { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 2rem; color: var(--sky); letter-spacing: -0.02em; }
+  .step-t { font-family: 'Manrope', 'Noto Sans SC', sans-serif; font-weight: 700; font-size: 1.25rem; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+  .step-d { font-size: 1rem; color: var(--muted); line-height: 1.9; max-width: 560px; }
+
+  .dest-block { background: linear-gradient(180deg, var(--paper) 0%, var(--sky-tint) 100%); }
+  .dest-layout { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 3.5rem; align-items: start; }
+  .dest-layout h2 { font-size: clamp(1.9rem, 3vw, 2.5rem); margin-bottom: 1.4rem; }
+  .dest-layout p { font-size: 1.06rem; color: var(--muted); line-height: 1.9; max-width: 460px; }
+  .dcard-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .dc { position: relative; height: 300px; border-radius: 22px; overflow: hidden; color: #fff; box-shadow: 0 14px 34px rgba(20,50,70,0.1); }
+  .dc .ph { position: absolute; inset: 0; background-size: cover; background-position: center; }
+  .dc .ph-grad { background: linear-gradient(155deg, #1a4a6e, #2f9be0 70%, #38b6c4); }
+  .dc video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .dc-tint { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(8,24,38,0.82) 100%); }
+  .dc-copy { position: absolute; left: 0; right: 0; bottom: 0; padding: 1.4rem 1.5rem; }
+  .dc-place { font-size: 0.72rem; letter-spacing: 0.04em; font-weight: 700; color: rgba(255,255,255,0.65); margin-bottom: 0.35rem; }
+  .dc-title { font-family: 'Manrope', 'Noto Sans SC', sans-serif; font-size: 1.2rem; font-weight: 800; letter-spacing: -0.005em; margin-bottom: 0.4rem; }
+  .dc-copy p { font-size: 0.86rem; line-height: 1.7; color: rgba(255,255,255,0.85); }
+
+  .finale { position: relative; padding: 8rem 2rem; overflow: hidden; text-align: center; color: #fff; }
+  .finale .ph { position: absolute; inset: 0; background-size: cover; background-position: center 60%; }
+  .finale-tint { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,30,45,0.55) 0%, rgba(10,30,45,0.78) 100%); }
+  .finale-inner { position: relative; max-width: 720px; margin: 0 auto; }
+  .finale h2 { font-size: clamp(2rem, 3.6vw, 3rem); line-height: 1.35; margin-bottom: 1.8rem; letter-spacing: -0.01em; }
+  .finale p { font-size: 1.1rem; line-height: 1.95; color: rgba(255,255,255,0.88); margin-bottom: 2.4rem; }
+  .finale-actions { display: flex; gap: 0.9rem; justify-content: center; flex-wrap: wrap; }
+
+  footer { background: var(--ink2); color: rgba(255,255,255,0.6); padding: 4rem 0 2.5rem; }
+  .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.4fr; gap: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .foot-brand { display: flex; align-items: center; gap: 0.55rem; font-weight: 700; font-size: 1.1rem; color: #fff; margin-bottom: 1rem; }
+  .foot-brand img { width: 30px; height: 30px; border-radius: 8px; }
+  .foot-addr { font-size: 0.88rem; line-height: 1.8; max-width: 280px; }
+  .foot-col h4 { font-size: 0.76rem; color: rgba(255,255,255,0.45); margin-bottom: 1rem; font-weight: 700; }
+  .foot-col a { display: block; font-size: 0.9rem; color: rgba(255,255,255,0.7); text-decoration: none; margin-bottom: 0.6rem; transition: color 0.2s; }
+  .foot-col a:hover { color: #fff; }
+  .foot-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 1.8rem; font-size: 0.78rem; color: rgba(255,255,255,0.4); flex-wrap: wrap; gap: 0.8rem; }
+
+  @media (max-width: 980px) {
+    .hero-grid, .split-grid, .honest-grid, .dest-layout { grid-template-columns: 1fr; gap: 2.4rem; }
+    .dcard-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-strip { grid-template-columns: 1fr 1fr; }
+    .gallery-strip .g-item.tall { grid-row: span 1; aspect-ratio: 3/4; }
+    .foot-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  }
+  @media (max-width: 680px) {
+    .wrap { padding: 0 1.25rem; }
+    .nav-inner { padding: 0.75rem 1.1rem; gap: 0.6rem; }
+    .brand { font-size: 0.9rem; gap: 0.4rem; min-width: 0; }
+    .brand img { width: 26px; height: 26px; }
+    .nav-right { gap: 0.4rem; flex-shrink: 0; }
+    .nav-cta { padding: 0.6rem 0.85rem; font-size: 0.78rem; }
+    .nav-links { position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--paper); border-bottom: 1px solid var(--line); padding: 0.5rem 1.25rem 1rem; box-shadow: 0 14px 30px rgba(20,50,70,0.08); display: none; }
+    .nav-links.open { display: flex; }
+    .nav-links a { padding: 0.95rem 0; border-bottom: 1px solid var(--line); opacity: 1; font-size: 1.05rem; }
+    .hero { padding: 1.6rem 1.1rem 3rem; }
+    section.block { padding: 4rem 0; }
+    .dcard-grid { grid-template-columns: 1fr; }
+    .gallery-strip { grid-template-columns: 1fr 1fr; }
+    .finale { padding: 5rem 1.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index-zh.html" class="brand"><img src="logo-mark.png" alt="蓝天假期">蓝天假期</a>
+    <nav class="nav-links" id="navlinks">
+      <a href="index-zh.html#journeys">行程</a>
+      <a href="index-zh.html#about">关于我们</a>
+      <a href="index-zh.html#destinations">目的地</a>
+      <a href="barrier-free-travel-zh.html">无障碍旅行</a>
+      <a href="barrier-free-travel.html" class="lang-badge">EN</a>
+    </nav>
+    <div class="nav-right">
+      <a href="https://wa.me/60164802332" class="nav-cta">规划我的行程</a>
+      <button class="nav-burger" id="burger" aria-label="打开菜单">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="reveal in">
+      <p class="hero-eyebrow">无障碍旅行</p>
+      <h1 class="display hero-h">世界依然是您的。</h1>
+      <p class="hero-sub">许多人在不知不觉中,被直接或间接地告知 — 旅行已经不再属于他们。一台轮椅、一场中风、一次病痛,或仅仅是年岁渐长,都可能让世界忽然变小。我们不认为一定要如此。</p>
+      <div class="hero-actions">
+        <a class="btn btn-sky" href="https://wa.me/60164802332?text=您好,我想咨询轮椅无障碍行程。">开始规划</a>
+        <a class="btn btn-outline" href="#belonging">了解更多</a>
+      </div>
+    </div>
+    <div class="hero-visual reveal in">
+      <video autoplay muted loop playsinline poster="bf-flower-arch.jpg">
+        <source src="bf-video-1.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- 归属感 -->
+<section class="block" id="belonging">
+  <div class="wrap statement reveal">
+    <h2 class="display">旅行,从来不是关于双腿。而是关于归属。</h2>
+    <p>是那顿曾担心自己走不到的餐桌前的团聚。是大家一起停下脚步望着的夕阳。是回程车上此起彼落的笑声。这些从来都与走了多少步无关。而是与所爱的人同在,站在自己一直向往的地方。</p>
+  </div>
+</section>
+
+<!-- 不确定感 -->
+<section class="block uncertain">
+  <div class="wrap uncertain-inner reveal">
+    <h2 class="display">最难的从来不是轮椅本身。</h2>
+    <h3>而是那份不确定。</h3>
+    <div class="fear-list">
+      <div class="fear-item">酒店会不会有台阶?</div>
+      <div class="fear-item">洗手间是否无障碍?</div>
+      <div class="fear-item">交通安排是否真的可行?</div>
+      <div class="fear-item">我会不会成为大家的负担?</div>
+    </div>
+    <p class="uncertain-close">正是这些问题,让许多家庭迟迟不敢订下行程 — 不是轮椅本身,而是那份未知。在任何人出发之前,一一解答这些问题,就是我们大部分的工作。</p>
+  </div>
+</section>
+
+<!-- 许多家庭停止一起旅行 -->
+<section class="block">
+  <div class="wrap split-grid">
+    <div class="split-copy reveal">
+      <p class="kicker">为什么这很重要</p>
+      <h2 class="display">许多家庭,渐渐不再一起旅行。</h2>
+      <p>许多家庭渐渐不再一起旅行,是因为他们开始相信这已经不再可能。一台轮椅、有限的行动能力,或是对无障碍设施的不确定,都可能让每一趟旅程变得望而却步。</p>
+      <p>在蓝天假期,我们相信这些珍贵的时刻不该被错过。我们帮助家庭把「也许有一天」重新变回「我们出发吧」,让彼此再次一起创造新的回忆。</p>
+    </div>
+    <div class="visual-col reveal">
+      <div class="ph" style="background-image:url('bf-coconut-stop.jpg'); background-position:center 30%;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 真实旅程相册 -->
+<section class="block" style="padding-top:0;">
+  <div class="wrap reveal">
+    <div class="gallery-strip">
+      <div class="g-item tall"><img src="bf-flower-arch.jpg" alt="轮椅旅客与家人在沙巴花架下合影"></div>
+      <div class="g-item"><img src="bf-mosque.jpg" alt="轮椅旅客在亚庇市立清真寺"></div>
+      <div class="g-item"><img src="bf-tower-group.jpg" alt="轮椅旅客团队在地标塔前欢呼"></div>
+      <div class="g-item tall"><img src="bf-fruit-market.jpg" alt="轮椅旅客一起在沙巴湿巴刹购物"></div>
+      <div class="g-item"><img src="bf-icecream.jpg" alt="一家人一起分享冰淇淋"></div>
+      <div class="g-item"><img src="bf-street-lunch.jpg" alt="团队在路边餐馆一起用餐"></div>
+    </div>
+    <p class="gallery-cap">来自我们近期的一趟沙巴行程 — 真实的旅人,真实的时刻,没有任何图库照片。</p>
+  </div>
+</section>
+
+<!-- 关于沙巴的真心话 -->
+<section class="block honest">
+  <div class="wrap reveal">
+    <p class="kicker">关于沙巴的真心话</p>
+    <h2 class="display sec-h">我们不会夸大其词。沙巴的无障碍设施仍在完善中。</h2>
+    <div class="honest-grid">
+      <ul class="honest-list">
+        <li>部分景点仍有台阶,且没有斜坡可替代。</li>
+        <li>无障碍洗手间数量有限,也不总是设在您预期的位置。</li>
+        <li>有些酒店确实适合,有些则不然 — 无论介绍写得多好。</li>
+        <li>提前做好诚实而周全的规划,才是关键所在。</li>
+      </ul>
+      <div class="honest-close">
+        <span class="no">我们不承诺一趟完美的旅程。</span>
+        <span class="yes">我们承诺一趟诚实的旅程。</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 我们如何提供协助 -->
+<section class="block">
+  <div class="wrap">
+    <div class="reveal" style="margin-bottom:2.6rem;">
+      <p class="kicker">我们如何提供协助</p>
+      <h2 class="display sec-h">在您登机之前,先做好这四件事。</h2>
+    </div>
+    <div class="steps reveal">
+      <div class="step-row">
+        <div class="step-n">01</div>
+        <div><div class="step-t">我们倾听。</div><div class="step-d">每一次对话都从您的实际情况出发,而不是我们的行程表 — 轮椅的类型、体力状况、顾虑与心愿。</div></div>
+      </div>
+      <div class="step-row">
+        <div class="step-n">02</div>
+        <div><div class="step-t">我们实地查证。</div><div class="step-d">我们亲自确认门口、转乘、洗手间与交通安排,而不是仅凭介绍资料的一面之词。</div></div>
+      </div>
+      <div class="step-row">
+        <div class="step-n">03</div>
+        <div><div class="step-t">我们量身定制。</div><div class="step-d">节奏、车辆、停留点 — 全部根据您的实际需求设计,而非套用标准行程模板。</div></div>
+      </div>
+      <div class="step-row">
+        <div class="step-n">04</div>
+        <div><div class="step-t">您安心旅行。</div><div class="step-d">全程由同一位联络人跟进,让您唯一要做的事,就是与家人一起,身处其中。</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 目的地 -->
+<section class="block dest-block">
+  <div class="wrap dest-layout">
+    <div class="reveal">
+      <p class="kicker">哪些地方可以实现</p>
+      <h2 class="display">您的下一段回忆,会在哪里?</h2>
+      <p>每个目的地都不相同。有些需要更细致的规划,有些则本身就以无障碍为设计考量。无论您心之所向是哪里,我们都会协助您了解可行性 — 并放心地规划这趟旅程。</p>
+    </div>
+    <div class="dcard-grid reveal">
+      <div class="dc">
+        <div class="ph" style="background-image:url('bf-mosque.jpg'); background-position:center 35%;"></div>
+        <div class="dc-tint"></div>
+        <div class="dc-copy">
+          <div class="dc-place">沙巴</div>
+          <div class="dc-title">野性而美丽,值得用心规划。</div>
+          <p>自然、野生动物、岛屿,难忘的景色。无障碍设施需要周全的事前规划。</p>
+        </div>
+      </div>
+      <div class="dc">
+        <div class="ph" style="background-image:url('bf-taiwan-bridge.jpg'); background-position:center 60%;"></div>
+        <div class="dc-tint"></div>
+        <div class="dc-copy">
+          <div class="dc-place">台湾</div>
+          <div class="dc-title">安心出发,自在同行。</div>
+          <p>无障碍捷运、便利的景点设施、友善的社区,是亚洲最具无障碍友好度的旅游地之一。</p>
+        </div>
+      </div>
+      <div class="dc">
+        <div class="ph" style="background-image:url('bf-japan-garden.jpg'); background-position:center 40%;"></div>
+        <div class="dc-tint"></div>
+        <div class="dc-copy">
+          <div class="dc-place">日本</div>
+          <div class="dc-title">以尊严为本的设计。</div>
+          <p>通用设计理念、无障碍铁道、酒店与景点,让整趟旅程更顺畅自在。</p>
+        </div>
+      </div>
+      <div class="dc">
+        <video autoplay muted loop playsinline class="ph"><source src="bf-dream-video.mp4" type="video/mp4"></video>
+        <div class="dc-tint"></div>
+        <div class="dc-copy">
+          <div class="dc-place">任何您心之所向的地方</div>
+          <div class="dc-title">先勇敢梦想。</div>
+          <p>若已有无障碍资讯,我们会为您找到;若需要额外规划,我们会提前准备 — 您的目的地,应该由梦想决定,而不是由轮椅决定。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 结尾 -->
+<section class="finale reveal">
+  <div class="ph" style="background-image:url('bf-tower-group.jpg'); background-position:center 55%;"></div>
+  <div class="finale-tint"></div>
+  <div class="finale-inner">
+    <h2 class="display">这个世界,从未停止等待您的到来。</h2>
+    <p>还有等待被探索的地方。还有等待一起分享的餐桌。还有等待共同欣赏的夕阳。旅行的方式或许不同了,但不同,不代表不可能。</p>
+    <div class="finale-actions">
+      <a class="btn btn-wa" href="https://wa.me/60164802332?text=您好,我想咨询轮椅无障碍行程。">让我们一起规划这趟旅程</a>
+      <a class="btn btn-glass" href="mailto:bsvacation123@gmail.com">或发邮件给我们</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><img src="logo-mark.png" alt="">蓝天假期</div>
+        <p class="foot-addr">D3-3, Block D, Tanjung Aru Plaza, Jalan Tun Mustapha, Tanjung Aru, 88100 Kota Kinabalu, Sabah</p>
+      </div>
+      <div class="foot-col">
+        <h4>探索</h4>
+        <a href="index-zh.html#journeys">行程</a>
+        <a href="index-zh.html#about">关于我们</a>
+        <a href="index-zh.html#destinations">目的地</a>
+        <a href="barrier-free-travel-zh.html">无障碍旅行</a>
+      </div>
+      <div class="foot-col">
+        <h4>行程</h4>
+        <a href="tour-hangzhou-zh.html">杭州研学之旅</a>
+        <a href="tour-shenzhen-zh.html">深圳研学之旅</a>
+        <a href="tour-hainan-zh.html">海南岛之旅</a>
+        <a href="tour-xinjiang-zh.html">北疆奇境之旅</a>
+      </div>
+      <div class="foot-col">
+        <h4>联系我们</h4>
+        <a href="https://wa.me/60164802332">WhatsApp · +60 16-480 2332</a>
+        <a href="mailto:bsvacation123@gmail.com">bsvacation123@gmail.com</a>
+        <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Blue Sky Vacation Sdn Bhd · Co. No. 1083236 · KPK/LN:7700</span>
+      <span>始于2015年,源自沙巴亚庇的精品旅游策划</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function () {
+    nav.classList.toggle('scrolled', window.scrollY > 12);
+  });
+  var burger = document.getElementById('burger'), links = document.getElementById('navlinks');
+  burger.addEventListener('click', function () { links.classList.toggle('open'); });
+  links.addEventListener('click', function (e) { if (e.target.tagName === 'A') links.classList.remove('open'); });
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) { entry.target.classList.add('in'); observer.unobserve(entry.target); }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(function (el) { observer.observe(el); });
+</script>
+</body>
+</html>

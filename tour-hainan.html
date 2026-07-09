@@ -4,6 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Hainan Island Carnival — 6-day direct flight tour from Kota Kinabalu. Haikou, Ocean Flower Island, Sanya, Phoenix Island 5-star, Atlantis, undersea dining. From RM 2,199.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hainan Island Carnival — 6 Days | Blue Sky Vacation">
+<meta property="og:description" content="Hainan Island Carnival — 6-day direct flight tour from Kota Kinabalu. Haikou, Ocean Flower Island, Sanya, Phoenix Island 5-star, Atlantis, undersea dining. From RM 2,199.">
+<meta property="og:url" content="https://bran0411.github.io/bluskyvacation/tour-hainan.html">
+<meta property="og:image" content="https://bran0411.github.io/bluskyvacation/hainan-card-main.jpg">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Blue Sky Vacation">
 <title>Hainan Island Carnival — 6 Days | Blue Sky Vacation</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +24,7 @@
     --ocean: #2f9be0; --coral: #e05a3a; --gold: #c49a2a;
   }
   html { scroll-behavior: smooth; }
+  html, body { overflow-x: hidden; max-width: 100%; }
   body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--charcoal); background: var(--white); font-weight: 300; line-height: 1.7; -webkit-font-smoothing: antialiased; }
 
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 3rem; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.07); }
@@ -58,8 +66,8 @@
   .price-tab { padding: 0.5rem 1.25rem; border: 1px solid var(--light-line); border-radius: 2px; font-size: 0.78rem; font-weight: 500; cursor: pointer; background: var(--white); color: var(--mid); transition: all 0.2s; }
   .price-tab.active { background: var(--ocean); color: white; border-color: var(--ocean); }
   .price-table-wrap { display: none; }
-  .price-table-wrap.active { display: block; }
-  table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+  .price-table-wrap.active { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  table { width: 100%; min-width: 560px; border-collapse: collapse; font-size: 0.84rem; }
   th { background: var(--charcoal); color: white; padding: 0.75rem 1rem; text-align: left; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
   td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--light-line); }
   tr:last-child td { border-bottom: none; }
