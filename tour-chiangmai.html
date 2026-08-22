@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Chiang Mai + Chiang Rai — Temples, elephants, and the real Chiang Rai. Blue Sky Vacation, Kota Kinabalu.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chiang Mai + Chiang Rai | Blue Sky Vacation">
+<meta property="og:description" content="Temples, elephants, and the real Chiang Rai.">
+<meta property="og:image" content="https://bran0411.github.io/bluskyvacation/logo-mark.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Blue Sky Vacation">
+<title>Chiang Mai + Chiang Rai | Blue Sky Vacation</title>
+<link rel="icon" href="logo-mark.png">
+<script src="./image-slot.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --bg:#F8FAFC; --paper:#ffffff; --text:#1E293B; --muted:#64748B;
+    --accent:#4AADE8; --accent-100:#E0F2FE; --accent-300:#38BDF8; --accent-700:#075985; --accent-900:#053A54;
+    --line:#DCE7F0; --sand:#F5E6C8; --sun:#FACC15;
+  }
+  html{scroll-behavior:smooth;}
+  html,body{overflow-x:hidden;max-width:100%;}
+  body{font-family:'Barlow',sans-serif;color:var(--text);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.h{font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:-0.01em;line-height:1.05;}
+  img{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  a:hover{color:var(--accent-700);}
+  ::selection{background:var(--accent-300);}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+  .wrap{max-width:1320px;margin:0 auto;padding:0 2rem;}
+
+  .marked{position:relative;}
+  .marked i.corner{position:absolute;width:9px;height:9px;pointer-events:none;}
+  .marked i.corner::before,.marked i.corner::after{content:'';position:absolute;background:var(--accent-700);}
+  .marked i.tl{top:-1px;left:-1px;} .marked i.tr{top:-1px;right:-1px;} .marked i.bl{bottom:-1px;left:-1px;} .marked i.br{bottom:-1px;right:-1px;}
+  .marked i.corner::before{width:9px;height:1px;top:4px;left:0;} .marked i.corner::after{width:1px;height:9px;left:4px;top:0;}
+
+  .nav{position:sticky;top:0;z-index:100;background:rgba(246,245,243,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+  .nav-inner{max-width:1320px;margin:0 auto;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;}
+  .brand{display:flex;align-items:center;gap:.6rem;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1.2rem;letter-spacing:.02em;text-transform:uppercase;}
+  .brand img{width:28px;height:28px;}
+  .nav-right{display:flex;align-items:center;gap:1rem;}
+  .back-link{font-size:.85rem;font-weight:500;color:var(--muted);}
+  .back-link:hover{color:var(--accent-700);}
+  .btn{font-family:'Barlow',sans-serif;font-size:.9rem;font-weight:600;padding:.75rem 1.4rem;border-radius:2px;display:inline-block;border:1px solid transparent;transition:background .2s,color .2s,border-color .2s;white-space:nowrap;}
+  .btn-primary{background:var(--accent-700);color:#fff;}
+  .btn-primary:hover{background:var(--accent-900);color:#fff;}
+  .btn-ghost{border-color:var(--line);color:var(--text);}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent-700);}
+
+  .hero{position:relative;aspect-ratio:16/8;min-height:320px;}
+  .hero image-slot{position:absolute;inset:0;}
+  .hero-tint{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,25,28,.2) 0%,rgba(20,25,28,.05) 35%,rgba(15,20,24,.78) 100%);pointer-events:none;}
+  .hero-copy{position:absolute;left:0;right:0;bottom:0;padding:3.5rem 2rem;max-width:1320px;margin:0 auto;color:#fff;}
+  .hero-eyebrow{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:1rem;}
+  .hero-h{font-size:clamp(2.2rem,4.5vw,3.6rem);max-width:20ch;margin-bottom:.7rem;}
+  .hero-sub{font-size:1.1rem;color:rgba(255,255,255,.88);max-width:520px;margin-bottom:1.8rem;}
+  .hero-actions{display:flex;gap:.8rem;flex-wrap:wrap;}
+  .hero-actions .btn-ghost{border-color:rgba(255,255,255,.5);color:#fff;}
+  .hero-actions .btn-ghost:hover{border-color:#fff;}
+
+  .facts{border-bottom:1px solid var(--line);background:var(--paper);}
+  .facts-inner{max-width:1320px;margin:0 auto;padding:1.6rem 2rem;display:flex;gap:2.5rem;flex-wrap:wrap;}
+  .fact-label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-700);font-weight:600;margin-bottom:.3rem;}
+  .fact-value{font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:600;}
+
+  section.block{padding:4.5rem 0;}
+  .sec-kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-700);font-weight:600;margin-bottom:.5rem;}
+  .sec-h{font-size:clamp(1.7rem,3vw,2.4rem);margin-bottom:2rem;}
+
+  .hl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;}
+  .hl-card{position:relative;border:1px solid var(--line);padding:1.4rem 1.5rem;background:var(--paper);}
+  .hl-text{font-size:1rem;font-weight:500;}
+
+  .shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:2.5rem;}
+  .shots image-slot{width:100%;height:220px;}
+
+  .cta{background:var(--accent-900);color:#fff;padding:4.5rem 0;text-align:center;}
+  .cta .sec-kicker{color:rgba(255,255,255,.6);}
+  .cta h2{color:#fff;margin-bottom:.8rem;}
+  .cta p{color:rgba(255,255,255,.75);max-width:480px;margin:0 auto 2rem;font-size:1rem;}
+  .cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+  .btn-white{background:#fff;color:var(--accent-900);}
+  .btn-white:hover{background:var(--accent-100);color:var(--accent-900);}
+
+  footer{border-top:1px solid var(--line);padding:2.5rem 0;}
+  .foot-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem;color:var(--muted);}
+  .foot-links{display:flex;gap:1.4rem;}
+
+  @media (max-width:720px){
+    .wrap,.nav-inner,.facts-inner{padding-left:1.2rem;padding-right:1.2rem;}
+    .hero{aspect-ratio:4/3;min-height:280px;}
+    .hero-copy{padding:1.6rem 1.2rem;}
+    .hero-h{font-size:clamp(1.8rem,7vw,2.6rem);}
+    section.block{padding:3rem 0;}
+    .hero-actions .btn{flex:1 1 auto;text-align:center;}
+    footer{padding:1.8rem 0;}
+    .foot-inner{flex-direction:column;align-items:flex-start;gap:1rem;}
+  }
+
+  .itin-list{display:flex;flex-direction:column;gap:.7rem;margin-bottom:2.8rem;}
+  .itin-day{position:relative;display:flex;gap:1.3rem;border:1px solid var(--line);background:var(--paper);padding:1.1rem 1.4rem;align-items:baseline;}
+  .itin-day-label{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1.05rem;color:var(--accent-700);min-width:5.2rem;flex-shrink:0;}
+  .itin-day-title{font-weight:600;font-size:1rem;}
+  .itin-day-desc{font-size:.9rem;color:var(--muted);margin-top:.2rem;}
+  .inc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem;margin-bottom:2.8rem;}
+  .inc-h{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1.15rem;margin-bottom:.9rem;}
+  .inc-list{list-style:none;display:flex;flex-direction:column;gap:.55rem;font-size:.92rem;}
+  .inc-list li{padding-left:1.3rem;position:relative;}
+  .inc-yes li::before{content:'+';position:absolute;left:0;color:var(--accent-700);font-weight:700;}
+  .inc-no li::before{content:'\2013';position:absolute;left:0;color:var(--muted);font-weight:700;}
+  .know-box{border:1px solid var(--accent-300);background:var(--accent-100);padding:1.6rem 1.8rem;}
+  .know-h{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-700);margin-bottom:.5rem;}
+  .know-p{font-size:.95rem;color:var(--text);line-height:1.6;max-width:70ch;}
+
+  .dates-block{margin-bottom:2.8rem;scroll-margin-top:90px;}
+  .deposit-line{font-size:.92rem;color:var(--muted);margin-top:1rem;}
+  .deposit-line strong{color:var(--text);}
+  .dates-table{width:100%;border-collapse:collapse;font-size:.92rem;}
+  .dates-table th{text-align:left;font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.75rem;color:var(--accent-700);padding:.6rem .9rem;border-bottom:1px solid var(--line);}
+  .dates-table td{padding:.7rem .9rem;border-bottom:1px solid var(--line);}
+  .dates-text{font-size:.95rem;color:var(--text);line-height:1.6;max-width:70ch;background:var(--paper);border:1px solid var(--line);padding:1.2rem 1.4rem;}
+  .tier-intro{font-size:1rem;color:var(--text);margin-bottom:1.4rem;font-weight:500;}
+  .tier-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin-bottom:1.2rem;}
+  .tier-card{border:1px solid var(--line);background:var(--paper);padding:1.3rem 1.4rem;cursor:pointer;transition:border-color .15s,box-shadow .15s;}
+  .tier-card:hover{border-color:var(--accent);}
+  .tier-card.selected{border-color:var(--accent-700);box-shadow:0 0 0 1px var(--accent-700);}
+  .tier-select-btn{display:inline-block;margin-top:.9rem;font-size:.82rem;font-weight:600;padding:.5rem 1rem;border:1px solid var(--accent-700);color:var(--accent-700);background:none;cursor:pointer;}
+  .tier-card.selected .tier-select-btn{background:var(--accent-700);color:#fff;}
+  .tier-name{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1.2rem;color:var(--accent-700);}
+  .tier-hotel{font-size:.85rem;color:var(--muted);margin-bottom:.9rem;}
+  .tier-stays{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem;}
+  .tier-stay{display:flex;align-items:baseline;justify-content:space-between;gap:.6rem;font-size:.85rem;border-left:2px solid var(--accent-300);padding-left:.6rem;}
+  .stay-city{font-weight:600;color:var(--text);white-space:nowrap;}
+  .stay-hotel{color:var(--muted);flex:1;text-align:left;padding:0 .5rem;}
+  .stay-nights{color:var(--accent-700);font-weight:600;white-space:nowrap;font-size:.78rem;text-transform:uppercase;letter-spacing:.03em;}
+  .tier-table{width:100%;border-collapse:collapse;font-size:.88rem;}
+  .tier-table td{padding:.45rem 0;border-bottom:1px solid var(--line);}
+  .tier-table td:last-child{text-align:right;font-weight:600;color:var(--text);}
+  .tier-table tr:last-child td{border-bottom:none;}
+  .addon-box{border:1px solid var(--line);background:var(--paper);padding:1.3rem 1.4rem;margin-top:1.2rem;}
+  .addon-title{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1.1rem;color:var(--accent-700);margin-bottom:.7rem;}
+  .addon-list{list-style:none;display:flex;flex-direction:column;gap:.5rem;font-size:.92rem;color:var(--text);}
+  .addon-list li{padding-left:1rem;position:relative;}
+  .addon-list li::before{content:"+";position:absolute;left:0;color:var(--accent-700);font-weight:700;}
+  .price-bar{position:fixed;left:0;right:0;bottom:0;z-index:200;background:var(--paper);border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(7,89,133,.08);padding:.9rem 1.5rem;display:none;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;}
+  .price-bar.show{display:flex;}
+  .price-bar-info{display:flex;flex-direction:column;gap:.1rem;}
+  .price-bar-tier{font-size:.78rem;color:var(--muted);}
+  .price-bar-total{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1.4rem;color:var(--accent-700);}
+  .price-bar-total span{font-size:.85rem;color:var(--muted);font-family:'Barlow',sans-serif;font-weight:500;}
+  .pax-stepper{display:flex;align-items:center;gap:.8rem;border:1px solid var(--line);padding:.4rem .8rem;}
+  .pax-stepper button{width:28px;height:28px;border:1px solid var(--line);background:var(--paper);font-size:1.1rem;cursor:pointer;line-height:1;}
+  .pax-stepper button:hover{border-color:var(--accent);color:var(--accent-700);}
+  .pax-note{font-size:.78rem;color:var(--muted);}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="home-new.html" class="brand"><img src="logo-cloud-wordmark.png" alt="Blue Sky Vacation" style="height:52px;width:auto;"></a>
+    <div class="nav-right">
+      <a href="home-new.html#trips" class="back-link">← All trips</a>
+      <a class="btn btn-primary marked" href="https://wa.me/60198787790?text=Hi%20Blue%20Sky%20Vacation%2C%20I'd%20like%20to%20ask%20about%20the%20Chiang%20Mai%20%2B%20Chiang%20Rai%20trip." target="_blank" rel="noopener"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>Contact us</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <image-slot id="hero-chiangmai" shape="rect" placeholder="White Temple's dazzling mirrored facade — awe-inspiring, unique."></image-slot>
+  <div class="hero-tint"></div>
+  <div class="hero-copy">
+    <div class="hero-eyebrow">Blue Sky Vacation</div>
+    <h1 class="hero-h">Chiang Mai + Chiang Rai</h1>
+    <p class="hero-sub">Temples, elephants, and the real Chiang Rai.</p>
+    <div class="hero-actions">
+      <button class="btn btn-primary" onclick="bsvBooking.open()" style="cursor:pointer;">Check Availability</button>
+      <a class="btn btn-ghost" href="#highlights">See highlights</a>
+    </div>
+  </div>
+</section>
+
+<div class="facts">
+  <div class="facts-inner">
+      <div class="fact"><div class="fact-label">Duration</div><div class="fact-value">4D3N</div></div>
+      <div class="fact"><div class="fact-label">Price</div><div class="fact-value">From RM1,398 · To RM2,298</div></div>
+      <div class="fact"><div class="fact-label">Flights</div><div class="fact-value">Ground-only — flights not included</div></div>
+  </div>
+</div>
+
+<section class="block" id="dates" style="padding-bottom:0;">
+  <div class="wrap">
+    <div class="sec-kicker">Dates &amp; pricing (tipping included)</div>
+    <h2 class="sec-h">Choose your hotel preference</h2>
+    <div class="dates-block">
+      <div class="tier-intro">Same trip, same itinerary — choose your comfort level.</div>
+      <div class="tier-grid">
+        <div class="tier-card" data-tier="Comfort — 3★ Chiang Mai" data-bands="[2,3,2146],[4,5,1384],[6,7,1216],[8,9,1084]">
+          <div class="tier-name">Comfort</div>
+          <div class="tier-stays">
+            <div class="tier-stay"><span class="stay-city">Chiang Mai</span><span class="stay-hotel">3★ hotel</span><span class="stay-nights">2 nights</span></div>
+            <div class="tier-stay"><span class="stay-city">Chiang Rai</span><span class="stay-hotel">Grand Hotel 3★ / M Boutique 3.5★</span><span class="stay-nights">1 night</span></div>
+          </div>
+          <table class="tier-table"><tbody>
+            <tr><td>2–3 travelers</td><td>RM2,146</td></tr>
+            <tr><td>4–5 travelers</td><td>RM1,384</td></tr>
+            <tr><td>6–7 travelers</td><td>RM1,216</td></tr>
+            <tr><td>8–9 travelers</td><td>RM1,084</td></tr>
+          </tbody></table>
+          <button class="tier-select-btn" type="button">Select Comfort</button>
+        </div>
+        <div class="tier-card" data-tier="Deluxe — Mövenpick Suriwongse 4★" data-bands="[2,3,2302],[4,5,1540],[6,7,1372],[8,9,1246]">
+          <div class="tier-name">Deluxe</div>
+          <div class="tier-stays">
+            <div class="tier-stay"><span class="stay-city">Chiang Mai</span><span class="stay-hotel">Mövenpick Suriwongse 4★</span><span class="stay-nights">2 nights</span></div>
+            <div class="tier-stay"><span class="stay-city">Chiang Rai</span><span class="stay-hotel">Grand Hotel 3★ / M Boutique 3.5★</span><span class="stay-nights">1 night</span></div>
+          </div>
+          <table class="tier-table"><tbody>
+            <tr><td>2–3 travelers</td><td>RM2,302</td></tr>
+            <tr><td>4–5 travelers</td><td>RM1,540</td></tr>
+            <tr><td>6–7 travelers</td><td>RM1,372</td></tr>
+            <tr><td>8–9 travelers</td><td>RM1,246</td></tr>
+          </tbody></table>
+          <button class="tier-select-btn" type="button">Select Deluxe</button>
+        </div>
+        <div class="tier-card" data-tier="Premium — Kantary Hill 4.5★" data-bands="[2,3,2410],[4,5,1648],[6,7,1480],[8,9,1354]">
+          <div class="tier-name">Premium</div>
+          <div class="tier-stays">
+            <div class="tier-stay"><span class="stay-city">Chiang Mai</span><span class="stay-hotel">Kantary Hill 4.5★</span><span class="stay-nights">2 nights</span></div>
+            <div class="tier-stay"><span class="stay-city">Chiang Rai</span><span class="stay-hotel">Grand Hotel 3★ / M Boutique 3.5★</span><span class="stay-nights">1 night</span></div>
+          </div>
+          <table class="tier-table"><tbody>
+            <tr><td>2–3 travelers</td><td>RM2,410</td></tr>
+            <tr><td>4–5 travelers</td><td>RM1,648</td></tr>
+            <tr><td>6–7 travelers</td><td>RM1,480</td></tr>
+            <tr><td>8–9 travelers</td><td>RM1,354</td></tr>
+          </tbody></table>
+          <button class="tier-select-btn" type="button">Select Premium</button>
+        </div>
+      </div>
+      <div class="deposit-line">Traveling in a group of 9 or more? Contact us for a custom quote.<br>All prices shown are all-inclusive — no additional tipping required. Every tier follows the same itinerary — the difference is your hotel standard in both cities, not the trip itself. Deposit: <strong>50% deposit</strong></div>
+      <div class="addon-box">
+        <div class="addon-title">Make It Your Own</div>
+        <ul class="addon-list">
+          <li>Upgrade your Chiang Rai stay to Khamthana Hotel (4★) — +RM35/person</li>
+          <li>Add an extra meal (lunch or dinner) — +RM45/person, available for groups of 6 or more</li>
+          <li>Halal meal option — +RM10/person, available on request</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="highlights">
+  <div class="wrap">
+    <div class="sec-kicker">On this trip</div>
+    <h2 class="sec-h">Highlights</h2>
+    <div class="hl-grid">
+      <div class="hl-card marked"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div class="hl-text">White Temple</div>
+      </div>
+      <div class="hl-card marked"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div class="hl-text">Golden Triangle</div>
+      </div>
+      <div class="hl-card marked"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div class="hl-text">Sky Walk</div>
+      </div>
+      <div class="hl-card marked"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div class="hl-text">Blue Temple</div>
+      </div>
+      <div class="hl-card marked"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div class="hl-text">Elephant Camp</div>
+      </div>
+      <div class="hl-card marked"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div class="hl-text">Chiang Rai overnight</div>
+      </div>
+    </div>
+    <div class="shots">
+      <image-slot id="shot-chiangmai-0" shape="rect" placeholder="Blue Temple"></image-slot>
+      <image-slot id="shot-chiangmai-1" shape="rect" placeholder="Elephant encounter"></image-slot>
+      <image-slot id="shot-chiangmai-2" shape="rect" placeholder="Golden Triangle river view"></image-slot>
+      <image-slot id="shot-chiangmai-3" shape="rect" placeholder="Sky Walk"></image-slot>
+    </div>
+  </div>
+</section>
+
+
+<section class="block" id="itinerary">
+  <div class="wrap">
+    <div class="sec-kicker">Ground-Only Package — arrange your own flights from Kota Kinabalu or elsewhere</div>
+    <h2 class="sec-h">Your trip, day by day</h2>
+    <div class="itin-contact" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;border:1px solid var(--line);background:var(--paper);padding:1rem 1.3rem;margin-bottom:1.2rem;">
+      <div style="font-size:.95rem;color:var(--muted);">Questions about this itinerary? Talk to us before you book.</div>
+      <a class="btn btn-ghost" href="https://wa.me/60198787790?text=Hi%20Blue%20Sky%20Vacation%2C%20I'd%20like%20to%20ask%20about%20the%20Chiang%20Mai%20%2B%20Chiang%20Rai%20itinerary." target="_blank" rel="noopener" style="flex-shrink:0;">Contact us</a>
+    </div>
+    <div class="itin-list">
+      <div class="itin-day">
+        <div class="itin-day-label">Day 1</div>
+        <div class="itin-day-body"><div class="itin-day-title">Arrival</div><div class="itin-day-desc">Doi Suthep temple.</div></div>
+      </div>
+      <div class="itin-day">
+        <div class="itin-day-label">Day 2</div>
+        <div class="itin-day-body"><div class="itin-day-title">Elephant Camp</div><div class="itin-day-desc">Transfer to Chiang Rai, Blue Temple, Night Bazaar.</div></div>
+      </div>
+      <div class="itin-day">
+        <div class="itin-day-label">Day 3</div>
+        <div class="itin-day-body"><div class="itin-day-title">White Temple</div><div class="itin-day-desc">Golden Triangle, Sky Walk, Long Neck Village, back to Chiang Mai.</div></div>
+      </div>
+      <div class="itin-day">
+        <div class="itin-day-label">Day 4</div>
+        <div class="itin-day-body"><div class="itin-day-title">Depart</div></div>
+      </div>
+    </div>
+    <div class="inc-grid">
+      <div class="inc-col">
+        <div class="inc-h">Included</div>
+        <ul class="inc-list inc-yes"><li>Hotel (both cities)</li><li>Private transport</li><li>Local guide</li></ul>
+      </div>
+      <div class="inc-col">
+        <div class="inc-h">Not included</div>
+        <ul class="inc-list inc-no"><li>Flights</li><li>RM40/pax compulsory tip</li></ul>
+      </div>
+    </div>
+    <div class="know-box marked"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <div class="know-h">Good to know</div>
+      <p class="know-p">Verified — genuinely zero shopping stops on this trip. The only Blue Sky trip with a real overnight stay in Chiang Rai, not just a day trip.</p>
+    </div>
+  </div>
+</section>
+
+<div class="cta">
+  <div class="wrap">
+    <div class="sec-kicker">Ready to go</div>
+    <h2 class="h" style="font-size:clamp(1.8rem,3vw,2.6rem);">Let's plan your Chiang Mai + Chiang Rai trip.</h2>
+    <p>Tell us your preferred dates and group size. We'll confirm pricing and departures.</p>
+    <div class="cta-buttons">
+      <button class="btn btn-white" onclick="bsvBooking.open()" style="cursor:pointer;">Check Availability</button>
+      <a class="btn btn-ghost" style="border-color:rgba(255,255,255,.35);color:#fff;" href="mailto:info@blueskv.com?subject=Chiang%20Mai%20%2B%20Chiang%20Rai%20Enquiry">Email us</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div>Powered by Blue Sky Vacation Sdn Bhd · Kota Kinabalu, Sabah</div>
+    <div class="foot-links">
+      <a href="https://wa.me/60198787790">WhatsApp</a>
+      <a href="mailto:info@blueskv.com">Email</a>
+      <a href="home-new.html">← All trips</a>
+    </div>
+  </div>
+</footer>
+
+<div class="price-bar" id="priceBar">
+  <div class="price-bar-info">
+    <div class="price-bar-tier" id="priceBarTier">Comfort — 3★ Chiang Mai</div>
+    <div class="price-bar-total" id="priceBarTotal">RM0 <span>total</span></div>
+  </div>
+  <div class="pax-stepper">
+    <button type="button" id="paxMinus">−</button>
+    <span id="paxCount">4</span> travelers
+    <button type="button" id="paxPlus">+</button>
+  </div>
+  <button class="btn btn-primary" type="button" id="priceBarCta">Check Availability</button>
+</div>
+
+<script src="./booking-widget.js"></script>
+<script>
+  var bsvBooking = new BSVBooking({
+    tripName: 'Chiang Mai + Chiang Rai',
+    waNumber: '60198787790',
+    dates: [{date:'Daily departure', price:'see tier pricing'}],
+    packageOptions: ['Comfort — 3★ Chiang Mai','Deluxe — Mövenpick Suriwongse 4★','Premium — Kantary Hill 4.5★'],
+    maxPax: 9
+  });
+
+  (function(){
+    var cards = document.querySelectorAll('.tier-card');
+    var bar = document.getElementById('priceBar');
+    var barTier = document.getElementById('priceBarTier');
+    var barTotal = document.getElementById('priceBarTotal');
+    var paxCountEl = document.getElementById('paxCount');
+    var selected = null;
+    var pax = 4;
+
+    function bandPrice(bands, p){
+      for (var i=0;i<bands.length;i++){
+        if (p >= bands[i][0] && p <= bands[i][1]) return bands[i][2];
+      }
+      return null;
+    }
+
+    function render(){
+      if (!selected) return;
+      var bands = JSON.parse('[' + selected.dataset.bands + ']');
+      var perPerson = bandPrice(bands, pax);
+      paxCountEl.textContent = pax;
+      barTier.textContent = selected.dataset.tier;
+      if (perPerson === null){
+        barTotal.innerHTML = 'Contact us <span>for 9+ travelers</span>';
+      } else {
+        var total = perPerson * pax;
+        barTotal.innerHTML = 'RM' + total.toLocaleString() + ' <span>total · RM' + perPerson.toLocaleString() + '/person</span>';
+      }
+    }
+
+    cards.forEach(function(card){
+      card.addEventListener('click', function(){
+        cards.forEach(function(c){ c.classList.remove('selected'); });
+        card.classList.add('selected');
+        selected = card;
+        bar.classList.add('show');
+        render();
+      });
+    });
+
+    document.getElementById('paxMinus').onclick = function(){ if (pax>2){ pax--; render(); } };
+    document.getElementById('paxPlus').onclick = function(){ if (pax<9){ pax++; render(); } };
+    document.getElementById('priceBarCta').onclick = function(){
+      if (!selected) return;
+      bsvBooking.open({ pkg: selected.dataset.tier, pax: pax });
+    };
+  })();
+</script>
+
+</body>
+</html>

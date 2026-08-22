@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Blue Sky Vacation — a few thoughtfully chosen trips, not a thousand choices. Curated travel from Kota Kinabalu.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blue Sky Vacation | Where should we take you?">
+<meta property="og:description" content="A few thoughtfully chosen trips, not a thousand choices.">
+<meta property="og:url" content="https://bran0411.github.io/bluskyvacation/home-new.html">
+<meta property="og:image" content="https://bran0411.github.io/bluskyvacation/logo-mark.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Blue Sky Vacation">
+<title>蓝天假期 | 想去哪里？</title>
+<link rel="icon" href="logo-mark.png">
+<script src="./image-slot.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --bg:#F8FAFC; --paper:#ffffff; --text:#1E293B; --muted:#64748B;
+    --accent:#4AADE8; --accent-100:#E0F2FE; --accent-300:#38BDF8; --accent-700:#075985; --accent-900:#053A54;
+    --line:#DCE7F0; --sand:#F5E6C8; --sun:#FACC15;
+  }
+  html{scroll-behavior:smooth;}
+  html,body{overflow-x:hidden;max-width:100%;}
+  body{font-family:'Barlow',sans-serif;color:var(--text);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.h{font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:-0.01em;line-height:1.05;}
+  img{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  a:hover{color:var(--accent-700);}
+  ::selection{background:var(--accent-300);}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+  .wrap{max-width:1320px;margin:0 auto;padding:0 2rem;}
+
+  /* corner marks — used sparingly, on brand + primary CTA only */
+  .marked{position:relative;}
+  .marked i.corner{position:absolute;width:9px;height:9px;pointer-events:none;}
+  .marked i.corner::before,.marked i.corner::after{content:'';position:absolute;background:var(--accent-700);}
+  .marked i.tl{top:-1px;left:-1px;} .marked i.tr{top:-1px;right:-1px;} .marked i.bl{bottom:-1px;left:-1px;} .marked i.br{bottom:-1px;right:-1px;}
+  .marked i.corner::before{width:9px;height:1px;top:4px;left:0;} .marked i.corner::after{width:1px;height:9px;left:4px;top:0;}
+
+  /* NAV */
+  .nav{position:sticky;top:0;z-index:100;background:rgba(246,245,243,0.9);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .25s;}
+  .nav.scrolled{border-color:var(--line);}
+  .nav-inner{max-width:1320px;margin:0 auto;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;}
+  .brand{display:flex;align-items:center;gap:.6rem;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1.2rem;letter-spacing:.02em;text-transform:uppercase;}
+  .brand img{width:28px;height:28px;}
+  .nav-links{display:flex;gap:.6rem;}
+  .nav-links a{font-size:.88rem;font-weight:500;color:var(--text);opacity:.8;padding:.5rem 1.1rem;border-radius:999px;border:1px solid var(--line);background:var(--paper);}
+  .nav-links a:hover{opacity:1;color:var(--accent-700);border-color:var(--accent-300);background:var(--accent-100);}
+  .nav-right{display:flex;align-items:center;gap:1rem;}
+  .lang-switch{font-size:.85rem;font-weight:600;color:var(--muted);}
+  .lang-switch:hover{color:var(--accent-700);}
+  .nav-saved{position:relative;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--paper);color:var(--text);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;}
+  .nav-saved:hover{border-color:var(--accent-300);color:var(--accent-700);}
+  .nav-saved .save-count{position:absolute;top:-4px;right:-4px;min-width:16px;height:16px;padding:0 3px;border-radius:999px;background:var(--accent-700);color:#fff;font-size:.62rem;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1;}
+  .nav-saved .save-count[hidden]{display:none;}
+  .nav-saved .save-count[hidden]{display:none;}
+  .saved-modal-backdrop{position:fixed;inset:0;background:rgba(15,20,24,.5);z-index:500;display:flex;align-items:flex-start;justify-content:center;padding:6vh 1.2rem;}
+  .saved-modal-backdrop[hidden]{display:none;}
+  .saved-modal{background:var(--paper);border-radius:14px;max-width:480px;width:100%;max-height:82vh;overflow-y:auto;padding:1.6rem;}
+  .saved-modal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.2rem;}
+  .saved-modal-head h3{font-size:1.4rem;}
+  .saved-close{background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--muted);width:32px;height:32px;}
+  .saved-empty{color:var(--muted);font-size:.9rem;padding:1rem 0;}
+  .saved-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 0;border-bottom:1px solid var(--line);}
+  .saved-row:last-child{border-bottom:none;}
+  .saved-row a{font-weight:600;}
+  .saved-row .saved-meta{font-size:.8rem;color:var(--muted);}
+  .saved-remove{background:none;border:none;color:var(--muted);cursor:pointer;font-size:.8rem;flex-shrink:0;}
+  .saved-remove:hover{color:var(--accent-700);}
+  .btn{font-family:'Barlow',sans-serif;font-size:.9rem;font-weight:600;padding:.75rem 1.4rem;border-radius:2px;display:inline-block;border:1px solid transparent;transition:background .2s,color .2s,border-color .2s;white-space:nowrap;}
+  .btn-primary{background:var(--accent-700);color:#fff;}
+  .btn-primary:hover{background:var(--accent-900);color:#fff;}
+  .btn-ghost{border-color:var(--line);color:var(--text);}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent-700);}
+  .nav-burger{display:none;background:none;border:none;font-size:1.3rem;color:var(--text);cursor:pointer;width:44px;height:44px;flex-shrink:0;}
+  .nav-drawer{display:none;}
+
+  /* HERO */
+  .hero{position:relative;aspect-ratio:21/6;min-height:220px;overflow:hidden;}
+  .hero-slideshow{position:absolute;inset:0;}
+  .hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.1s ease;}
+  .hero-slide.active{opacity:1;}
+  .hero-slide img{width:100%;height:100%;object-fit:cover;display:block;}
+  .hero-dots{position:absolute;top:1.4rem;right:1.6rem;display:flex;gap:.5rem;z-index:3;}
+  .hero-dot{width:8px;height:8px;padding:0;border:none;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;transition:background .3s,width .3s;position:relative;}
+  .hero-dot.active{background:#fff;width:22px;border-radius:4px;}
+  .hero-dot::before{content:'';position:absolute;inset:-12px;}
+  .hero-tint{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,25,28,.15) 0%,rgba(20,25,28,.05) 40%,rgba(15,20,24,.72) 100%);pointer-events:none;}
+  .hero-copy{position:absolute;left:0;right:0;bottom:0;padding:3.5rem 2rem;max-width:1320px;margin:0 auto;color:#fff;}
+  .hero-eyebrow{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:1rem;}
+  .hero-h{font-size:clamp(2.2rem,4vw,3.2rem);max-width:16ch;margin-bottom:1rem;}
+  .hero-sub{font-size:1.05rem;color:rgba(255,255,255,.88);max-width:440px;margin-bottom:1.8rem;}
+  .hero-actions{display:flex;gap:.8rem;flex-wrap:wrap;pointer-events:auto;}
+  .hero-actions .btn-ghost{border-color:rgba(255,255,255,.5);color:#fff;}
+  .hero-actions .btn-ghost:hover{border-color:#fff;}
+
+  section.block{padding:3.2rem 0;}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:1.5rem;margin-bottom:2rem;}
+  .sec-h{font-size:clamp(1.7rem,3vw,2.4rem);}
+  .sec-kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-700);font-weight:600;margin-bottom:.5rem;}
+  .sec-sub{font-size:.95rem;color:var(--muted);max-width:46ch;}
+  .region-title{font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:600;}
+  .region-tag{font-family:'Barlow',sans-serif;font-size:.85rem;font-weight:500;color:var(--muted);}
+
+  /* horizontal rail */
+  .rail{--rail-pad:2rem;--rail-inset:max(var(--rail-pad),calc((100vw - 1320px)/2 + var(--rail-pad)));display:flex;gap:1.2rem;overflow-x:auto;scroll-snap-type:x proximity;scroll-padding-inline:var(--rail-inset);padding:.3rem var(--rail-inset) 1rem;scrollbar-width:thin;}
+  .rail::-webkit-scrollbar{height:6px;}
+  .rail::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px;}
+  .rail-item{scroll-snap-align:start;flex:0 0 auto;}
+
+  /* trip card */
+  .trip-card{width:190px;position:relative;}
+  .trip-card image-slot{width:100%;height:230px;border-radius:12px;overflow:hidden;}
+  .trip-name{font-family:'Barlow Condensed',sans-serif;font-size:1.15rem;font-weight:600;margin-top:.7rem;}
+  .trip-desc{font-size:.82rem;color:var(--muted);margin-top:.1rem;}
+  .trip-meta{font-size:.78rem;color:var(--accent-700);font-weight:600;margin-top:.35rem;}
+  .depart-badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.68rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--accent-700);background:var(--accent-100);border:1px solid var(--accent-300);padding:.28rem .6rem;border-radius:100px;margin-top:.6rem;}
+  .ground-badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.68rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--accent-700);background:var(--accent-100);border:1px solid var(--accent-300);padding:.28rem .6rem;border-radius:100px;margin-top:.6rem;}
+  .private-badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.68rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--accent-700);background:var(--accent-100);border:1px solid var(--accent-300);padding:.28rem .6rem;border-radius:100px;margin-top:.3rem;}
+  .promo-price{font-size:.76rem;color:#c0392b;font-weight:700;margin-top:.2rem;}
+  .save-btn{position:absolute;top:.6rem;right:.6rem;z-index:2;width:32px;height:32px;border-radius:50%;border:none;background:rgba(20,25,28,.42);backdrop-filter:blur(4px);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,transform .15s;}
+  .save-btn:hover{background:rgba(20,25,28,.6);transform:scale(1.08);}
+  .save-btn.saved{color:#fff;}
+  .save-btn.saved svg{fill:#e0576b;stroke:#e0576b;}
+  .date-badge{position:absolute;left:.5rem;right:.5rem;bottom:.5rem;z-index:2;background:rgba(20,25,28,.6);backdrop-filter:blur(4px);color:#fff;font-size:.62rem;font-weight:600;padding:.3rem .5rem;border-radius:8px;letter-spacing:.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center;}
+  .go-card .date-badge{font-size:.62rem;padding:.25rem .5rem;}
+  .date-badge.promo{background:#c0392b;font-weight:700;}
+  .thumb-wrap{position:relative;}
+
+  /* mood card */
+  .mood-card{width:190px;position:relative;border-radius:12px;overflow:hidden;height:230px;}
+  .mood-card image-slot{width:100%;height:100%;}
+  .mood-tint{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(10,15,18,.7) 100%);pointer-events:none;}
+  .mood-label{position:absolute;left:0;right:0;bottom:0;padding:1rem;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:1.15rem;font-weight:600;text-transform:uppercase;letter-spacing:.02em;}
+
+  /* destination card */
+  .dest-card{width:190px;position:relative;border-radius:12px;overflow:hidden;height:230px;}
+  .dest-card image-slot{width:100%;height:100%;}
+  .dest-tint{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(10,15,18,.78) 100%);pointer-events:none;}
+  .dest-copy{position:absolute;left:0;right:0;bottom:0;padding:.9rem;color:#fff;}
+  .dest-name{font-family:'Barlow Condensed',sans-serif;font-size:1.25rem;font-weight:600;}
+  .dest-tag{font-size:.72rem;color:rgba(255,255,255,.85);margin-top:.1rem;}
+
+  /* seasonal */
+  .seasonal{position:relative;height:520px;border-radius:16px;overflow:hidden;margin:0 2rem;}
+  .seasonal image-slot{width:100%;height:100%;}
+  .seasonal-tint{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,15,18,.72) 0%,rgba(10,15,18,.2) 55%,rgba(10,15,18,0) 100%);pointer-events:none;}
+  .seasonal-copy{position:absolute;left:0;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;padding:3rem;max-width:460px;color:#fff;}
+  .seasonal-kicker{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.8);margin-bottom:.8rem;}
+  .seasonal-h{font-size:clamp(2.2rem,4vw,3.2rem);margin-bottom:.8rem;}
+  .seasonal-sub{font-size:1rem;color:rgba(255,255,255,.85);margin-bottom:1.5rem;}
+
+  /* ground-only, subdued */
+  .go-card{width:190px;position:relative;}
+  .go-card image-slot{width:100%;height:150px;border-radius:8px;}
+  .go-name{font-size:.95rem;font-weight:600;margin-top:.6rem;}
+  .go-meta{font-size:.82rem;color:var(--muted);margin-top:.1rem;}
+  .go-card .save-btn{width:28px;height:28px;top:.5rem;right:.5rem;}
+  .go-card .save-btn svg{width:15px;height:15px;}
+
+  /* custom trip */
+  .custom{position:relative;height:460px;border-radius:16px;overflow:hidden;margin:0 2rem;display:flex;align-items:center;}
+  .custom image-slot{position:absolute;inset:0;}
+  .custom-tint{position:absolute;inset:0;background:rgba(15,20,24,.55);pointer-events:none;}
+  .custom-copy{position:relative;z-index:1;padding:3rem;color:#fff;max-width:500px;}
+  .custom-h{font-size:clamp(2rem,3.6vw,2.8rem);margin-bottom:.6rem;}
+  .custom-sub{font-size:1rem;color:rgba(255,255,255,.88);margin-bottom:1.6rem;}
+
+  footer{border-top:1px solid var(--line);padding:2.5rem 0;}
+  .foot-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem;color:var(--muted);}
+  .foot-links{display:flex;gap:1.4rem;}
+
+  /* sticky bottom search */
+  body{padding-bottom:74px;}
+  .bottom-bar{position:fixed;left:0;right:0;bottom:0;z-index:200;background:rgba(251,250,248,.92);backdrop-filter:blur(12px);border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(20,20,20,.05);}
+  .bottom-bar-inner{max-width:720px;margin:0 auto;padding:.7rem 2rem;}
+  .bottom-bar-inner{display:flex;align-items:center;gap:.8rem;}
+  .bb-icon-btn{flex-shrink:0;width:38px;height:38px;border-radius:999px;border:1px solid var(--line);background:var(--paper);display:flex;align-items:center;justify-content:center;color:var(--text);cursor:pointer;}
+  .bb-icon-btn:hover{border-color:var(--accent-300);color:var(--accent-700);}
+  .bb-search{display:flex;align-items:center;gap:.6rem;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:.6rem 1.1rem;flex:1;}
+  .bb-search input{border:none;background:transparent;outline:none;font-family:'Barlow',sans-serif;font-size:.9rem;color:var(--text);width:100%;}
+  .bb-search svg{flex-shrink:0;opacity:.6;}
+  .bb-search[hidden]{display:none;}
+  .bb-wa{margin-left:auto;flex-shrink:0;font-size:.85rem;font-weight:600;color:#fff;background:var(--accent-700);padding:.55rem 1.1rem;border-radius:999px;}
+  .bb-wa:hover{background:var(--accent-900);color:#fff;}
+
+  @media (max-width:720px){
+    .wrap{padding:0 1.2rem;}
+    .nav-inner{padding:.85rem 1.2rem;}
+    .nav-links{display:none;}
+    .nav-right{gap:.6rem;}
+    .nav-right .lang-switch{padding:.5rem;}
+    .nav-right .btn-primary{padding:.65rem 1rem;font-size:.85rem;}
+    .nav-burger{display:flex;align-items:center;justify-content:center;}
+    .nav-drawer{display:flex;flex-direction:column;gap:0;background:var(--paper);border-bottom:1px solid var(--line);}
+    .nav-drawer.open{display:flex;}
+    .nav-drawer a{padding:1rem 1.2rem;font-size:1rem;font-weight:500;border-top:1px solid var(--line);min-height:44px;display:flex;align-items:center;}
+
+    .hero{aspect-ratio:4/3;min-height:260px;}
+    .hero-copy{padding:1.4rem 1.2rem;}
+    .hero-h{font-size:clamp(1.7rem,7vw,2.4rem);}
+    .hero-sub{font-size:.92rem;max-width:100%;}
+    .hero-actions .btn{flex:1 1 auto;text-align:center;padding:.9rem 1.2rem;}
+
+    section.block{padding:2.2rem 0;}
+    .sec-head{margin-bottom:1.3rem;}
+    .sec-h{font-size:1.5rem;}
+
+    .rail{--rail-pad:1.2rem;gap:.9rem;scroll-snap-type:x mandatory;scroll-padding-inline:1.2rem;}
+    .trip-card{width:150px;}
+    .trip-card image-slot{height:180px;}
+    .mood-card{width:132px;height:172px;}
+    .dest-card{width:150px;height:180px;}
+    .go-card{width:150px;}
+    .go-card image-slot{height:120px;}
+
+    .seasonal,.custom{margin:0 1.2rem;height:400px;border-radius:12px;}
+    .seasonal-copy,.custom-copy{padding:1.6rem;max-width:100%;}
+    .seasonal-h,.custom-h{font-size:1.9rem;}
+    .seasonal-copy .btn,.custom-copy .btn{width:100%;text-align:center;}
+
+    footer{padding:1.8rem 0;}
+    .foot-inner{flex-direction:column;align-items:flex-start;gap:1rem;}
+
+    .bottom-bar-inner{padding:.6rem 1.2rem;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="home-new-zh.html" class="brand" style="width: 133px; height: 64px"><img src="logo-cloud-wordmark.png" alt="Blue Sky Vacation" style="height:52px;width:auto;"></a>
+    <div class="nav-links">
+      <a href="#trips">探索</a>
+      <a href="#trips">行程</a>
+      <a href="#hrdf">HRDF 培训团</a>
+      <a href="#destinations">目的地</a>
+      <a href="#custom">定制行程</a>
+    </div>
+    <div class="nav-right">
+      <button class="nav-burger" id="burger" aria-label="菜单" aria-expanded="false">☰</button>
+    </div>
+  </div>
+  <div class="nav-drawer" id="navDrawer">
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-slideshow">
+    <div class="hero-slide active"><img src="489609458_4051532918497248_1940284714742493010_n.jpg" alt="Blue Sky Vacation group at the Library of Celsus, Ephesus"></div>
+    <div class="hero-slide"><img src="485982727_1184343729815511_5118358137774656538_n.jpg" alt="Tour group on a seaside street in China"></div>
+    <div class="hero-slide"><img src="641052910_1446697950246753_6674012609998891816_n.jpg" alt="Tour group at the Sardis gymnasium ruins"></div>
+    <div class="hero-slide"><img src="641202067_1446697946913420_8097102355757341920_n.jpg" alt="Tour group beside ancient ruins and a minaret"></div>
+  </div>
+  <div class="hero-dots">
+    <button class="hero-dot active" data-i="0" aria-label="显示图片 1"></button>
+    <button class="hero-dot" data-i="1" aria-label="显示图片 2"></button>
+    <button class="hero-dot" data-i="2" aria-label="显示图片 3"></button>
+    <button class="hero-dot" data-i="3" aria-label="显示图片 4"></button>
+  </div>
+  <div class="hero-tint"></div>
+  <div class="hero-copy">
+    <div class="hero-eyebrow">Blue Sky Vacation</div>
+    <h1 class="hero-h">更好的行程。<br>更好的价格。</h1>
+    <p class="hero-sub">超值假期，为您精心挑选。</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#trips">探索行程</a>
+      <a class="btn btn-ghost" href="#custom">还没想好去哪？</a>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="all-in">
+  <div class="wrap sec-head">
+    <div>
+      <div class="sec-kicker">机票、酒店、交通 — 全包</div>
+      <h2 class="sec-h" style="font-size:clamp(2rem,3.6vw,2.9rem);">全包配套行程</h2>
+      <div class="sec-sub">从亚庇直飞出发，其余一切由我们安排。</div>
+    </div>
+  </div>
+  <div class="rail">
+    <a class="rail-item trip-card" href="tour-tokyo.html#dates"><button class="save-btn" data-href="tour-tokyo.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="allin-tokyo" shape="rounded" radius="14" placeholder="Golden-hour Asakusa street with Sensoji's pagoda"></image-slot><span class="date-badge">20 Oct · 10 Nov · 01 Dec</span></div><div class="trip-name">东京 + 富士山</div><div class="trip-desc">轻松的东京初体验</div><span class="depart-badge" title="Kota Kinabalu">出发地：亚庇 BKI</span><div class="trip-meta">6D4N · From RM4,390</div><div class="promo-price">🔥 优惠 RM3,490 · 仅剩 3 位</div></a>
+    <a class="rail-item trip-card" href="tour-japan-honshu.html#dates"><button class="save-btn" data-href="tour-japan-honshu.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="allin-honshu" shape="rounded" radius="14" placeholder="Fushimi Inari's gate tunnel"></image-slot><span class="date-badge">13 Dec · 06 Feb · 07 Mar</span></div><div class="trip-name">日本本州</div><div class="trip-desc">东京 · 京都 · 大阪 · 奈良 · 镰仓</div><span class="depart-badge" title="Kota Kinabalu">出发地：亚庇 BKI</span><div class="trip-meta">8D6N · From RM6,990</div></a>
+    <a class="rail-item trip-card" href="tour-bangkok.html#dates"><button class="save-btn" data-href="tour-bangkok.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="allin-bangkok" shape="rounded" radius="14" placeholder="River Kwai Bridge at sunset"></image-slot><span class="date-badge">08 Sep · 01 Dec</span></div><div class="trip-name">曼谷 + 北碧</div><div class="trip-desc">历史、人文与曼谷的活力</div><span class="depart-badge" title="Kota Kinabalu">出发地：亚庇 BKI</span><div class="trip-meta">5D4N · From RM2,490</div></a>
+    <a class="rail-item trip-card" href="tour-beijing.html#dates"><button class="save-btn" data-href="tour-beijing.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="allin-beijing" shape="rounded" radius="14" placeholder="Great Wall winding into misty hills"></image-slot><span class="date-badge">07 Nov · 27 Dec · 06 Jan +3</span></div><div class="trip-name">北京</div><div class="trip-desc">中国经典古都，精彩呈现</div><span class="depart-badge" title="Kota Kinabalu">出发地：亚庇 BKI</span><div class="trip-meta">8D6N · From RM4,088</div></a>
+    <a class="rail-item trip-card" href="tour-harbin-changbai.html#dates"><button class="save-btn" data-href="tour-harbin-changbai.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="allin-changbai" shape="rounded" radius="14" placeholder="Tianchi's deep-blue crater lake"></image-slot><span class="date-badge">07 Nov · 05 Mar · 07 Mar</span></div><div class="trip-name">哈尔滨 + 长白山</div><div class="trip-desc">中国东北温泉之旅</div><span class="depart-badge" title="Kota Kinabalu">出发地：亚庇 BKI</span><div class="trip-meta">8D6N · From RM4,888</div></a>
+    <a class="rail-item trip-card" href="tour-harbin-snowtown.html#dates"><button class="save-btn" data-href="tour-harbin-snowtown.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="allin-snowtown" shape="rounded" radius="14" placeholder="Snow Town's rooftops lit up at night"></image-slot><span class="date-badge">27 Dec · 06 Jan · 07 Feb</span></div><div class="trip-name">哈尔滨 + 雪乡</div><div class="trip-desc">冰雪世界与东北虎</div><span class="depart-badge" title="Kota Kinabalu">出发地：亚庇 BKI</span><div class="trip-meta">8D6N · From RM6,088</div></a>
+    <a class="rail-item trip-card" href="tour-hainan-zh.html"><button class="save-btn" data-href="tour-hainan-zh.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="allin-hainan" shape="rounded" radius="14" placeholder="Hainan Island beaches and Phoenix Island skyline"></image-slot></div><div class="trip-name">海南岛</div><div class="trip-desc">海滩、亚特兰蒂斯与海底餐厅</div><span class="depart-badge" title="Kota Kinabalu">出发地：亚庇 BKI</span><div class="trip-meta">5D4N/6D5N · From RM2,199</div></a>
+    <a class="rail-item trip-card" href="tour-guilin-zh.html#dates"><button class="save-btn" data-href="tour-guilin-zh.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="allin-guilin" src="guilin-balloon-sunrise.jpg" shape="rounded" radius="14" placeholder="Karst peaks along the Li River at Elephant Trunk Hill"></image-slot></div><div class="trip-name">桂林 & 阳朔</div><div class="trip-desc">喀斯特山水与在地人文</div><span class="depart-badge" title="Kota Kinabalu">出发地：亚庇 BKI</span><div class="trip-meta">5D4N/6D5N · From RM2,499</div></a>
+    <a class="rail-item trip-card" href="tour-xinjiang-zh.html"><button class="save-btn" data-href="tour-xinjiang-zh.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="allin-xinjiang" src="xinjiang-card-main.jpg" shape="rounded" radius="14" placeholder="Kanas Lake and the birch forests of Altay"></image-slot><span class="date-badge">夏季 · 冬季出发</span></div><div class="trip-name">北疆深度游</div><div class="trip-desc">喀纳斯、禾木、赛里木湖与独库公路</div><span class="depart-badge" title="Kuala Lumpur">出发地：吉隆坡 KUL</span><div class="trip-meta">11D10N / 9D8N · From RM8,599</div></a>
+  </div>
+</section>
+
+<section class="block" id="ground-only">
+  <div class="wrap sec-head">
+    <div>
+      <div class="sec-kicker">地接配套</div>
+      <h2 class="sec-h" style="font-size:1.4rem;">已有机票？或想自由选择出发日期？</h2>
+      <div class="sec-sub">酒店 + 交通 + 行程。不含机票。</div>
+    </div>
+  </div>
+  <div class="rail">
+    <a class="rail-item go-card" href="tour-phuket.html#dates"><button class="save-btn" data-href="tour-phuket.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="go-phuket" placeholder="Phi Phi's turquoise bay"></image-slot><span class="date-badge">每日出发</span></div><div class="go-name">普吉岛</div><span class="ground-badge">纯地接</span><span class="private-badge">私家团</span><div class="go-meta">4D3N · From RM1,888</div></a>
+    <a class="rail-item go-card" href="tour-chiangmai.html#dates"><button class="save-btn" data-href="tour-chiangmai.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="go-chiangmai" placeholder="White Temple's mirrored facade"></image-slot><span class="date-badge">每日出发</span></div><div class="go-name">清迈 + 清莱</div><span class="ground-badge">纯地接</span><span class="private-badge">私家团</span><div class="go-meta">4D3N · From RM1,398</div></a>
+    <a class="rail-item go-card" href="tour-bali-classic.html#dates"><button class="save-btn" data-href="tour-bali-classic.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="go-baliclassic" placeholder="Tegalalang's layered green rice terraces"></image-slot><span class="date-badge">每日出发</span></div><div class="go-name">巴厘岛经典行</div><span class="ground-badge">纯地接</span><span class="private-badge">私家团</span><div class="go-meta">4D3N · From RM1,248</div></a>
+    <a class="rail-item go-card" href="tour-bali-dolphin.html#dates"><button class="save-btn" data-href="tour-bali-dolphin.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="go-balidolphin" placeholder="Dolphins leaping at sunrise off Lovina"></image-slot><span class="date-badge">每日出发</span></div><div class="go-name">巴厘岛海豚行</div><span class="ground-badge">纯地接</span><span class="private-badge">私家团</span><div class="go-meta">4D3N · From RM1,328</div></a>
+    <a class="rail-item go-card" href="tour-shanghai-watertowns.html#dates"><button class="save-btn" data-href="tour-shanghai-watertowns.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="go-shwater" src="shanghai-zhujiajiao-canal-night.jpg" placeholder="A water town canal at night"></image-slot><span class="date-badge">每日出发</span></div><div class="go-name">上海、杭州与水乡</div><span class="ground-badge">纯地接</span><div class="go-meta">6D5N · From RM1,498</div></a>
+    <a class="rail-item go-card" href="tour-shanghai-private.html#dates"><button class="save-btn" data-href="tour-shanghai-private.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="go-shprivate" placeholder="Private car against the Shanghai skyline"></image-slot><span class="date-badge">每日出发</span></div><div class="go-name">上海、苏州与杭州私家团</div><span class="ground-badge">纯地接</span><span class="private-badge">私家团</span><div class="go-meta">6D5N · From RM1,140</div></a>
+  </div>
+</section>
+
+<section class="block" id="hrdf">
+  <div class="wrap sec-head">
+    <div>
+      <div class="sec-kicker">100% HRDF 可申领</div>
+      <h2 class="sec-h">企业考察研学团</h2>
+      <div class="sec-sub">深入中国科技与制造业的系统化学习课程。可通过 HRD Corp 申领，我们全程协助申请。</div>
+    </div>
+  </div>
+  <div class="rail">
+    <a class="rail-item trip-card" href="tour-shenzhen-zh.html"><button class="save-btn" data-href="tour-shenzhen-zh.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="hrdf-shenzhen" src="shenzhen-card-robot.jpg" shape="rounded" radius="14" placeholder="Humanoid robots on the UBTECH production floor"></image-slot><span class="date-badge">10–16 Nov 2026</span></div><div class="trip-name">深圳 AI 研学之旅</div><div class="trip-desc">比亚迪、优必选人形机器人、百度 Apollo、顺丰无人机物流</div><span class="depart-badge">100% HRDF 可申领</span><div class="trip-meta">7D6N · RM8,250 HRDF · RM8,000 cash</div></a>
+    <a class="rail-item trip-card" href="tour-hangzhou-zh.html"><button class="save-btn" data-href="tour-hangzhou-zh.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="hrdf-hangzhou" src="hangzhou-alibaba.jpg" shape="rounded" radius="14" placeholder="Alibaba's Hangzhou campus"></image-slot><span class="date-badge">11–17 Oct 2026</span></div><div class="trip-name">杭州 AI 研学之旅</div><div class="trip-desc">阿里巴巴、吉利新能源、BrainCo、科大讯飞与机器人小镇</div><span class="depart-badge">100% HRDF 可申领</span><div class="trip-meta">7D6N · RM8,250 HRDF · RM8,000 cash</div></a>
+  </div>
+</section>
+
+<section class="block" id="trips">
+  <div class="wrap sec-head">
+    <div>
+      <div class="sec-kicker">为您推荐</div>
+      <h2 class="sec-h">我们觉得您会喜欢的行程</h2>
+    </div>
+  </div>
+  <div class="rail">
+    <a class="rail-item trip-card" href="tour-tokyo.html#dates"><button class="save-btn" data-href="tour-tokyo.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="reco-tokyo" shape="rounded" radius="14" placeholder="Golden-hour Asakusa street with Sensoji's pagoda"></image-slot><span class="date-badge">20 Oct · 10 Nov · 01 Dec</span></div><div class="trip-name">东京 + 富士山</div><div class="trip-desc">轻松的东京初体验</div><span class="depart-badge" title="Kota Kinabalu">出发地：亚庇 BKI</span><div class="trip-meta">6D4N · From RM4,390</div><div class="promo-price">🔥 优惠 RM3,490 · 仅剩 3 位</div></a>
+    <a class="rail-item trip-card" href="tour-bangkok.html#dates"><button class="save-btn" data-href="tour-bangkok.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="reco-bangkok" shape="rounded" radius="14" placeholder="River Kwai Bridge at sunset"></image-slot><span class="date-badge">08 Sep · 01 Dec</span></div><div class="trip-name">曼谷 + 北碧</div><div class="trip-desc">历史、人文与曼谷的活力</div><span class="depart-badge" title="Kota Kinabalu">出发地：亚庇 BKI</span><div class="trip-meta">5D4N · From RM2,490</div></a>
+    <a class="rail-item trip-card" href="tour-beijing.html#dates"><button class="save-btn" data-href="tour-beijing.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="reco-beijing" shape="rounded" radius="14" placeholder="Great Wall winding into misty hills"></image-slot><span class="date-badge">07 Nov · 27 Dec · 06 Jan +3</span></div><div class="trip-name">北京</div><div class="trip-desc">中国经典古都，精彩呈现</div><span class="depart-badge" title="Kota Kinabalu">出发地：亚庇 BKI</span><div class="trip-meta">8D6N · From RM4,088</div></a>
+    <a class="rail-item trip-card" href="tour-bali-classic.html#dates"><button class="save-btn" data-href="tour-bali-classic.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="reco-baliclassic" shape="rounded" radius="14" placeholder="Tegalalang's layered green rice terraces"></image-slot><span class="date-badge">每日出发</span></div><div class="trip-name">巴厘岛经典行</div><div class="trip-desc">寺庙、梯田与日落海岸</div><span class="ground-badge">纯地接</span><span class="private-badge">私家团</span><div class="trip-meta">4D3N · From RM1,248</div></a>
+    <a class="rail-item trip-card" href="tour-shanghai-watertowns.html#dates"><button class="save-btn" data-href="tour-shanghai-watertowns.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="reco-shwater" src="shanghai-zhujiajiao-canal-night.jpg" shape="rounded" radius="14" placeholder="A water town canal at night"></image-slot><span class="date-badge">每日出发</span></div><div class="trip-name">上海、杭州与水乡</div><div class="trip-desc">上海与周边，按自己的节奏走</div><span class="ground-badge">纯地接</span><div class="trip-meta">6D5N · From RM1,498</div></a>
+  </div>
+</section>
+
+<section class="block" id="destinations">
+  <div class="wrap sec-head">
+    <div>
+      <div class="sec-kicker">浏览</div>
+      <h2 class="sec-h">热门目的地</h2>
+    </div>
+  </div>
+  <div class="wrap" style="margin-bottom:1rem;">
+    <div class="region-title">日本 <span class="region-tag">— 寺庙、雪景与城市</span></div>
+  </div>
+  <div class="rail" style="margin-bottom:2.4rem;">
+    <a class="rail-item trip-card" href="tour-tokyo.html#dates"><button class="save-btn" data-href="tour-tokyo.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="region-japan-tokyo" shape="rounded" radius="14" placeholder="Golden-hour Asakusa street with Sensoji's pagoda"></image-slot><span class="date-badge">20 Oct · 10 Nov · 01 Dec</span></div><div class="trip-name">东京 + 富士山</div><div class="trip-desc">轻松的东京初体验</div><span class="depart-badge" title="Kota Kinabalu">出发地：亚庇 BKI</span><div class="trip-meta">6D4N · From RM4,390</div><div class="promo-price">🔥 优惠 RM3,490 · 仅剩 3 位</div></a>
+    <a class="rail-item trip-card" href="tour-japan-honshu.html#dates"><button class="save-btn" data-href="tour-japan-honshu.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="region-japan-honshu" shape="rounded" radius="14" placeholder="Fushimi Inari's gate tunnel"></image-slot><span class="date-badge">13 Dec · 06 Feb · 07 Mar</span></div><div class="trip-name">日本本州</div><div class="trip-desc">东京 · 京都 · 大阪 · 奈良 · 镰仓</div><span class="depart-badge" title="Kota Kinabalu">出发地：亚庇 BKI</span><div class="trip-meta">8D6N · From RM6,990</div></a>
+  </div>
+  <div class="wrap" style="margin-bottom:1rem;">
+    <div class="region-title">泰国 <span class="region-tag">— 海岛与街头美食</span></div>
+  </div>
+  <div class="rail" style="margin-bottom:2.4rem;">
+    <a class="rail-item trip-card" href="tour-bangkok.html#dates"><button class="save-btn" data-href="tour-bangkok.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="region-thailand-bangkok" shape="rounded" radius="14" placeholder="River Kwai Bridge at sunset"></image-slot><span class="date-badge">08 Sep · 01 Dec</span></div><div class="trip-name">曼谷 + 北碧</div><div class="trip-desc">历史、人文与曼谷的活力</div><span class="depart-badge" title="Kota Kinabalu">出发地：亚庇 BKI</span><div class="trip-meta">5D4N · From RM2,490</div></a>
+    <a class="rail-item trip-card" href="tour-phuket.html#dates"><button class="save-btn" data-href="tour-phuket.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="region-thailand-phuket" shape="rounded" radius="14" placeholder="Phi Phi's turquoise bay"></image-slot><span class="date-badge">每日出发</span></div><div class="trip-name">普吉岛</div><div class="trip-desc">选一座海岛，然后放松</div><span class="ground-badge">纯地接</span><span class="private-badge">私家团</span><div class="trip-meta">4D3N · From RM1,888</div></a>
+    <a class="rail-item trip-card" href="tour-chiangmai.html#dates"><button class="save-btn" data-href="tour-chiangmai.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="region-thailand-chiangmai" shape="rounded" radius="14" placeholder="White Temple's mirrored facade"></image-slot><span class="date-badge">每日出发</span></div><div class="trip-name">清迈 + 清莱</div><div class="trip-desc">寺庙、大象与真实的清莱</div><span class="ground-badge">纯地接</span><span class="private-badge">私家团</span><div class="trip-meta">4D3N · From RM1,398</div></a>
+  </div>
+  <div class="wrap" style="margin-bottom:1rem;">
+    <div class="region-title">中国 <span class="region-tag">— 长城、湖光与冬季</span></div>
+  </div>
+  <div class="rail" style="margin-bottom:2.4rem;">
+    <a class="rail-item trip-card" href="tour-shanghai-watertowns.html#dates"><button class="save-btn" data-href="tour-shanghai-watertowns.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="region-china-shwater" src="shanghai-zhujiajiao-canal-night.jpg" shape="rounded" radius="14" placeholder="A water town canal at night"></image-slot><span class="date-badge">每日出发</span></div><div class="trip-name">上海、杭州与水乡</div><div class="trip-desc">上海与周边，按自己的节奏走</div><span class="ground-badge">纯地接</span><div class="trip-meta">6D5N · From RM1,498</div></a>
+    <a class="rail-item trip-card" href="tour-beijing.html#dates"><button class="save-btn" data-href="tour-beijing.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="region-china-beijing" shape="rounded" radius="14" placeholder="Great Wall winding into misty hills"></image-slot><span class="date-badge">07 Nov · 27 Dec · 06 Jan +3</span></div><div class="trip-name">北京</div><div class="trip-desc">中国经典古都，精彩呈现</div><span class="depart-badge" title="Kota Kinabalu">出发地：亚庇 BKI</span><div class="trip-meta">8D6N · From RM4,088</div></a>
+    <a class="rail-item trip-card" href="tour-harbin-changbai.html#dates"><button class="save-btn" data-href="tour-harbin-changbai.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="region-china-changbai" shape="rounded" radius="14" placeholder="Tianchi's deep-blue crater lake"></image-slot><span class="date-badge">07 Nov · 05 Mar · 07 Mar</span></div><div class="trip-name">哈尔滨 + 长白山</div><div class="trip-desc">中国东北温泉之旅</div><span class="depart-badge" title="Kota Kinabalu">出发地：亚庇 BKI</span><div class="trip-meta">8D6N · From RM4,888</div></a>
+    <a class="rail-item trip-card" href="tour-harbin-snowtown.html#dates"><button class="save-btn" data-href="tour-harbin-snowtown.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="region-china-snowtown" shape="rounded" radius="14" placeholder="Snow Town's rooftops lit up at night"></image-slot><span class="date-badge">27 Dec · 06 Jan · 07 Feb</span></div><div class="trip-name">哈尔滨 + 雪乡</div><div class="trip-desc">冰雪世界与东北虎</div><span class="depart-badge" title="Kota Kinabalu">出发地：亚庇 BKI</span><div class="trip-meta">8D6N · From RM6,088</div></a>
+    <a class="rail-item trip-card" href="tour-hainan-zh.html"><button class="save-btn" data-href="tour-hainan-zh.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="region-china-hainan" shape="rounded" radius="14" placeholder="Hainan Island beaches and Phoenix Island skyline"></image-slot></div><div class="trip-name">海南岛</div><div class="trip-desc">海滩、亚特兰蒂斯与海底餐厅</div><span class="depart-badge" title="Kota Kinabalu">出发地：亚庇 BKI</span><div class="trip-meta">5D4N/6D5N · From RM2,199</div></a>
+    <a class="rail-item trip-card" href="tour-guilin-zh.html#dates"><button class="save-btn" data-href="tour-guilin-zh.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="region-china-guilin" src="guilin-balloon-sunrise.jpg" shape="rounded" radius="14" placeholder="Karst peaks along the Li River at Elephant Trunk Hill"></image-slot></div><div class="trip-name">桂林 & 阳朔</div><div class="trip-desc">喀斯特山水与在地人文</div><span class="depart-badge" title="Kota Kinabalu">出发地：亚庇 BKI</span><div class="trip-meta">5D4N/6D5N · From RM2,499</div></a>
+  </div>
+  <div class="wrap" style="margin-bottom:1rem;">
+    <div class="region-title">巴厘岛 <span class="region-tag">— 梯田与海岸</span></div>
+  </div>
+  <div class="rail" style="margin-bottom:2.4rem;">
+    <a class="rail-item trip-card" href="tour-bali-classic.html#dates"><button class="save-btn" data-href="tour-bali-classic.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="region-bali-baliclassic" shape="rounded" radius="14" placeholder="Tegalalang's layered green rice terraces"></image-slot><span class="date-badge">每日出发</span></div><div class="trip-name">巴厘岛经典行</div><div class="trip-desc">寺庙、梯田与日落海岸</div><span class="ground-badge">纯地接</span><span class="private-badge">私家团</span><div class="trip-meta">4D3N · From RM1,248</div></a>
+    <a class="rail-item trip-card" href="tour-bali-dolphin.html#dates"><button class="save-btn" data-href="tour-bali-dolphin.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="region-bali-balidolphin" shape="rounded" radius="14" placeholder="Dolphins leaping at sunrise off Lovina"></image-slot><span class="date-badge">每日出发</span></div><div class="trip-name">巴厘岛海豚行</div><div class="trip-desc">巴厘岛，加上海豚与宁静北岸</div><span class="ground-badge">纯地接</span><span class="private-badge">私家团</span><div class="trip-meta">4D3N · From RM1,328</div></a>
+  </div>
+</section>
+
+<section class="block" id="moods">
+  <div class="wrap sec-head">
+    <div>
+      <div class="sec-kicker">主题</div>
+      <h2 class="sec-h">这次想要什么样的旅行？</h2>
+    </div>
+  </div>
+  <div class="wrap" style="margin-bottom:1rem;">
+    <div class="region-title">追雪之旅</div>
+  </div>
+  <div class="rail" style="margin-bottom:2.4rem;">
+    <a class="rail-item trip-card" href="tour-harbin-changbai.html#dates"><button class="save-btn" data-href="tour-harbin-changbai.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="mood-snow-winter-changbai" shape="rounded" radius="14" placeholder="Tianchi's deep-blue crater lake"></image-slot><span class="date-badge">07 Nov · 05 Mar · 07 Mar</span></div><div class="trip-name">哈尔滨 + 长白山</div><div class="trip-desc">中国东北温泉之旅</div><span class="depart-badge" title="Kota Kinabalu">出发地：亚庇 BKI</span><div class="trip-meta">8D6N · From RM4,888</div></a>
+    <a class="rail-item trip-card" href="tour-harbin-snowtown.html#dates"><button class="save-btn" data-href="tour-harbin-snowtown.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="mood-snow-winter-snowtown" shape="rounded" radius="14" placeholder="Snow Town's rooftops lit up at night"></image-slot><span class="date-badge">27 Dec · 06 Jan · 07 Feb</span></div><div class="trip-name">哈尔滨 + 雪乡</div><div class="trip-desc">冰雪世界与东北虎</div><span class="depart-badge" title="Kota Kinabalu">出发地：亚庇 BKI</span><div class="trip-meta">8D6N · From RM6,088</div></a>
+  </div>
+  <div class="wrap" style="margin-bottom:1rem;">
+    <div class="region-title">海滩与海岛</div>
+  </div>
+  <div class="rail" style="margin-bottom:2.4rem;">
+    <a class="rail-item trip-card" href="tour-phuket.html#dates"><button class="save-btn" data-href="tour-phuket.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="mood-beach-islands-phuket" shape="rounded" radius="14" placeholder="Phi Phi's turquoise bay"></image-slot><span class="date-badge">每日出发</span></div><div class="trip-name">普吉岛</div><div class="trip-desc">选一座海岛，然后放松</div><span class="ground-badge">纯地接</span><span class="private-badge">私家团</span><div class="trip-meta">4D3N · From RM1,888</div></a>
+    <a class="rail-item trip-card" href="tour-bali-classic.html#dates"><button class="save-btn" data-href="tour-bali-classic.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="mood-beach-islands-baliclassic" shape="rounded" radius="14" placeholder="Tegalalang's layered green rice terraces"></image-slot><span class="date-badge">每日出发</span></div><div class="trip-name">巴厘岛经典行</div><div class="trip-desc">寺庙、梯田与日落海岸</div><span class="ground-badge">纯地接</span><span class="private-badge">私家团</span><div class="trip-meta">4D3N · From RM1,248</div></a>
+    <a class="rail-item trip-card" href="tour-bali-dolphin.html#dates"><button class="save-btn" data-href="tour-bali-dolphin.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="mood-beach-islands-balidolphin" shape="rounded" radius="14" placeholder="Dolphins leaping at sunrise off Lovina"></image-slot><span class="date-badge">每日出发</span></div><div class="trip-name">巴厘岛海豚行</div><div class="trip-desc">巴厘岛，加上海豚与宁静北岸</div><span class="ground-badge">纯地接</span><span class="private-badge">私家团</span><div class="trip-meta">4D3N · From RM1,328</div></a>
+  </div>
+  <div class="wrap" style="margin-bottom:1rem;">
+    <div class="region-title">人文与历史</div>
+  </div>
+  <div class="rail" style="margin-bottom:2.4rem;">
+    <a class="rail-item trip-card" href="tour-bangkok.html#dates"><button class="save-btn" data-href="tour-bangkok.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="mood-culture-history-bangkok" shape="rounded" radius="14" placeholder="River Kwai Bridge at sunset"></image-slot><span class="date-badge">08 Sep · 01 Dec</span></div><div class="trip-name">曼谷 + 北碧</div><div class="trip-desc">历史、人文与曼谷的活力</div><span class="depart-badge" title="Kota Kinabalu">出发地：亚庇 BKI</span><div class="trip-meta">5D4N · From RM2,490</div></a>
+    <a class="rail-item trip-card" href="tour-beijing.html#dates"><button class="save-btn" data-href="tour-beijing.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="mood-culture-history-beijing" shape="rounded" radius="14" placeholder="Great Wall winding into misty hills"></image-slot><span class="date-badge">07 Nov · 27 Dec · 06 Jan +3</span></div><div class="trip-name">北京</div><div class="trip-desc">中国经典古都，精彩呈现</div><span class="depart-badge" title="Kota Kinabalu">出发地：亚庇 BKI</span><div class="trip-meta">8D6N · From RM4,088</div></a>
+    <a class="rail-item trip-card" href="tour-japan-honshu.html#dates"><button class="save-btn" data-href="tour-japan-honshu.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="mood-culture-history-honshu" shape="rounded" radius="14" placeholder="Fushimi Inari's gate tunnel"></image-slot><span class="date-badge">13 Dec · 06 Feb · 07 Mar</span></div><div class="trip-name">日本本州</div><div class="trip-desc">东京 · 京都 · 大阪 · 奈良 · 镰仓</div><span class="depart-badge" title="Kota Kinabalu">出发地：亚庇 BKI</span><div class="trip-meta">8D6N · From RM6,990</div></a>
+  </div>
+  <div class="wrap" style="margin-bottom:1rem;">
+    <div class="region-title">自由与私家团</div>
+  </div>
+  <div class="rail" style="margin-bottom:2.4rem;">
+    <a class="rail-item trip-card" href="tour-phuket.html#dates"><button class="save-btn" data-href="tour-phuket.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="mood-flexible-private-phuket" shape="rounded" radius="14" placeholder="Phi Phi's turquoise bay"></image-slot><span class="date-badge">每日出发</span></div><div class="trip-name">普吉岛</div><div class="trip-desc">选一座海岛，然后放松</div><span class="ground-badge">纯地接</span><span class="private-badge">私家团</span><div class="trip-meta">4D3N · From RM1,888</div></a>
+    <a class="rail-item trip-card" href="tour-bali-classic.html#dates"><button class="save-btn" data-href="tour-bali-classic.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="mood-flexible-private-baliclassic" shape="rounded" radius="14" placeholder="Tegalalang's layered green rice terraces"></image-slot><span class="date-badge">每日出发</span></div><div class="trip-name">巴厘岛经典行</div><div class="trip-desc">寺庙、梯田与日落海岸</div><span class="ground-badge">纯地接</span><span class="private-badge">私家团</span><div class="trip-meta">4D3N · From RM1,248</div></a>
+    <a class="rail-item trip-card" href="tour-shanghai-private.html#dates"><button class="save-btn" data-href="tour-shanghai-private.html" aria-label="收藏行程"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg></button><div class="thumb-wrap"><image-slot id="mood-flexible-private-shprivate" shape="rounded" radius="14" placeholder="Private car against the Shanghai skyline"></image-slot><span class="date-badge">每日出发</span></div><div class="trip-name">上海、苏州与杭州私家团</div><div class="trip-desc">专属导游，畅游上海与周边</div><span class="ground-badge">纯地接</span><span class="private-badge">私家团</span><div class="trip-meta">6D5N · From RM1,140</div></a>
+  </div>
+</section>
+
+<section class="block">
+  <div class="seasonal">
+    <image-slot id="seasonal-snow" placeholder="Snow Town's snow-laden rooftops lit up at night"></image-slot>
+    <div class="seasonal-tint"></div>
+    <div class="seasonal-copy">
+      <div class="seasonal-kicker">当季推荐</div>
+      <h2 class="seasonal-h">追雪之旅</h2>
+      <p class="seasonal-sub">哈尔滨 + 雪乡、哈尔滨 + 长白山 — 本季精选。</p>
+      <div style="display:flex;gap:.8rem;flex-wrap:wrap;">
+        <a class="btn btn-primary" href="tour-harbin-snowtown.html">哈尔滨 + 雪乡</a>
+        <a class="btn btn-ghost" href="tour-harbin-changbai.html">哈尔滨 + 长白山</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="custom">
+  <div class="custom">
+    <image-slot id="custom-bg" placeholder="A wide, inviting travel scene"></image-slot>
+    <div class="custom-tint"></div>
+    <div class="custom-copy">
+      <h2 class="custom-h">还没找到合适的？</h2>
+      <p class="custom-sub">告诉我们您的需求，我们一起为您打造。</p>
+      <a class="btn btn-primary" href="https://wa.me/60198787790?text=Hi%20Blue%20Sky%20Vacation%2C%20I%27d%20like%20to%20build%20a%20custom%20trip.">定制我的行程</a>
+    </div>
+  </div>
+</section>
+
+<footer style="background:var(--accent-900);color:#fff;padding:3.5rem 0 0;">
+  <div class="wrap" style="display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:2.5rem;padding-bottom:2.8rem;">
+    <div>
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:1rem;">
+        <img src="logo-cloud-wordmark.png" alt="Blue Sky Vacation" style="height:62px;width:auto;">
+      </div>
+      <div style="font-size:.78rem;color:rgba(255,255,255,.7);line-height:1.55;max-width:26ch;">D3-3, Block D, Tanjung Aru Plaza, Jalan Tun Mustapha, Tanjung Aru, 88100 Kota Kinabalu, Sabah</div>
+    </div>
+    <div>
+      <div style="font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:600;margin-bottom:.9rem;">探索</div>
+      <div style="display:flex;flex-direction:column;gap:.6rem;font-size:.82rem;">
+        <a href="home-new-zh.html#trips" style="color:rgba(255,255,255,.85);">行程</a>
+        <a href="home-new-zh.html#destinations" style="color:rgba(255,255,255,.85);">目的地</a>
+        <a href="home-new-zh.html#moods" style="color:rgba(255,255,255,.85);">旅行主题</a>
+        <a href="home-new-zh.html#custom" style="color:rgba(255,255,255,.85);">定制行程</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:600;margin-bottom:.9rem;">联系我们</div>
+      <div style="display:flex;flex-direction:column;gap:.6rem;font-size:.82rem;">
+        <a href="https://wa.me/60198787790" style="color:rgba(255,255,255,.85);">WhatsApp · +6019-878 7790</a>
+        <a href="mailto:info@blueskv.com" style="color:rgba(255,255,255,.85);">info@blueskv.com</a>
+        <a href="#" style="color:rgba(255,255,255,.85);">Instagram</a>
+        <a href="#" style="color:rgba(255,255,255,.85);">Facebook</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap" style="border-top:1px solid rgba(255,255,255,.12);padding:1.4rem 0;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.74rem;color:rgba(255,255,255,.55);">
+    <div>© 2026 Blue Sky Vacation Sdn Bhd · Co. No. 1083236 · KPK/LN:7700</div>
+    <div>源自沙巴亚庇的精心旅程 · 自 2014 年</div>
+  </div>
+</footer>
+
+<div class="bottom-bar">
+  <div class="bottom-bar-inner">
+    <button class="bb-icon-btn" id="searchToggle" aria-label="搜索">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
+    </button>
+    <button class="bb-icon-btn nav-saved" id="savedBtn" aria-label="已收藏行程">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12.1 21.35l-1.1-1.02C5.14 15.36 2 12.5 2 8.99 2 6.5 3.98 4.5 6.5 4.5c1.4 0 2.75.65 3.6 1.68C10.95 5.15 12.3 4.5 13.7 4.5 16.22 4.5 18.2 6.5 18.2 8.99c0 3.51-3.14 6.37-8.9 11.35l-1.1 1.01z"></path></svg>
+      <span class="save-count" id="saveCount" hidden>0</span>
+    </button>
+    <label class="bb-search" id="bbSearch" hidden>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
+      <input type="text" placeholder="搜索目的地或行程">
+    </label>
+    <a href="home-new.html" class="lang-switch">EN</a>
+    <a class="bb-wa" href="https://wa.me/60198787790?text=Hi%20Blue%20Sky%20Vacation%2C%20I%27d%20like%20to%20plan%20a%20trip.">联系我们</a>
+  </div>
+</div>
+
+<div class="saved-modal-backdrop" id="savedModal" hidden>
+  <div class="saved-modal">
+    <div class="saved-modal-head">
+      <h3>已收藏行程</h3>
+      <button class="saved-close" id="savedClose" aria-label="关闭">✕</button>
+    </div>
+    <div id="savedList"></div>
+  </div>
+</div>
+
+<script>
+  window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled', window.scrollY>10);});
+  const burger=document.getElementById('burger'), drawer=document.getElementById('navDrawer');
+  burger.addEventListener('click',()=>{
+    const open=drawer.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+    burger.textContent = open ? '✕' : '☰';
+  });
+  drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{drawer.classList.remove('open');burger.textContent='☰';burger.setAttribute('aria-expanded','false');}));
+
+  document.getElementById('searchToggle').addEventListener('click', () => {
+    const box = document.getElementById('bbSearch');
+    box.hidden = !box.hidden;
+    if (!box.hidden) box.querySelector('input').focus();
+  });
+  const searchInput = document.querySelector('.bb-search input');
+  (function () {
+    var slides = [].slice.call(document.querySelectorAll('.hero-slide'));
+    var dots = [].slice.call(document.querySelectorAll('.hero-dot'));
+    var stage = document.querySelector('.hero-slideshow');
+    if (slides.length < 2) return;
+    var i = 0, timer = null;
+    function go(n) {
+      i = (n + slides.length) % slides.length;
+      slides.forEach(function (s, k) { s.classList.toggle('active', k === i); });
+      dots.forEach(function (d, k) { d.classList.toggle('active', k === i); });
+    }
+    function start() { timer = setInterval(function () { go(i + 1); }, 4800); }
+    function stop() { clearInterval(timer); }
+    dots.forEach(function (d) { d.addEventListener('click', function () { go(parseInt(d.dataset.i, 10)); stop(); start(); }); });
+    stage.addEventListener('mouseenter', stop);
+    stage.addEventListener('mouseleave', start);
+    start();
+  })();
+  const searchable = document.querySelectorAll('.trip-card, .dest-card, .mood-card, .go-card');
+  function goToMatch() {
+    const q = searchInput.value.trim().toLowerCase();
+    if (!q) return;
+    const match = Array.from(searchable).find(c => c.textContent.toLowerCase().includes(q));
+    if (match) {
+      const rail = match.closest('.rail');
+      rail.scrollTo({ left: match.offsetLeft - rail.offsetLeft, behavior: 'smooth' });
+      const y = rail.getBoundingClientRect().top + window.scrollY - 90;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  }
+  searchInput.addEventListener('input', goToMatch);
+  searchInput.addEventListener('keydown', e => { if (e.key === 'Enter') goToMatch(); });
+
+  // saved trips
+  const SAVED_KEY = 'bsv-saved-trips';
+  function getSaved() { try { return JSON.parse(localStorage.getItem(SAVED_KEY)) || []; } catch (e) { return []; } }
+  function setSaved(list) { localStorage.setItem(SAVED_KEY, JSON.stringify(list)); }
+  function updateSaveButtons() {
+    const saved = getSaved().map(s => s.href);
+    document.querySelectorAll('.save-btn').forEach(btn => {
+      btn.classList.toggle('saved', saved.includes(btn.dataset.href));
+    });
+    const count = document.getElementById('saveCount');
+    const n = getSaved().length;
+    count.textContent = n;
+    count.hidden = n === 0;
+  }
+  document.querySelectorAll('.save-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault(); e.stopPropagation();
+      const href = btn.dataset.href;
+      const card = btn.closest('.trip-card, .go-card');
+      const name = card.querySelector('.trip-name, .go-name').textContent;
+      const meta = card.querySelector('.trip-meta, .go-meta').textContent;
+      let saved = getSaved();
+      if (saved.some(s => s.href === href)) {
+        saved = saved.filter(s => s.href !== href);
+      } else {
+        saved.push({ href, name, meta });
+      }
+      setSaved(saved);
+      updateSaveButtons();
+      renderSavedList();
+    });
+  });
+  function renderSavedList() {
+    const list = document.getElementById('savedList');
+    const saved = getSaved();
+    if (!saved.length) { list.innerHTML = '<div class="saved-empty">No saved trips yet. Tap the heart on any trip to save it here.</div>'; return; }
+    list.innerHTML = saved.map(s => `
+      <div class="saved-row">
+        <div><a href="${s.href}">${s.name}</a><div class="saved-meta">${s.meta}</div></div>
+        <button class="saved-remove" data-href="${s.href}">移除</button>
+      </div>`).join('');
+    list.querySelectorAll('.saved-remove').forEach(b => b.addEventListener('click', () => {
+      setSaved(getSaved().filter(s => s.href !== b.dataset.href));
+      updateSaveButtons();
+      renderSavedList();
+    }));
+  }
+  const savedModal = document.getElementById('savedModal');
+  document.getElementById('savedBtn').addEventListener('click', () => { renderSavedList(); savedModal.hidden = false; });
+  document.getElementById('savedClose').addEventListener('click', () => { savedModal.hidden = true; });
+  savedModal.addEventListener('click', e => { if (e.target === savedModal) savedModal.hidden = true; });
+  updateSaveButtons();
+</script>
+</body>
+</html>

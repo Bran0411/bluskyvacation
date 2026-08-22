@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="桂林与阳朔 — 超爽、玩乐、桂冠天下三种行程。喀斯特山水、漓江、热气球、遇龙河竹筏、侗族村寨。亚庇直飞包机。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="桂林与阳朔 | 蓝天假期">
+<meta property="og:description" content="桂林与阳朔 — 超爽、玩乐、桂冠天下三种行程。喀斯特山水、漓江、热气球、遇龙河竹筏、侗族村寨。亚庇直飞包机。">
+<meta property="og:url" content="https://bran0411.github.io/bluskyvacation/tour-guilin-zh.html">
+<meta property="og:image" content="https://bran0411.github.io/bluskyvacation/logo-mark.png">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="蓝天假期">
+<title>桂林与阳朔 | 蓝天假期</title>
+<link rel="icon" href="logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --sky: #2f9be0; --jade: #1a7a5e; --sand: #F7F3EE;
+    --charcoal: #1A1A1A; --mid: #4A4A4A; --light-line: #E2DDD8;
+    --white: #FFFFFF; --accent: #C9793A;
+  }
+  html { scroll-behavior: smooth; }
+  html, body { overflow-x: hidden; max-width: 100%; }
+  body { font-family: 'Noto Sans SC', 'Plus Jakarta Sans', sans-serif; color: var(--charcoal); background: var(--white); font-weight: 300; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 3rem; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.07); }
+  .nav-logo { font-family: 'Manrope', sans-serif; font-size: 1.3rem; font-weight: 600; color: var(--sky); text-decoration: none; white-space: nowrap; display: flex; align-items: center; flex-shrink: 0; }
+  .nav-logo span { color: var(--accent); }
+  .nav-back { font-size: 0.82rem; color: var(--mid); text-decoration: none; }
+  .nav-back:hover { color: var(--sky); }
+
+  .hero { min-height: 90vh; background: linear-gradient(120deg, #0d2e22 0%, #12503c 45%, #1a7a5e 75%, #2fb08a 100%); display: flex; align-items: center; padding-top: 70px; position: relative; overflow: hidden; }
+  .hero-content { padding: 5rem; max-width: 700px; position: relative; z-index: 2; }
+  .hero-badges { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
+  .badge { padding: 0.3rem 0.8rem; border-radius: 2px; font-size: 0.76rem; font-weight: 500; letter-spacing: 0.02em; }
+  .badge-jade { background: var(--jade); color: white; white-space: nowrap; }
+  .badge-days { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.18); white-space: nowrap; }
+  .hero-title { font-family: 'Manrope', 'Noto Sans SC', sans-serif; font-size: clamp(2.4rem, 4vw, 4rem); line-height: 1.3; font-weight: 700; color: var(--white); margin-bottom: 0.7rem; }
+  .hero-sub { font-family: 'Manrope', 'Noto Sans SC', sans-serif; font-size: 1.1rem; color: rgba(255,255,255,0.5); margin-bottom: 1.5rem; }
+  .hero-desc { font-size: 0.95rem; color: rgba(255,255,255,0.65); line-height: 2; max-width: 520px; margin-bottom: 2.5rem; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-jade { background: var(--jade); color: white; padding: 0.9rem 2rem; text-decoration: none; font-size: 0.88rem; font-weight: 500; border-radius: 2px; transition: opacity 0.2s; display: inline-block; }
+  .btn-jade:hover { opacity: 0.88; }
+  .btn-outline { border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.8); padding: 0.9rem 2rem; text-decoration: none; font-size: 0.88rem; border-radius: 2px; display: inline-block; transition: border-color 0.2s; }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.6); }
+  .hero-route { position: absolute; right: 0; top: 0; bottom: 0; width: 40%; display: flex; flex-direction: column; justify-content: center; padding: 3rem; gap: 0.75rem; }
+  .route-stop { background: rgba(9,28,20,0.42); backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.18); border-radius: 3px; padding: 0.65rem 1rem; display: flex; align-items: center; gap: 0.75rem; }
+  .route-icon { font-size: 1rem; flex-shrink: 0; }
+  .route-name { font-size: 0.86rem; font-weight: 500; line-height: 1.4; color: rgba(255,255,255,0.92); margin-bottom: 0.3rem; }
+  .route-sub { font-size: 0.76rem; line-height: 1.3; color: rgba(255,255,255,0.6); }
+
+  .packages-section { padding: 5rem 5rem 3rem; background: var(--sand); }
+  .section-eyebrow { font-size: 0.8rem; color: var(--accent); font-weight: 600; margin-bottom: 0.8rem; }
+  .section-title { font-family: 'Manrope', 'Noto Sans SC', sans-serif; font-size: clamp(1.7rem, 2.5vw, 2.3rem); font-weight: 700; line-height: 1.4; margin-bottom: 2rem; }
+  .pkg-tabs { display: flex; gap: 0; margin-bottom: 2.5rem; border: 1px solid var(--light-line); border-radius: 3px; overflow: hidden; }
+  .pkg-tab { flex: 1; padding: 1.25rem 1.5rem; cursor: pointer; background: var(--white); border-right: 1px solid var(--light-line); transition: background 0.2s; text-align: center; }
+  .pkg-tab:last-child { border-right: none; }
+  .pkg-tab.active { background: var(--charcoal); }
+  .pkg-tab-season { font-size: 0.78rem; color: var(--mid); font-weight: 500; margin-bottom: 0.25rem; }
+  .pkg-tab.active .pkg-tab-season { color: rgba(255,255,255,0.45); }
+  .pkg-tab-name { font-family: 'Manrope', 'Noto Sans SC', sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--charcoal); }
+  .pkg-tab.active .pkg-tab-name { color: white; }
+  .pkg-tab-days { font-size: 0.8rem; color: var(--mid); margin-top: 0.2rem; }
+  .pkg-tab.active .pkg-tab-days { color: rgba(255,255,255,0.5); }
+  .pkg-tab-shop { font-size: 0.7rem; font-weight: 600; margin-top: 0.5rem; padding: 0.2rem 0.6rem; border-radius: 100px; display: inline-block; }
+  .pkg-tab-shop.has-shop { background: rgba(201,121,58,0.12); color: var(--accent); }
+  .pkg-tab-shop.no-shop { background: rgba(26,122,94,0.12); color: var(--jade); }
+  .pkg-tab.active .pkg-tab-shop.has-shop { background: rgba(201,121,58,0.22); color: #e2a06a; }
+  .pkg-tab.active .pkg-tab-shop.no-shop { background: rgba(47,176,138,0.22); color: #6fd8b5; }
+  .pkg-content { display: none; }
+  .pkg-content.active { display: block; }
+
+  .pkg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem; }
+  .pkg-card { background: var(--white); border-radius: 3px; padding: 2rem; border: 1px solid var(--light-line); }
+  .pkg-card-label { font-size: 0.8rem; color: var(--mid); font-weight: 600; margin-bottom: 1rem; }
+  .pkg-highlight-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .pkg-highlight-list li { font-size: 0.9rem; color: var(--mid); display: flex; gap: 0.6rem; align-items: flex-start; line-height: 1.7; }
+  .ph-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 8px; }
+
+  .price-band { background: linear-gradient(150deg,#0d3a2a,#1a7a5e 70%,#2fb08a); color: #fff; border-radius: 4px; padding: 1.75rem 2rem; display: flex; flex-wrap: wrap; gap: 2rem 3rem; align-items: center; margin-bottom: 1rem; }
+  .price-band b { font-family: 'Manrope', sans-serif; font-size: 2.2rem; font-weight: 700; display: block; line-height: 1; }
+  .price-band span { font-size: 0.82rem; color: rgba(255,255,255,0.7); }
+  .price-band .mini b { font-size: 1.3rem; }
+
+  table.fare { width: 100%; min-width: 480px; border-collapse: collapse; font-size: 0.9rem; }
+  table.fare thead tr { background: var(--charcoal); color: #fff; }
+  table.fare th { padding: 0.7rem 1rem; text-align: left; font-size: 0.8rem; font-weight: 600; }
+  table.fare td { padding: 0.65rem 1rem; border-bottom: 1px solid var(--light-line); }
+  .fare-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 1rem; border: 1px solid var(--light-line); border-radius: 3px; }
+  .fare-note { font-size: 0.86rem; color: var(--mid); background: var(--white); padding: 1rem 1.25rem; border-radius: 3px; border: 1px solid var(--light-line); }
+  .video-card { position: relative; border-radius: 6px; overflow: hidden; margin-top: 1.25rem; box-shadow: 0 10px 26px rgba(20,50,40,0.12); }
+  .video-card video { width: 100%; display: block; max-height: 420px; object-fit: cover; }
+  .video-card-tag { position: absolute; top: 1rem; left: 1rem; background: rgba(13,58,42,0.75); backdrop-filter: blur(4px); color: #fff; font-size: 0.76rem; font-weight: 600; padding: 0.35rem 0.8rem; border-radius: 100px; }
+
+  .highlights-section { padding: 5rem 5rem; }
+  .highlights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
+  .hl-card { border: 1px solid var(--light-line); border-radius: 3px; overflow: hidden; }
+  .hl-top { height: 180px; background: linear-gradient(150deg,#0d3a2a,#1a7a5e); display: flex; align-items: center; justify-content: center; }
+  .hl-top span { font-size: 0.76rem; color: rgba(255,255,255,0.55); text-align: center; padding: 0 1rem; }
+  .hl-body { padding: 1.5rem; }
+  .hl-icon { font-size: 1.6rem; margin-bottom: 0.75rem; }
+  .hl-tag { font-size: 0.76rem; color: var(--mid); font-weight: 500; margin-bottom: 0.4rem; }
+  .hl-name { font-family: 'Manrope', 'Noto Sans SC', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .hl-desc { font-size: 0.86rem; color: var(--mid); line-height: 1.8; }
+
+  .itinerary-section { padding: 5rem 5rem; background: var(--sand); }
+  .itin-tabs { display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  .itin-tab { padding: 0.5rem 1.25rem; border: 1px solid var(--light-line); border-radius: 2px; font-size: 0.84rem; font-weight: 500; cursor: pointer; background: var(--white); color: var(--mid); transition: all 0.2s; }
+  .itin-tab.active { background: var(--charcoal); color: white; border-color: var(--charcoal); }
+  .itin-content { display: none; }
+  .itin-content.active { display: block; }
+  .day-list { display: flex; flex-direction: column; gap: 0.75rem; }
+  .day-item { background: var(--white); border-radius: 3px; overflow: hidden; border: 1px solid var(--light-line); }
+  .day-header { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem; cursor: pointer; }
+  .day-header:hover { background: rgba(0,0,0,0.02); }
+  .day-num { font-size: 0.76rem; font-weight: 600; padding: 0.25rem 0.6rem; border-radius: 2px; white-space: nowrap; flex-shrink: 0; color: white; background: var(--jade); }
+  .day-route { font-size: 0.82rem; color: var(--mid); flex-shrink: 0; }
+  .day-title { font-size: 0.9rem; font-weight: 500; flex: 1; }
+  .day-chevron { font-size: 0.75rem; color: var(--mid); transition: transform 0.3s; }
+  .day-item.open .day-chevron { transform: rotate(180deg); }
+  .day-body { display: none; border-top: 1px solid var(--light-line); padding: 1.25rem; background: var(--sand); }
+  .day-item.open .day-body { display: block; }
+  .day-stops { display: flex; flex-direction: column; gap: 0.75rem; }
+  .stop { display: flex; gap: 0.75rem; align-items: flex-start; }
+  .stop-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 7px; background: var(--jade); }
+  .stop-text { font-size: 0.88rem; color: var(--charcoal); line-height: 1.75; }
+  .stop-text strong { font-weight: 600; }
+  .stop-text span { color: var(--mid); font-size: 0.82rem; display: block; margin-top: 0.1rem; }
+  .hotel-line { display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(26,122,94,0.08); border: 1px solid rgba(26,122,94,0.18); border-radius: 2px; padding: 0.2rem 0.6rem; font-size: 0.76rem; color: var(--jade); font-weight: 500; margin-top: 0.75rem; }
+  .meal-line { display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(201,121,58,0.08); border: 1px solid rgba(201,121,58,0.18); border-radius: 2px; padding: 0.2rem 0.6rem; font-size: 0.76rem; color: var(--accent); font-weight: 500; margin-top: 0.5rem; margin-right: 0.4rem; }
+
+  .food-section { padding: 4rem 5rem; background: var(--charcoal); color: white; }
+  .food-section .section-title { color: white; }
+  .food-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2rem; }
+  .food-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 3px; padding: 1.25rem; text-align: center; }
+  .food-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .food-name { font-size: 0.86rem; font-weight: 500; color: rgba(255,255,255,0.9); margin-bottom: 0.25rem; }
+  .food-detail { font-size: 0.76rem; color: rgba(255,255,255,0.45); line-height: 1.6; }
+
+  .practical-section { padding: 4rem 5rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
+  .prac-card { padding: 1.75rem; border: 1px solid var(--light-line); border-radius: 3px; }
+  .prac-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+  .prac-title { font-size: 0.8rem; color: var(--mid); font-weight: 600; margin-bottom: 0.6rem; }
+  .prac-body { font-size: 0.88rem; color: var(--mid); line-height: 1.8; }
+
+  .cta-section { background: linear-gradient(135deg, #0d3a2a 0%, #1a7a5e 100%); color: white; padding: 5rem; text-align: center; }
+  .cta-section .section-title { color: white; margin-bottom: 1rem; }
+  .cta-section p { color: rgba(255,255,255,0.6); margin-bottom: 2rem; max-width: 480px; margin-left: auto; margin-right: auto; font-size: 1rem; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-white { background: white; color: var(--charcoal); padding: 0.9rem 2.5rem; text-decoration: none; font-size: 0.88rem; font-weight: 500; border-radius: 2px; display: inline-block; }
+  .btn-whatsapp { background: #25D366; color: white; padding: 0.9rem 2.5rem; text-decoration: none; font-size: 0.88rem; font-weight: 500; border-radius: 2px; display: inline-block; }
+
+  footer { background: #0a0a0a; color: rgba(255,255,255,0.35); padding: 2rem 5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; }
+  .footer-logo { font-family: 'Manrope', sans-serif; font-size: 1.1rem; font-weight: 600; color: rgba(255,255,255,0.75); }
+  .footer-logo span { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .hero-content { padding: 3rem 1.5rem; }
+    .hero-route { display: none; }
+    .packages-section, .highlights-section, .itinerary-section, .cta-section { padding: 3.5rem 1.5rem; }
+    .food-section, .practical-section { padding: 3rem 1.5rem; }
+    .pkg-tabs { flex-direction: column; }
+    .pkg-tab { border-right: none; border-bottom: 1px solid var(--light-line); }
+    .pkg-grid, .highlights-grid, .food-grid, .practical-section { grid-template-columns: 1fr; }
+    .day-header { flex-wrap: wrap; row-gap: 0.4rem; }
+    .day-title { flex-basis: 100%; order: 4; }
+    .day-chevron { margin-left: auto; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+  }
+  @media (max-width: 480px) {
+    nav { padding: 0.8rem 1rem; }
+    .nav-logo { font-size: 0.85rem !important; }
+    .nav-logo img { width: 24px !important; height: 24px !important; margin-right: 0.35rem !important; }
+    nav > div { gap: 0.5rem !important; }
+    .nav-back { font-size: 0.74rem !important; }
+    .nav-alltours { display: none; }
+    .nav-cta-btn { font-size: 0.74rem !important; padding: 0.45rem 0.7rem !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index-zh.html" class="nav-logo"><img src="logo-mark.png" alt="" style="height:30px;width:30px;border-radius:7px;object-fit:cover;vertical-align:middle;margin-right:0.55rem;">Blue Sky <span>Vacation</span></a>
+  <div style="display:flex;align-items:center;gap:1.25rem;">
+    <a href="tour-guilin.html" class="nav-back">EN</a>
+    <a href="index-zh.html" class="nav-back nav-alltours">← 所有行程</a>
+    <a href="https://wa.me/60198787790?text=您好,我想了解桂林的行程。" class="nav-cta-btn" style="background:#16384f;color:#fff;text-decoration:none;font-size:0.86rem;font-weight:600;padding:0.55rem 1.1rem;border-radius:100px;white-space:nowrap;">规划我的行程</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-badges">
+      <span class="badge badge-jade">包机 · 亚庇直飞</span>
+      <span class="badge badge-days">超爽 · 玩乐 · 桂冠天下</span>
+    </div>
+    <h1 class="hero-title">桂林与阳朔</h1>
+    <p class="hero-sub">桂林山水甲天下</p>
+    <p class="hero-desc">喀斯特山峰拔地而起,漓江蜿蜒其间;热气球缓缓升空,俯瞰阳朔十里画廊;遇龙河上竹筏悠然漂流;侗族村寨依山而建,古朴而生动。亚庇直飞包机,轻松抵达。</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/60198787790?text=您好,我对桂林的行程感兴趣。" class="btn-jade">立即咨询</a>
+      <a href="#packages" class="btn-outline">比较行程</a>
+    </div>
+  </div>
+  <div class="hero-route">
+    <div class="route-stop"><div class="route-icon">🐘</div><div><div class="route-name">象鼻山</div><div class="route-sub">桂林城市地标</div></div></div>
+    <div class="route-stop"><div class="route-icon">🎈</div><div><div class="route-name">热气球体验+航拍</div><div class="route-sub">阳朔十里画廊</div></div></div>
+    <div class="route-stop"><div class="route-icon">🎋</div><div><div class="route-name">遇龙河竹筏漂流</div><div class="route-sub">「小漓江」</div></div></div>
+    <div class="route-stop"><div class="route-icon">🥁</div><div><div class="route-name">马岭鼓寨</div><div class="route-sub">侗族文化与歌谣</div></div></div>
+    <div class="route-stop"><div class="route-icon">🏮</div><div><div class="route-name">西街</div><div class="route-sub">阳朔千年古街</div></div></div>
+  </div>
+</div>
+
+<section class="packages-section" id="packages">
+  <p class="section-eyebrow">三种方式,深度体验桂林</p>
+  <h2 class="section-title">选择您的行程</h2>
+
+  <div class="pkg-tabs">
+    <div class="pkg-tab active" onclick="showPkg('awesome')">
+      <div class="pkg-tab-season">Awesome</div>
+      <div class="pkg-tab-name">超爽桂林</div>
+      <div class="pkg-tab-days">5天4晚</div>
+      <div class="pkg-tab-shop has-shop">含购物店</div>
+    </div>
+    <div class="pkg-tab" onclick="showPkg('wow')">
+      <div class="pkg-tab-season">Wow</div>
+      <div class="pkg-tab-name">玩乐桂林</div>
+      <div class="pkg-tab-days">6天5晚</div>
+      <div class="pkg-tab-shop has-shop">含购物店</div>
+    </div>
+    <div class="pkg-tab" onclick="showPkg('crown')">
+      <div class="pkg-tab-season">Crown</div>
+      <div class="pkg-tab-name">桂冠天下</div>
+      <div class="pkg-tab-days">6天5晚</div>
+      <div class="pkg-tab-shop no-shop">无购物店</div>
+    </div>
+  </div>
+
+  <!-- AWESOME -->
+  <div class="pkg-content active" id="pkg-awesome">
+    <div class="pkg-grid">
+      <div class="pkg-card">
+        <div class="pkg-card-label">行程亮点</div>
+        <ul class="pkg-highlight-list">
+          <li><div class="ph-dot"></div>热气球体验+360°航拍,俯瞰阳朔十里画廊</li>
+          <li><div class="ph-dot"></div>复古边三轮挎斗车骑行,穿行遇龙河畔村落(赠送航拍视频)</li>
+          <li><div class="ph-dot"></div>遇龙河多人竹筏漂流</li>
+          <li><div class="ph-dot"></div>东漓古村 — 门簪拓印、扯腐竹体验、现磨豆浆品尝</li>
+          <li><div class="ph-dot"></div>靖江王府 — 拓福体验+科举考试模拟互动</li>
+          <li><div class="ph-dot"></div>观景下午茶 &amp; 万达广场购物</li>
+        </ul>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-card-label">酒店与须知</div>
+        <ul class="pkg-highlight-list">
+          <li><div class="ph-dot"></div>携程4钻酒店 — 桂林民丰或笙品或同级,阳朔华美达或万枫或同级</li>
+          <li><div class="ph-dot"></div>全程餐食按行程安排 — 餐标RMB40(10人一桌),特色海鲜自助烧烤</li>
+          <li><div class="ph-dot"></div>购物店:丝绸、茶叶(或保健生活馆)</li>
+          <li><div class="ph-dot"></div>推荐自费:桂林千古情或印象刘三姐 + 富里桥 + 月亮山(¥300/人)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="price-band">
+      <div><b>RM 2,499</b><span>起价 · 每人双人房价格</span></div>
+      <div class="mini"><b>RM 380</b><span>单人房差</span></div>
+      <div class="mini"><b>5天4晚</b><span>亚庇出发</span></div>
+      <div class="mini"><b>RM 300</b><span>每人订金</span></div>
+    </div>
+    <div class="fare-wrap">
+      <table class="fare">
+        <thead><tr><th>出发日期</th><th>团费</th><th>备注</th></tr></thead>
+        <tbody>
+          <tr><td>2026年10月26日</td><td><strong>RM 2,499</strong></td><td>首航优惠</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td>11月9日、23日</td><td><strong>RM 2,599</strong></td><td>—</td></tr>
+          <tr><td>12月7日</td><td><strong>RM 2,799</strong></td><td>—</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td>12月21日</td><td><strong>RM 2,899</strong></td><td>年终旺季</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fare-note">已含机场税、机上用餐、20KG行李津贴、司机导游小费。不含旅游保险、行程未列明餐食、单人房差。孩童(占床/加床)与成人同价;不占床减RM100;婴儿RM400 nett。全程以华语导览 — 私人团如需英语导游,加收RM50/人。外国人附加费RM300。出发前35天须缴清全额团费。</p>
+    <div class="video-card">
+      <span class="video-card-tag">超爽桂林实景视频</span>
+      <video autoplay muted loop playsinline><source src="guilin-video-awesome.mp4" type="video/mp4"></video>
+    </div>
+  </div>
+
+  <!-- WOW -->
+  <div class="pkg-content" id="pkg-wow">
+    <div class="pkg-grid">
+      <div class="pkg-card">
+        <div class="pkg-card-label">行程亮点 — 超爽桂林基础上加码</div>
+        <ul class="pkg-highlight-list">
+          <li><div class="ph-dot"></div>龙胜布尼梯田 — 上梁仪式、非遗打糍粑、拦门竹竿舞</li>
+          <li><div class="ph-dot"></div>季节采摘 — 橘子、柿子、草莓等生态果园鲜果采摘</li>
+          <li><div class="ph-dot"></div>阳朔多留一天一夜,节奏更从容</li>
+          <li><div class="ph-dot"></div>热气球+航拍、挎斗车骑行、遇龙河竹筏</li>
+          <li><div class="ph-dot"></div>马岭鼓寨侗族大歌、靖江王府</li>
+        </ul>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-card-label">酒店与须知</div>
+        <ul class="pkg-highlight-list">
+          <li><div class="ph-dot"></div>携程4钻酒店 — 桂林民丰或笙品,阳朔华美达或万枫或同级</li>
+          <li><div class="ph-dot"></div>全程餐食按行程安排 — 餐标RMB40(10人一桌),特色海鲜自助烧烤</li>
+          <li><div class="ph-dot"></div>购物店:丝绸、茶叶(或保健生活馆)</li>
+          <li><div class="ph-dot"></div>推荐自费:桂林千古情或印象刘三姐 + 富里桥 + 月亮山(¥300/人)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="price-band">
+      <div><b>RM 2,699</b><span>起价 · 每人双人房价格</span></div>
+      <div class="mini"><b>RM 480</b><span>单人房差</span></div>
+      <div class="mini"><b>6天5晚</b><span>亚庇出发</span></div>
+      <div class="mini"><b>RM 300</b><span>每人订金</span></div>
+    </div>
+    <div class="fare-wrap">
+      <table class="fare">
+        <thead><tr><th>出发日期</th><th>团费</th><th>备注</th></tr></thead>
+        <tbody>
+          <tr><td>10月30日</td><td><strong>RM 2,699</strong></td><td>促销</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td>11月4日</td><td><strong>RM 2,899</strong></td><td>—</td></tr>
+          <tr><td>11月13日、18日、27日</td><td><strong>RM 2,799</strong></td><td>—</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td>12月2日</td><td><strong>RM 2,899</strong></td><td>—</td></tr>
+          <tr><td>12月11日</td><td><strong>RM 3,099</strong></td><td>—</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td>12月16日、25日</td><td><strong>RM 3,199</strong></td><td>年终旺季</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fare-note">已含机场税、机上用餐、20KG行李津贴、司机导游小费。不含旅游保险、行程未列明餐食、单人房差。孩童(占床/加床)与成人同价;不占床减RM100;婴儿RM400 nett。全程以华语导览 — 私人团如需英语导游,加收RM50/人。外国人附加费RM300。出发前35天须缴清全额团费。</p>
+    <div class="video-card">
+      <span class="video-card-tag">玩乐桂林实景视频</span>
+      <video autoplay muted loop playsinline><source src="guilin-video-wow.mp4" type="video/mp4"></video>
+    </div>
+  </div>
+
+  <!-- CROWN -->
+  <div class="pkg-content" id="pkg-crown">
+    <div class="pkg-grid">
+      <div class="pkg-card">
+        <div class="pkg-card-label">行程亮点 — 最丰富的行程</div>
+        <ul class="pkg-highlight-list">
+          <li><div class="ph-dot"></div>三江程阳八寨 + 「坐妹」侗族风情实景演艺</li>
+          <li><div class="ph-dot"></div>三江鼓楼 — 高42.6米,不用一钉一铆</li>
+          <li><div class="ph-dot"></div>东漓古村4项特色体验,含蜡染体验</li>
+          <li><div class="ph-dot"></div>桂花公社DIY — 亲手制作桂花糕、桂花茶带回家</li>
+          <li><div class="ph-dot"></div>热气球+航拍、挎斗车骑行、遇龙河竹筏</li>
+          <li><div class="ph-dot"></div>本行程无购物店安排</li>
+        </ul>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-card-label">酒店与须知</div>
+        <ul class="pkg-highlight-list">
+          <li><div class="ph-dot"></div>携程4+5钻酒店 — 桂林笙品(2晚)、阳朔万枫(2晚)</li>
+          <li><div class="ph-dot"></div>升级1晚桂林漓江大瀑布酒店 — 桂林地标5星酒店</li>
+          <li><div class="ph-dot"></div>特色餐饮 — 岩洞餐厅、苏格里岛海鲜自助烧烤</li>
+          <li><div class="ph-dot"></div>推荐自费:桂林千古情或印象刘三姐 + 富里桥 + 月亮山(¥300/人)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="price-band">
+      <div><b>RM 3,199</b><span>起价 · 每人双人房价格</span></div>
+      <div class="mini"><b>RM 550</b><span>单人房差</span></div>
+      <div class="mini"><b>6天5晚</b><span>亚庇出发</span></div>
+      <div class="mini"><b>RM 300</b><span>每人订金</span></div>
+    </div>
+    <div class="fare-wrap">
+      <table class="fare">
+        <thead><tr><th>出发日期</th><th>团费</th><th>备注</th></tr></thead>
+        <tbody>
+          <tr><td>10月30日</td><td><strong>RM 3,199</strong></td><td>促销</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td>11月4日</td><td><strong>RM 3,399</strong></td><td>—</td></tr>
+          <tr><td>11月13日、18日、27日</td><td><strong>RM 3,299</strong></td><td>—</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td>12月2日</td><td><strong>RM 3,399</strong></td><td>—</td></tr>
+          <tr><td>12月11日</td><td><strong>RM 3,599</strong></td><td>—</td></tr>
+          <tr style="background:rgba(0,0,0,0.02);"><td>12月16日、25日</td><td><strong>RM 3,699</strong></td><td>年终旺季</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fare-note">已含机场税、机上用餐、20KG行李津贴、司机导游小费。不含旅游保险、行程未列明餐食、单人房差。孩童(占床/加床)与成人同价;不占床减RM100;婴儿RM400 nett。全程以华语导览 — 私人团如需英语导游,加收RM50/人。外国人附加费RM300。出发前35天须缴清全额团费。</p>
+    <div class="video-card">
+      <span class="video-card-tag">桂冠天下实景视频</span>
+      <video autoplay muted loop playsinline><source src="guilin-video-crown.mp4" type="video/mp4"></video>
+    </div>
+  </div>
+
+  <div style="margin-top:2.5rem;">
+    <div class="section-eyebrow" style="margin-bottom:1.25rem;">预订须知 — 所有行程适用</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
+      <div style="background:var(--white);border:1px solid var(--light-line);border-radius:3px;padding:1.4rem 1.5rem;">
+        <div style="font-size:0.8rem;color:var(--jade);font-weight:700;margin-bottom:0.7rem;">儿童与婴儿</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.45rem;font-size:0.88rem;color:var(--mid);line-height:1.6;">
+          <li><strong style="color:var(--charcoal);font-weight:600;">占床/加床</strong> — 与成人同价</li>
+          <li><strong style="color:var(--charcoal);font-weight:600;">不占床</strong> — 减RM100</li>
+          <li><strong style="color:var(--charcoal);font-weight:600;">婴儿</strong> — RM400 nett(23个月以下)</li>
+        </ul>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--light-line);border-radius:3px;padding:1.4rem 1.5rem;">
+        <div style="font-size:0.8rem;color:var(--jade);font-weight:700;margin-bottom:0.7rem;">航班</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.45rem;font-size:0.88rem;color:var(--mid);line-height:1.6;">
+          <li>亚庇 ✈ 桂林两江国际机场,直飞包机</li>
+          <li>去程约1100–1500 · 回程约1600–2000(预估)</li>
+          <li>含20KG托运行李</li>
+        </ul>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--light-line);border-radius:3px;padding:1.4rem 1.5rem;">
+        <div style="font-size:0.8rem;color:var(--jade);font-weight:700;margin-bottom:0.7rem;">预订与团体</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.45rem;font-size:0.88rem;color:var(--mid);line-height:1.6;">
+          <li><strong style="color:var(--charcoal);font-weight:600;">RM 300</strong> 每人订金(不可退还)</li>
+          <li>最低10成人成团 · 16人以上配领队</li>
+          <li>出发前35天须缴清全额团费</li>
+        </ul>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--light-line);border-radius:3px;padding:1.4rem 1.5rem;">
+        <div style="font-size:0.8rem;color:var(--jade);font-weight:700;margin-bottom:0.7rem;">语言与独立包团</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.45rem;font-size:0.88rem;color:var(--mid);line-height:1.6;">
+          <li>标准配置为华语导游</li>
+          <li>英语导游:加收RM50/人</li>
+          <li>可申请独立包团(20+1)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="highlights-section">
+  <p class="section-eyebrow">必游亮点</p>
+  <h2 class="section-title">喀斯特山水,<br>与鲜活的人文风情。</h2>
+  <div class="highlights-grid">
+    <div class="hl-card">
+      <div class="hl-top"><span>象鼻山照片待补充</span></div>
+      <div class="hl-body">
+        <div class="hl-icon">🐘</div>
+        <div class="hl-tag">桂林市区</div>
+        <h3 class="hl-name">象鼻山</h3>
+        <p class="hl-desc">桂林城市地标 — 整座山形似一头巨象俯身漓江饮水,象鼻与象身之间的水月洞造就了「象山水月」的经典奇景。园区内还有「桂林山水甲天下」石刻真迹。</p>
+      </div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-top"><span>日月双塔照片待补充</span></div>
+      <div class="hl-body">
+        <div class="hl-icon">🌇</div>
+        <div class="hl-tag">桂林市区 · 夜景</div>
+        <h3 class="hl-name">日月双塔</h3>
+        <p class="hl-desc">世界第一高铜塔与最高琉璃塔,两塔隔杉湖相望。白日恢弘雅致,夜间灯光璀璨倒映湖面,是桂林夜景最具代表性的打卡点。</p>
+      </div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-top"><span>热气球照片待补充</span></div>
+      <div class="hl-body">
+        <div class="hl-icon">🎈</div>
+        <div class="hl-tag">阳朔</div>
+        <h3 class="hl-name">热气球体验 + 航拍</h3>
+        <p class="hl-desc">在专业操作员陪同下搭乘热气球 — 固定不漂移,模式平稳安全,以高空全景视角俯瞰阳朔十里画廊的峰林与田园风光,搭配专业航拍定格山水大片。</p>
+      </div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-top"><span>西街照片待补充</span></div>
+      <div class="hl-body">
+        <div class="hl-icon">🏮</div>
+        <div class="hl-tag">阳朔</div>
+        <h3 class="hl-name">西街</h3>
+        <p class="hl-desc">阳朔千年古街,青石板路串联中西特色商铺、酒吧与手作店。白天文艺安静,夜晚热闹有烟火气,是最具活力的核心街区。</p>
+      </div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-top"><span>遇龙河照片待补充</span></div>
+      <div class="hl-body">
+        <div class="hl-icon">🎋</div>
+        <div class="hl-tag">阳朔</div>
+        <h3 class="hl-name">遇龙河竹筏漂流</h3>
+        <p class="hl-desc">乘坐多人竹筏漫游有「小漓江」之称的遇龙河,河水清澈见底,两岸峰林田园相伴,人工撑筏节奏舒缓不颠簸,沉浸式体验悠闲惬意。</p>
+      </div>
+    </div>
+    <div class="hl-card">
+      <div class="hl-top"><span>侗族村寨照片待补充</span></div>
+      <div class="hl-body">
+        <div class="hl-icon">🥁</div>
+        <div class="hl-tag">三江 / 龙胜</div>
+        <h3 class="hl-name">马岭鼓寨与侗族文化</h3>
+        <p class="hl-desc">原生态侗族村寨,依山而建,完整保留侗族鼓楼、吊脚楼、风雨桥等特色建筑,聆听被誉为「天籁之音」的侗族大歌。桂冠天下行程更增加三江鼓楼与程阳八寨。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="itinerary-section" id="itinerary">
+  <p class="section-eyebrow">逐日行程</p>
+  <h2 class="section-title">完整行程细节</h2>
+  <div class="itin-tabs">
+    <div class="itin-tab active" onclick="showItin('awesome')">超爽桂林 · 5天4晚</div>
+    <div class="itin-tab" onclick="showItin('wow')">玩乐桂林 · 6天5晚</div>
+    <div class="itin-tab" onclick="showItin('crown')">桂冠天下 · 6天5晚</div>
+  </div>
+
+  <!-- AWESOME -->
+  <div class="itin-content active" id="itin-awesome">
+    <div class="day-list">
+      <div class="day-item open">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num">D1</span><span class="day-route">亚庇 → 桂林</span>
+          <span class="day-title">象鼻山 · 日月双塔</span><span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>象鼻山</strong><span>桂林城市地标,象征桂林之城。</span></div></div>
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>日月双塔(远观)</strong><span>世界第一高铜塔与最高琉璃塔,夜景璀璨。</span></div></div>
+          <div class="meal-line">机上用餐 · 晚餐</div>
+          <div class="hotel-line">🏨 桂林民丰酒店或同级</div>
+        </div></div>
+      </div>
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num">D2</span><span class="day-route">桂林 → 阳朔 · 2小时</span>
+          <span class="day-title">靖江王府 · 热气球体验 · 西街</span><span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>靖江王府</strong><span>明代藩王府邸 — 体验拓福手艺与科举考试模拟互动。</span></div></div>
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>★ 热气球体验+360°航拍</strong><span>固定不漂移,俯瞰阳朔十里画廊。</span></div></div>
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>西街</strong><span>千年古街,夜晚最具活力。</span></div></div>
+          <div class="meal-line">早餐 · 午餐 · 晚餐</div>
+          <div class="hotel-line">🏨 阳朔华美达或万枫或同级</div>
+        </div></div>
+      </div>
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num">D3</span><span class="day-route">阳朔 → 桂林 · 2小时</span>
+          <span class="day-title">马岭鼓寨 · 遇龙河竹筏 · 挎斗车骑行</span><span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>马岭鼓寨(侗族)</strong><span>原生态侗族村寨,聆听侗族大歌。</span></div></div>
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>★ 遇龙河多人竹筏漂流</strong><span>「小漓江」美誉,悠闲惬意。</span></div></div>
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>挎斗车骑行+免费航拍</strong><span>穿行遇龙河畔小众村落与稻田。</span></div></div>
+          <div class="meal-line">早餐 · 午餐 · 晚餐</div>
+          <div class="hotel-line">🏨 桂林民丰酒店或同级</div>
+        </div></div>
+      </div>
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num">D4</span><span class="day-route">桂林</span>
+          <span class="day-title">东漓古村 · 观景下午茶 · 万达广场</span><span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>东漓古村</strong><span>门簪拓印、扯腐竹体验、现磨豆浆品尝。</span></div></div>
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>观景下午茶</strong><span>精致点心与本地茶饮,放松身心。</span></div></div>
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>万达广场</strong><span>桂林核心大型商圈,自由逛吃。</span></div></div>
+          <div class="meal-line">早餐 · 午餐</div>
+          <div class="hotel-line">🏨 桂林民丰酒店或同级</div>
+        </div></div>
+      </div>
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num">D5</span><span class="day-route">桂林 → 亚庇</span>
+          <span class="day-title">桂花公社 · 返程</span><span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>桂花公社</strong><span>国内首个以桂花文化为主题的沉浸式园区,品鉴桂花茶、桂花蜜。</span></div></div>
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>送往桂林两江国际机场</strong><span>午餐后返程。</span></div></div>
+          <div class="meal-line">早餐 · 午餐 · 机上用餐</div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WOW -->
+  <div class="itin-content" id="itin-wow">
+    <div class="day-list">
+      <div class="day-item open">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num">D1</span><span class="day-route">亚庇 → 桂林</span>
+          <span class="day-title">榕杉湖景区 · 象鼻山 · 日月双塔</span><span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>榕杉湖景区</strong><span>桂林两江四湖核心景区,千年古榕、古南门、九曲桥。</span></div></div>
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>象鼻山</strong><span>桂林城市地标。</span></div></div>
+          <div class="meal-line">机上用餐 · 晚餐</div>
+          <div class="hotel-line">🏨 桂林民丰酒店或同级</div>
+        </div></div>
+      </div>
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num">D2</span><span class="day-route">桂林 → 龙胜 · 2.5小时 → 桂林</span>
+          <span class="day-title">布尼梯田 — 上梁仪式、打糍粑、竹竿舞</span><span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>★ 龙胜布尼梯田</strong><span>小众原生态梯田。传统上梁仪式、非遗打糍粑、拦门竹竿舞。</span></div></div>
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>万达广场</strong><span>本地美食与特产选购。</span></div></div>
+          <div class="meal-line">早餐 · 午餐</div>
+          <div class="hotel-line">🏨 桂林民丰酒店或同级</div>
+        </div></div>
+      </div>
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num">D3</span><span class="day-route">桂林 → 阳朔 · 2小时</span>
+          <span class="day-title">挎斗车骑行 · 季节采摘 · 西街</span><span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>挎斗车骑行+免费航拍</strong><span>避开人潮,打卡遇龙河畔原生态风光。</span></div></div>
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>季节采摘</strong><span>橘子、柿子、草莓等鲜果(天气原因可能更换为观景下午茶)。</span></div></div>
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>西街</strong><span>夜晚热闹有烟火气。</span></div></div>
+          <div class="meal-line">早餐 · 午餐</div>
+          <div class="hotel-line">🏨 阳朔华美达或万枫或同级</div>
+        </div></div>
+      </div>
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num">D4</span><span class="day-route">阳朔</span>
+          <span class="day-title">马岭鼓寨 · 热气球体验 · 遇龙河竹筏</span><span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>马岭鼓寨(侗族)</strong><span>聆听侗族大歌。</span></div></div>
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>★ 热气球体验+360°航拍</strong><span>俯瞰十里画廊(天气原因可能更换为世外桃源)。</span></div></div>
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>★ 遇龙河多人竹筏漂流</strong><span>悠闲惬意的漂流体验。</span></div></div>
+          <div class="meal-line">早餐 · 午餐 · 晚餐</div>
+          <div class="hotel-line">🏨 阳朔华美达或万枫或同级</div>
+        </div></div>
+      </div>
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num">D5</span><span class="day-route">阳朔 → 桂林 · 2小时</span>
+          <span class="day-title">靖江王府 · 桂花公社</span><span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>靖江王府</strong><span>拓福体验+科举考试模拟互动。</span></div></div>
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>桂花公社</strong><span>品鉴桂花茶、桂花蜜。</span></div></div>
+          <div class="meal-line">早餐 · 午餐 · 晚餐</div>
+          <div class="hotel-line">🏨 桂林民丰酒店或同级</div>
+        </div></div>
+      </div>
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num">D6</span><span class="day-route">桂林 → 亚庇</span>
+          <span class="day-title">返程</span><span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>送往桂林两江国际机场</strong><span>午餐后返程,结束6天的欢乐之旅。</span></div></div>
+          <div class="meal-line">早餐 · 午餐 · 机上用餐</div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CROWN -->
+  <div class="itin-content" id="itin-crown">
+    <div class="day-list">
+      <div class="day-item open">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num">D1</span><span class="day-route">亚庇 → 桂林</span>
+          <span class="day-title">象鼻山 · 逍遥楼 · 东西巷</span><span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>象鼻山</strong><span>桂林城市地标与象征。</span></div></div>
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>逍遥楼</strong><span>桂林唐代名楼,俯瞰漓江与古城全貌。</span></div></div>
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>东西巷</strong><span>明清古街,感受桂林市井文化。</span></div></div>
+          <div class="meal-line">机上用餐 · 晚餐</div>
+          <div class="hotel-line">🏨 桂林笙品酒店或同级</div>
+        </div></div>
+      </div>
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num">D2</span><span class="day-route">桂林 → 阳朔 · 1.5小时</span>
+          <span class="day-title">东漓古村(4项体验) · 热气球体验</span><span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>东漓古村</strong><span>门簪拓印、扯腐竹、现磨豆浆,加上蜡染体验 — 用蜂蜡、植物染料手绘纹样。</span></div></div>
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>★ 热气球体验+360°航拍</strong><span>俯瞰十里画廊(天气原因可能更换为世外桃源)。</span></div></div>
+          <div class="meal-line">早餐 · 午餐 · 晚餐</div>
+          <div class="hotel-line">🏨 阳朔万枫酒店或同级</div>
+        </div></div>
+      </div>
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num">D3</span><span class="day-route">阳朔</span>
+          <span class="day-title">西街 · 挎斗车骑行 · 遇龙河竹筏 · 季节采摘</span><span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>挎斗车骑行+免费航拍</strong><span>避开人潮,打卡原生态山水风光。</span></div></div>
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>★ 遇龙河多人竹筏</strong><span>「小漓江」悠闲漂流。</span></div></div>
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>季节采摘</strong><span>天气原因可能更换为瑶山索道。</span></div></div>
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>西街</strong><span>夜晚热闹有烟火气。</span></div></div>
+          <div class="meal-line">早餐 · 午餐</div>
+          <div class="hotel-line">🏨 阳朔万枫酒店或同级</div>
+        </div></div>
+      </div>
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num">D4</span><span class="day-route">阳朔 → 三江 · 3小时</span>
+          <span class="day-title">马岭鼓寨 · 三江「坐妹」演艺 · 三江鼓楼</span><span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>马岭鼓寨(侗族)</strong><span>聆听侗族大歌。</span></div></div>
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>★ 三江坐妹演艺</strong><span>大型侗族风情实景演出,以侗族婚恋文化为主题。</span></div></div>
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>★ 三江鼓楼</strong><span>侗族建筑艺术巅峰之作,高42.6米,共27层,不用一钉一铆。</span></div></div>
+          <div class="meal-line">早餐 · 午餐 · 晚餐</div>
+          <div class="hotel-line">🏨 三江酒店或同级</div>
+        </div></div>
+      </div>
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num">D5</span><span class="day-route">三江 → 桂林 · 3小时</span>
+          <span class="day-title">程阳八寨 · 观景下午茶 · 万达广场</span><span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>★ 程阳八寨</strong><span>中国最大的侗族村寨群,拥有世界文化遗产程阳风雨桥。</span></div></div>
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>观景下午茶</strong><span>山水之间,静享悠闲下午茶。</span></div></div>
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>万达广场</strong><span>购物与本地小吃。</span></div></div>
+          <div class="meal-line">早餐 · 午餐</div>
+          <div class="hotel-line">🏨 桂林漓江大瀑布饭店 — 升级5星地标酒店</div>
+        </div></div>
+      </div>
+      <div class="day-item">
+        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="day-num">D6</span><span class="day-route">桂林 → 亚庇</span>
+          <span class="day-title">桂花公社DIY · 返程</span><span class="day-chevron">▼</span>
+        </div>
+        <div class="day-body"><div class="day-stops">
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>★ 桂花公社(DIY体验)</strong><span>在专业师傅指导下亲手制作桂花糕、桂花茶,打包带走作为伴手礼。</span></div></div>
+          <div class="stop"><div class="stop-dot"></div><div class="stop-text"><strong>送往桂林两江国际机场</strong><span>午餐后返程。</span></div></div>
+          <div class="meal-line">早餐 · 午餐 · 机上用餐</div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="food-section">
+  <p class="section-eyebrow" style="color:rgba(255,255,255,0.4)">桂林饮食文化</p>
+  <h2 class="section-title">吃遍桂林与阳朔</h2>
+  <div class="food-grid">
+    <div class="food-card"><div class="food-icon">🦢</div><div class="food-name">广式烧鹅</div><div class="food-detail">皮脆肉香,桂林人气美食</div></div>
+    <div class="food-card"><div class="food-icon">🐟</div><div class="food-name">阳朔啤酒鱼</div><div class="food-detail">用当地啤酒烹煮河鱼,加入辣椒番茄提味</div></div>
+    <div class="food-card"><div class="food-icon">🍠</div><div class="food-name">荔浦芋扣肉</div><div class="food-detail">芋头与五花肉层层叠放,广西经典菜</div></div>
+    <div class="food-card"><div class="food-icon">🍄</div><div class="food-name">山野菌菇火锅</div><div class="food-detail">采自山野的菌菇,清汤鲜美</div></div>
+    <div class="food-card"><div class="food-icon">🍜</div><div class="food-name">正宗桂林米粉</div><div class="food-detail">桂林招牌早餐米粉</div></div>
+    <div class="food-card"><div class="food-icon">🥟</div><div class="food-name">港式点心</div><div class="food-detail">行程中的轻食选择</div></div>
+    <div class="food-card"><div class="food-icon">🦐</div><div class="food-name">海鲜自助烧烤</div><div class="food-detail">超爽桂林与玩乐桂林的特色晚餐</div></div>
+    <div class="food-card"><div class="food-icon">🎋</div><div class="food-name">岩洞餐厅 &amp; 高山流水</div><div class="food-detail">桂冠天下行程的特色餐饮体验</div></div>
+  </div>
+</div>
+
+<div class="practical-section">
+  <div class="prac-card">
+    <div class="prac-icon">✈️</div>
+    <div class="prac-title">交通</div>
+    <div class="prac-body">从亚庇国际机场直飞包机前往桂林两江国际机场。去程一般于上午出发,下午抵达。</div>
+  </div>
+  <div class="prac-card">
+    <div class="prac-icon">🌡️</div>
+    <div class="prac-title">天气须知</div>
+    <div class="prac-body">桂林属亚热带气候 — 冬季温和(5–15°C),夏季温暖湿润。建议穿着舒适的步行鞋前往村寨与竹筏体验,秋冬出发建议携带薄外套。</div>
+  </div>
+  <div class="prac-card">
+    <div class="prac-icon">💳</div>
+    <div class="prac-title">支付与须知</div>
+    <div class="prac-body">出发前建议下载支付宝或微信支付并绑卡。现金(人民币)通用。全程以华语导览。最后确认的行程将以接待社安排为准,不可预知情况下敝社保留删改行程内容的权力,恕不预先通知。</div>
+  </div>
+</div>
+
+<div class="cta-section">
+  <p class="section-eyebrow" style="color:rgba(255,255,255,0.4)">准备好出发了吗</p>
+  <h2 class="section-title">桂林,等您来。</h2>
+  <p>告诉我们您偏好的出发日期与团体人数,我们会推荐超爽、玩乐或桂冠天下,并确认价格与出发详情。</p>
+  <div class="cta-buttons">
+    <a href="https://wa.me/60198787790?text=您好,我对桂林的行程感兴趣,请提供出发日期与价格。" class="btn-whatsapp">WhatsApp 咨询</a>
+    <a href="mailto:info@blueskv.com?subject=桂林行程咨询" class="btn-white">发送邮件</a>
+  </div>
+</div>
+
+<section style="padding:5rem 5rem;background:var(--white);border-top:1px solid var(--light-line);">
+  <p style="font-size:0.8rem;color:var(--accent);font-weight:600;margin-bottom:0.8rem;">继续探索</p>
+  <h2 style="font-family:'Manrope','Noto Sans SC',sans-serif;font-size:clamp(1.7rem,2.5vw,2.3rem);font-weight:700;margin-bottom:2.5rem;color:var(--charcoal);">蓝天假期的更多行程</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;">
+      <a href="tour-xinjiang-zh.html" style="display:block;text-decoration:none;color:inherit;border:1px solid var(--light-line);border-radius:3px;overflow:hidden;background:var(--white);">
+        <div style="height:120px;background:linear-gradient(135deg,#0f3a5c,#1a5a8a);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🏔️</div>
+        <div style="padding:1.25rem 1.5rem;">
+          <div style="font-size:0.76rem;color:var(--accent);font-weight:700;margin-bottom:0.4rem;">休闲游 · 11天10夜</div>
+          <h3 style="font-family:'Manrope','Noto Sans SC',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:0.35rem;color:var(--charcoal);">北疆奇境之旅</h3>
+          <p style="font-size:0.86rem;color:var(--mid);line-height:1.7;">喀纳斯湖、禾木村、赛里木湖与独库公路。</p>
+        </div>
+      </a>
+      <a href="tour-hangzhou-zh.html" style="display:block;text-decoration:none;color:inherit;border:1px solid var(--light-line);border-radius:3px;overflow:hidden;background:var(--white);">
+        <div style="height:120px;background:linear-gradient(135deg,#0B4F8A,#062a4a);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🤖</div>
+        <div style="padding:1.25rem 1.5rem;">
+          <div style="font-size:0.76rem;color:#1a7a3c;font-weight:700;margin-bottom:0.4rem;">100% HRDF · 8天6夜</div>
+          <h3 style="font-family:'Manrope','Noto Sans SC',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:0.35rem;color:var(--charcoal);">杭州人工智能研学之旅</h3>
+          <p style="font-size:0.86rem;color:var(--mid);line-height:1.7;">阿里巴巴、吉利汽车、BrainCo、科大讯飞与机器人小镇。</p>
+        </div>
+      </a>
+      <a href="tour-hainan-zh.html" style="display:block;text-decoration:none;color:inherit;border:1px solid var(--light-line);border-radius:3px;overflow:hidden;background:var(--white);">
+        <div style="height:120px;background:linear-gradient(135deg,#0a5f7a,#0e7a6e);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🏝️</div>
+        <div style="padding:1.25rem 1.5rem;">
+          <div style="font-size:0.76rem;color:var(--accent);font-weight:700;margin-bottom:0.4rem;">休闲游 · 6天</div>
+          <h3 style="font-family:'Manrope','Noto Sans SC',sans-serif;font-size:1.2rem;font-weight:700;margin-bottom:0.35rem;color:var(--charcoal);">海南岛狂欢之旅</h3>
+          <p style="font-size:0.86rem;color:var(--mid);line-height:1.7;">亚庇直飞海口,海花岛与三亚亚特兰蒂斯。</p>
+        </div>
+      </a>
+  </div>
+</section>
+
+<footer style="align-items:flex-start;gap:2rem;flex-wrap:wrap;">
+  <div style="max-width:300px;">
+    <div class="footer-logo">Blue Sky <span>Vacation</span></div>
+    <p style="margin-top:0.75rem;line-height:1.8;">D3-3, Block D, Tanjung Aru Plaza, Jalan Tun Mustapha, Tanjung Aru, 88100 Kota Kinabalu, Sabah</p>
+  </div>
+  <div style="line-height:2;">
+    <a href="https://wa.me/60198787790" style="color:rgba(255,255,255,0.65);text-decoration:none;display:block;">WhatsApp · +6019-878 7790</a>
+    <a href="mailto:info@blueskv.com" style="color:rgba(255,255,255,0.65);text-decoration:none;display:block;">info@blueskv.com</a>
+    <a href="index-zh.html" style="color:rgba(255,255,255,0.65);text-decoration:none;display:block;">← 所有行程</a>
+  </div>
+  <div style="line-height:1.8;opacity:0.8;">
+    © 2026 Blue Sky Vacation Sdn Bhd<br>Co. No. 1083236 · KPK/LN:7700<br>Kota Kinabalu, Sabah
+  </div>
+</footer>
+
+<script>
+  function showPkg(id) {
+    document.querySelectorAll('.pkg-content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.pkg-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('pkg-' + id).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+  function showItin(id) {
+    document.querySelectorAll('.itin-content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.itin-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('itin-' + id).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+</script>
+</body>
+</html>
