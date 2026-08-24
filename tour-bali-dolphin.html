@@ -12,7 +12,6 @@
 <meta property="og:site_name" content="Blue Sky Vacation">
 <title>Bali Dolphin | Blue Sky Vacation</title>
 <link rel="icon" href="logo-mark.png">
-<script src="./image-slot.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -54,7 +53,7 @@
   .btn-ghost:hover{border-color:var(--accent);color:var(--accent-700);}
 
   .hero{position:relative;aspect-ratio:16/8;min-height:320px;}
-  .hero image-slot{position:absolute;inset:0;}
+  .hero img.slot{position:absolute;inset:0;}
   .hero-tint{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,25,28,.2) 0%,rgba(20,25,28,.05) 35%,rgba(15,20,24,.78) 100%);pointer-events:none;}
   .hero-copy{position:absolute;left:0;right:0;bottom:0;padding:3.5rem 2rem;max-width:1320px;margin:0 auto;color:#fff;}
   .hero-eyebrow{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:1rem;}
@@ -78,7 +77,7 @@
   .hl-text{font-size:1rem;font-weight:500;}
 
   .shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:2.5rem;}
-  .shots image-slot{width:100%;height:220px;}
+  .shots img.slot{width:100%;height:220px;}
 
   .cta{background:var(--accent-900);color:#fff;padding:4.5rem 0;text-align:center;}
   .cta .sec-kicker{color:rgba(255,255,255,.6);}
@@ -125,6 +124,8 @@
   .dates-table th{text-align:left;font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.75rem;color:var(--accent-700);padding:.6rem .9rem;border-bottom:1px solid var(--line);}
   .dates-table td{padding:.7rem .9rem;border-bottom:1px solid var(--line);}
   .dates-text{font-size:.95rem;color:var(--text);line-height:1.6;max-width:70ch;background:var(--paper);border:1px solid var(--line);padding:1.2rem 1.4rem;}
+  img.slot{display:block;width:100%;height:100%;object-fit:cover;}
+  .slot-empty{background:linear-gradient(150deg,#0f3a5c,#1a5a8a 70%,#2f9be0);}
 </style>
 </head>
 <body>
@@ -140,7 +141,7 @@
 </nav>
 
 <section class="hero">
-  <image-slot id="hero-balidolphin" shape="rect" placeholder="Dolphins leaping at sunrise off Lovina — serene, special."></image-slot>
+  <img class="slot" src="photo-hero-balidolphin.jpg" alt="Dolphins leaping at sunrise off Lovina — serene, special." loading="lazy" style="object-fit:cover;">
   <div class="hero-tint"></div>
   <div class="hero-copy">
     <div class="hero-eyebrow">Blue Sky Vacation</div>
@@ -189,9 +190,9 @@
       </div>
     </div>
     <div class="shots">
-      <image-slot id="shot-balidolphin-0" shape="rect" placeholder="Kintamani viewpoint"></image-slot>
-      <image-slot id="shot-balidolphin-1" shape="rect" placeholder="Tampak Siring"></image-slot>
-      <image-slot id="shot-balidolphin-2" shape="rect" placeholder="Quiet North Bali beach"></image-slot>
+      <img class="slot" src="photo-shot-balidolphin-0.jpg" alt="Kintamani viewpoint" loading="lazy" style="object-fit:cover;">
+      <img class="slot" src="photo-shot-balidolphin-1.jpg" alt="Tampak Siring" loading="lazy" style="object-fit:cover;">
+      <img class="slot" src="photo-shot-balidolphin-2.jpg" alt="Quiet North Bali beach" loading="lazy" style="object-fit:cover;">
     </div>
   </div>
 </section>

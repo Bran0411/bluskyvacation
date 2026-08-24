@@ -3,1037 +3,341 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Northern Xinjiang Odyssey — 11D10N Classic & Elite summer tours, and 9D8N Winter Exclusive. Kanas Lake, Hemu Village, Sayram Lake, Duku Highway, Ghost City. From Kuala Lumpur via China Southern.">
+<meta name="description" content="Northern Xinjiang Odyssey — 11D10N Classic &amp; Elite summer tours, 9D8N Winter Exclusive. Kanas Lake, Hemu Village, Sayram Lake, Duku Highway, Ghost City. From Kuala Lumpur via China Southern.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Northern Xinjiang Odyssey | Blue Sky Vacation">
-<meta property="og:description" content="Northern Xinjiang Odyssey — 11D10N Classic &amp; Elite summer tours, and 9D8N Winter Exclusive. Kanas Lake, Hemu Village, Sayram Lake, Duku Highway, Ghost City. From Kuala Lumpur via China Southern.">
-<meta property="og:url" content="https://bran0411.github.io/bluskyvacation/tour-xinjiang.html">
-<meta property="og:image" content="https://bran0411.github.io/bluskyvacation/xinjiang-card-main.jpg">
+<meta property="og:description" content="Kanas, Hemu, Sayram Lake and the Duku Highway.">
+<meta property="og:image" content="https://bran0411.github.io/bluskyvacation/logo-mark.png">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Blue Sky Vacation">
 <title>Northern Xinjiang Odyssey | Blue Sky Vacation</title>
+<link rel="icon" href="logo-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --sky: #2f9be0; --teal: #0E7A6E; --sand: #F7F3EE;
-    --charcoal: #1A1A1A; --mid: #4A4A4A; --light-line: #E2DDD8;
-    --white: #FFFFFF; --accent: #C9793A;
-    --grass: #2d6a2d; --alpine: #1a4a6e; --winter: #2a3a5a; --gold: #b8860b;
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --bg:#F8FAFC; --paper:#ffffff; --text:#1E293B; --muted:#64748B;
+    --accent:#4AADE8; --accent-100:#E0F2FE; --accent-300:#38BDF8; --accent-700:#075985; --accent-900:#053A54;
+    --line:#DCE7F0; --sand:#F5E6C8; --sun:#FACC15;
   }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Plus Jakarta Sans', sans-serif; color: var(--charcoal); background: var(--white); font-weight: 300; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  html{scroll-behavior:smooth;}
+  html,body{overflow-x:hidden;max-width:100%;}
+  body{font-family:'Barlow',sans-serif;color:var(--text);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.h{font-family:'Barlow Condensed',sans-serif;font-weight:600;letter-spacing:-0.01em;line-height:1.05;}
+  img{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  a:hover{color:var(--accent-700);}
+  ::selection{background:var(--accent-300);}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+  .wrap{max-width:1320px;margin:0 auto;padding:0 2rem;}
 
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 3rem; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.07); }
-  .nav-logo { font-family: 'Manrope', sans-serif; font-size: 1.3rem; font-weight: 600; color: var(--sky); text-decoration: none; white-space: nowrap; display: flex; align-items: center; flex-shrink: 0; }
-  .nav-logo span { color: var(--accent); }
-  .nav-back { font-size: 0.78rem; color: var(--mid); text-decoration: none; }
-  .nav-back:hover { color: var(--sky); }
+  .marked{position:relative;}
+  .marked i.corner{position:absolute;width:9px;height:9px;pointer-events:none;}
+  .marked i.corner::before,.marked i.corner::after{content:'';position:absolute;background:var(--accent-700);}
+  .marked i.tl{top:-1px;left:-1px;} .marked i.tr{top:-1px;right:-1px;} .marked i.bl{bottom:-1px;left:-1px;} .marked i.br{bottom:-1px;right:-1px;}
+  .marked i.corner::before{width:9px;height:1px;top:4px;left:0;} .marked i.corner::after{width:1px;height:9px;left:4px;top:0;}
 
-  /* HERO */
-  .hero { min-height: 90vh; background: linear-gradient(100deg, rgba(11,42,66,0.94) 0%, rgba(15,58,92,0.82) 38%, rgba(26,90,138,0.60) 68%, rgba(47,155,224,0.40) 100%), url('urumqi-0.jpg') center 30%/cover no-repeat; display: flex; align-items: center; padding-top: 70px; position: relative; overflow: hidden; }
-  .hero-content { padding: 5rem; max-width: 700px; position: relative; z-index: 2; }
-  .hero-badges { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
-  .badge { padding: 0.3rem 0.8rem; border-radius: 2px; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; }
-  .badge-summer { background: var(--grass); color: white; }
-  .badge-winter { background: var(--winter); color: white; }
-  .badge-days { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.18); }
-  .hero-title { font-family: 'Manrope', sans-serif; font-size: clamp(2.8rem, 4.5vw, 5rem); line-height: 1.05; font-weight: 600; color: var(--white); margin-bottom: 0.5rem; }
-  .hero-title em { color: #a8d8a8; font-style: italic; }
-  .hero-sub { font-family: 'Manrope', sans-serif; font-size: 1.2rem; color: rgba(255,255,255,0.45); font-style: italic; margin-bottom: 1.5rem; }
-  .hero-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.85; max-width: 520px; margin-bottom: 2.5rem; }
-  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn-grass { background: var(--grass); color: white; padding: 0.9rem 2rem; text-decoration: none; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; transition: opacity 0.2s; display: inline-block; }
-  .btn-grass:hover { opacity: 0.88; }
-  .btn-outline { border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.8); padding: 0.9rem 2rem; text-decoration: none; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; display: inline-block; transition: border-color 0.2s; }
-  .btn-outline:hover { border-color: rgba(255,255,255,0.6); }
-  .hero-route { position: absolute; right: 0; top: 0; bottom: 0; width: 42%; display: flex; flex-direction: column; justify-content: center; padding: 3rem; gap: 0.75rem; }
-  .route-stop { background: rgba(9,28,46,0.42); backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.18); border-radius: 3px; padding: 0.65rem 1rem; display: flex; align-items: center; gap: 0.75rem; }
-  .route-icon { font-size: 1rem; flex-shrink: 0; }
-  .route-name { font-size: 0.78rem; font-weight: 500; color: rgba(255,255,255,0.92); }
-  .route-sub { font-size: 0.68rem; color: rgba(255,255,255,0.6); }
+  .nav{position:sticky;top:0;z-index:100;background:rgba(246,245,243,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);}
+  .nav-inner{max-width:1320px;margin:0 auto;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;}
+  .brand{display:flex;align-items:center;gap:.6rem;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1.2rem;letter-spacing:.02em;text-transform:uppercase;}
+  .brand img{width:28px;height:28px;}
+  .nav-right{display:flex;align-items:center;gap:1rem;}
+  .back-link{font-size:.85rem;font-weight:500;color:var(--muted);}
+  .back-link:hover{color:var(--accent-700);}
+  .btn{font-family:'Barlow',sans-serif;font-size:.9rem;font-weight:600;padding:.75rem 1.4rem;border-radius:2px;display:inline-block;border:1px solid transparent;transition:background .2s,color .2s,border-color .2s;white-space:nowrap;}
+  .btn-primary{background:var(--accent-700);color:#fff;}
+  .btn-primary:hover{background:var(--accent-900);color:#fff;}
+  .btn-ghost{border-color:var(--line);color:var(--text);}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent-700);}
 
-  /* PACKAGE SELECTOR */
-  .packages-section { padding: 5rem 5rem 3rem; background: var(--sand); }
-  .section-eyebrow { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 0.8rem; }
-  .section-title { font-family: 'Manrope', sans-serif; font-size: clamp(1.8rem, 2.5vw, 2.4rem); font-weight: 600; line-height: 1.15; margin-bottom: 2rem; }
-  .pkg-tabs { display: flex; gap: 0; margin-bottom: 2.5rem; border: 1px solid var(--light-line); border-radius: 3px; overflow: hidden; }
-  .pkg-tab { flex: 1; padding: 1.25rem 1.5rem; cursor: pointer; background: var(--white); border-right: 1px solid var(--light-line); transition: background 0.2s; text-align: center; }
-  .pkg-tab:last-child { border-right: none; }
-  .pkg-tab.active { background: var(--charcoal); }
-  .pkg-tab-season { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); font-weight: 500; margin-bottom: 0.25rem; }
-  .pkg-tab.active .pkg-tab-season { color: rgba(255,255,255,0.45); }
-  .pkg-tab-name { font-family: 'Manrope', sans-serif; font-size: 1.25rem; font-weight: 600; color: var(--charcoal); }
-  .pkg-tab.active .pkg-tab-name { color: white; }
-  .pkg-tab-days { font-size: 0.72rem; color: var(--mid); margin-top: 0.2rem; }
-  .pkg-tab.active .pkg-tab-days { color: rgba(255,255,255,0.5); }
-  .pkg-content { display: none; }
-  .pkg-content.active { display: block; }
+  .hero{position:relative;aspect-ratio:16/8;min-height:320px;}
+  .hero img.slot{position:absolute;inset:0;}
+  .hero-tint{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,25,28,.2) 0%,rgba(20,25,28,.05) 35%,rgba(15,20,24,.78) 100%);pointer-events:none;}
+  .hero-copy{position:absolute;left:0;right:0;bottom:0;padding:3.5rem 2rem;max-width:1320px;margin:0 auto;color:#fff;}
+  .hero-eyebrow{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:1rem;}
+  .hero-h{font-size:clamp(2.2rem,4.5vw,3.6rem);max-width:20ch;margin-bottom:.7rem;}
+  .hero-sub{font-size:1.1rem;color:rgba(255,255,255,.88);max-width:520px;margin-bottom:1.8rem;}
+  .hero-actions{display:flex;gap:.8rem;flex-wrap:wrap;}
+  .hero-actions .btn-ghost{border-color:rgba(255,255,255,.5);color:#fff;}
+  .hero-actions .btn-ghost:hover{border-color:#fff;}
 
-  /* PACKAGE DETAIL */
-  .pkg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem; }
-  .pkg-card { background: var(--white); border-radius: 3px; padding: 2rem; border: 1px solid var(--light-line); }
-  .pkg-card-label { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); font-weight: 500; margin-bottom: 1rem; }
-  .pkg-highlight-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-  .pkg-highlight-list li { font-size: 0.84rem; color: var(--mid); display: flex; gap: 0.6rem; align-items: flex-start; line-height: 1.55; }
-  .ph-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 6px; }
-  .pkg-meals { display: flex; flex-direction: column; gap: 0.4rem; }
-  .meal-row { display: flex; gap: 0.5rem; align-items: center; font-size: 0.82rem; }
-  .meal-day { font-size: 0.7rem; color: var(--mid); min-width: 40px; font-weight: 500; }
-  .meal-item { font-size: 0.78rem; color: var(--mid); }
-  .meal-hotel { font-size: 0.72rem; color: var(--sky); }
+  .facts{border-bottom:1px solid var(--line);background:var(--paper);}
+  .facts-inner{max-width:1320px;margin:0 auto;padding:1.6rem 2rem;display:flex;gap:2.5rem;flex-wrap:wrap;}
+  .fact-label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-700);font-weight:600;margin-bottom:.3rem;}
+  .fact-value{font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:600;}
 
-  /* UPGRADE COMPARISON */
-  .compare-section { background: var(--white); border: 1px solid var(--light-line); border-radius: 3px; padding: 2rem; margin-bottom: 2rem; }
-  .compare-title { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); font-weight: 500; margin-bottom: 1.25rem; }
-  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-  .compare-col h4 { font-size: 0.78rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--charcoal); }
-  .compare-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-  .compare-list li { font-size: 0.8rem; color: var(--mid); display: flex; gap: 0.5rem; align-items: flex-start; }
-  .ci { color: var(--grass); font-size: 0.85rem; flex-shrink: 0; margin-top: 1px; }
-  .cx { color: var(--accent); font-size: 0.85rem; flex-shrink: 0; margin-top: 1px; }
+  section.block{padding:4.5rem 0;}
+  .sec-kicker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-700);font-weight:600;margin-bottom:.5rem;}
+  .sec-h{font-size:clamp(1.7rem,3vw,2.4rem);margin-bottom:2rem;}
 
-  /* HIGHLIGHTS */
-  .highlights-section { padding: 5rem 5rem; }
-  .highlights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
-  .hl-card { border: 1px solid var(--light-line); border-radius: 3px; overflow: hidden; }
-  .hl-top { height: 5px; }
-  .hl-body { padding: 1.5rem; }
-  .hl-icon { font-size: 1.6rem; margin-bottom: 0.75rem; }
-  .hl-tag { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); font-weight: 500; margin-bottom: 0.4rem; }
-  .hl-name { font-family: 'Manrope', sans-serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
-  .hl-desc { font-size: 0.8rem; color: var(--mid); line-height: 1.65; }
-  .seasonal-note { display: inline-block; background: rgba(184,134,11,0.1); border: 1px solid rgba(184,134,11,0.3); border-radius: 2px; padding: 0.2rem 0.5rem; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-top: 0.5rem; font-weight: 500; }
+  .hl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;}
+  .hl-card{position:relative;border:1px solid var(--line);padding:1.4rem 1.5rem;background:var(--paper);}
+  .hl-text{font-size:1rem;font-weight:500;}
 
-  /* ITINERARY */
-  .itinerary-section { padding: 5rem 5rem; background: var(--sand); }
-  .itin-tabs { display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
-  .itin-tab { padding: 0.5rem 1.25rem; border: 1px solid var(--light-line); border-radius: 2px; font-size: 0.78rem; font-weight: 500; cursor: pointer; background: var(--white); color: var(--mid); transition: all 0.2s; }
-  .itin-tab.active { background: var(--charcoal); color: white; border-color: var(--charcoal); }
-  .itin-content { display: none; }
-  .itin-content.active { display: block; }
-  .day-list { display: flex; flex-direction: column; gap: 0.75rem; }
-  .day-item { background: var(--white); border-radius: 3px; overflow: hidden; border: 1px solid var(--light-line); }
-  .day-header { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem; cursor: pointer; }
-  .day-header:hover { background: rgba(0,0,0,0.02); }
-  .day-num { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.25rem 0.6rem; border-radius: 2px; white-space: nowrap; flex-shrink: 0; color: white; }
-  .day-route { font-size: 0.75rem; color: var(--mid); flex-shrink: 0; }
-  .day-title { font-size: 0.85rem; font-weight: 500; flex: 1; }
-  .day-chevron { font-size: 0.75rem; color: var(--mid); transition: transform 0.3s; }
-  .day-item.open .day-chevron { transform: rotate(180deg); }
-  .day-body { display: none; border-top: 1px solid var(--light-line); padding: 1.25rem; background: var(--sand); }
-  .day-item.open .day-body { display: block; }
-  .day-stops { display: flex; flex-direction: column; gap: 0.75rem; }
-  .stop { display: flex; gap: 0.75rem; align-items: flex-start; }
-  .stop-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
-  .stop-text { font-size: 0.82rem; color: var(--charcoal); line-height: 1.6; }
-  .stop-text strong { font-weight: 500; }
-  .stop-text span { color: var(--mid); font-size: 0.78rem; display: block; margin-top: 0.1rem; }
-  .hotel-line { display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(11,79,138,0.07); border: 1px solid rgba(11,79,138,0.15); border-radius: 2px; padding: 0.2rem 0.6rem; font-size: 0.7rem; color: var(--sky); font-weight: 500; margin-top: 0.75rem; }
-  .meal-line { display: inline-flex; align-items: center; gap: 0.35rem; background: rgba(45,106,45,0.07); border: 1px solid rgba(45,106,45,0.15); border-radius: 2px; padding: 0.2rem 0.6rem; font-size: 0.7rem; color: var(--grass); font-weight: 500; margin-top: 0.5rem; margin-right: 0.4rem; }
-  .optional-tag { background: rgba(201,121,58,0.1); border: 1px solid rgba(201,121,58,0.25); border-radius: 2px; padding: 0.15rem 0.4rem; font-size: 0.65rem; color: var(--accent); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; margin-left: 0.4rem; vertical-align: middle; }
+  .shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:2.5rem;}
+  .shots img.slot{width:100%;height:220px;}
 
-  /* FOOD & HOTELS */
-  .food-section { padding: 4rem 5rem; background: var(--charcoal); color: white; }
-  .food-section .section-title { color: white; }
-  .food-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2rem; }
-  .food-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 3px; padding: 1.25rem; text-align: center; overflow: hidden; }
-  .food-photo { height: 110px; background-size: cover; background-position: center; margin: -1.25rem -1.25rem 0.75rem; }
-  .food-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
-  .food-name { font-size: 0.78rem; font-weight: 500; color: rgba(255,255,255,0.9); margin-bottom: 0.25rem; }
-  .food-detail { font-size: 0.7rem; color: rgba(255,255,255,0.45); line-height: 1.5; }
+  .cta{background:var(--accent-900);color:#fff;padding:4.5rem 0;text-align:center;}
+  .cta .sec-kicker{color:rgba(255,255,255,.6);}
+  .cta h2{color:#fff;margin-bottom:.8rem;}
+  .cta p{color:rgba(255,255,255,.75);max-width:480px;margin:0 auto 2rem;font-size:1rem;}
+  .cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+  .btn-white{background:#fff;color:var(--accent-900);}
+  .btn-white:hover{background:var(--accent-100);color:var(--accent-900);}
 
-  /* PRACTICAL */
-  .practical-section { padding: 4rem 5rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
-  .prac-card { padding: 1.75rem; border: 1px solid var(--light-line); border-radius: 3px; }
-  .prac-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
-  .prac-title { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); font-weight: 500; margin-bottom: 0.6rem; }
-  .prac-body { font-size: 0.83rem; color: var(--mid); line-height: 1.7; }
+  footer{border-top:1px solid var(--line);padding:2.5rem 0;}
+  .foot-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem;color:var(--muted);}
+  .foot-links{display:flex;gap:1.4rem;}
 
-  /* CTA */
-  .cta-section { background: linear-gradient(135deg, #0f3a5c 0%, #1a5a8a 100%); color: white; padding: 5rem; text-align: center; }
-  .cta-section .section-title { color: white; margin-bottom: 1rem; }
-  .cta-section p { color: rgba(255,255,255,0.6); margin-bottom: 2rem; max-width: 480px; margin-left: auto; margin-right: auto; font-size: 0.95rem; }
-  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-  .btn-white { background: white; color: var(--charcoal); padding: 0.9rem 2.5rem; text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; display: inline-block; }
-  .btn-whatsapp { background: #25D366; color: white; padding: 0.9rem 2.5rem; text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 2px; display: inline-block; }
-
-  footer { background: #0a0a0a; color: rgba(255,255,255,0.35); padding: 2rem 5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; }
-  .footer-logo { font-family: 'Manrope', sans-serif; font-size: 1.1rem; font-weight: 600; color: rgba(255,255,255,0.75); }
-  .footer-logo span { color: var(--accent); }
-
-  @media (max-width: 768px) {
-    nav { padding: 1rem 1.5rem; }
-    .hero-content { padding: 3rem 1.5rem; }
-    .hero-route { display: none; }
-    .packages-section, .highlights-section, .itinerary-section, .cta-section { padding: 3.5rem 1.5rem; }
-    .food-section, .practical-section { padding: 3rem 1.5rem; }
-    .pkg-tabs { flex-direction: column; }
-    .pkg-tab { border-right: none; border-bottom: 1px solid var(--light-line); }
-    .pkg-grid, .compare-grid, .highlights-grid, .food-grid, .practical-section { grid-template-columns: 1fr; }
-    .day-header { flex-wrap: wrap; row-gap: 0.4rem; }
-    .day-title { flex-basis: 100%; order: 4; }
-    .day-chevron { margin-left: auto; }
-    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+  @media (max-width:720px){
+    .wrap,.nav-inner,.facts-inner{padding-left:1.2rem;padding-right:1.2rem;}
+    .hero{aspect-ratio:4/3;min-height:280px;}
+    .hero-copy{padding:1.6rem 1.2rem;}
+    .hero-h{font-size:clamp(1.8rem,7vw,2.6rem);}
+    section.block{padding:3rem 0;}
+    .hero-actions .btn{flex:1 1 auto;text-align:center;}
+    footer{padding:1.8rem 0;}
+    .foot-inner{flex-direction:column;align-items:flex-start;gap:1rem;}
   }
 
-  @media (max-width: 480px) {
-    nav { padding: 0.8rem 1rem; }
-    .nav-logo { font-size: 0.85rem !important; }
-    .nav-logo img { width: 24px !important; height: 24px !important; margin-right: 0.35rem !important; }
-    nav > div { gap: 0.5rem !important; }
-    .nav-back { font-size: 0.68rem !important; }
-    .nav-alltours { display: none; }
-    .nav-cta-btn { font-size: 0.68rem !important; padding: 0.45rem 0.7rem !important; }
-  }
+  .itin-list{display:flex;flex-direction:column;gap:.7rem;margin-bottom:2.8rem;}
+  .itin-day{position:relative;display:flex;gap:1.3rem;border:1px solid var(--line);background:var(--paper);padding:1.1rem 1.4rem;align-items:baseline;}
+  .itin-day-label{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1.05rem;color:var(--accent-700);min-width:5.2rem;flex-shrink:0;}
+  .itin-day-title{font-weight:600;font-size:1rem;}
+  .itin-day-desc{font-size:.9rem;color:var(--muted);margin-top:.2rem;}
+  .inc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem;margin-bottom:2.8rem;}
+  .inc-h{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1.15rem;margin-bottom:.9rem;}
+  .inc-list{list-style:none;display:flex;flex-direction:column;gap:.55rem;font-size:.92rem;}
+  .inc-list li{padding-left:1.3rem;position:relative;}
+  .inc-yes li::before{content:'+';position:absolute;left:0;color:var(--accent-700);font-weight:700;}
+  .inc-no li::before{content:'\2013';position:absolute;left:0;color:var(--muted);font-weight:700;}
+  .know-box{border:1px solid var(--accent-300);background:var(--accent-100);padding:1.6rem 1.8rem;}
+  .know-h{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-700);margin-bottom:.5rem;}
+  .know-p{font-size:.95rem;color:var(--text);line-height:1.6;max-width:70ch;}
+
+  .dates-block{margin-bottom:2.8rem;scroll-margin-top:90px;}
+  .deposit-line{font-size:.92rem;color:var(--muted);margin-top:1rem;}
+  .deposit-line strong{color:var(--text);}
+  .dates-table{width:100%;border-collapse:collapse;font-size:.92rem;}
+  .dates-table th{text-align:left;font-family:'Barlow Condensed',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.75rem;color:var(--accent-700);padding:.6rem .9rem;border-bottom:1px solid var(--line);}
+  .dates-table td{padding:.7rem .9rem;border-bottom:1px solid var(--line);}
+  .dates-text{font-size:.95rem;color:var(--text);line-height:1.6;max-width:70ch;background:var(--paper);border:1px solid var(--line);padding:1.2rem 1.4rem;}
+  .tier-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-bottom:2.8rem;}
+  .tier{position:relative;border:1px solid var(--line);background:var(--paper);padding:1.5rem 1.6rem;}
+  .tier-season{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-700);font-weight:600;margin-bottom:.4rem;}
+  .tier-name{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1.5rem;line-height:1;}
+  .tier-days{font-size:.85rem;color:var(--muted);margin:.3rem 0 .9rem;}
+  .tier-price{font-family:'Barlow Condensed',sans-serif;font-size:1.7rem;font-weight:600;}
+  .tier-price span{font-size:.8rem;font-weight:400;color:var(--muted);font-family:'Barlow',sans-serif;}
+  .tier-list{list-style:none;display:flex;flex-direction:column;gap:.45rem;font-size:.9rem;margin-top:1rem;}
+  .tier-list li{padding-left:1.2rem;position:relative;}
+  .tier-list li::before{content:'+';position:absolute;left:0;color:var(--accent-700);font-weight:700;}
+  .itin-h{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:1.3rem;margin:2.2rem 0 1rem;}
+  .itin-day-route{font-size:.8rem;color:var(--accent-700);font-weight:600;margin-top:.25rem;}
+  img.slot{display:block;width:100%;height:100%;object-fit:cover;}
+  .slot-empty{background:linear-gradient(150deg,#0f3a5c,#1a5a8a 70%,#2f9be0);}
 </style>
 </head>
 <body>
 
-<nav>
-  <a href="index.html" class="nav-logo"><img src="logo-mark.png" alt="" style="height:30px;width:30px;border-radius:7px;object-fit:cover;vertical-align:middle;margin-right:0.55rem;">Blue Sky <span>Vacation</span></a>
-  <div style="display:flex;align-items:center;gap:1.25rem;">
-    <a href="tour-xinjiang-zh.html" class="nav-back">中文</a>
-    <a href="index.html" class="nav-back nav-alltours">← All tours</a>
-    <a href="https://wa.me/60198787790?text=Hi%20Blue%20Sky%20Vacation%2C%20I'd%20like%20to%20plan%20a%20trip." class="nav-cta-btn" style="background:#16384f;color:#fff;text-decoration:none;font-size:0.8rem;font-weight:600;padding:0.55rem 1.1rem;border-radius:100px;white-space:nowrap;">Plan my trip</a>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="home-new.html" class="brand"><img src="logo-cloud-wordmark.png" alt="Blue Sky Vacation" style="height:52px;width:auto;"></a>
+    <div class="nav-right">
+      <a href="home-new.html#trips" class="back-link">← All trips</a>
+      <a class="btn btn-primary marked" href="https://wa.me/60198787790?text=Hi%20Blue%20Sky%20Vacation%2C%20I'd%20like%20to%20ask%20about%20the%20Northern%20Xinjiang%20Odyssey%20trip." target="_blank" rel="noopener"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>Contact us</a>
+    </div>
   </div>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-content">
-    <div class="hero-badges">
-      <span class="badge badge-summer">Summer · 11D10N</span>
-      <span class="badge badge-winter">Winter · 9D8N</span>
-      <span class="badge badge-days">Classic · Elite · Winter options</span>
-    </div>
-    <h1 class="hero-title">Northern<br><em>Xinjiang</em><br>Odyssey</h1>
-    <p class="hero-sub">域见北疆 · Discover the Last Frontier of China</p>
-    <p class="hero-desc">Three worlds in one destination — the fairy-tale birch forests and glacial lakes of Altay, the rolling sub-alpine meadows of Ili, and in winter, a frozen wonderland no photograph has ever fully captured. Kanas, Hemu, Sayram Lake, the Duku Highway, and Ghost City.</p>
+<section class="hero">
+  <img class="slot" src="xinjiang-card-main.jpg" alt="Kanas Lake and the birch forests of Altay" loading="lazy" style="object-fit:cover;">
+  <div class="hero-tint"></div>
+  <div class="hero-copy">
+    <div class="hero-eyebrow">Blue Sky Vacation</div>
+    <h1 class="hero-h">Northern Xinjiang Odyssey</h1>
+    <p class="hero-sub">Kanas, Hemu, Sayram Lake and the Duku Highway — the last frontier of China.</p>
     <div class="hero-actions">
-      <a href="https://wa.me/60198787790?text=Hi,%20I'm%20interested%20in%20the%20Northern%20Xinjiang%20tour" class="btn-grass">Enquire now</a>
-      <a href="#packages" class="btn-outline">Compare packages</a>
+      <button class="btn btn-primary" onclick="bsvBooking.open()" style="cursor:pointer;">Check Availability</button>
+      <a class="btn btn-ghost" href="#highlights">See highlights</a>
     </div>
   </div>
-  <div class="hero-route">
-    <div class="route-stop"><div class="route-icon">🏙️</div><div><div class="route-name">Urumqi</div><div class="route-sub">Gateway city · Day 1 & 10–11</div></div></div>
-    <div class="route-stop"><div class="route-icon">🏔️</div><div><div class="route-name">Kanas National Geological Park</div><div class="route-sub">Wolong Bay · Fairy Bay · Moon Bay</div></div></div>
-    <div class="route-stop"><div class="route-icon">🌲</div><div><div class="route-name">Hemu Village</div><div class="route-sub">China's most beautiful fairytale village</div></div></div>
-    <div class="route-stop"><div class="route-icon">🌈</div><div><div class="route-name">Wucai Beach</div><div class="route-sub">Coloured cliffs at sunset · Irtysh River</div></div></div>
-    <div class="route-stop"><div class="route-icon">👻</div><div><div class="route-name">Ghost City — Urho</div><div class="route-sub">Wind-carved Yadan landforms</div></div></div>
-    <div class="route-stop"><div class="route-icon">💎</div><div><div class="route-name">Sayram Lake</div><div class="route-sub">Last Tear of the Atlantic</div></div></div>
-    <div class="route-stop"><div class="route-icon">🐎</div><div><div class="route-name">Nalati Grassland</div><div class="route-sub">Sky-high alpine meadow · Ili Valley</div></div></div>
-    <div class="route-stop"><div class="route-icon">🛣️</div><div><div class="route-name">Duku Highway</div><div class="route-sub">Seasonal · Four seasons in one day</div></div></div>
+</section>
+
+<div class="facts">
+  <div class="facts-inner">
+    <div class="fact"><div class="fact-label">Duration</div><div class="fact-value">11D10N · 9D8N</div></div>
+    <div class="fact"><div class="fact-label">Price</div><div class="fact-value">From RM8,599</div></div>
+    <div class="fact"><div class="fact-label">Departure</div><div class="fact-value">Kuala Lumpur (KUL)</div></div>
+    <div class="fact"><div class="fact-label">Seasons</div><div class="fact-value">Summer &amp; Winter</div></div>
+    <div class="fact"><div class="fact-label">Flights</div><div class="fact-value">Flight included</div></div>
   </div>
 </div>
 
-<!-- PACKAGES -->
-<section class="packages-section" id="packages">
-  <p class="section-eyebrow">Three ways to experience Xinjiang</p>
-  <h2 class="section-title">Choose your journey</h2>
-
-  <div class="pkg-tabs">
-    <div class="pkg-tab active" onclick="showPkg('classic')">
-      <div class="pkg-tab-season">Summer · May–Oct</div>
-      <div class="pkg-tab-name">Classic</div>
-      <div class="pkg-tab-days">11 Days · 10 Nights</div>
+<section class="block" id="highlights">
+  <div class="wrap">
+    <div class="sec-kicker">On this trip</div>
+    <h2 class="sec-h">Highlights</h2>
+    <div class="hl-grid">
+      <div class="hl-card marked"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i><div class="hl-text">Kanas Lake &amp; the Three Bays</div></div>
+      <div class="hl-card marked"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i><div class="hl-text">Hemu Village</div></div>
+      <div class="hl-card marked"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i><div class="hl-text">Sayram Lake</div></div>
+      <div class="hl-card marked"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i><div class="hl-text">Duku Highway</div></div>
+      <div class="hl-card marked"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i><div class="hl-text">Urho Ghost City</div></div>
+      <div class="hl-card marked"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i><div class="hl-text">Nalati Sky Grassland</div></div>
+      <div class="hl-card marked"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i><div class="hl-text">Dushanzi Grand Canyon</div></div>
+      <div class="hl-card marked"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i><div class="hl-text">Xinjiang Grand Bazaar</div></div>
     </div>
-    <div class="pkg-tab" onclick="showPkg('elite')">
-      <div class="pkg-tab-season">Summer · May–Oct</div>
-      <div class="pkg-tab-name">Elite</div>
-      <div class="pkg-tab-days">11 Days · 10 Nights</div>
-    </div>
-    <div class="pkg-tab" onclick="showPkg('winter')">
-      <div class="pkg-tab-season">Winter · Nov–Feb</div>
-      <div class="pkg-tab-name">Winter Exclusive</div>
-      <div class="pkg-tab-days">9 Days · 8 Nights</div>
+    <div class="shots">
+      <img class="slot" src="Ourchinastory-xinjiang-dukuhighway1_x1.jpg" alt="Duku Highway" loading="lazy" style="object-fit:cover;">
+      <img class="slot" src="1607_Xinjiang-Lamb-Skewer_007.jpg" alt="Xinjiang lamb skewers" loading="lazy" style="object-fit:cover;">
+      <img class="slot" src="20221128204111-da-pan-ji-xinjiang-chicken-recipe.webp" alt="Big plate chicken" loading="lazy" style="object-fit:cover;">
+      <img class="slot" src="xinjiang-kanas-autumn.webp" alt="Kanas Lake in autumn" loading="lazy" style="object-fit:cover;">
     </div>
   </div>
+</section>
 
-  <!-- CLASSIC -->
-  <div class="pkg-content active" id="pkg-classic">
-    <div class="pkg-grid">
-      <div class="pkg-card">
-        <div class="pkg-card-label">What's included</div>
-        <ul class="pkg-highlight-list">
-          <li><div class="ph-dot"></div>All entrance fees included throughout</li>
-          <li><div class="ph-dot"></div>2+1 VIP Premium Coach — spacious seating, extra legroom for long distances</li>
-          <li><div class="ph-dot"></div>Shuttle buses at Kanas, Hemu Village, Ghost City, Nalati Grassland</li>
-          <li><div class="ph-dot"></div>Full meal plan: hotel breakfast + lunches + dinners daily</li>
-          <li><div class="ph-dot"></div>4-star hotels throughout, listed per night</li>
-          <li><div class="ph-dot"></div>Seasonal Duku Highway (Jun–Sep) or high-speed train alternative</li>
-          <li><div class="ph-dot"></div>Roast whole lamb farewell dinner on Day 10</li>
-        </ul>
+<section class="block" id="packages">
+  <div class="wrap">
+    <div class="sec-kicker">Three ways to travel</div>
+    <h2 class="sec-h">Choose your journey</h2>
+    <div class="tier-grid">
+      <div class="tier marked"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div class="tier-season">Summer · May–Oct</div>
+        <div class="tier-name">Classic</div>
+        <div class="tier-days">11 Days · 10 Nights</div>
+        <div class="tier-price">RM8,599 <span>from, twin share</span></div>
+        <ul class="tier-list"><li>2+1 VIP premium coach</li><li>4-star hotels throughout</li><li>Full meal plan, all entrance fees</li><li>Roast whole lamb farewell dinner</li></ul>
       </div>
-      <div class="pkg-card">
-        <div class="pkg-card-label">Signature dining</div>
-        <ul class="pkg-highlight-list">
-          <li><div class="ph-dot"></div>Burqin Cold-Water Fish (Day 2)</li>
-          <li><div class="ph-dot"></div>Hand-Grabbed Rice 手抓饭 (Day 5)</li>
-          <li><div class="ph-dot"></div>Xinjiang Big Plate Chicken 大盘鸡 (Day 6)</li>
-          <li><div class="ph-dot"></div>Signature Lamb Ribs 羊排 (Day 7)</li>
-          <li><div class="ph-dot"></div>Xinjiang BBQ Skewers 烤串 (Day 9)</li>
-          <li><div class="ph-dot"></div>Roast Whole Lamb 烤全羊 farewell banquet (Day 10)</li>
-        </ul>
+      <div class="tier marked"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div class="tier-season">Summer · May–Oct</div>
+        <div class="tier-name">Elite</div>
+        <div class="tier-days">11 Days · 10 Nights</div>
+        <div class="tier-price">RM12,499 <span>from, twin share</span></div>
+        <ul class="tier-list"><li>Smaller group, more exclusive</li><li>Premium hotel upgrades</li><li>Enhanced dining selections</li><li>Same attractions and route</li></ul>
       </div>
-    </div>
-    <div class="compare-section">
-      <div class="compare-title">Classic vs Elite — key differences</div>
-      <div class="compare-grid">
-        <div class="compare-col">
-          <h4>Classic includes</h4>
-          <ul class="compare-list">
-            <li><span class="ci">✓</span>2+1 VIP Premium Coach (standard group)</li>
-            <li><span class="ci">✓</span>4-star hotels throughout</li>
-            <li><span class="ci">✓</span>Full meal plan as listed</li>
-            <li><span class="ci">✓</span>All same attractions and itinerary</li>
-          </ul>
-        </div>
-        <div class="compare-col">
-          <h4>Elite adds / upgrades</h4>
-          <ul class="compare-list">
-            <li><span class="ci">✓</span>Smaller group, more exclusive experience</li>
-            <li><span class="ci">✓</span>Premium hotel upgrades</li>
-            <li><span class="ci">✓</span>Enhanced dining selections</li>
-            <li><span class="ci">✓</span>Contact us for full Elite pricing & details</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div style="background:linear-gradient(150deg,#0f3a5c,#1a5a8a 70%,#2f9be0);color:#fff;border-radius:4px;padding:1.75rem 2rem;display:flex;flex-wrap:wrap;gap:2rem 3rem;align-items:center;margin-bottom:1rem;">
-      <div><span style="font-family:'Manrope',sans-serif;font-size:2.2rem;font-weight:700;display:block;line-height:1;">RM 8,599</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">From · per person, twin share</span></div>
-      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">RM 2,000</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Single supp. (from)</span></div>
-      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">11D · 10N</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Summer · May–Oct 2026</span></div>
-      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">RM 2,000</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Deposit / person</span></div>
-    </div>
-    <div style="overflow-x:auto; margin-bottom:1rem; border:1px solid var(--light-line); border-radius:3px;">
-      <table style="width:100%; border-collapse:collapse; font-size:0.84rem;">
-        <thead>
-          <tr style="background:var(--charcoal); color:#fff;">
-            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.72rem; font-weight:600;">Departure Dates</th>
-            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.72rem; font-weight:600;">Tour Fare (with flight)</th>
-            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.72rem; font-weight:600;">Ground Fare (no flight)</th>
-            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.72rem; font-weight:600;">Single Supp.</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">27 Aug – 6 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 8,999</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
-          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">28 Aug – 7 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,399</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
-          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">1 – 11 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 8,999</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
-          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">3 – 13 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 8,999</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
-          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">4 – 14 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 8,999</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
-          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">5 – 15 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 8,999</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
-          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">6 – 16 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 8,999</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
-          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">7 – 17 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 8,999</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
-          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">12 – 22 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,399</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
-          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">13 – 23 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,399</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
-          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">14 – 24 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,399</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
-          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">15 – 25 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,399</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
-          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">17 – 27 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,399</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
-          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">18 – 28 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,399</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,100</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,300</td></tr>
-          <tr><td style="padding:0.65rem 1rem;">8 – 18 Oct <span style="color:var(--mid); font-size:0.72rem;">· train</span></td><td style="padding:0.65rem 1rem;"><strong>RM 8,599</strong></td><td style="padding:0.65rem 1rem;">RM 6,600</td><td style="padding:0.65rem 1rem;">RM 2,000</td></tr>
-          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem;">9 – 19 Oct <span style="color:var(--mid); font-size:0.72rem;">· train</span></td><td style="padding:0.65rem 1rem;"><strong>RM 8,599</strong></td><td style="padding:0.65rem 1rem;">RM 6,600</td><td style="padding:0.65rem 1rem;">RM 2,000</td></tr>
-          <tr><td style="padding:0.65rem 1rem;">10 – 20 Oct <span style="color:var(--mid); font-size:0.72rem;">· train</span></td><td style="padding:0.65rem 1rem;"><strong>RM 8,599</strong></td><td style="padding:0.65rem 1rem;">RM 6,600</td><td style="padding:0.65rem 1rem;">RM 2,000</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p style="font-size:0.82rem; color:var(--mid); background:var(--white); padding:1rem 1.25rem; border-radius:3px; border:1px solid var(--light-line);">Ground fare = no international flights, land arrangements only. All tours conducted in Mandarin. October departures use a high-speed train alternative via Yining (Duku Highway closed for the season). Fares subject to seat availability at time of booking.</p>
-  </div>
-
-  <!-- ELITE -->
-  <div class="pkg-content" id="pkg-elite">
-    <div class="pkg-grid">
-      <div class="pkg-card">
-        <div class="pkg-card-label">Elite upgrades over Classic</div>
-        <ul class="pkg-highlight-list">
-          <li><div class="ph-dot"></div>Smaller, more curated group size</li>
-          <li><div class="ph-dot"></div>Premium hotel selection throughout</li>
-          <li><div class="ph-dot"></div>Upgraded dining and in-destination experiences</li>
-          <li><div class="ph-dot"></div>Same comprehensive itinerary covering all 9 stops</li>
-          <li><div class="ph-dot"></div>2+1 VIP Coach or premium vehicle depending on group size</li>
-          <li><div class="ph-dot"></div>All entrance fees, shuttle buses, and Duku Highway (seasonal)</li>
-        </ul>
-      </div>
-      <div class="pkg-card">
-        <div class="pkg-card-label">Same great itinerary</div>
-        <ul class="pkg-highlight-list">
-          <li><div class="ph-dot"></div>Kanas: Wolong Bay, Fairy Bay, Moon Bay + Guanyu Terrace</li>
-          <li><div class="ph-dot"></div>Hemu Village: birch forest, Hemu Bridge, Hemu River</li>
-          <li><div class="ph-dot"></div>Wucai Beach sunset · Burqin Night Market</li>
-          <li><div class="ph-dot"></div>Ghost City Urho — wind-eroded Yadan landforms</li>
-          <li><div class="ph-dot"></div>Sayram Lake circuit · Guozigou Bridge (Ili's No.1 view)</li>
-          <li><div class="ph-dot"></div>Nalati Sky Grassland + Duku Highway (seasonal)</li>
-        </ul>
-      </div>
-    </div>
-    <div style="background:linear-gradient(150deg,#0f3a5c,#1a5a8a 70%,#2f9be0);color:#fff;border-radius:4px;padding:1.75rem 2rem;display:flex;flex-wrap:wrap;gap:2rem 3rem;align-items:center;margin-bottom:1rem;">
-      <div><span style="font-family:'Manrope',sans-serif;font-size:2.2rem;font-weight:700;display:block;line-height:1;">RM 12,499</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Per person, twin share</span></div>
-      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">RM 2,890</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Single supp.</span></div>
-      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">11D · 10N</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Summer · Sep–Oct 2026</span></div>
-      <div><span style="font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:600;display:block;line-height:1.1;">RM 2,000</span><span style="font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.7);">Deposit / person</span></div>
-    </div>
-    <div style="overflow-x:auto; margin-bottom:1rem; border:1px solid var(--light-line); border-radius:3px;">
-      <table style="width:100%; border-collapse:collapse; font-size:0.84rem;">
-        <thead>
-          <tr style="background:var(--charcoal); color:#fff;">
-            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.72rem; font-weight:600;">Departure Dates</th>
-            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.72rem; font-weight:600;">Tour Fare (with flight)</th>
-            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.72rem; font-weight:600;">Ground Fare (no flight)</th>
-            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.72rem; font-weight:600;">Single Supp.</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">2 – 12 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
-          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">3 – 13 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
-          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">4 – 14 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
-          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">6 – 16 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
-          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">7 – 17 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
-          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">8 – 18 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
-          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">14 – 24 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
-          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">15 – 25 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
-          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">17 – 27 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
-          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">18 – 28 Sep</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 8,800</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 2,890</td></tr>
-          <tr><td style="padding:0.65rem 1rem;">8 – 18 Oct</td><td style="padding:0.65rem 1rem;"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem;">RM 8,800</td><td style="padding:0.65rem 1rem;">RM 2,890</td></tr>
-          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem;">9 – 19 Oct</td><td style="padding:0.65rem 1rem;"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem;">RM 8,800</td><td style="padding:0.65rem 1rem;">RM 2,890</td></tr>
-          <tr><td style="padding:0.65rem 1rem;">10 – 20 Oct</td><td style="padding:0.65rem 1rem;"><strong>RM 12,499</strong></td><td style="padding:0.65rem 1rem;">RM 8,800</td><td style="padding:0.65rem 1rem;">RM 2,890</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p style="font-size:0.82rem; color:var(--mid); background:var(--white); padding:1rem 1.25rem; border-radius:3px; border:1px solid var(--light-line);">Elite runs a smaller group with upgraded hotels and dining on the same itinerary. Ground fare = no international flights, land arrangements only. All tours conducted in Mandarin. Fares subject to seat availability at time of booking.</p>
-  </div>
-
-  <!-- WINTER -->
-  <div class="pkg-content" id="pkg-winter">
-    <div class="pkg-grid" style="grid-template-columns: 1fr;">
-      <div class="pkg-card">
-        <div class="pkg-card-label">Winter Exclusive inclusions</div>
-        <ul class="pkg-highlight-list">
-          <li><div class="ph-dot"></div>1+1 Luxury MPV throughout — spacious, premium ride</li>
-          <li><div class="ph-dot"></div>Stay inside Hemu Village at Globeflower Hotel (more time in the village)</li>
-          <li><div class="ph-dot"></div>Complimentary Yunxiao Peak cable car at Hemu</li>
-          <li><div class="ph-dot"></div>Complimentary afternoon tea at Hemu snow view</li>
-          <li><div class="ph-dot"></div>Free snow tubing and horse-drawn sled at Hemu</li>
-          <li><div class="ph-dot"></div>Milky Way starry sky viewing at Hemu (clear nights)</li>
-          <li><div class="ph-dot"></div>Jiangjunshan Ski Resort with snow party + cable car</li>
-          <li><div class="ph-dot"></div>Self-drive around Sayram Lake in ice season</li>
-          <li><div class="ph-dot"></div>Sayram Lake sunrise over blue ice</li>
-          <li><div class="ph-dot"></div>Shawan Natural Hot Spring Hotel — soak in mineral springs</li>
-          <li><div class="ph-dot"></div>Tianshan Heavenly Lake in winter snowscape</li>
-          <li><div class="ph-dot"></div>4+5 star hotels throughout</li>
-        </ul>
-      </div>
-      <div class="pkg-card">
-        <div class="pkg-card-label">Sayram Lake — what to see by month</div>
-        <ul class="pkg-highlight-list">
-          <li><div class="ph-dot"></div><strong>November</strong> — Unfrozen lake, pink skies, drifting snow, swans</li>
-          <li><div class="ph-dot"></div><strong>December</strong> — "Ice push" phenomenon: floating ice driven ashore, half-blue half-ice lake</li>
-          <li><div class="ph-dot"></div><strong>January</strong> — Blue icefalls shimmering under sunlight — like an ice palace</li>
-          <li><div class="ph-dot"></div><strong>February</strong> — Blue ice, ice flowers and ice bubbles — magical dreamscape</li>
-        </ul>
-      </div>
-      <div class="pkg-card">
-        <div class="pkg-card-label">Optional add-on</div>
-        <ul class="pkg-highlight-list">
-          <li><div class="ph-dot"></div>Ice Floating Experience — RMB 400/person (drift along a frozen river through an icy canyon)</li>
-        </ul>
-      </div>
-    </div>
-    <p style="font-size:0.86rem; color:var(--mid); background:var(--white); padding:1rem 1.25rem; border-radius:3px; border:1px solid var(--light-line); margin-bottom:1.5rem;"><strong style="color:var(--charcoal);">RM 9,299</strong> includes return flights from Kuala Lumpur (China Southern).</p>
-    <div style="overflow-x:auto; margin-bottom:1rem; border:1px solid var(--light-line); border-radius:3px;">
-      <table style="width:100%; border-collapse:collapse; font-size:0.84rem;">
-        <thead>
-          <tr style="background:var(--charcoal); color:#fff;">
-            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.72rem; font-weight:600;">Departure Dates</th>
-            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.72rem; font-weight:600;">Tour Fare (with flight)</th>
-            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.72rem; font-weight:600;">Ground Fare (no flight)</th>
-            <th style="padding:0.7rem 1rem; text-align:left; font-size:0.72rem; font-weight:600;">Single Supp.</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">20 – 28 Nov</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,299</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,599</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 1,670</td></tr>
-          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">27 Nov – 5 Dec</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,299</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,599</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 1,670</td></tr>
-          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">5 – 13 Dec</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,299</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,599</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 1,670</td></tr>
-          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">18 – 26 Dec</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,299</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,599</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 1,670</td></tr>
-          <tr><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">8 – 16 Jan</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,299</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,599</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 1,670</td></tr>
-          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">15 – 23 Jan</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);"><strong>RM 9,299</strong></td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 7,599</td><td style="padding:0.65rem 1rem; border-bottom:1px solid var(--light-line);">RM 1,670</td></tr>
-          <tr><td style="padding:0.65rem 1rem;">14 – 22 Feb</td><td style="padding:0.65rem 1rem;"><strong>RM 9,299</strong></td><td style="padding:0.65rem 1rem;">RM 7,599</td><td style="padding:0.65rem 1rem;">RM 1,670</td></tr>
-          <tr style="background:rgba(0,0,0,0.02);"><td style="padding:0.65rem 1rem;">22 Feb – 2 Mar</td><td style="padding:0.65rem 1rem;"><strong>RM 9,299</strong></td><td style="padding:0.65rem 1rem;">RM 7,599</td><td style="padding:0.65rem 1rem;">RM 1,670</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p style="font-size:0.82rem; color:var(--mid); background:var(--white); padding:1rem 1.25rem; border-radius:3px; border:1px solid var(--light-line);">1+1 luxury MPV throughout, 4&#9733;+5&#9733; hotels, all entrance fees included. Ground fare = no international flights, land arrangements only. Tours conducted in Mandarin. Ski clothing not included at Jiangjunshan Ski Resort; seasonal scenery varies with weather.</p>
-  </div>
-
-  <!-- BOOKING ESSENTIALS -->
-  <div style="margin-top:2.5rem;">
-    <div class="compare-title" style="margin-bottom:1.25rem;">Booking essentials — all packages</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
-      <div style="background:var(--white);border:1px solid var(--light-line);border-radius:3px;padding:1.4rem 1.5rem;">
-        <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--sky);font-weight:600;margin-bottom:0.7rem;">Child fares · under 11</div>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.45rem;font-size:0.83rem;color:var(--mid);line-height:1.5;">
-          <li><strong style="color:var(--charcoal);font-weight:600;">With bed</strong> — less 5% of adult fare</li>
-          <li><strong style="color:var(--charcoal);font-weight:600;">No bed</strong> — less 10% of adult fare</li>
-          <li><strong style="color:var(--charcoal);font-weight:600;">Infant</strong> — less 90% (under 24 months)</li>
-        </ul>
-      </div>
-      <div style="background:var(--white);border:1px solid var(--light-line);border-radius:3px;padding:1.4rem 1.5rem;">
-        <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--sky);font-weight:600;margin-bottom:0.7rem;">Flights · China Southern</div>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.45rem;font-size:0.83rem;color:var(--mid);line-height:1.5;">
-          <li>KUL ✈ Guangzhou ✈ Ürümqi (CZ), return</li>
-          <li>23kg checked baggage included</li>
-          <li>Overnight KLIA1 departure</li>
-        </ul>
-      </div>
-      <div style="background:var(--white);border:1px solid var(--light-line);border-radius:3px;padding:1.4rem 1.5rem;">
-        <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--sky);font-weight:600;margin-bottom:0.7rem;">Booking &amp; group</div>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.45rem;font-size:0.83rem;color:var(--mid);line-height:1.5;">
-          <li><strong style="color:var(--charcoal);font-weight:600;">RM 2,000</strong> deposit per person</li>
-          <li>10 to depart · tour leader from 16</li>
-          <li>Conducted in Mandarin</li>
-        </ul>
-      </div>
-      <div style="background:var(--white);border:1px solid var(--light-line);border-radius:3px;padding:1.4rem 1.5rem;">
-        <div style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--sky);font-weight:600;margin-bottom:0.7rem;">Optional · Travel insurance</div>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.45rem;font-size:0.83rem;color:var(--mid);line-height:1.5;">
-          <li>Chubb Executive, Zone 1 (11–15 days)</li>
-          <li><strong style="color:var(--charcoal);font-weight:600;">From RM 88</strong> individual (under 65)</li>
-          <li>Family &amp; senior plans available</li>
-        </ul>
+      <div class="tier marked"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div class="tier-season">Winter · Nov–Feb</div>
+        <div class="tier-name">Winter Exclusive</div>
+        <div class="tier-days">9 Days · 8 Nights</div>
+        <div class="tier-price">RM9,299 <span>from, twin share</span></div>
+        <ul class="tier-list"><li>1+1 luxury MPV throughout</li><li>Stay inside Hemu Village</li><li>Jiangjunshan ski resort + snow party</li><li>Sayram Lake blue ice &amp; hot springs</li></ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- HIGHLIGHTS -->
-<section class="highlights-section">
-  <p class="section-eyebrow">Must-see experiences</p>
-  <h2 class="section-title">Nine landscapes.<br>One extraordinary journey.</h2>
-  <div class="highlights-grid">
-    <div class="hl-card">
-      <div class="hl-top" style="height:180px;background:url('kanas.jpg') center/cover;"></div>
-      <div class="hl-body">
-        <div class="hl-icon">🏔️</div>
-        <div class="hl-tag">Northern Altay</div>
-        <h3 class="hl-name">Kanas Lake & The Three Bays</h3>
-        <p class="hl-desc">China's most pristine alpine lake, deep inside the Altay Mountains. Wolong Bay, Fairy Bay, and Moon Bay each have their own character — mist-draped, moon-curved river bends through birch forest. The Guanyu Terrace overlooks it all.</p>
+<section class="block" id="itinerary">
+  <div class="wrap">
+    <div class="sec-kicker">Departs Kuala Lumpur (KUL) · China Southern</div>
+    <h2 class="sec-h">Your trip, day by day</h2>
+    <div class="itin-contact" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;border:1px solid var(--line);background:var(--paper);padding:1rem 1.3rem;margin-bottom:1.2rem;">
+      <div style="font-size:.95rem;color:var(--muted);">Questions about this itinerary? Talk to us before you book.</div>
+      <a class="btn btn-ghost" href="https://wa.me/60198787790?text=Hi%20Blue%20Sky%20Vacation%2C%20I'd%20like%20to%20ask%20about%20the%20Northern%20Xinjiang%20Odyssey%20itinerary." target="_blank" rel="noopener" style="flex-shrink:0;">Contact us</a>
+    </div>
+    <div class="itin-h">Summer · Classic &amp; Elite · 11D10N</div>
+    <div class="itin-list">
+      <div class="itin-day"><div class="itin-day-label">Day 1</div><div class="itin-day-body"><div class="itin-day-title">Depart KL · Arrive Urumqi · Free evening</div><div class="itin-day-route">KL → Urumqi</div></div></div>
+      <div class="itin-day"><div class="itin-day-label">Day 2</div><div class="itin-day-body"><div class="itin-day-title">S21 Desert Highway · Karameli Desert Park</div><div class="itin-day-route">Urumqi → Burqin · 520km</div></div></div>
+      <div class="itin-day"><div class="itin-day-label">Day 3</div><div class="itin-day-body"><div class="itin-day-title">Kanas National Geological Park · Three Bays · Guanyu Terrace</div><div class="itin-day-route">Burqin → Jiadengyu · 180km</div></div></div>
+      <div class="itin-day"><div class="itin-day-label">Day 4</div><div class="itin-day-body"><div class="itin-day-title">Hemu Highway · Hemu Village · Wucai Beach · Night Market</div><div class="itin-day-route">Jiadengyu → Hemu → Burqin</div></div></div>
+      <div class="itin-day"><div class="itin-day-label">Day 5</div><div class="itin-day-body"><div class="itin-day-title">Ghost City · Dushanzi Grand Canyon</div><div class="itin-day-route">Burqin → Urho → Kuitun · 550km</div></div></div>
+      <div class="itin-day"><div class="itin-day-label">Day 6</div><div class="itin-day-body"><div class="itin-day-title">Sayram Lake Circuit · Guozigou Bridge</div><div class="itin-day-route">Kuitun → Sayram Lake → Huocheng</div></div></div>
+      <div class="itin-day"><div class="itin-day-label">Day 7</div><div class="itin-day-body"><div class="itin-day-title">Seasonal: Flower Sea (May–Jun) or Kazanchi Folk Area (Aug–Sep) · Zhaosu Wetland</div><div class="itin-day-route">Huocheng → Yining → Zhaosu</div></div></div>
+      <div class="itin-day"><div class="itin-day-label">Day 8</div><div class="itin-day-body"><div class="itin-day-title">Nalati Sky Grassland</div><div class="itin-day-route">Zhaosu → Nalati · 170km</div></div></div>
+      <div class="itin-day"><div class="itin-day-label">Day 9</div><div class="itin-day-body"><div class="itin-day-title">Duku Highway — Four Seasons in One Day (seasonal)</div><div class="itin-day-route">Nalati → Dushanzi · 270km</div></div></div>
+      <div class="itin-day"><div class="itin-day-label">Day 10</div><div class="itin-day-body"><div class="itin-day-title">Akhal-Teke Horse Base · Xinjiang Grand Bazaar · Farewell Roast Whole Lamb</div><div class="itin-day-route">Dushanzi → Urumqi · 260km</div></div></div>
+      <div class="itin-day"><div class="itin-day-label">Day 11</div><div class="itin-day-body"><div class="itin-day-title">Return flight home</div><div class="itin-day-route">Urumqi → KL</div></div></div>
+    </div>
+    <div class="itin-h">Winter Exclusive · 9D8N</div>
+    <div class="itin-list">
+      <div class="itin-day"><div class="itin-day-label">Day 1</div><div class="itin-day-body"><div class="itin-day-title">Depart KL · Arrive Urumqi via Guangzhou</div><div class="itin-day-route">KL → Transit → Urumqi</div></div></div>
+      <div class="itin-day"><div class="itin-day-label">Day 2</div><div class="itin-day-body"><div class="itin-day-title">S21 Desert Highway · Jiangjunshan Ski Resort + Snow Party</div><div class="itin-day-route">Urumqi → Altay · 665km</div></div></div>
+      <div class="itin-day"><div class="itin-day-label">Day 3</div><div class="itin-day-body"><div class="itin-day-title">Hemu Scenic Area · Milky Way Starry Sky · Yunxiao Cable Car</div><div class="itin-day-route">Altay → Hemu · 287km</div></div></div>
+      <div class="itin-day"><div class="itin-day-label">Day 4</div><div class="itin-day-body"><div class="itin-day-title">Hemu Village Viewing Platform · Kanas Lake</div><div class="itin-day-route">Hemu → Kanas · 70km</div></div></div>
+      <div class="itin-day"><div class="itin-day-label">Day 5</div><div class="itin-day-body"><div class="itin-day-title">Urho Ghost City · Karamay</div><div class="itin-day-route">Kanas → Ghost City → Karamay</div></div></div>
+      <div class="itin-day"><div class="itin-day-label">Day 6</div><div class="itin-day-body"><div class="itin-day-title">Sayram Lake — Self-Drive Ice Circuit</div><div class="itin-day-route">Karamay → Sayram Lake · 420km</div></div></div>
+      <div class="itin-day"><div class="itin-day-label">Day 7</div><div class="itin-day-body"><div class="itin-day-title">Sayram Lake Sunrise · Shawan Hot Spring Hotel</div><div class="itin-day-route">Sayram Lake → Shawan · 379km</div></div></div>
+      <div class="itin-day"><div class="itin-day-label">Day 8</div><div class="itin-day-body"><div class="itin-day-title">Tianshan Heavenly Lake · Xinjiang Grand Bazaar</div><div class="itin-day-route">Shawan → Urumqi · 171km</div></div></div>
+      <div class="itin-day"><div class="itin-day-label">Day 9</div><div class="itin-day-body"><div class="itin-day-title">Return flight home</div><div class="itin-day-route">Urumqi → Transit → KL</div></div></div>
+    </div>
+    <div class="inc-grid">
+      <div class="inc-col">
+        <div class="inc-h">Included</div>
+        <ul class="inc-list inc-yes"><li>Return flights from Kuala Lumpur (China Southern, via Guangzhou)</li><li>23kg checked baggage</li><li>Hotels as listed per night</li><li>All entrance fees throughout</li><li>Shuttle buses at Kanas, Hemu, Ghost City, Nalati</li><li>Full meal plan: breakfast, lunch and dinner daily</li><li>Local guide and coach transport</li></ul>
+      </div>
+      <div class="inc-col">
+        <div class="inc-h">Not included</div>
+        <ul class="inc-list inc-no"><li>Travel insurance</li><li>China visa</li><li>Single supplement (see table)</li><li>Personal expenses and optional activities</li></ul>
       </div>
     </div>
-    <div class="hl-card">
-      <div class="hl-top" style="height:180px;background:url('hemu.webp') center/cover;"></div>
-      <div class="hl-body">
-        <div class="hl-icon">🌲</div>
-        <div class="hl-tag">Northern Altay · Autumn Gold</div>
-        <h3 class="hl-name">Hemu Village</h3>
-        <p class="hl-desc">One of China's most beautiful villages. Wooden Tuva houses, white birch forests, and the Hemu River valley. In autumn the birches turn gold — in winter they're cloaked in snow. From the observation deck, the whole village unfolds below you like a painting.</p>
-        <span class="seasonal-note">Summer: birch & wildflowers · Winter: snow village</span>
+    <div class="dates-block" id="dates">
+      <div class="itin-h" style="margin-top:0;">Classic · departures &amp; fares</div>
+      <table class="dates-table"><thead><tr><th>Departure</th><th>Tour fare (with flight)</th><th>Ground fare (no flight)</th><th>Single supp.</th></tr></thead><tbody><tr><td>27 Aug – 6 Sep</td><td>RM8,999</td><td>RM7,100</td><td>RM2,300</td></tr><tr><td>28 Aug – 7 Sep</td><td>RM9,399</td><td>RM7,100</td><td>RM2,300</td></tr><tr><td>1 – 11 Sep</td><td>RM8,999</td><td>RM7,100</td><td>RM2,300</td></tr><tr><td>3 – 13 Sep</td><td>RM8,999</td><td>RM7,100</td><td>RM2,300</td></tr><tr><td>4 – 14 Sep</td><td>RM8,999</td><td>RM7,100</td><td>RM2,300</td></tr><tr><td>5 – 15 Sep</td><td>RM8,999</td><td>RM7,100</td><td>RM2,300</td></tr><tr><td>6 – 16 Sep</td><td>RM8,999</td><td>RM7,100</td><td>RM2,300</td></tr><tr><td>7 – 17 Sep</td><td>RM8,999</td><td>RM7,100</td><td>RM2,300</td></tr><tr><td>12 – 22 Sep</td><td>RM9,399</td><td>RM7,100</td><td>RM2,300</td></tr><tr><td>13 – 23 Sep</td><td>RM9,399</td><td>RM7,100</td><td>RM2,300</td></tr><tr><td>14 – 24 Sep</td><td>RM9,399</td><td>RM7,100</td><td>RM2,300</td></tr><tr><td>15 – 25 Sep</td><td>RM9,399</td><td>RM7,100</td><td>RM2,300</td></tr><tr><td>17 – 27 Sep</td><td>RM9,399</td><td>RM7,100</td><td>RM2,300</td></tr><tr><td>18 – 28 Sep</td><td>RM9,399</td><td>RM7,100</td><td>RM2,300</td></tr><tr><td>8 – 18 Oct · train</td><td>RM8,599</td><td>RM6,600</td><td>RM2,000</td></tr><tr><td>9 – 19 Oct · train</td><td>RM8,599</td><td>RM6,600</td><td>RM2,000</td></tr><tr><td>10 – 20 Oct · train</td><td>RM8,599</td><td>RM6,600</td><td>RM2,000</td></tr></tbody></table>
+      <div class="itin-h">Elite · departures &amp; fares</div>
+      <table class="dates-table"><thead><tr><th>Departure</th><th>Tour fare (with flight)</th><th>Ground fare (no flight)</th><th>Single supp.</th></tr></thead><tbody><tr><td>2 – 12 Sep</td><td>RM12,499</td><td>RM8,800</td><td>RM2,890</td></tr><tr><td>3 – 13 Sep</td><td>RM12,499</td><td>RM8,800</td><td>RM2,890</td></tr><tr><td>4 – 14 Sep</td><td>RM12,499</td><td>RM8,800</td><td>RM2,890</td></tr><tr><td>6 – 16 Sep</td><td>RM12,499</td><td>RM8,800</td><td>RM2,890</td></tr><tr><td>7 – 17 Sep</td><td>RM12,499</td><td>RM8,800</td><td>RM2,890</td></tr><tr><td>8 – 18 Sep</td><td>RM12,499</td><td>RM8,800</td><td>RM2,890</td></tr><tr><td>14 – 24 Sep</td><td>RM12,499</td><td>RM8,800</td><td>RM2,890</td></tr><tr><td>15 – 25 Sep</td><td>RM12,499</td><td>RM8,800</td><td>RM2,890</td></tr><tr><td>17 – 27 Sep</td><td>RM12,499</td><td>RM8,800</td><td>RM2,890</td></tr><tr><td>18 – 28 Sep</td><td>RM12,499</td><td>RM8,800</td><td>RM2,890</td></tr><tr><td>8 – 18 Oct</td><td>RM12,499</td><td>RM8,800</td><td>RM2,890</td></tr><tr><td>9 – 19 Oct</td><td>RM12,499</td><td>RM8,800</td><td>RM2,890</td></tr><tr><td>10 – 20 Oct</td><td>RM12,499</td><td>RM8,800</td><td>RM2,890</td></tr></tbody></table>
+      <div class="itin-h">Winter Exclusive · departures &amp; fares</div>
+      <table class="dates-table"><thead><tr><th>Departure</th><th>Tour fare (with flight)</th><th>Ground fare (no flight)</th><th>Single supp.</th></tr></thead><tbody><tr><td>20 – 28 Nov</td><td>RM9,299</td><td>RM7,599</td><td>RM1,670</td></tr><tr><td>27 Nov – 5 Dec</td><td>RM9,299</td><td>RM7,599</td><td>RM1,670</td></tr><tr><td>5 – 13 Dec</td><td>RM9,299</td><td>RM7,599</td><td>RM1,670</td></tr><tr><td>18 – 26 Dec</td><td>RM9,299</td><td>RM7,599</td><td>RM1,670</td></tr><tr><td>8 – 16 Jan</td><td>RM9,299</td><td>RM7,599</td><td>RM1,670</td></tr><tr><td>15 – 23 Jan</td><td>RM9,299</td><td>RM7,599</td><td>RM1,670</td></tr><tr><td>14 – 22 Feb</td><td>RM9,299</td><td>RM7,599</td><td>RM1,670</td></tr><tr><td>22 Feb – 2 Mar</td><td>RM9,299</td><td>RM7,599</td><td>RM1,670</td></tr></tbody></table>
+      <div class="deposit-line">Ground fare excludes international flights — land arrangements only. Deposit: <strong>RM2,000 per pax</strong></div>
+      <button class="btn btn-primary marked" onclick="bsvBooking.open()" style="cursor:pointer;margin-top:1.2rem;"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>Check Availability</button>
+      <div class="flight-box marked" style="border:1px solid var(--line);background:var(--paper);padding:1.3rem 1.5rem;margin-top:1.8rem;"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+        <div class="sec-kicker" style="margin-bottom:.45rem;">Flight details</div>
+        <div style="font-size:1rem;font-weight:500;">China Southern · Kuala Lumpur → Guangzhou → Ürümqi, and return</div>
+        <div style="font-size:.88rem;color:var(--muted);margin-top:.55rem;">Overnight KLIA1 departure. Flight times and routing are confirmed closer to departure and subject to change.</div>
       </div>
     </div>
-    <div class="hl-card">
-      <div class="hl-top" style="height:180px;background:url('wucai.jpg') center/cover;"></div>
-      <div class="hl-body">
-        <div class="hl-icon">🌈</div>
-        <div class="hl-tag">Northern Altay · Sunset</div>
-        <h3 class="hl-name">Wucai Beach 五彩滩</h3>
-        <p class="hl-desc">A Danxia landscape along the Irtysh River. At sunset, the rock formations glow in shades of red, orange, and yellow — and across the river, green poplars form a sharp contrast. One of the most photogenic spots in all of Xinjiang.</p>
-      </div>
-    </div>
-    <div class="hl-card">
-      <div class="hl-top" style="height:180px;background:url('ghostcity.jpg') center/cover;"></div>
-      <div class="hl-body">
-        <div class="hl-icon">👻</div>
-        <div class="hl-tag">Karamay · Yadan Landforms</div>
-        <h3 class="hl-name">Ghost City — Urho</h3>
-        <p class="hl-desc">Also known as the "Wind City." Wind-carved rock pillars of extraordinary shapes rise across the Gobi Desert. When the wind howls between the formations, the sound resembles ghostly cries. A place like nowhere else on Earth.</p>
-      </div>
-    </div>
-    <div class="hl-card">
-      <div class="hl-top" style="height:180px;background:url('sayram.jpg') center/cover;"></div>
-      <div class="hl-body">
-        <div class="hl-icon">💎</div>
-        <div class="hl-tag">Ili · Any season</div>
-        <h3 class="hl-name">Sayram Lake</h3>
-        <p class="hl-desc">Called "The Last Tear of the Atlantic" — the westernmost ocean-connected lake in China. Crystal blue waters ringed by snow peaks. In summer, swans and wildflowers. In winter, blue ice, icefalls, and ice bubbles that look like another planet.</p>
-        <span class="seasonal-note">Summer: blue mirror · Winter: ice palace</span>
-      </div>
-    </div>
-    <div class="hl-card">
-      <div class="hl-top" style="height:180px;background:url('nalati.jpg') center/cover;"></div>
-      <div class="hl-body">
-        <div class="hl-icon">🐎</div>
-        <div class="hl-tag">Ili · Seasonal</div>
-        <h3 class="hl-name">Nalati Sky Grassland</h3>
-        <p class="hl-desc">A sub-alpine meadow at nearly 2,000m altitude — rolling green hills, wildflower seas, and snow-capped peaks. Called "Paradise on Earth." On certain months, herds of heavenly horses run through the Zhaosu Wetland below. Shuttle bus from base included.</p>
-        <span class="seasonal-note">Best: May–September</span>
-      </div>
-    </div>
-    <div class="hl-card">
-      <div class="hl-top" style="height:180px;background:url('duku.jpg') center/cover;"></div>
-      <div class="hl-body">
-        <div class="hl-icon">🛣️</div>
-        <div class="hl-tag">Seasonal · Jun–Sep</div>
-        <h3 class="hl-name">Duku Highway 独库公路</h3>
-        <p class="hl-desc">One of China's most beautiful roads — 560km through the Tianshan Mountains. The highway passes from alpine snow into grasslands, canyon gorges, and desert in a single day. Literally "four seasons in one day." Seasonal (Jun–Sep); train alternative in other months.</p>
-        <span class="seasonal-note">Seasonal: June–September only</span>
-      </div>
-    </div>
-    <div class="hl-card">
-      <div class="hl-top" style="height:180px;background:url('lavender.jpg') center 30%/cover;"></div>
-      <div class="hl-body">
-        <div class="hl-icon">🌸</div>
-        <div class="hl-tag">Ili · Seasonal</div>
-        <h3 class="hl-name">Tianshan Flower Sea & Kazanchi Folk Area</h3>
-        <p class="hl-desc">In May–June, peonies and lavender carpet the Tianshan foothills. In August–September, Kazanchi Folk Area opens — ride a horse cart through Uyghur streets, taste the famous Marajun ice cream, and watch Uzbek folk performances.</p>
-        <span class="seasonal-note">Flowers: May–Jun · Culture: Aug–Sep</span>
-      </div>
-    </div>
-    <div class="hl-card">
-      <div class="hl-top" style="height:180px;background:url('ski-resort.jpg') center/cover;"></div>
-      <div class="hl-body">
-        <div class="hl-icon">⛷️</div>
-        <div class="hl-tag">Winter exclusive</div>
-        <h3 class="hl-name">Jiangjunshan Ski Resort + Yunxiao Cable Car</h3>
-        <p class="hl-desc">Winter unlocks experiences no other season offers: skiing in Altay (some of China's best snow), a snow party on the mountain, the Yunxiao Peak cable car with views across four countries (China, Russia, Kazakhstan, Mongolia), and a hot spring soak at Shawan.</p>
-        <span class="seasonal-note">Winter only: Nov–Feb</span>
-      </div>
+    <div class="know-box marked"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+      <div class="know-h">Good to know</div>
+      <p class="know-p">This tour departs Kuala Lumpur, not Kota Kinabalu. Ürümqi runs two time zones ahead of Malaysia on the clock but keeps local daylight hours, so mornings start late and evenings run long. Tours are conducted in Mandarin. Download Alipay or WeChat Pay and link a card before you travel; cash in CNY works everywhere. The Duku Highway section is seasonal (Jun–Sep) and may be replaced by high-speed rail.</p>
     </div>
   </div>
 </section>
 
-<!-- ITINERARY -->
-<section class="itinerary-section" id="itinerary">
-  <p class="section-eyebrow">Day by day</p>
-  <h2 class="section-title">Full itineraries</h2>
-  <div class="itin-tabs">
-    <div class="itin-tab active" onclick="showItin('sum')">Summer Classic/Elite · 11D10N</div>
-    <div class="itin-tab" onclick="showItin('win')">Winter Exclusive · 9D8N</div>
-  </div>
-
-  <!-- SUMMER ITINERARY -->
-  <div class="itin-content active" id="itin-sum">
-    <div class="day-list">
-
-      <div class="day-item open">
-        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
-          <span class="day-num" style="background:#2d6a2d">D1</span>
-          <span class="day-route">KL → Urumqi</span>
-          <span class="day-title">Depart KL · Arrive Urumqi · Free evening</span>
-          <span class="day-chevron">▼</span>
-        </div>
-        <div class="day-body"><div class="day-stops">
-          <div class="stop"><div class="stop-dot" style="background:#2d6a2d"></div><div class="stop-text"><strong>Assemble KL International Airport · Fly to Urumqi</strong><span>China Southern Airlines. Check in and rest, or explore freely.</span></div></div>
-          <div class="meal-line">D: Xinjiang Specialty Welcome Dinner</div>
-          <div class="hotel-line">🏨 Urumqi Hantang Hotel or similar ★★★★</div>
-        </div></div>
-      </div>
-
-      <div class="day-item">
-        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
-          <span class="day-num" style="background:#2d6a2d">D2</span>
-          <span class="day-route">Urumqi → Burqin · 520km · 6.5hrs</span>
-          <span class="day-title">S21 Desert Highway · Karameli Desert Park</span>
-          <span class="day-chevron">▼</span>
-        </div>
-        <div class="day-body"><div class="day-stops">
-          <div class="stop"><div class="stop-dot" style="background:#c85a1a"></div><div class="stop-text"><strong>Karameli Desert Park 克拉美丽沙漠公园</strong><span>Pass through — vast Gobi terrain, rippling dunes, wind-eroded landforms.</span></div></div>
-          <div class="stop"><div class="stop-dot" style="background:#2d6a2d"></div><div class="stop-text"><strong>S21 Desert Highway 沙漠公路</strong><span>Drive through China's second-largest desert — Gurbantunggut. The Kalamaili Mountains Nature Reserve alongside is home to Mongolian wild asses and goitered gazelle.</span></div></div>
-          <div class="meal-line">L: Xinjiang Specialty</div><div class="meal-line">D: Burqin Cold-Water Fish</div>
-          <div class="hotel-line">🏨 Burqin Riverside Art Villa Holiday Hotel or similar ★★★★</div>
-        </div></div>
-      </div>
-
-      <div class="day-item">
-        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
-          <span class="day-num" style="background:#2d6a2d">D3</span>
-          <span class="day-route">Burqin → Jiadengyu · 180km · 4hrs</span>
-          <span class="day-title">Kanas National Geological Park · Three Bays · Guanyu Terrace</span>
-          <span class="day-chevron">▼</span>
-        </div>
-        <div class="day-body"><div class="day-stops">
-          <div class="stop"><div class="stop-dot" style="background:#2d6a2d"></div><div class="stop-text"><strong>★ Kanas National Geological Park 喀纳斯景区</strong><span>Shuttle bus included. Wolong Bay, Fairy Bay, Moon Bay — three iconic river bends through forested alpine valleys.</span></div></div>
-          <div class="stop"><div class="stop-dot" style="background:#2d6a2d"></div><div class="stop-text"><strong>★ Guanyu Terrace 喀纳斯观鱼台</strong><span>Highest viewpoint in Kanas. Overlooking the full lake — named after the legend that visitors might spot the "lake monster" from here. Most iconic viewpoint in Northern Xinjiang.</span></div></div>
-          <div class="meal-line">L: At Scenic Area</div><div class="meal-line">D: Xinjiang Specialty</div>
-          <div class="hotel-line">🏨 Kanas Hongfu Eco-Resort Hotel or similar ★★★★</div>
-        </div></div>
-      </div>
-
-      <div class="day-item">
-        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
-          <span class="day-num" style="background:#2d6a2d">D4</span>
-          <span class="day-route">Jiadengyu → Hemu → Burqin · 50km + 170km</span>
-          <span class="day-title">Hemu Highway · Hemu Village · Wucai Beach · Night Market</span>
-          <span class="day-chevron">▼</span>
-        </div>
-        <div class="day-body"><div class="day-stops">
-          <div class="stop"><div class="stop-dot" style="background:#4a7a1a"></div><div class="stop-text"><strong>Hemu Highway 禾木公路</strong><span>Scenic drive to Hemu — mountains, birch forests, winding river valleys. Stops for photography along the way.</span></div></div>
-          <div class="stop"><div class="stop-dot" style="background:#4a7a1a"></div><div class="stop-text"><strong>★ Hemu Scenic Area — Hemu Village 禾木风景区</strong><span>Shuttle bus included. Birch Forest, Hemu Bridge, Hemu River. Climb the observation deck for full village panorama — wooden houses, smoke from chimneys, mountains behind.</span></div></div>
-          <div class="stop"><div class="stop-dot" style="background:#c85a1a"></div><div class="stop-text"><strong>★ Wucai Beach 五彩滩</strong><span>Danxia multi-coloured rock formations along the Irtysh River. Red, yellow, orange cliffs — spectacular at sunset.</span></div></div>
-          <div class="stop"><div class="stop-dot" style="background:#2d6a2d"></div><div class="stop-text"><strong>Hedi Night Market 河提夜市</strong><span>Burqin's liveliest market. Grilled fish, lamb skewers, hand-grabbed rice — the flavours of the Silk Road.</span></div></div>
-          <div class="meal-line">L: Chinese Set</div><div class="meal-line">D: Chinese Set</div>
-          <div class="hotel-line">🏨 Burqin Riverside Art Villa Holiday Hotel or similar ★★★★</div>
-        </div></div>
-      </div>
-
-      <div class="day-item">
-        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
-          <span class="day-num" style="background:#5a3a8a">D5</span>
-          <span class="day-route">Burqin → Urho → Kuitun · 270km + 280km</span>
-          <span class="day-title">Ghost City · Dushanzi Grand Canyon</span>
-          <span class="day-chevron">▼</span>
-        </div>
-        <div class="day-body"><div class="day-stops">
-          <div class="stop"><div class="stop-dot" style="background:#5a3a8a"></div><div class="stop-text"><strong>★ Urho Ghost City 乌尔禾世界魔鬼城</strong><span>Shuttle bus included. Classic Yadan landform — wind-carved rock pillars, maze-like passages, eerie howling winds. Layered rock colours under sunlight.</span></div></div>
-          <div class="stop"><div class="stop-dot" style="background:#5a3a8a"></div><div class="stop-text"><strong>★ Dushanzi Grand Canyon 独山子大峡谷</strong><span>Carved by Tianshan snowmelt. Layered canyon walls with terraced cliffs and sculpted rock formations.</span></div></div>
-          <div class="meal-line">L: Hand-Grabbed Rice 手抓饭</div><div class="meal-line">D: Liao's Signature Pork Ribs</div>
-          <div class="hotel-line">🏨 Kuitun Rezen Hotel or similar ★★★★</div>
-        </div></div>
-      </div>
-
-      <div class="day-item">
-        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
-          <span class="day-num" style="background:#1a5a8a">D6</span>
-          <span class="day-route">Kuitun → Sayram Lake → Huocheng · 210km + 80km</span>
-          <span class="day-title">Sayram Lake Circuit · Guozigou Bridge</span>
-          <span class="day-chevron">▼</span>
-        </div>
-        <div class="day-body"><div class="day-stops">
-          <div class="stop"><div class="stop-dot" style="background:#1a5a8a"></div><div class="stop-text"><strong>★ Sayram Lake 赛里木湖 — Full Lake Tour</strong><span>"The Last Tear of the Atlantic." Crystal-blue water ringed by snow peaks. Circling the lake reveals different moods in the light.</span></div></div>
-          <div class="stop"><div class="stop-dot" style="background:#1a5a8a"></div><div class="stop-text"><strong>Guozigou Bridge 果子沟大桥</strong><span>Pass through. "Ili's No.1 Scenic View" — an iconic bridge spanning the dramatic Guozigou Canyon.</span></div></div>
-          <div class="meal-line">L: Chinese Set</div><div class="meal-line">D: Xinjiang Big Plate Chicken 大盘鸡</div>
-          <div class="hotel-line">🏨 Huocheng Qingshuihe Shengdu Hotel or similar ★★★★</div>
-        </div></div>
-      </div>
-
-      <div class="day-item">
-        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
-          <span class="day-num" style="background:#2d6a2d">D7</span>
-          <span class="day-route">Huocheng → Yining → Zhaosu · 70km + 180km</span>
-          <span class="day-title">Seasonal: Flower Sea (May–Jun) or Kazanchi Folk Area (Aug–Sep) · Zhaosu Wetland</span>
-          <span class="day-chevron">▼</span>
-        </div>
-        <div class="day-body"><div class="day-stops">
-          <div class="stop"><div class="stop-dot" style="background:#4a7a1a"></div><div class="stop-text"><strong>★ Tianshan Flower Sea 天山花海</strong><span>Seasonal: May–June only. Peonies, lavender, and wildflowers carpeting the Tianshan foothills in waves of colour.</span></div></div>
-          <div class="stop"><div class="stop-dot" style="background:#c85a1a"></div><div class="stop-text"><strong>★ Kazanchi Folk Tourism Area 喀赞其民俗古城</strong><span>Seasonal: Aug–Sep only. Horse cart ride through Uyghur streets, traditional residential architecture, European-style buildings, Marajun ice cream, osmanthus eyebrow custom, Uzbek folk performances.</span></div></div>
-          <div class="stop"><div class="stop-dot" style="background:#2d6a2d"></div><div class="stop-text"><strong>★ Zhaosu Wetland Park 昭苏湿地公园 — Heavenly Horses Bathing in the River</strong><span>One of Xinjiang's largest natural wetlands (nearly 5,000 hectares). Herds of horses in the river — a scene exclusive to Zhaosu and unique to Malaysia tour groups. Wooden boardwalks and viewing platforms.</span></div></div>
-          <div class="meal-line">L: Signature Lamb Ribs 羊排</div><div class="meal-line">D: Chinese Set</div>
-          <div class="hotel-line">🏨 Zhaosu Pegasus Hotel or similar ★★★★</div>
-        </div></div>
-      </div>
-
-      <div class="day-item">
-        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
-          <span class="day-num" style="background:#2d6a2d">D8</span>
-          <span class="day-route">Zhaosu → Nalati · 170km · 3.5hrs</span>
-          <span class="day-title">Nalati Sky Grassland</span>
-          <span class="day-chevron">▼</span>
-        </div>
-        <div class="day-body"><div class="day-stops">
-          <div class="stop"><div class="stop-dot" style="background:#2d6a2d"></div><div class="stop-text"><strong>★ Nalati Sky Grassland 那拉提空中草原</strong><span>Shuttle bus included. Sub-alpine meadow at altitude — rolling green hills, wildflower sea, snow peaks on the horizon. Called "Paradise on Earth." One of the world's great grassland landscapes.</span></div></div>
-          <div class="meal-line">L: Chinese Set</div><div class="meal-line">D: Xinjiang Specialty</div>
-          <div class="hotel-line">🏨 Cultural Tourism Nalati Resort Hotel or similar ★★★★</div>
-        </div></div>
-      </div>
-
-      <div class="day-item">
-        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
-          <span class="day-num" style="background:#8a2a0a">D9</span>
-          <span class="day-route">Nalati → Dushanzi · 270km · ~5–6hrs via Duku Highway</span>
-          <span class="day-title">Duku Highway — Four Seasons in One Day (Seasonal)</span>
-          <span class="day-chevron">▼</span>
-        </div>
-        <div class="day-body"><div class="day-stops">
-          <div class="stop"><div class="stop-dot" style="background:#8a2a0a"></div><div class="stop-text"><strong>Duku Highway 独库公路</strong><span>Seasonal (June–September). One of China's most scenic roads — 560km through Tianshan crossing alpine snow, canyon gorges, and grassland. In May and October, return by high-speed train via Yining instead. If road is closed on any date, train alternative used.</span></div></div>
-          <div class="meal-line">L: Chinese Set</div><div class="meal-line">D: Xinjiang BBQ Skewers 烤串</div>
-          <div class="hotel-line">🏨 Dushanzi Xigoma International Hotel or similar ★★★★</div>
-        </div></div>
-      </div>
-
-      <div class="day-item">
-        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
-          <span class="day-num" style="background:#2d6a2d">D10</span>
-          <span class="day-route">Dushanzi → Urumqi · 260km · 3.5hrs</span>
-          <span class="day-title">Akhal-Teke Horse Base · Xinjiang Grand Bazaar · Farewell Roast Whole Lamb</span>
-          <span class="day-chevron">▼</span>
-        </div>
-        <div class="day-body"><div class="day-stops">
-          <div class="stop"><div class="stop-dot" style="background:#c85a1a"></div><div class="stop-text"><strong>★ Xinjiang Ancient Ecological Park — Akhal-Teke Horse Base</strong><span>Silicified wood, fossil trees, black iron meteorites, grassland stone figures, Przewalski's wild horses, and the legendary Akhal-Teke horses. Watch equestrian performances — "Belt and Road" cultural exchange base.</span></div></div>
-          <div class="stop"><div class="stop-dot" style="background:#2d6a2d"></div><div class="stop-text"><strong>Xinjiang International Grand Bazaar 新疆国际大巴扎</strong><span>"Window of Xinjiang" — Islamic architecture, ethnic handicrafts, cuisine, and a living market culture.</span></div></div>
-          <div class="meal-line">L: Chinese Set</div><div class="meal-line">D: Roast Whole Lamb 烤全羊 — Farewell Banquet</div>
-          <div class="hotel-line">🏨 Urumqi Hantang Hotel or similar ★★★★</div>
-        </div></div>
-      </div>
-
-      <div class="day-item">
-        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
-          <span class="day-num" style="background:#2d6a2d">D11</span>
-          <span class="day-route">Urumqi → KL</span>
-          <span class="day-title">Return flight home</span>
-          <span class="day-chevron">▼</span>
-        </div>
-        <div class="day-body"><div class="day-stops">
-          <div class="stop"><div class="stop-dot" style="background:#2d6a2d"></div><div class="stop-text"><strong>Assemble at Urumqi Airport · Fly to Kuala Lumpur</strong><span>Itinerary may be adjusted based on final confirmed flight schedule.</span></div></div>
-        </div></div>
-      </div>
-
+<div class="cta">
+  <div class="wrap">
+    <div class="sec-kicker">Ready to go</div>
+    <h2 class="h" style="font-size:clamp(1.8rem,3vw,2.6rem);">Let's plan your Xinjiang trip.</h2>
+    <p>Tell us your season and group size. We'll recommend Classic, Elite or Winter, and confirm pricing.</p>
+    <div class="cta-buttons">
+      <button class="btn btn-white" onclick="bsvBooking.open()" style="cursor:pointer;">Check Availability</button>
+      <a class="btn btn-ghost" style="border-color:rgba(255,255,255,.35);color:#fff;" href="mailto:info@blueskv.com?subject=Northern%20Xinjiang%20Enquiry">Email us</a>
     </div>
   </div>
+</div>
 
-  <!-- WINTER ITINERARY -->
-  <div class="itin-content" id="itin-win">
-    <div class="day-list">
-
-      <div class="day-item open">
-        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
-          <span class="day-num" style="background:#2a3a5a">D1</span>
-          <span class="day-route">KL → Transit → Urumqi</span>
-          <span class="day-title">Depart KL · Arrive Urumqi via transit (Guangzhou)</span>
-          <span class="day-chevron">▼</span>
-        </div>
-        <div class="day-body"><div class="day-stops">
-          <div class="stop"><div class="stop-dot" style="background:#2a3a5a"></div><div class="stop-text"><strong>KL → Guangzhou → Urumqi</strong><span>Check in to hotel. Welcome dinner at Xinjiang specialty restaurant.</span></div></div>
-          <div class="meal-line">D: Xinjiang Specialty Welcome Dinner</div>
-          <div class="hotel-line">🏨 Urumqi Liston International Hotel or similar ★★★★★</div>
-        </div></div>
-      </div>
-
-      <div class="day-item">
-        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
-          <span class="day-num" style="background:#2a3a5a">D2</span>
-          <span class="day-route">Urumqi → Altay · 665km · 9hrs</span>
-          <span class="day-title">S21 Desert Highway · Jiangjunshan Ski Resort + Snow Party</span>
-          <span class="day-chevron">▼</span>
-        </div>
-        <div class="day-body"><div class="day-stops">
-          <div class="stop"><div class="stop-dot" style="background:#2a3a5a"></div><div class="stop-text"><strong>S21 Desert Highway</strong><span>Drive through the Gobi Desert — a landscape of vast deserts, rugged terrain, and snowy plains in winter.</span></div></div>
-          <div class="stop"><div class="stop-dot" style="background:#1a4a8a"></div><div class="stop-text"><strong>★ Jiangjunshan Ski Resort 将军山滑雪场</strong><span>Ski resort in Altay City with excellent snow quality, a cable car to the summit, and a snow party on the slopes. (Ski clothing not included — rent on-site.)</span></div></div>
-          <div class="stop"><div class="stop-dot" style="background:#c85a1a"></div><div class="stop-text"><strong>Optional: Ice Floating Experience — RMB 400</strong><span>Drift along a frozen river through an icy canyon. Unique and unforgettable.</span></div></div>
-          <div class="meal-line">L: Xinjiang-style mixed noodles</div>
-          <div class="hotel-line">🏨 Wanda Moments Altay or similar ★★★★</div>
-        </div></div>
-      </div>
-
-      <div class="day-item">
-        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
-          <span class="day-num" style="background:#2a3a5a">D3</span>
-          <span class="day-route">Altay → Hemu · 287km · 6hrs</span>
-          <span class="day-title">Hemu Scenic Area · Milky Way Starry Sky · Yunxiao Cable Car</span>
-          <span class="day-chevron">▼</span>
-        </div>
-        <div class="day-body"><div class="day-stops">
-          <div class="stop"><div class="stop-dot" style="background:#4a7a1a"></div><div class="stop-text"><strong>★ Hemu Scenic Area 禾木景区</strong><span>Shuttle bus + Yunxiao Peak cable car included. The most iconic view in Hemu is from the observation deck — overlooking the whole village, chimney smoke rising, distant snow peaks in the frame. Morning mist makes it look like a fairytale.</span></div></div>
-          <div class="stop"><div class="stop-dot" style="background:#1a3a6a"></div><div class="stop-text"><strong>★ Yunxiao Peak Cable Car 云霄峰缆车</strong><span>Complimentary. Panoramic views of snowy forest — and on clear days, you can see across all four countries: China, Russia, Kazakhstan, and Mongolia.</span></div></div>
-          <div class="stop"><div class="stop-dot" style="background:#4a7a1a"></div><div class="stop-text"><strong>Milky Way & Starry Sky viewing</strong><span>Hemu Village has almost no light pollution in winter — one of the best stargazing locations in China.</span></div></div>
-          <div class="stop"><div class="stop-dot" style="background:#c85a1a"></div><div class="stop-text"><strong>Free activities at Hemu</strong><span>Complimentary afternoon tea in snow view · Free snow tubing · Free horse-drawn sled ride.</span></div></div>
-          <div class="meal-line">L: Chinese Set</div><div class="meal-line">D: Cold-Water Fish</div>
-          <div class="hotel-line">🏨 Hemu Globeflower Hotel 禾木金莲花名宿 or similar (inside Hemu Village)</div>
-        </div></div>
-      </div>
-
-      <div class="day-item">
-        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
-          <span class="day-num" style="background:#2a3a5a">D4</span>
-          <span class="day-route">Hemu → Kanas · 70km · 2hrs</span>
-          <span class="day-title">Hemu Village Viewing Platform · Kanas Lake</span>
-          <span class="day-chevron">▼</span>
-        </div>
-        <div class="day-body"><div class="day-stops">
-          <div class="stop"><div class="stop-dot" style="background:#4a7a1a"></div><div class="stop-text"><strong>Hemu Village — Haden Observation Deck 禾木村哈登观景台</strong><span>At sunrise, golden light reflects across the snowfields and morning mist intertwines with the light. The wooden village below is silver-white. Every frame is breathtaking.</span></div></div>
-          <div class="stop"><div class="stop-dot" style="background:#1a5a8a"></div><div class="stop-text"><strong>★ Kanas Lake 喀纳斯</strong><span>Famous for deep blue lake water that changes colour with the light. In winter, surrounded by snow-capped mountains and frozen forests. Rime-covered trees, ice on the lake edges — a winter wonderland.</span></div></div>
-          <div class="meal-line">L: Simple meal at scenic area</div><div class="meal-line">D: Chinese Set</div>
-          <div class="hotel-line">🏨 Kanas Kunshye Luxury Private Accommodation or similar ★★★★★</div>
-        </div></div>
-      </div>
-
-      <div class="day-item">
-        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
-          <span class="day-num" style="background:#2a3a5a">D5</span>
-          <span class="day-route">Kanas → Ghost City → Karamay · 358km + 98km</span>
-          <span class="day-title">Urho Ghost City · Karamay</span>
-          <span class="day-chevron">▼</span>
-        </div>
-        <div class="day-body"><div class="day-stops">
-          <div class="stop"><div class="stop-dot" style="background:#5a3a8a"></div><div class="stop-text"><strong>★ Urho Ghost City 乌尔禾魔鬼城</strong><span>Shuttle bus included. Wind-carved rock pillars across the Gobi. Also called "Wind City" — strong winds roar between the stone formations, producing eerie sounds that gave this place its name.</span></div></div>
-          <div class="meal-line">L: Simple meal at scenic area</div><div class="meal-line">D: BBQ 风味烧烤</div>
-          <div class="hotel-line">🏨 Karamay Jinghui Grand Hotel or similar ★★★★</div>
-        </div></div>
-      </div>
-
-      <div class="day-item">
-        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
-          <span class="day-num" style="background:#1a4a8a">D6</span>
-          <span class="day-route">Karamay → Sayram Lake · 420km · 6hrs</span>
-          <span class="day-title">Sayram Lake — Self-Drive Ice Circuit</span>
-          <span class="day-chevron">▼</span>
-        </div>
-        <div class="day-body"><div class="day-stops">
-          <div class="stop"><div class="stop-dot" style="background:#1a5a8a"></div><div class="stop-text"><strong>★ Self-Drive Around Sayram Lake 赛里木湖自驾环湖</strong><span>In winter, the lake freezes into extraordinary formations — blue ice, ice bubbles, ice flowers, and blue icefalls. Depending on your month: November (unfrozen lake + swans), December ("ice push"), January (blue icefalls), February (full ice world). Scenery varies with weather.</span></div></div>
-          <div class="meal-line">L: Chinese Set</div><div class="meal-line">D: Xinjiang Big Plate Chicken</div>
-          <div class="hotel-line">🏨 Selim Lake Spruce Resort 赛里木湖水云杉酒店 or similar ★★★★</div>
-        </div></div>
-      </div>
-
-      <div class="day-item">
-        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
-          <span class="day-num" style="background:#1a4a8a">D7</span>
-          <span class="day-route">Sayram Lake → Shawan · 379km · 5hrs</span>
-          <span class="day-title">Sayram Lake Sunrise · Shawan Hot Spring Hotel</span>
-          <span class="day-chevron">▼</span>
-        </div>
-        <div class="day-body"><div class="day-stops">
-          <div class="stop"><div class="stop-dot" style="background:#1a5a8a"></div><div class="stop-text"><strong>★ Sayram Lake Sunrise 赛里木湖日出</strong><span>Golden light spreading across the crystal-clear frozen surface, interplaying with light and shadow, set against distant snow peaks. One of the most romantic winter scenes in all of China.</span></div></div>
-          <div class="stop"><div class="stop-dot" style="background:#4a7a1a"></div><div class="stop-text"><strong>★ Shawan Natural Hot Spring 沙湾酒店泡温泉</strong><span>Geothermal springs from the Tianshan Mountains. After days in the winter cold, soaking in warm mineral-rich springs with steam rising around you is deeply restorative. Bring your own swimwear.</span></div></div>
-          <div class="meal-line">L: Xinjiang meatball soup 新疆特色丸子汤</div><div class="meal-line">D: Xinjiang Big Plate Chicken</div>
-          <div class="hotel-line">🏨 Xinjiang Heavenly Holy Spring Resort Hotel 沙湾天赐温泉酒店 or similar ★★★★</div>
-        </div></div>
-      </div>
-
-      <div class="day-item">
-        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
-          <span class="day-num" style="background:#2a3a5a">D8</span>
-          <span class="day-route">Shawan → Urumqi · 171km · 2hrs</span>
-          <span class="day-title">Tianshan Heavenly Lake · Xinjiang Grand Bazaar</span>
-          <span class="day-chevron">▼</span>
-        </div>
-        <div class="day-body"><div class="day-stops">
-          <div class="stop"><div class="stop-dot" style="background:#1a5a8a"></div><div class="stop-text"><strong>★ Tianshan Heavenly Lake 天山天池</strong><span>Shuttle bus included. A high-altitude glacial lake where snow peaks reflect on crystal-clear waters. In winter, the lake is frozen and blanketed in snow — pure serenity and majestic beauty.</span></div></div>
-          <div class="stop"><div class="stop-dot" style="background:#c85a1a"></div><div class="stop-text"><strong>Xinjiang International Grand Bazaar 新疆国际大巴扎</strong><span>Urumqi's landmark cultural district. Islamic architecture, ethnic cuisine, handcrafts, and live cultural atmosphere.</span></div></div>
-          <div class="meal-line">L: Xinjiang fried noodles 新疆特色炒面</div>
-          <div class="hotel-line">🏨 Urumqi Liston International Hotel or similar ★★★★★</div>
-        </div></div>
-      </div>
-
-      <div class="day-item">
-        <div class="day-header" onclick="this.parentElement.classList.toggle('open')">
-          <span class="day-num" style="background:#2a3a5a">D9</span>
-          <span class="day-route">Urumqi → Transit → KL</span>
-          <span class="day-title">Return flight home</span>
-          <span class="day-chevron">▼</span>
-        </div>
-        <div class="day-body"><div class="day-stops">
-          <div class="stop"><div class="stop-dot" style="background:#2a3a5a"></div><div class="stop-text"><strong>Assemble at Urumqi International Airport · Fly via transit city to KL</strong></div></div>
-        </div></div>
-      </div>
-
+<footer>
+  <div class="wrap foot-inner">
+    <div>Powered by Blue Sky Vacation Sdn Bhd · Kota Kinabalu, Sabah</div>
+    <div class="foot-links">
+      <a href="https://wa.me/60198787790">WhatsApp</a>
+      <a href="mailto:info@blueskv.com">Email</a>
+      <a href="home-new.html">← All trips</a>
     </div>
-  </div>
-</section>
-
-<!-- FOOD -->
-<div class="food-section">
-  <p class="section-eyebrow" style="color:rgba(255,255,255,0.4)">Xinjiang food culture</p>
-  <h2 class="section-title">Eating your way across Northern Xinjiang</h2>
-  <div class="food-grid">
-    <div class="food-card"><div class="food-photo" style="background-image:url('food-roast-lamb.jpg');"></div><div class="food-icon">🐑</div><div class="food-name">Roast Whole Lamb 烤全羊</div><div class="food-detail">Farewell banquet on the final night — the most ceremonial meal in Xinjiang</div></div>
-    <div class="food-card"><div class="food-photo" style="background-image:url('food-hand-rice.webp');"></div><div class="food-icon">🍚</div><div class="food-name">Hand-Grabbed Rice 手抓饭</div><div class="food-detail">The definitive Uyghur dish — lamb, carrots, raisins over slow-cooked rice</div></div>
-    <div class="food-card"><div class="food-photo" style="background-image:url('food-bigplate-chicken.webp');"></div><div class="food-icon">🍗</div><div class="food-name">Big Plate Chicken 大盘鸡</div><div class="food-detail">Xinjiang's most famous dish — spiced chicken and potato in a wide clay plate</div></div>
-    <div class="food-card"><div class="food-photo" style="background-image:url('food-coldwater-fish.jpg');"></div><div class="food-icon">🐟</div><div class="food-name">Burqin Cold-Water Fish 冷水鱼</div><div class="food-detail">Clear mountain stream trout from the Irtysh — simply grilled or steamed</div></div>
-    <div class="food-card"><div class="food-photo" style="background-image:url('food-bbq-skewers.jpg');"></div><div class="food-icon">🍢</div><div class="food-name">Xinjiang BBQ Skewers 烤串</div><div class="food-detail">Lamb skewers from the night market — seasoned with cumin and chilli</div></div>
-    <div class="food-card"><div class="food-photo" style="background-image:url('food-lamb-ribs.jpg');"></div><div class="food-icon">🍖</div><div class="food-name">Signature Lamb Ribs 羊排</div><div class="food-detail">Braised or grilled — Xinjiang's lamb is uniquely sweet from mountain grass</div></div>
-    <div class="food-card"><div class="food-photo" style="background-image:url('food-hemu-hotpot.jpg');background-position:center 35%;"></div><div class="food-icon">🍲</div><div class="food-name">Hemu Clay Pot Hotpot</div><div class="food-detail">Winter exclusive — warming clay pot with Tuva-style broth in the snow village</div></div>
-    <div class="food-card"><div class="food-photo" style="background-image:url('food-lagman-noodles.jpg');"></div><div class="food-icon">🍜</div><div class="food-name">Xinjiang Lagman Noodles 拌面</div><div class="food-detail">Hand-pulled noodles with lamb and vegetables — a Uyghur staple</div></div>
-  </div>
-</div>
-
-<!-- PRACTICAL -->
-<div class="practical-section">
-  <div class="prac-card">
-    <div class="prac-icon">✈️</div>
-    <div class="prac-title">Getting there</div>
-    <div class="prac-body">Depart from Kuala Lumpur International Airport. Summer: China Southern direct or one connection. Winter: via Guangzhou. Urumqi is 2 time zones ahead of Malaysia (same clock — add 2h mentally).</div>
-  </div>
-  <div class="prac-card">
-    <div class="prac-icon">🌡️</div>
-    <div class="prac-title">What to expect</div>
-    <div class="prac-body">Summer (May–Sep): 15–28°C days, cool evenings. Layer up for altitude. Autumn (Sep–Oct): 5–18°C, peak foliage. Winter (Nov–Feb): –10°C to –25°C in Altay — full winter gear essential. Thermal base layers, down jacket, snow boots, gloves.</div>
-  </div>
-  <div class="prac-card">
-    <div class="prac-icon">💳</div>
-    <div class="prac-title">Payments & notes</div>
-    <div class="prac-body">Download Alipay or WeChat Pay and link your card before departure. Cash (CNY) works everywhere. All tours conducted in Mandarin. All entrance fees included — no individual refunds on unused tickets. Tours depart from KL.</div>
-  </div>
-</div>
-
-<!-- CTA -->
-<div class="cta-section">
-  <p class="section-eyebrow" style="color:rgba(255,255,255,0.4)">Ready to explore</p>
-  <h2 class="section-title">Xinjiang awaits.</h2>
-  <p>Tell us your preferred travel season and group size. We'll recommend Classic, Elite, or Winter — and get you pricing and departure dates.</p>
-  <div class="cta-buttons">
-    <a href="https://wa.me/60198787790?text=Hi,%20I'm%20interested%20in%20the%20Northern%20Xinjiang%20tour.%20Please%20advise%20on%20dates%20and%20pricing." class="btn-whatsapp">WhatsApp to enquire</a>
-    <a href="mailto:info@blueskv.com?subject=Northern Xinjiang Tour Enquiry" class="btn-white">Email us</a>
-  </div>
-</div>
-
-<section style="padding:5rem 5rem;background:var(--white);border-top:1px solid var(--light-line);">
-  <p style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:0.8rem;">Keep exploring</p>
-  <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,2.5vw,2.4rem);font-weight:600;margin-bottom:2.5rem;color:var(--charcoal);">More tours from Blue Sky</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;">
-      <a href="tour-guilin.html" style="display:block;text-decoration:none;color:inherit;border:1px solid var(--light-line);border-radius:3px;overflow:hidden;background:var(--white);">
-        <div style="height:120px;background:linear-gradient(135deg,#0d3a2a,#1a7a5e);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🏞️</div>
-        <div style="padding:1.25rem 1.5rem;">
-          <div style="font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:0.4rem;">Leisure · 5D4N / 6D5N</div>
-          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;margin-bottom:0.35rem;color:var(--charcoal);">Guilin &amp; Yangshuo</h3>
-          <p style="font-size:0.8rem;color:var(--mid);line-height:1.6;">Karst peaks, hot air balloons &amp; Yulong River bamboo rafts.</p>
-        </div>
-      </a>
-      <a href="tour-hangzhou.html" style="display:block;text-decoration:none;color:inherit;border:1px solid var(--light-line);border-radius:3px;overflow:hidden;background:var(--white);">
-        <div style="height:120px;background:linear-gradient(135deg,#0B4F8A,#062a4a);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🤖</div>
-        <div style="padding:1.25rem 1.5rem;">
-          <div style="font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:#1a7a3c;font-weight:600;margin-bottom:0.4rem;">100% HRDF · 8D6N</div>
-          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;margin-bottom:0.35rem;color:var(--charcoal);">Hangzhou AI Study Trip</h3>
-          <p style="font-size:0.8rem;color:var(--mid);line-height:1.6;">Alibaba, Geely EV, BrainCo, iFlytek &amp; Robot Town.</p>
-        </div>
-      </a>
-      <a href="tour-shenzhen.html" style="display:block;text-decoration:none;color:inherit;border:1px solid var(--light-line);border-radius:3px;overflow:hidden;background:var(--white);">
-        <div style="height:120px;background:linear-gradient(135deg,#1a0a2e,#0a2040);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🔋</div>
-        <div style="padding:1.25rem 1.5rem;">
-          <div style="font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:#1a7a3c;font-weight:600;margin-bottom:0.4rem;">100% HRDF · 7D6N</div>
-          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;margin-bottom:0.35rem;color:var(--charcoal);">Shenzhen AI Study Trip</h3>
-          <p style="font-size:0.8rem;color:var(--mid);line-height:1.6;">BYD, UBTECH humanoids, Baidu Apollo &amp; DJI drones.</p>
-        </div>
-      </a>
-      <a href="tour-hainan.html" style="display:block;text-decoration:none;color:inherit;border:1px solid var(--light-line);border-radius:3px;overflow:hidden;background:var(--white);">
-        <div style="height:120px;background:linear-gradient(135deg,#0a5f7a,#0e7a6e);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🏝️</div>
-        <div style="padding:1.25rem 1.5rem;">
-          <div style="font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:0.4rem;">Leisure · 6 Days</div>
-          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;margin-bottom:0.35rem;color:var(--charcoal);">Hainan Island Carnival</h3>
-          <p style="font-size:0.8rem;color:var(--mid);line-height:1.6;">Direct KK–Haikou. Ocean Flower Island &amp; Sanya Atlantis.</p>
-        </div>
-      </a>
-  </div>
-</section>
-
-<footer style="align-items:flex-start;gap:2rem;flex-wrap:wrap;">
-  <div style="max-width:300px;">
-    <div class="footer-logo">Blue Sky <span>Vacation</span></div>
-    <p style="margin-top:0.75rem;line-height:1.7;">D3-3, Block D, Tanjung Aru Plaza, Jalan Tun Mustapha, Tanjung Aru, 88100 Kota Kinabalu, Sabah</p>
-  </div>
-  <div style="line-height:1.9;">
-    <a href="https://wa.me/60198787790" style="color:rgba(255,255,255,0.65);text-decoration:none;display:block;">WhatsApp · +6019-878 7790</a>
-    <a href="mailto:info@blueskv.com" style="color:rgba(255,255,255,0.65);text-decoration:none;display:block;">info@blueskv.com</a>
-    <a href="index.html" style="color:rgba(255,255,255,0.65);text-decoration:none;display:block;">← All tours</a>
-  </div>
-  <div style="line-height:1.7;opacity:0.8;">
-    © 2026 Blue Sky Vacation Sdn Bhd<br>Co. No. 1083236 · KPK/LN:7700<br>Kota Kinabalu, Sabah
   </div>
 </footer>
 
+<script src="./booking-widget.js"></script>
 <script>
-  function showPkg(id) {
-    document.querySelectorAll('.pkg-content').forEach(c => c.classList.remove('active'));
-    document.querySelectorAll('.pkg-tab').forEach(t => t.classList.remove('active'));
-    document.getElementById('pkg-' + id).classList.add('active');
-    event.currentTarget.classList.add('active');
-  }
-  function showItin(id) {
-    document.querySelectorAll('.itin-content').forEach(c => c.classList.remove('active'));
-    document.querySelectorAll('.itin-tab').forEach(t => t.classList.remove('active'));
-    document.getElementById('itin-' + id).classList.add('active');
-    event.currentTarget.classList.add('active');
-  }
-  document.querySelectorAll('.day-header').forEach(h => {
-    h.addEventListener('click', () => h.parentElement.classList.toggle('open'));
+  var bsvBooking = new BSVBooking({
+    tripName: 'Northern Xinjiang Odyssey',
+    waNumber: '60198787790',
+    dates: [
+      {date:'27 Aug 2026', price:'Classic RM8,999'},
+      {date:'01 Sep 2026', price:'Classic RM8,999'},
+      {date:'02 Sep 2026', price:'Elite RM12,499'},
+      {date:'12 Sep 2026', price:'Classic RM9,399'},
+      {date:'14 Sep 2026', price:'Elite RM12,499'},
+      {date:'08 Oct 2026', price:'Classic RM8,599 (train)'},
+      {date:'20 Nov 2026', price:'Winter RM9,299'},
+      {date:'05 Dec 2026', price:'Winter RM9,299'},
+      {date:'18 Dec 2026', price:'Winter RM9,299'},
+      {date:'08 Jan 2027', price:'Winter RM9,299'},
+      {date:'14 Feb 2027', price:'Winter RM9,299'}
+    ],
+    packageOptions: ['Classic — 11D10N summer','Elite — 11D10N summer','Winter Exclusive — 9D8N'],
+    maxPax: 8
   });
 </script>
 </body>
