@@ -58,6 +58,8 @@
   styleEl.textContent = CSS;
   document.head.appendChild(styleEl);
 
+  styleEl.textContent += '.bsvb-sechead{font-family:\'Barlow Condensed\',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:.78rem;color:var(--accent-700,#2C5F8A);margin:1.4rem 0 .2rem;}';
+
   var EMAILJS_SERVICE_ID = 'service_6ynhgqm';
   var EMAILJS_TEMPLATE_ID = 'template_0de7zs6';
   var EMAILJS_CUSTOMER_TEMPLATE_ID = 'template_f2w5y07';
@@ -387,6 +389,156 @@
     actions.appendChild(closeBtn);
     body.appendChild(actions);
 
+    this._shell('Request sent', 'All done', body);
+  };
+
+  BSVBooking.prototype.openCustom = function(){
+    this.custom = { dest:'', when:'', nights:'', pax:2, budget:'', style:'', name:'', email:'', phone:'', notes:'' };
+    this._renderCustom();
+    this.overlay.classList.add('open');
+    document.body.style.overflow='hidden';
+  };
+
+  BSVBooking.prototype._renderCustom = function(){
+    var self = this, k = this.custom;
+    var body = el('div');
+    var inputCss = 'width:100%;padding:.65rem .8rem;border:1px solid var(--line,#DCE7F0);font-family:\'Barlow\',sans-serif;font-size:.95rem;background:#fff;color:var(--text,#1E293B);';
+
+    function field(label, key, placeholder, wide){
+      var f = el('div','bsvb-field');
+      f.appendChild(el('label','',label));
+      var i = document.createElement('input');
+      i.type = 'text'; i.style.cssText = inputCss; i.placeholder = placeholder || '';
+      i.value = k[key] || '';
+      i.oninput = function(){ k[key] = i.value; };
+      f.appendChild(i);
+      if(wide) f.style.gridColumn = '1 / -1';
+      return f;
+    }
+    function row(){
+      var r = el('div','bsvb-row');
+      r.style.cssText = 'display:grid;grid-template-columns:1fr 1fr;gap:.9rem;';
+      for(var i=0;i<arguments.length;i++) r.appendChild(arguments[i]);
+      return r;
+    }
+
+    body.appendChild(el('div','bsvb-note','Tell us roughly what you have in mind. Nothing here is fixed \u2014 we will come back to you with options.'));
+
+    var destF = el('div','bsvb-field');
+    destF.appendChild(el('label','','Where would you like to go?'));
+    var destI = document.createElement('input');
+    destI.type='text'; destI.style.cssText=inputCss;
+    destI.placeholder='Japan, Bali, somewhere cold \u2014 or not sure yet';
+    destI.value = k.dest; destI.oninput = function(){ k.dest = destI.value; };
+    destF.appendChild(destI);
+    body.appendChild(destF);
+
+    body.appendChild(row(
+      field('When?', 'when', 'e.g. December, or 12\u201319 Mar'),
+      field('How many nights?', 'nights', 'e.g. 5')
+    ));
+
+    var paxF = el('div','bsvb-field');
+    paxF.appendChild(el('label','','How many travellers?'));
+    var paxI = document.createElement('input');
+    paxI.type='number'; paxI.min='1'; paxI.max='60'; paxI.style.cssText=inputCss;
+    paxI.value = k.pax; paxI.oninput = function(){ k.pax = paxI.value; };
+    paxF.appendChild(paxI);
+
+    var budF = el('div','bsvb-field');
+    budF.appendChild(el('label','','Budget per person (optional)'));
+    var budI = document.createElement('input');
+    budI.type='text'; budI.style.cssText=inputCss; budI.placeholder='e.g. RM3,000\u20134,000';
+    budI.value = k.budget; budI.oninput = function(){ k.budget = budI.value; };
+    budF.appendChild(budI);
+    body.appendChild(row(paxF, budF));
+
+    var styleF = el('div','bsvb-field');
+    styleF.appendChild(el('label','','What kind of trip?'));
+    var styleS = document.createElement('select');
+    styleS.style.cssText = inputCss;
+    ['','Family holiday','Couple / honeymoon','Friends group','Corporate / incentive','School or interest group','Solo'].forEach(function(o){
+      var op = document.createElement('option');
+      op.value = o; op.textContent = o || 'Select one';
+      styleS.appendChild(op);
+    });
+    styleS.value = k.style;
+    styleS.onchange = function(){ k.style = styleS.value; };
+    styleF.appendChild(styleS);
+    body.appendChild(styleF);
+
+    body.appendChild(el('div','bsvb-sechead','Your contact details'));
+    body.appendChild(row(field('Full name','name','As per passport'), field('Phone','phone','+60 …')));
+    body.appendChild(field('Email','email','you@example.com', true));
+
+    var notesF = el('div','bsvb-field');
+    notesF.appendChild(el('label','','Anything else we should know? (optional)'));
+    var notesI = document.createElement('textarea');
+    notesI.rows = 3;
+    notesI.style.cssText = inputCss + 'resize:vertical;';
+    notesI.placeholder = 'Must-see places, pace, dietary needs, mobility, occasions\u2026';
+    notesI.value = k.notes; notesI.oninput = function(){ k.notes = notesI.value; };
+    notesF.appendChild(notesI);
+    body.appendChild(notesF);
+
+    var actions = el('div','bsvb-actions');
+    var submit = el('button','bsvb-btn bsvb-btn-primary','Send my request');
+    submit.style.marginLeft = 'auto';
+    submit.onclick = function(){
+      if(!k.name || !k.email || !k.phone){
+        alert('Please fill in your name, email and phone so we can reply.');
+        return;
+      }
+      self._submitCustom();
+    };
+    actions.appendChild(submit);
+    body.appendChild(actions);
+
+    this._shell('Custom trip', 'Let\u2019s build your trip', body);
+  };
+
+  BSVBooking.prototype._submitCustom = function(){
+    var k = this.custom;
+    var reqId = 'BSV-C' + Date.now().toString(36).toUpperCase();
+    this._reqId = reqId;
+    var detail = [];
+    if(k.nights) detail.push('Nights: ' + k.nights);
+    if(k.budget) detail.push('Budget per person: ' + k.budget);
+    if(k.style) detail.push('Trip type: ' + k.style);
+    if(k.notes) detail.push('Notes: ' + k.notes);
+    var params = {
+      trip_name: 'Custom trip \u2014 ' + (k.dest || 'destination not decided'),
+      departure_date: k.when || 'Flexible',
+      pax: k.pax,
+      package: k.style || '-',
+      lead_name: k.name,
+      lead_dob: '-',
+      lead_email: k.email,
+      lead_phone: k.phone,
+      remarks: detail.join(' | ') || '-',
+      request_id: reqId
+    };
+    loadEmailJs().then(function(emailjs){
+      return emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params);
+    }).catch(function(err){ console.warn('EmailJS notification failed', err); });
+    loadEmailJs().then(function(emailjs){
+      return emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_CUSTOMER_TEMPLATE_ID, params);
+    }).catch(function(err){ console.warn('EmailJS customer confirmation failed', err); });
+
+    var self = this;
+    var body = el('div');
+    var done = el('div','bsvb-done');
+    done.appendChild(el('div','bsvb-check','<svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"></path></svg>'));
+    done.appendChild(el('h3','','Thanks \u2014 we\u2019ve got it.'));
+    done.appendChild(el('p','','We\u2019ll come back to you within 1 working day with a suggested itinerary and pricing.'));
+    done.appendChild(el('div','bsvb-disclaimer','This is a <strong>custom trip enquiry</strong>, not a booking. Request ID: ' + reqId));
+    body.appendChild(done);
+    var actions = el('div','bsvb-actions');
+    var closeBtn = el('button','bsvb-btn bsvb-btn-primary','Done');
+    closeBtn.style.marginLeft = 'auto';
+    closeBtn.onclick = function(){ self.close(); };
+    actions.appendChild(closeBtn);
+    body.appendChild(actions);
     this._shell('Request sent', 'All done', body);
   };
 

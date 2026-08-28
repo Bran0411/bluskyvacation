@@ -11,7 +11,10 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Blue Sky Vacation">
 <title>Bangkok + Kanchanaburi | Blue Sky Vacation</title>
-<link rel="icon" href="logo-mark.png">
+<link rel="icon" href="/favicon.png" sizes="48x48">
+<link rel="icon" href="/favicon-192.png" sizes="192x192">
+<link rel="icon" href="/favicon-512.png" sizes="512x512">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -137,7 +140,7 @@
     <a href="home-new.html" class="brand"><img src="logo-cloud-wordmark.png" alt="Blue Sky Vacation" style="height:52px;width:auto;"></a>
     <div class="nav-right">
       <a href="home-new.html#trips" class="back-link">← All trips</a>
-      <a class="btn btn-primary marked" href="https://wa.me/60198787790?text=Hi%20Blue%20Sky%20Vacation%2C%20I'd%20like%20to%20ask%20about%20the%20Bangkok%20%2B%20Kanchanaburi%20trip." target="_blank" rel="noopener"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>Contact us</a>
+      <button class="btn btn-primary marked" onclick="bsvBooking.openCustom()" style="cursor:pointer;"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>Custom Trip</button>
     </div>
   </div>
 </nav>
@@ -169,7 +172,7 @@
     <div class="sec-kicker">Dates &amp; pricing</div>
     <h2 class="sec-h">Choose your date</h2>
     <div class="dates-block">
-      <table class="dates-table"><thead><tr><th>Date</th><th>Price</th><th>Seats</th></tr></thead><tbody><tr><td>08 Sep 2026</td><td>RM2,490</td><td>14</td></tr><tr class="low-seats"><td>01 Dec 2026 (peak)</td><td>RM2,890</td><td><span class="seats-badge">5 LEFT</span>5</td></tr></tbody></table>
+      <table class="dates-table"><thead><tr><th>Date</th><th>Price</th><th>Availability</th></tr></thead><tbody><tr><td>08 Sep 2026</td><td>RM2,490</td><td>Available</td></tr><tr class="low-seats"><td>01 Dec 2026 (peak)</td><td>RM2,890</td><td>Available</td></tr></tbody></table>
       <div class="deposit-line">Deposit: <strong>RM400/pax</strong></div>
       <button class="btn btn-primary marked" onclick="bsvBooking.open()" style="cursor:pointer;margin-top:1.2rem;"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>Check Availability</button>
       <div class="flight-box marked" style="border:1px solid var(--line);background:var(--paper);padding:1.3rem 1.5rem;margin-top:1.8rem;"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
